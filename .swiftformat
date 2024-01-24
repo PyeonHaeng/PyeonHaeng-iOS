@@ -1,0 +1,20 @@
+--swiftversion 5.9
+
+# format options
+
+--indent 2
+--selfrequired
+--importgrouping alpha
+--enable acronyms
+--acronyms "URL, ID, UUID, CVS"
+--enable blankLineAfterImports
+--enable blankLinesAroundMark
+--enable blockComments
+--enable docComments
+--enable isEmpty
+--enable markTypes
+--enable sortSwitchCases
+--enable wrapEnumCases
+--enable wrapSwitchCases
+
+--disable wrapMultilineStatementBraces
