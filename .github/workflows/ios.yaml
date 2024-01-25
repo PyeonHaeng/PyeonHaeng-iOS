@@ -41,6 +41,7 @@ jobs:
         env:
           APPCONFIG: ${{ secrets.XCCONFIG }}
         run: |
+          mkdir XCConfig
           echo $APPCONFIG | base64 --decode > ./XCConfig/Shared.xcconfig
       - name: Set Default Scheme
         run: |
