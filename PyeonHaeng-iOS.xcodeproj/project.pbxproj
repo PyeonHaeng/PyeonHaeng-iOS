@@ -835,7 +835,7 @@
 				BA28F1812B6155450052855E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = CI;
 		};
 		BAA4D9A42B5A1795005999F8 /* Build configuration list for PBXProject "PyeonHaeng-iOS" */ = {
 			isa = XCConfigurationList;
@@ -845,7 +845,7 @@
 				BAA4D9B62B5A1796005999F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = CI;
 		};
 		BAA4D9B72B5A1796005999F8 /* Build configuration list for PBXNativeTarget "PyeonHaeng-iOS" */ = {
 			isa = XCConfigurationList;
@@ -855,7 +855,7 @@
 				BAA4D9B92B5A1796005999F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = CI;
 		};
 /* End XCConfigurationList section */
 
