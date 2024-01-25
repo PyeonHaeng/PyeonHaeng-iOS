@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA0563FB2B61EAD5003D6DC7 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = BA0563FA2B61EAD5003D6DC7 /* .gitkeep */; };
 		BA28F17C2B6155450052855E /* PyeonHaeng_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA28F17B2B6155450052855E /* PyeonHaeng_iOSTests.swift */; };
 		BA28F1852B6155810052855E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA28F1842B6155810052855E /* OnboardingView.swift */; };
 		BA28F1882B6155910052855E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA28F1872B6155910052855E /* HomeView.swift */; };
@@ -43,6 +44,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BA0563FA2B61EAD5003D6DC7 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		BA0564022B62179A003D6DC7 /* Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Core; sourceTree = "<group>"; };
+		BA0564032B6219D4003D6DC7 /* APIService */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = APIService; sourceTree = "<group>"; };
 		BA28F1792B6155450052855E /* PyeonHaeng-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PyeonHaeng-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA28F17B2B6155450052855E /* PyeonHaeng_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PyeonHaeng_iOSTests.swift; sourceTree = "<group>"; };
 		BA28F1842B6155810052855E /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -89,6 +93,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA0563F92B61EABA003D6DC7 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				BA0563FA2B61EAD5003D6DC7 /* .gitkeep */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		BA28F1702B6152E90052855E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +210,7 @@
 		BA28F1AA2B616E2D0052855E /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
+				BA0563F92B61EABA003D6DC7 /* Components */,
 				BA28F1AB2B616E540052855E /* Fonts */,
 				BA28F1AE2B6173B60052855E /* Text+textStyle.swift */,
 			);
@@ -215,6 +228,8 @@
 		BAA4D9A02B5A1795005999F8 = {
 			isa = PBXGroup;
 			children = (
+				BA0564032B6219D4003D6DC7 /* APIService */,
+				BA0564022B62179A003D6DC7 /* Core */,
 				BAA4D9AB2B5A1795005999F8 /* PyeonHaeng-iOS */,
 				BA28F17A2B6155450052855E /* PyeonHaeng-iOSTests */,
 				BAA4D9AA2B5A1795005999F8 /* Products */,
@@ -354,6 +369,7 @@
 				BAA4D9B12B5A1796005999F8 /* Assets.xcassets in Resources */,
 				BAF2BEB32B61236100931AF0 /* Localizable.xcstrings in Resources */,
 				BA28F1A22B61572A0052855E /* Pretendard-Medium.otf in Resources */,
+				BA0563FB2B61EAD5003D6DC7 /* .gitkeep in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
