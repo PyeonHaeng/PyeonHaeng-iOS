@@ -1,0 +1,85 @@
+{
+  "count": 10,
+  "products": [
+    {
+      "date": "2024:01",
+      "img": "https://image.woodongs.com/imgsvr/item/GD_8809288634967_001.jpg",
+      "price": 2500,
+      "name": "BR)레인보우샤베트과즙워터500ML",
+      "tag": "1+1",
+      "store": "GS25"
+    },
+    {
+      "date": "2024:01",
+      "img": "https://image.woodongs.com/imgsvr/item/GD_8809288635315_003.jpg",
+      "price": 2500,
+      "name": "BR)망고탱고과즙워터500ML",
+      "tag": "1+1",
+      "store": "GS25"
+    },
+    {
+      "date": "2024:01",
+      "img": "https://image.woodongs.com/imgsvr/item/GD_8809288634974_001.jpg",
+      "price": 2500,
+      "name": "BR)피치요거트과즙워터500ML",
+      "tag": "1+1",
+      "store": "GS25"
+    },
+    {
+      "date": "2024:01",
+      "img": "https://image.woodongs.com/imgsvr/item/GD_8806002010861_865.jpg",
+      "price": 5000,
+      "name": "광동)헛개파워100ML",
+      "tag": "1+1",
+      "store": "GS25"
+    },
+    {
+      "date": "2024:01",
+      "img": "https://image.woodongs.com/imgsvr/item/GD_8806011416005_001.JPG",
+      "price": 5000,
+      "name": "동아)모닝케어D100ML",
+      "tag": "1+1",
+      "store": "GS25"
+    },
+    {
+      "date": "2024:01",
+      "img": "https://image.woodongs.com/imgsvr/item/GD_8806011415992_001.JPG",
+      "price": 5000,
+      "name": "동아)모닝케어H100ML",
+      "tag": "1+1",
+      "store": "GS25"
+    },
+    {
+      "date": "2024:01",
+      "img": "https://image.woodongs.com/imgsvr/item/GD_8809556566891_001.jpg",
+      "price": 5000,
+      "name": "서영)모닝이즈백100ML",
+      "tag": "1+1",
+      "store": "GS25"
+    },
+    {
+      "date": "2024:01",
+      "img": "https://image.woodongs.com/imgsvr/item/GD_8809125061857_002.jpg",
+      "price": 5000,
+      "name": "종근당)헛개땡큐골드100ML",
+      "tag": "1+1",
+      "store": "GS25"
+    },
+    {
+      "date": "2024:01",
+      "img": "https://image.woodongs.com/imgsvr/item/GD_8809329050015_018.jpg",
+      "price": 5000,
+      "name": "천지개벽)숙취해소음료100ML",
+      "tag": "1+1",
+      "store": "GS25"
+    },
+    {
+      "date": "2024:01",
+      "img": "https://image.woodongs.com/imgsvr/item/GD_8801013777260_001.jpg",
+      "price": 5000,
+      "name": "큐원)상쾌환부스터100ML",
+      "tag": "1+1",
+      "store": "GS25"
+    }
+  ]
+}

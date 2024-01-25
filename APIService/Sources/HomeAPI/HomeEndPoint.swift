@@ -17,5 +17,5 @@ struct HomeEndPoint: EndPoint {
 
   var parameters: Network.HTTPParameter
 
-  var headers: [String : String]
+  var headers: [String: String]
 }
