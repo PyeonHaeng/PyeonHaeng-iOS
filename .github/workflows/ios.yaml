@@ -39,8 +39,7 @@ jobs:
           xcode-version: "15.2"
       - name: Set Default Scheme
         run: |
-          scheme_list=$(xcodebuild -list -json | tr -d "\n")
-          default=$(echo $scheme_list | ruby -e "require 'json'; puts JSON.parse(STDIN.gets)['project']['targets'][0]")
+          default="App-GitHub-CI"
           echo $default | cat >default
           echo Using default scheme: $default
       - name: Build
