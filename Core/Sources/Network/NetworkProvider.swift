@@ -38,7 +38,6 @@ public struct NetworkProvider: Networking {
       case .plain:
         break
       case let .body(data):
-        let body = data.toDictionary
         request.httpBody = try JSONEncoder().encode(data)
       case let .query(data):
         var components = URLComponents(string: url.absoluteString)

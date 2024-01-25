@@ -2,9 +2,9 @@ name: iOS CI workflow
 
 on:
   push:
-    branches: [ "feature/*" ]
+    branches: ["feature/*"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
     types: [labeled, opened, synchronize, reopened]
 
 jobs:
@@ -37,6 +37,12 @@ jobs:
         uses: maxim-lobanov/setup-xcode@v1
         with:
           xcode-version: "15.2"
+      - name: Create Shared.xcconfig
+        env:
+          APPCONFIG: ${{ secrets.XCCONFIG }}
+        run: |
+          mkdir XCConfig
+          echo $APPCONFIG | base64 --decode > ./XCConfig/Shared.xcconfig
       - name: Set Default Scheme
         run: |
           scheme_list=$(xcodebuild -list -json | tr -d "\n")

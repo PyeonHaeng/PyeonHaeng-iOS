@@ -9,8 +9,6 @@ import Foundation
 import Network
 
 struct HomeEndPoint: EndPoint {
-  var baseURL: String
-
   var method: HTTPMethod
 
   var path: String

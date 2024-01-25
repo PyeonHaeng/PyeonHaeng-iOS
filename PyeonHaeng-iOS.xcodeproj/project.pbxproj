@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		BA0563FB2B61EAD5003D6DC7 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = BA0563FA2B61EAD5003D6DC7 /* .gitkeep */; };
+		BA0564062B624646003D6DC7 /* Shared.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = BA0564052B624646003D6DC7 /* Shared.xcconfig */; };
+		BA0564092B6248EA003D6DC7 /* HomeAPI in Frameworks */ = {isa = PBXBuildFile; productRef = BA0564082B6248EA003D6DC7 /* HomeAPI */; };
+		BA05640B2B6248EA003D6DC7 /* HomeAPISupport in Frameworks */ = {isa = PBXBuildFile; productRef = BA05640A2B6248EA003D6DC7 /* HomeAPISupport */; };
+		BA05640D2B6248EA003D6DC7 /* Network in Frameworks */ = {isa = PBXBuildFile; productRef = BA05640C2B6248EA003D6DC7 /* Network */; };
 		BA28F17C2B6155450052855E /* PyeonHaeng_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA28F17B2B6155450052855E /* PyeonHaeng_iOSTests.swift */; };
 		BA28F1852B6155810052855E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA28F1842B6155810052855E /* OnboardingView.swift */; };
 		BA28F1882B6155910052855E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA28F1872B6155910052855E /* HomeView.swift */; };
@@ -47,6 +51,7 @@
 		BA0563FA2B61EAD5003D6DC7 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		BA0564022B62179A003D6DC7 /* Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Core; sourceTree = "<group>"; };
 		BA0564032B6219D4003D6DC7 /* APIService */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = APIService; sourceTree = "<group>"; };
+		BA0564052B624646003D6DC7 /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Shared.xcconfig; path = XCConfig/Shared.xcconfig; sourceTree = SOURCE_ROOT; };
 		BA28F1792B6155450052855E /* PyeonHaeng-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PyeonHaeng-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA28F17B2B6155450052855E /* PyeonHaeng_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PyeonHaeng_iOSTests.swift; sourceTree = "<group>"; };
 		BA28F1842B6155810052855E /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -87,6 +92,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA05640D2B6248EA003D6DC7 /* Network in Frameworks */,
+				BA05640B2B6248EA003D6DC7 /* HomeAPISupport in Frameworks */,
+				BA0564092B6248EA003D6DC7 /* HomeAPI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +107,22 @@
 				BA0563FA2B61EAD5003D6DC7 /* .gitkeep */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		BA0564042B624629003D6DC7 /* XCConfig */ = {
+			isa = PBXGroup;
+			children = (
+				BA0564052B624646003D6DC7 /* Shared.xcconfig */,
+			);
+			name = XCConfig;
+			path = "PyeonHaeng-iOS/XCConfig";
+			sourceTree = "<group>";
+		};
+		BA0564072B6248EA003D6DC7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		BA28F1702B6152E90052855E /* Resources */ = {
@@ -230,9 +254,11 @@
 			children = (
 				BA0564032B6219D4003D6DC7 /* APIService */,
 				BA0564022B62179A003D6DC7 /* Core */,
+				BAA4D9AA2B5A1795005999F8 /* Products */,
 				BAA4D9AB2B5A1795005999F8 /* PyeonHaeng-iOS */,
 				BA28F17A2B6155450052855E /* PyeonHaeng-iOSTests */,
-				BAA4D9AA2B5A1795005999F8 /* Products */,
+				BA0564042B624629003D6DC7 /* XCConfig */,
+				BA0564072B6248EA003D6DC7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -300,6 +326,11 @@
 			dependencies = (
 			);
 			name = "PyeonHaeng-iOS";
+			packageProductDependencies = (
+				BA0564082B6248EA003D6DC7 /* HomeAPI */,
+				BA05640A2B6248EA003D6DC7 /* HomeAPISupport */,
+				BA05640C2B6248EA003D6DC7 /* Network */,
+			);
 			productName = "PyeonHaeng-iOS";
 			productReference = BAA4D9A92B5A1795005999F8 /* PyeonHaeng-iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -367,6 +398,7 @@
 				BA28F1A42B61572A0052855E /* Pretendard-ExtraBold.otf in Resources */,
 				BA28F1A02B61572A0052855E /* Pretendard-Regular.otf in Resources */,
 				BAA4D9B12B5A1796005999F8 /* Assets.xcassets in Resources */,
+				BA0564062B624646003D6DC7 /* Shared.xcconfig in Resources */,
 				BAF2BEB32B61236100931AF0 /* Localizable.xcstrings in Resources */,
 				BA28F1A22B61572A0052855E /* Pretendard-Medium.otf in Resources */,
 				BA0563FB2B61EAD5003D6DC7 /* .gitkeep in Resources */,
@@ -454,6 +486,7 @@
 /* Begin XCBuildConfiguration section */
 		BA28F1802B6155450052855E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA0564052B624646003D6DC7 /* Shared.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -472,6 +505,7 @@
 		};
 		BA28F1812B6155450052855E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA0564052B624646003D6DC7 /* Shared.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -490,6 +524,7 @@
 		};
 		BAA4D9B52B5A1796005999F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA0564052B624646003D6DC7 /* Shared.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -553,6 +588,7 @@
 		};
 		BAA4D9B62B5A1796005999F8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA0564052B624646003D6DC7 /* Shared.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -609,6 +645,7 @@
 		};
 		BAA4D9B82B5A1796005999F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA0564052B624646003D6DC7 /* Shared.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -641,6 +678,7 @@
 		};
 		BAA4D9B92B5A1796005999F8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA0564052B624646003D6DC7 /* Shared.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -681,7 +719,7 @@
 				BA28F1812B6155450052855E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		BAA4D9A42B5A1795005999F8 /* Build configuration list for PBXProject "PyeonHaeng-iOS" */ = {
 			isa = XCConfigurationList;
@@ -690,7 +728,7 @@
 				BAA4D9B62B5A1796005999F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		BAA4D9B72B5A1796005999F8 /* Build configuration list for PBXNativeTarget "PyeonHaeng-iOS" */ = {
 			isa = XCConfigurationList;
@@ -699,9 +737,24 @@
 				BAA4D9B92B5A1796005999F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BA0564082B6248EA003D6DC7 /* HomeAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = HomeAPI;
+		};
+		BA05640A2B6248EA003D6DC7 /* HomeAPISupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = HomeAPISupport;
+		};
+		BA05640C2B6248EA003D6DC7 /* Network */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Network;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BAA4D9A12B5A1795005999F8 /* Project object */;
 }
