@@ -1,5 +1,5 @@
 //
-//  Text+textStyle.swift
+//  Text+pyeonhaengStyle.swift
 //
 //  Created by 홍승현 on 1/25/24.
 //
@@ -8,7 +8,7 @@ import SwiftUI
 
 // MARK: - Pretendard
 
-private enum Pretendard: String {
+enum Pretendard: String, CaseIterable {
   /// black
   case black = "Pretendard-Black"
 
@@ -33,7 +33,7 @@ private enum Pretendard: String {
 
 // MARK: - DolDam
 
-private enum DolDam: String {
+enum DolDam: String, CaseIterable {
   case `default` = "EF_jejudoldam"
 }
 

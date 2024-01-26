@@ -56,4 +56,3 @@ public enum PyeonHaengFont {
   /// Cancel
   case x2
 }
-
