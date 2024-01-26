@@ -77,6 +77,7 @@
 		BAA4D9AE2B5A1795005999F8 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		BAA4D9B02B5A1796005999F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAA4D9B32B5A1796005999F8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BABFEA6F2B6399C30084C0EC /* Shared */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Shared; sourceTree = "<group>"; };
 		BAF2BEB22B61236100931AF0 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -252,6 +253,7 @@
 		BAA4D9A02B5A1795005999F8 = {
 			isa = PBXGroup;
 			children = (
+				BABFEA6F2B6399C30084C0EC /* Shared */,
 				BA0564032B6219D4003D6DC7 /* APIService */,
 				BA0564022B62179A003D6DC7 /* Core */,
 				BAA4D9AA2B5A1795005999F8 /* Products */,
