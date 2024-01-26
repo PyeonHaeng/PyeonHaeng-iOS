@@ -1,11 +1,10 @@
 //
-//  FontStyles.swift
-//  PyeonHaeng-iOS
+//  PyeonHaengFont.swift
 //
 //  Created by 홍승현 on 1/25/24.
 //
 
-enum FontStyles {
+public enum PyeonHaengFont {
   /// Heading 1
   case h1
 
@@ -57,3 +56,4 @@ enum FontStyles {
   /// Cancel
   case x2
 }
+

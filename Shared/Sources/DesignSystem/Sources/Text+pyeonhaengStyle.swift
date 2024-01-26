@@ -1,6 +1,5 @@
 //
 //  Text+textStyle.swift
-//  PyeonHaeng-iOS
 //
 //  Created by 홍승현 on 1/25/24.
 //
@@ -9,7 +8,7 @@ import SwiftUI
 
 // MARK: - Pretendard
 
-enum Pretendard: String {
+private enum Pretendard: String {
   /// black
   case black = "Pretendard-Black"
 
@@ -39,7 +38,7 @@ private enum DolDam: String {
 }
 
 extension Text {
-  func textStyle(_ style: FontStyles) -> some View {
+  public func font(_ style: PyeonHaengFont) -> Text {
     switch style {
     case .h1:
       font(.custom(Pretendard.bold.rawValue, size: 32))
