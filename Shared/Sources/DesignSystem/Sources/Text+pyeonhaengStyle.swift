@@ -37,8 +37,8 @@ enum DolDam: String, CaseIterable {
   case `default` = "EF_jejudoldam"
 }
 
-extension Text {
-  public func font(_ style: PyeonHaengFont) -> Text {
+public extension Text {
+  func font(_ style: PyeonHaengFont) -> Text {
     switch style {
     case .h1:
       font(.custom(Pretendard.bold.rawValue, size: 32))
