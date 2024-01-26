@@ -5,7 +5,6 @@
 //  Created by 홍승현 on 1/26/24.
 //
 
-import CoreGraphics
 import CoreText
 import Foundation
 
