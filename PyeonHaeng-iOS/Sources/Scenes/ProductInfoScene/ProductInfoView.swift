@@ -11,7 +11,7 @@ import SwiftUI
 
 struct ProductInfoView: View {
   var body: some View {
-    NavigationView {
+    NavigationStack {
       VStack(spacing: 8.0) {
         ProductInfoHeader()
           .navigationTitle("제품 상세")
