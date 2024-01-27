@@ -17,12 +17,4 @@ enum PromotionTag {
     case .none: "행사없음"
     }
   }
-
-  var color: Color {
-    switch self {
-    case .onePlus: .pyeonHaengRed
-    case .twoPlus: .pyeonHaengBlue
-    case .none: .gray400
-    }
-  }
 }
