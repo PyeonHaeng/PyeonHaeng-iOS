@@ -8,26 +8,6 @@
 import SwiftUI
 
 struct PromotionTagView: View {
-  
-  enum PromotionTag {
-    case onePlus, twoPlus, none
-
-    var string: String {
-      switch self {
-      case .onePlus: "1+1"
-      case .twoPlus: "2+1"
-      case .none: "행사없음"
-      }
-    }
-
-    var color: Color {
-      switch self {
-      case .onePlus: .pyeonHaengRed
-      case .twoPlus: .pyeonHaengBlue
-      case .none: .gray400
-      }
-    }
-  }
 
   var promotionTag: PromotionTag
 
