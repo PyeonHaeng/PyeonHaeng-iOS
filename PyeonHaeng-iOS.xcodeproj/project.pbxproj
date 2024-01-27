@@ -113,7 +113,6 @@
 			isa = PBXGroup;
 			children = (
 				BA0563FA2B61EAD5003D6DC7 /* .gitkeep */,
-				E5F2EC442B64926100EE0838 /* PromotionTagView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -150,6 +149,7 @@
 			children = (
 				E5462C652B65677B00E9FDF2 /* PromotionTag.swift */,
 				BAA4D9AC2B5A1795005999F8 /* PyeonHaengApp.swift */,
+				E5462C6B2B65CF7800E9FDF2 /* Components */,
 				E5F2EC412B648EE500EE0838 /* Extensions */,
 				BA28F1722B61532C0052855E /* Scenes */,
 			);
@@ -300,6 +300,14 @@
 				BAA4D9B32B5A1796005999F8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E5462C6B2B65CF7800E9FDF2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E5F2EC442B64926100EE0838 /* PromotionTagView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		E5F2EC412B648EE500EE0838 /* Extensions */ = {
