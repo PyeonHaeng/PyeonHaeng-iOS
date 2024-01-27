@@ -11,7 +11,7 @@ struct PromotionTagView: View {
   
   enum PromotionTag {
     case onePlus, twoPlus, none
-    
+
     var string: String {
       switch self {
       case .onePlus: "1+1"
@@ -19,21 +19,18 @@ struct PromotionTagView: View {
       case .none: "행사없음"
       }
     }
-    
+
     var color: Color {
       switch self {
-      case .onePlus:
-        return .pyeonHaengRed
-      case .twoPlus:
-        return .pyeonHaengBlue
-      case .none:
-        return .gray400
+      case .onePlus: .pyeonHaengRed
+      case .twoPlus: .pyeonHaengBlue
+      case .none: .gray400
       }
     }
   }
-  
+
   var promotionTag: PromotionTag
-  
+
   var body: some View {
     Text(promotionTag.string)
       .textStyle(.b3)
