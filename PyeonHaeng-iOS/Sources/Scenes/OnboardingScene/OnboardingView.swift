@@ -8,46 +8,89 @@
 import SwiftUI
 
 struct OnboardingView: View {
+    
+    @State private var currentPage = 0
+
+    // 본문 제목과 내용을 동적으로 변경하기 위한 @State 변수
+    @State private var titleText = "하나사면 하나더"
+    @State private var bodyText = """
+                                   다양한 편의점의 1+1, 2+1 행사 제품 정보로
+                                   알뜰하고 합리적으로 소비할수 있어요.
+                                   """
+
     var body: some View {
         NavigationView {
             VStack {
-                Spacer().frame(height: 82)
-                Image("Onboarding01")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 275.55, height: 280)
-                // 페이지컨트롤
+                TabView(selection: $currentPage) {
+                    // 첫 번째 페이지
+                    VStack {
+                        Spacer().frame(height: 82)
+                        Image("Onboarding01")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 275.55, height: 280)
+                        Spacer()
+                    }
+                    .tag(0)
+
+                    // 두 번째 페이지
+                    VStack {
+                        Spacer().frame(height: 139)
+                        Image("Onboarding02")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 320, height: 197.11)
+                        Spacer()
+                    }
+                    .tag(1)
+                }
+                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                .onChange(of: currentPage, {
+                    updateTexts(for: currentPage)
+                })
+
                 // 본문 제목
-                Text("하나사면 하나더")
+                Text(titleText)
                     .textStyle(.h2)
                     .padding(.top, 20)
 
                 // 본문 내용
-                Text("""
-                     다양한 편의점의 1+1, 2+1 행사 제품 정보로
-                     알뜰하고 합리적으로 소비할수 있어요.
-                    """)
+                Text(bodyText)
                     .textStyle(.body2)
                     .multilineTextAlignment(.center)
                     .padding(.top, 8)
 
-                Spacer()
+                Spacer().frame(height: 84)
 
-                Button("다음") {
-                    // 다음 버튼 동작
+                Button(action: {
+                    if currentPage < 1 {
+                        currentPage += 1
+                    }
+                }) {
+                    Text(currentPage < 1 ? "다음" : "편행 시작하기")
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(.main500)
+                        .cornerRadius(10)
+                        .padding(.horizontal, 20)
                 }
-                .foregroundColor(.white)
-                .frame(maxWidth: .infinity)
-                .padding()
-                .background(.main500) // 임시 색상, 나중에 변경 가능
-                .cornerRadius(10)
-                .padding(.horizontal, 20)
                 .padding(.bottom, 8)
-
-                .navigationBarTitle("", displayMode: .inline)
-                .navigationBarItems(trailing: Text("건너뛰기")
-                    .foregroundStyle(.main500))
             }
+            .navigationBarTitle("", displayMode: .inline)
+            .navigationBarItems(trailing: Text("건너뛰기")
+                .foregroundColor(.main500))
+        }
+    }
+    
+    /// currentPage 값에 따라 본문 제목과 내용을 업데이트하는 함수
+    func updateTexts(for page: Int) {
+        if page == 0 {
+            titleText = "하나사면 하나더"
+            bodyText = "다양한 편의점의 1+1, 2+1 행사 제품 정보로\n알뜰하고 합리적으로 소비할수 있어요."
+        } else if page == 1 {
+            titleText = "수많은 혜택을 한곳에서"
+            bodyText = "세븐일레븐, CU, 이마트 24, GS 25, 미니스톱의 수많은 행사정보를\n‘편행’한곳에서 만나보세요."
         }
     }
 }
