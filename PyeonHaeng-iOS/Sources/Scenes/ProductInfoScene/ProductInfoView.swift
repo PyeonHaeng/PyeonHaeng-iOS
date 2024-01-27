@@ -7,9 +7,19 @@
 
 import SwiftUI
 
+// MARK: - ProductInfoView
+
 struct ProductInfoView: View {
   var body: some View {
-    Text("")
+    NavigationView {
+      VStack(spacing: 8.0) {
+        ProductInfoHeader()
+          .navigationTitle("제품 상세")
+          .navigationBarTitleDisplayMode(.inline)
+        Spacer()
+      }
+      .padding(.horizontal, 20.0)
+    }
   }
 }
 

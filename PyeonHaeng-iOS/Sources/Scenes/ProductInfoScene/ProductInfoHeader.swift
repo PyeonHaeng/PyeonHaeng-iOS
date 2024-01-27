@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct ProductInfoHeader: View {
-  
+  /// 임시 데이터입니다.
   enum MockProduct {
     static let imageURL: String = "https://image.woodongs.com/imgsvr/item/GD_8809288635315_003.jpg"
-    static let name: String = "펩시 제로 라임 250ml"
+    static let name: String = "BR)레인보우샤베트과즙워터500ML"
+    static let price: Int = 2500
   }
-  
+
   var body: some View {
     VStack(spacing: 8.0) {
       AsyncImage(url: URL(string: MockProduct.imageURL)) { image in
@@ -25,13 +26,14 @@ struct ProductInfoHeader: View {
         ProgressView()
       }
       .frame(maxWidth: .infinity, maxHeight: 257.0)
-      .padding(.top, 44.12)
-      .padding(.bottom, 40.45)
-      
+      .padding(.top, 44.0)
+      .padding(.bottom, 40.0)
+
       Text(MockProduct.name)
+        .foregroundStyle(.gray900)
         .textStyle(.h3)
         .frame(maxWidth: .infinity, alignment: .leading)
-      
+
       HStack(alignment: .bottom) {
         VStack(alignment: .leading, spacing: .zero) {
           Text("행사 진행 편의점")
@@ -42,18 +44,19 @@ struct ProductInfoHeader: View {
         }
         Spacer()
         HStack(spacing: 8.0) {
+          PromotionTagView(promotionTag: .onePlus)
           Text("개당")
             .textStyle(.c1)
-            .frame(maxHeight: 38.0)
-          Text("1,250원")
+          Text(MockProduct.price.toStringWithComma())
             .textStyle(.h2)
+            .frame(maxHeight: 38.0)
         }
       }
+      .foregroundStyle(.gray900)
     }
   }
 }
 
 #Preview(traits: .sizeThatFitsLayout) {
   ProductInfoHeader()
-    .previewLayout(.fixed(width: 100, height: 100))
 }
