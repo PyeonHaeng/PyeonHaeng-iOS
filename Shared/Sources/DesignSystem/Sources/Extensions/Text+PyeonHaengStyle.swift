@@ -84,8 +84,4 @@ public extension Text {
       font(.custom(Pretendard.regular.rawValue, size: 12))
     }
   }
-  
-  func foregroundStyle(_ style: PyeonHaengColor) -> Text {
-    foregroundStyle(Color(style.rawValue))
-  }
 }
