@@ -10,14 +10,6 @@ import SwiftUI
 struct PromotionTagView: View {
   var promotionTag: PromotionTag
 
-  var color: Color {
-    switch promotionTag {
-    case .onePlus: .pyeonHaengRed
-    case .twoPlus: .pyeonHaengBlue
-    case .none: .gray400
-    }
-  }
-
   var body: some View {
     Text(promotionTag.string)
       .font(.b3)
@@ -31,4 +23,14 @@ struct PromotionTagView: View {
 
 #Preview(traits: .sizeThatFitsLayout) {
   PromotionTagView(promotionTag: .none)
+}
+
+private extension PromotionTagView {
+  var color: Color {
+    switch promotionTag {
+    case .onePlus: .pyeonHaengRed
+    case .twoPlus: .pyeonHaengBlue
+    case .none: .gray400
+    }
+  }
 }
