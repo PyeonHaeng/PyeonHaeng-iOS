@@ -8,7 +8,9 @@
 import SwiftUI
 
 enum PromotionTag {
-  case onePlus, twoPlus, none
+  case onePlus
+  case twoPlus
+  case none
 
   var string: String {
     switch self {

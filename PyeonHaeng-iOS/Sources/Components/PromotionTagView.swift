@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct PromotionTagView: View {
-
   var promotionTag: PromotionTag
 
   var color: Color {
@@ -18,10 +17,10 @@ struct PromotionTagView: View {
     case .none: .gray400
     }
   }
-  
+
   var body: some View {
     Text(promotionTag.string)
-      .textStyle(.b3)
+      .font(.b3)
       .padding(.horizontal, 8.0)
       .frame(maxHeight: 18.0)
       .foregroundStyle(color)

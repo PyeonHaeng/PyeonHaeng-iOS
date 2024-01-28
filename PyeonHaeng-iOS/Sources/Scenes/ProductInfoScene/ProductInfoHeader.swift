@@ -5,6 +5,7 @@
 //  Created by 김응철 on 2024/1/26.
 //
 
+import DesignSystem
 import SwiftUI
 
 struct ProductInfoHeader: View {
@@ -30,29 +31,29 @@ struct ProductInfoHeader: View {
       .padding(.bottom, 40.0)
 
       Text(MockProduct.name)
-        .foregroundStyle(.gray900)
-        .textStyle(.h3)
+        .font(.h3)
+        .foregroundStyle(Color.gray900)
         .frame(maxWidth: .infinity, alignment: .leading)
 
       HStack(alignment: .bottom) {
         VStack(alignment: .leading, spacing: .zero) {
           Text("행사 진행 편의점")
-            .textStyle(.c2)
+            .font(.c2)
             .padding(.top, 16.0)
-          Image(.GS_25)
+          Image.gs25
             .padding(.top, 2.0)
         }
         Spacer()
         HStack(spacing: 8.0) {
           PromotionTagView(promotionTag: .onePlus)
           Text("개당")
-            .textStyle(.c1)
+            .font(.c1)
           Text("\(MockProduct.price.toStringWithComma())₩")
-            .textStyle(.h2)
+            .font(.h2)
             .frame(maxHeight: 38.0)
         }
       }
-      .foregroundStyle(.gray900)
+      .foregroundStyle(Color.gray900)
     }
   }
 }

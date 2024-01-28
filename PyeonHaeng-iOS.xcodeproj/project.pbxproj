@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BA0563FB2B61EAD5003D6DC7 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = BA0563FA2B61EAD5003D6DC7 /* .gitkeep */; };
 		BA0564062B624646003D6DC7 /* Shared.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = BA0564052B624646003D6DC7 /* Shared.xcconfig */; };
 		BA0564092B6248EA003D6DC7 /* HomeAPI in Frameworks */ = {isa = PBXBuildFile; productRef = BA0564082B6248EA003D6DC7 /* HomeAPI */; };
 		BA05640B2B6248EA003D6DC7 /* HomeAPISupport in Frameworks */ = {isa = PBXBuildFile; productRef = BA05640A2B6248EA003D6DC7 /* HomeAPISupport */; };
@@ -28,12 +27,11 @@
 		BA28F1A42B61572A0052855E /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA28F19A2B61572A0052855E /* Pretendard-ExtraBold.otf */; };
 		BA28F1A52B61572A0052855E /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA28F19B2B61572A0052855E /* Pretendard-Light.otf */; };
 		BA28F1A62B61572A0052855E /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA28F19C2B61572A0052855E /* Pretendard-Black.otf */; };
-		BA28F1AD2B616E600052855E /* FontStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA28F1AC2B616E600052855E /* FontStyles.swift */; };
-		BA28F1AF2B6173B60052855E /* Text+textStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA28F1AE2B6173B60052855E /* Text+textStyle.swift */; };
 		BAA4D9AD2B5A1795005999F8 /* PyeonHaengApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA4D9AC2B5A1795005999F8 /* PyeonHaengApp.swift */; };
 		BAA4D9AF2B5A1795005999F8 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA4D9AE2B5A1795005999F8 /* SplashView.swift */; };
 		BAA4D9B12B5A1796005999F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAA4D9B02B5A1796005999F8 /* Assets.xcassets */; };
 		BAA4D9B42B5A1796005999F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAA4D9B32B5A1796005999F8 /* Preview Assets.xcassets */; };
+		BAB569612B639F3000D1E0F9 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = BAB569602B639F3000D1E0F9 /* DesignSystem */; };
 		BAF2BEB32B61236100931AF0 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = BAF2BEB22B61236100931AF0 /* Localizable.xcstrings */; };
 		E5462C662B65677B00E9FDF2 /* PromotionTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5462C652B65677B00E9FDF2 /* PromotionTag.swift */; };
 		E5F2EC402B637D4A00EE0838 /* ProductInfoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F2EC3F2B637D4A00EE0838 /* ProductInfoHeader.swift */; };
@@ -52,7 +50,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BA0563FA2B61EAD5003D6DC7 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		BA0564022B62179A003D6DC7 /* Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Core; sourceTree = "<group>"; };
 		BA0564032B6219D4003D6DC7 /* APIService */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = APIService; sourceTree = "<group>"; };
 		BA0564052B624646003D6DC7 /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Shared.xcconfig; path = XCConfig/Shared.xcconfig; sourceTree = SOURCE_ROOT; };
@@ -74,13 +71,12 @@
 		BA28F19B2B61572A0052855E /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
 		BA28F19C2B61572A0052855E /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
 		BA28F1A72B6157E90052855E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BA28F1AC2B616E600052855E /* FontStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStyles.swift; sourceTree = "<group>"; };
-		BA28F1AE2B6173B60052855E /* Text+textStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+textStyle.swift"; sourceTree = "<group>"; };
 		BAA4D9A92B5A1795005999F8 /* PyeonHaeng-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PyeonHaeng-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAA4D9AC2B5A1795005999F8 /* PyeonHaengApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PyeonHaengApp.swift; sourceTree = "<group>"; };
 		BAA4D9AE2B5A1795005999F8 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		BAA4D9B02B5A1796005999F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAA4D9B32B5A1796005999F8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BABFEA6F2B6399C30084C0EC /* Shared */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Shared; sourceTree = "<group>"; };
 		BAF2BEB22B61236100931AF0 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		E5462C652B65677B00E9FDF2 /* PromotionTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionTag.swift; sourceTree = "<group>"; };
 		E5F2EC3F2B637D4A00EE0838 /* ProductInfoHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoHeader.swift; sourceTree = "<group>"; };
@@ -103,20 +99,13 @@
 				BA05640D2B6248EA003D6DC7 /* Network in Frameworks */,
 				BA05640B2B6248EA003D6DC7 /* HomeAPISupport in Frameworks */,
 				BA0564092B6248EA003D6DC7 /* HomeAPI in Frameworks */,
+				BAB569612B639F3000D1E0F9 /* DesignSystem in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BA0563F92B61EABA003D6DC7 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				BA0563FA2B61EAD5003D6DC7 /* .gitkeep */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
 		BA0564042B624629003D6DC7 /* XCConfig */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,27 +232,10 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		BA28F1AA2B616E2D0052855E /* DesignSystem */ = {
-			isa = PBXGroup;
-			children = (
-				BA0563F92B61EABA003D6DC7 /* Components */,
-				BA28F1AB2B616E540052855E /* Fonts */,
-				BA28F1AE2B6173B60052855E /* Text+textStyle.swift */,
-			);
-			path = DesignSystem;
-			sourceTree = "<group>";
-		};
-		BA28F1AB2B616E540052855E /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				BA28F1AC2B616E600052855E /* FontStyles.swift */,
-			);
-			path = Fonts;
-			sourceTree = "<group>";
-		};
 		BAA4D9A02B5A1795005999F8 = {
 			isa = PBXGroup;
 			children = (
+				BABFEA6F2B6399C30084C0EC /* Shared */,
 				BA0564032B6219D4003D6DC7 /* APIService */,
 				BA0564022B62179A003D6DC7 /* Core */,
 				BAA4D9AA2B5A1795005999F8 /* Products */,
@@ -286,7 +258,6 @@
 		BAA4D9AB2B5A1795005999F8 /* PyeonHaeng-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				BA28F1AA2B616E2D0052855E /* DesignSystem */,
 				BAA4D9B22B5A1796005999F8 /* Preview Content */,
 				BA28F1702B6152E90052855E /* Resources */,
 				BA28F1712B6152EE0052855E /* Sources */,
@@ -358,6 +329,7 @@
 				BA0564082B6248EA003D6DC7 /* HomeAPI */,
 				BA05640A2B6248EA003D6DC7 /* HomeAPISupport */,
 				BA05640C2B6248EA003D6DC7 /* Network */,
+				BAB569602B639F3000D1E0F9 /* DesignSystem */,
 			);
 			productName = "PyeonHaeng-iOS";
 			productReference = BAA4D9A92B5A1795005999F8 /* PyeonHaeng-iOS.app */;
@@ -429,7 +401,6 @@
 				BA0564062B624646003D6DC7 /* Shared.xcconfig in Resources */,
 				BAF2BEB32B61236100931AF0 /* Localizable.xcstrings in Resources */,
 				BA28F1A22B61572A0052855E /* Pretendard-Medium.otf in Resources */,
-				BA0563FB2B61EAD5003D6DC7 /* .gitkeep in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,11 +467,9 @@
 				BA28F18B2B6155BD0052855E /* ProductInfoView.swift in Sources */,
 				E5F2EC432B648F5B00EE0838 /* Int+.swift in Sources */,
 				E5462C662B65677B00E9FDF2 /* PromotionTag.swift in Sources */,
-				BA28F1AF2B6173B60052855E /* Text+textStyle.swift in Sources */,
 				BA28F1912B61566E0052855E /* ProductSearchView.swift in Sources */,
 				BA28F18E2B6156420052855E /* SettingsView.swift in Sources */,
 				BAA4D9AF2B5A1795005999F8 /* SplashView.swift in Sources */,
-				BA28F1AD2B616E600052855E /* FontStyles.swift in Sources */,
 				BAA4D9AD2B5A1795005999F8 /* PyeonHaengApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -785,6 +754,10 @@
 		BA05640C2B6248EA003D6DC7 /* Network */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Network;
+		};
+		BAB569602B639F3000D1E0F9 /* DesignSystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DesignSystem;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
