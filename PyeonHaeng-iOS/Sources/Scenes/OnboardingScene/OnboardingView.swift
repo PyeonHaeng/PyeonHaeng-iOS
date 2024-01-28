@@ -40,6 +40,16 @@ private enum OnboardingPage: Int, CaseIterable {
       .onboarding02
     }
   }
+    
+    /// 온보딩 이미지의 상단 Spacer의 높이
+  var spacerHeight: CGFloat {
+    switch self {
+    case .first:
+      82
+    case .second:
+      139
+    }
+  }
 }
 
 // MARK: - OnboardingView
@@ -68,7 +78,7 @@ struct OnboardingView: View {
           ForEach(OnboardingPage.allCases.indices, id: \.self) { index in
             let page = OnboardingPage(rawValue: index) ?? OnboardingPage.first
             VStack {
-              Spacer().frame(height: page == .first ? 82 : 139)
+              Spacer().frame(height: page.spacerHeight)
               page.image
                 .resizable()
                 .aspectRatio(contentMode: .fit)
