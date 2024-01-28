@@ -16,7 +16,7 @@ struct PyeonHaengApp: App {
 
   var body: some Scene {
     WindowGroup {
-      HomeView()
+      SplashView()
     }
   }
 }
