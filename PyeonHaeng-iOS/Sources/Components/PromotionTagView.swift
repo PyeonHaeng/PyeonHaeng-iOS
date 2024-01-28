@@ -7,11 +7,13 @@
 
 import SwiftUI
 
+// MARK: - PromotionTagView
+
 struct PromotionTagView: View {
   var promotionTag: PromotionTag
 
   var body: some View {
-    Text(promotionTag.string)
+    Text(promotionTag.description)
       .font(.b3)
       .padding(.horizontal, 8.0)
       .frame(maxHeight: 18.0)

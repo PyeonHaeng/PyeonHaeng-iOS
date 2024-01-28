@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-enum PromotionTag {
+enum PromotionTag: CustomStringConvertible {
   case onePlus
   case twoPlus
   case none
 
-  var string: String {
+  var description: String {
     switch self {
     case .onePlus: "1+1"
     case .twoPlus: "2+1"
