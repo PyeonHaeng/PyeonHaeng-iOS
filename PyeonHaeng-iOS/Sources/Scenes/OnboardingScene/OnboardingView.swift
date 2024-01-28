@@ -40,8 +40,8 @@ private enum OnboardingPage: Int, CaseIterable {
       .onboarding02
     }
   }
-    
-    /// 온보딩 이미지의 상단 Spacer의 높이
+
+  /// 온보딩 이미지의 상단 Spacer의 높이
   var spacerHeight: CGFloat {
     switch self {
     case .first:
@@ -79,10 +79,12 @@ struct OnboardingView: View {
             let page = OnboardingPage(rawValue: index) ?? OnboardingPage.first
             VStack {
               Spacer().frame(height: page.spacerHeight)
+
               page.image
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .padding(.horizontal, 40)
+
               Spacer()
             }
             .tag(index)
@@ -97,6 +99,9 @@ struct OnboardingView: View {
         // 본문 제목
         Text(currentTitle)
           .font(.h2)
+          .transition(.opacity.combined(with: .slide))
+          .animation(.easeInOut, value: currentPage)
+
         Spacer().frame(height: 16)
 
         // 본문 내용
@@ -105,16 +110,21 @@ struct OnboardingView: View {
           .foregroundStyle(Color.gray500)
           .multilineTextAlignment(.center)
           .padding(.top, 8)
+          .transition(.opacity.combined(with: .slide))
+          .animation(.easeInOut, value: currentPage)
 
         Spacer().frame(height: 84)
 
         Button(action: {
-          if currentPage < OnboardingPage.allCases.count - 1 {
-            currentPage += 1
+          withAnimation {
+            if currentPage < OnboardingPage.allCases.count - 1 {
+              currentPage += 1
+            }
           }
         }) {
           Text(nextBtnText)
-            .foregroundColor(.white)
+            .font(.h5)
+            .foregroundStyle(.white)
             .frame(maxWidth: .infinity)
             .padding()
             .background(Color.green500)
@@ -134,6 +144,13 @@ struct OnboardingView: View {
       }
     }
   }
+
+  /// Text 뷰에 애니메이션 효과를 적용하는 private 메서드
+  private func applyTextAnimation(_ content: Text) -> some View {
+    content
+      .transition(.opacity.combined(with: .slide))
+      .animation(.easeInOut, value: currentPage)
+  }
 }
 
 // MARK: - CustomPageControl
@@ -145,17 +162,15 @@ private struct CustomPageControl: View {
   var body: some View {
     HStack {
       ForEach(0 ..< pageCount, id: \.self) { index in
-        if currentPage == index {
-          Rectangle()
-            .frame(width: 24, height: 6)
-            .foregroundStyle(Color.green500)
-            .transition(.scale)
-        } else {
-          Circle()
-            .frame(width: 6, height: 6)
-            .foregroundStyle(Color.gray500)
-            .transition(.scale)
-        }
+        Rectangle()
+          .frame(width: index == currentPage ? 24 : 6, height: 6)
+          .foregroundStyle(index == currentPage ? Color.green500 : Color.gray100)
+          .cornerRadius(3)
+          .onTapGesture {
+            withAnimation {
+              currentPage = index // 해당 인덱스로 페이지 변경
+            }
+          }
       }
     }
     // 페이지 변경 시 애니메이션 효과
