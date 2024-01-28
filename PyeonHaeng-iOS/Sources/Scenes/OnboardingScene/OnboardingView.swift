@@ -10,7 +10,7 @@ import SwiftUI
 // MARK: - OnboardingPage
 
 /// 온보딩 페이지 정보를 관리하는 enum
-enum OnboardingPage: Int, CaseIterable {
+private enum OnboardingPage: Int, CaseIterable {
   case first
   case second
 
@@ -108,7 +108,7 @@ struct OnboardingView: View {
 
 // MARK: - CustomPageControl
 
-struct CustomPageControl: View {
+private struct CustomPageControl: View {
   @Binding var currentPage: Int
   var pageCount: Int
 
