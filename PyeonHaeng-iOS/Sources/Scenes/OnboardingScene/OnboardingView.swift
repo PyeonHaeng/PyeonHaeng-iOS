@@ -72,13 +72,14 @@ struct OnboardingView: View {
 
         // 본문 제목
         Text(OnboardingPage(rawValue: currentPage)?.title ?? "")
-          .textStyle(.h2)
+          .font(.h2)
         Spacer().frame(height: 16)
 
         // 본문 내용
         Text(OnboardingPage(rawValue: currentPage)?.body ?? "")
-          .textStyle(.body2)
-          .foregroundStyle(.gray500)
+          .font(.body2)
+          
+          .foregroundStyle(.black)
           .multilineTextAlignment(.center)
           .padding(.top, 8)
 
@@ -93,7 +94,7 @@ struct OnboardingView: View {
             .foregroundColor(.white)
             .frame(maxWidth: .infinity)
             .padding()
-            .background(.main500)
+            .background(.green)
             .cornerRadius(10)
             .padding(.horizontal, 20)
         }
@@ -101,7 +102,7 @@ struct OnboardingView: View {
       }
       .navigationBarTitle("", displayMode: .inline)
       .navigationBarItems(trailing: Text("건너뛰기")
-        .foregroundColor(.main500))
+        .foregroundColor(.green))
     }
   }
 }
@@ -118,7 +119,7 @@ struct CustomPageControl: View {
         if currentPage == index {
           Rectangle()
             .frame(width: 24, height: 6)
-            .foregroundColor(.main500)
+            .foregroundColor(.green)
             .transition(.scale)
         } else {
           Circle()
