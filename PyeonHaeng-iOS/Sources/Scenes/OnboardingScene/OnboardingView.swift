@@ -32,12 +32,12 @@ private enum OnboardingPage: Int, CaseIterable {
     }
   }
 
-  var imageName: String {
+  var image: Image {
     switch self {
     case .first:
-      "Onboarding01"
+      .onboarding01
     case .second:
-      "Onboarding02"
+      .onboarding02
     }
   }
 }
@@ -55,7 +55,7 @@ struct OnboardingView: View {
             let page = OnboardingPage(rawValue: index) ?? OnboardingPage.first
             VStack {
               Spacer().frame(height: page == .first ? 82 : 139)
-              Image(page.imageName)
+              page.image
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .padding(.horizontal, 40)

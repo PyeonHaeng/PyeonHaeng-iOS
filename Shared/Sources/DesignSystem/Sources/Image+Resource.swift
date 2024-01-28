@@ -13,4 +13,7 @@ public extension Image {
   static let _7Eleven: Image = .init(._7Eleven)
   static let emart24: Image = .init(.emart24)
   static let ministop: Image = .init(.ministop)
+
+  static let onboarding01: Image = .init(.onboarding01)
+  static let onboarding02: Image = .init(.onboarding02)
 }
