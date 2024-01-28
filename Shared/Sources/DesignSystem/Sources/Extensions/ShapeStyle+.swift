@@ -34,6 +34,5 @@ public extension ShapeStyle where Self == Color {
   static var pyeonHaengGreen: Color { .init(.pyeonHaengGreen) }
   static var pyeonHaengRed: Color { .init(.pyeonHaengRed) }
   static var pyeonHaengYellow: Color { .init(.pyeonHaengYellow) }
-  
   static var blur: Color { .init(.blur) }
 }
