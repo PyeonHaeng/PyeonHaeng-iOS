@@ -53,14 +53,6 @@ struct HomeView: View {
   }
 }
 
-// MARK: - HomeProductListView
-
-struct HomeProductListView: View {
-  var body: some View {
-    Text("")
-  }
-}
-
 #Preview {
   HomeView()
 }
