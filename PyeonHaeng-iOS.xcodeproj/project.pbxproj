@@ -181,8 +181,8 @@
 			isa = PBXGroup;
 			children = (
 				BA28F1872B6155910052855E /* HomeView.swift */,
-				BAE159DD2B663A9A002DCF94 /* HomeProductSorterView.swift */,
 				BAE159D72B65FA6F002DCF94 /* HomeProductDetailSelectionView.swift */,
+				BAE159DD2B663A9A002DCF94 /* HomeProductSorterView.swift */,
 				BAE159D92B65FC35002DCF94 /* HomeProductListView.swift */,
 			);
 			path = HomeScene;

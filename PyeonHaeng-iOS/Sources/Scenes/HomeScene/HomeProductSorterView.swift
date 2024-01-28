@@ -16,7 +16,7 @@ struct HomeProductSorterView: View {
 
   var body: some View {
     HStack {
-      Text(attributedString)
+      Text(productCountString)
         .font(.title2)
       Spacer()
       Button {} label: {
@@ -26,8 +26,8 @@ struct HomeProductSorterView: View {
     .padding(.all, 8)
   }
 
-  var attributedString: AttributedString {
-    var string = AttributedString("총 \(count)개의 상품이 있어요!")
+  var productCountString: AttributedString {
+    var string = AttributedString(localized: "총 \(count)개의 상품이 있어요!")
 
     if let range = string.range(of: "\(count)") {
       string[range].foregroundColor = .green500
