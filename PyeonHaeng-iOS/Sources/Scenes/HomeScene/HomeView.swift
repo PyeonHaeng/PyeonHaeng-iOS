@@ -47,8 +47,12 @@ struct HomeView: View {
       }
     }
   }
+}
 
-  private enum Metrics {
+// MARK: HomeView.Metrics
+
+private extension HomeView {
+  enum Metrics {
     static let horizontal: CGFloat = 20
   }
 }

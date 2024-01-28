@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// MARK: - HomeProductDetailSelectionView
+
 struct HomeProductDetailSelectionView: View {
   var body: some View {
     HStack {
@@ -20,7 +22,7 @@ struct HomeProductDetailSelectionView: View {
             .scaledToFit()
             .frame(width: Metrics.iconWidth, height: Metrics.iconHeight)
             .foregroundStyle(Color.gray300)
-            .font(.system(size: 40, weight: .black))
+            .bold()
         }
       }
 
@@ -48,15 +50,19 @@ struct HomeProductDetailSelectionView: View {
         )
       }
       .overlay {
-        RoundedRectangle(cornerRadius: 16)
+        RoundedRectangle(cornerRadius: Metrics.promotionButtonCornerRadius)
           .stroke()
           .foregroundStyle(Color.gray400)
       }
     }
-    .frame(height: 56)
+    .frame(height: Metrics.height)
   }
+}
 
-  private enum Metrics {
+// MARK: HomeProductDetailSelectionView.Metrics
+
+private extension HomeProductDetailSelectionView {
+  enum Metrics {
     static let textHeight: CGFloat = 24
     static let horizontal: CGFloat = 20
     static let iconWidth: CGFloat = 8
@@ -66,5 +72,8 @@ struct HomeProductDetailSelectionView: View {
     static let promotionButtonPaddingLeading: CGFloat = 16
     static let promotionButtonPaddingBottom: CGFloat = 4
     static let promotionButtonPaddingTrailing: CGFloat = 16
+    static let promotionButtonCornerRadius: CGFloat = 16
+
+    static let height: CGFloat = 56
   }
 }
