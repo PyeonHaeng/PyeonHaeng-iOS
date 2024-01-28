@@ -14,5 +14,5 @@ struct HomeProductListView: View {
 }
 
 #Preview {
-    HomeProductListView()
+  HomeProductListView()
 }
