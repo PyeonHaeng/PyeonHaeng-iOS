@@ -32,6 +32,7 @@
 		BAA4D9B12B5A1796005999F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAA4D9B02B5A1796005999F8 /* Assets.xcassets */; };
 		BAA4D9B42B5A1796005999F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAA4D9B32B5A1796005999F8 /* Preview Assets.xcassets */; };
 		BAB569612B639F3000D1E0F9 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = BAB569602B639F3000D1E0F9 /* DesignSystem */; };
+		BAE159D82B65FA6F002DCF94 /* HomeProductDetailSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE159D72B65FA6F002DCF94 /* HomeProductDetailSelectionView.swift */; };
 		BAF2BEB32B61236100931AF0 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = BAF2BEB22B61236100931AF0 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,7 @@
 		BAA4D9B02B5A1796005999F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAA4D9B32B5A1796005999F8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BABFEA6F2B6399C30084C0EC /* Shared */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Shared; sourceTree = "<group>"; };
+		BAE159D72B65FA6F002DCF94 /* HomeProductDetailSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProductDetailSelectionView.swift; sourceTree = "<group>"; };
 		BAF2BEB22B61236100931AF0 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				BA28F1872B6155910052855E /* HomeView.swift */,
+				BAE159D72B65FA6F002DCF94 /* HomeProductDetailSelectionView.swift */,
 			);
 			path = HomeScene;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 				BA28F18B2B6155BD0052855E /* ProductInfoView.swift in Sources */,
 				BA28F1912B61566E0052855E /* ProductSearchView.swift in Sources */,
 				BA28F18E2B6156420052855E /* SettingsView.swift in Sources */,
+				BAE159D82B65FA6F002DCF94 /* HomeProductDetailSelectionView.swift in Sources */,
 				BAA4D9AF2B5A1795005999F8 /* SplashView.swift in Sources */,
 				BAA4D9AD2B5A1795005999F8 /* PyeonHaengApp.swift in Sources */,
 			);
