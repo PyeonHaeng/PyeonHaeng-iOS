@@ -78,7 +78,6 @@ struct OnboardingView: View {
         // 본문 내용
         Text(OnboardingPage(rawValue: currentPage)?.body ?? "")
           .font(.body2)
-          
           .foregroundStyle(.black)
           .multilineTextAlignment(.center)
           .padding(.top, 8)
