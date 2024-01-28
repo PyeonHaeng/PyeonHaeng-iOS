@@ -15,8 +15,8 @@ struct HomeView: View {
     NavigationStack {
       VStack {
         HomeProductDetailSelectionView()
+        HomeProductSorterView(count: 12)
         HomeProductListView()
-        Spacer()
       }
       .padding(.horizontal, Metrics.horizontal)
       .navigationBarTitleDisplayMode(.inline)
