@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension View {
+public extension View {
   func foregroundStyle(_ color: PyeonHaengColor) -> some View {
     foregroundStyle(Color(color.rawValue))
   }

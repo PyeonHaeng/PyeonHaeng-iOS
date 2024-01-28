@@ -85,8 +85,7 @@ public extension Text {
     }
   }
   
-  func foregroundColor(_ style: PyeonHaengColor) -> Text {
+  func foregroundStyle(_ style: PyeonHaengColor) -> Text {
     foregroundStyle(Color(style.rawValue))
   }
-  
 }
