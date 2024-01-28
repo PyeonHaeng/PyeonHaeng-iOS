@@ -48,7 +48,7 @@ struct ProductInfoHeader: View {
           PromotionTagView(promotionTag: .onePlus)
           Text("개당")
             .font(.c1)
-          Text("\(MockProduct.price.toStringWithComma())₩")
+          Text(verbatim: "\(MockProduct.price.toStringWithComma())₩")
             .font(.h2)
             .frame(maxHeight: 38.0)
         }
