@@ -48,7 +48,7 @@ struct OnboardingView: View {
   @State private var currentPage = 0
 
   var body: some View {
-    NavigationView {
+    NavigationStack {
       VStack {
         TabView(selection: $currentPage) {
           ForEach(OnboardingPage.allCases.indices, id: \.self) { index in
@@ -78,7 +78,7 @@ struct OnboardingView: View {
         // 본문 내용
         Text(OnboardingPage(rawValue: currentPage)?.body ?? "")
           .font(.body2)
-          .foregroundStyle(.black)
+          .foregroundStyle(Color.gray500)
           .multilineTextAlignment(.center)
           .padding(.top, 8)
 
@@ -93,15 +93,21 @@ struct OnboardingView: View {
             .foregroundColor(.white)
             .frame(maxWidth: .infinity)
             .padding()
-            .background(.green)
+            .background(Color.green500)
             .cornerRadius(10)
             .padding(.horizontal, 20)
         }
         .padding(.bottom, 8)
       }
-      .navigationBarTitle("", displayMode: .inline)
-      .navigationBarItems(trailing: Text("건너뛰기")
-        .foregroundColor(.green))
+      .navigationTitle("")
+      .toolbar {
+        ToolbarItem(placement: .navigationBarTrailing) {
+          Button("건너뛰기") {
+            // 건너뛰기 버튼 액션
+          }
+          .foregroundStyle(Color.green500)
+        }
+      }
     }
   }
 }
@@ -118,12 +124,12 @@ private struct CustomPageControl: View {
         if currentPage == index {
           Rectangle()
             .frame(width: 24, height: 6)
-            .foregroundColor(.green)
+            .foregroundStyle(Color.green500)
             .transition(.scale)
         } else {
           Circle()
             .frame(width: 6, height: 6)
-            .foregroundColor(.gray)
+            .foregroundStyle(Color.gray500)
             .transition(.scale)
         }
       }
