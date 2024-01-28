@@ -47,6 +47,20 @@ private enum OnboardingPage: Int, CaseIterable {
 struct OnboardingView: View {
   @State private var currentPage = 0
 
+  private var currentTitle: String {
+    OnboardingPage(rawValue: currentPage)?.title ?? ""
+  }
+
+  private var currentBody: String {
+    OnboardingPage(rawValue: currentPage)?.body ?? ""
+  }
+
+  private var nextBtnText: String {
+    currentPage < OnboardingPage.allCases.count - 1 ? "다음" : "편행 시작하기"
+  }
+
+  private var skipBtnText: String = "건너뛰기"
+
   var body: some View {
     NavigationStack {
       VStack {
@@ -71,12 +85,12 @@ struct OnboardingView: View {
           .padding(.vertical)
 
         // 본문 제목
-        Text(OnboardingPage(rawValue: currentPage)?.title ?? "")
+        Text(currentTitle)
           .font(.h2)
         Spacer().frame(height: 16)
 
         // 본문 내용
-        Text(OnboardingPage(rawValue: currentPage)?.body ?? "")
+        Text(currentBody)
           .font(.body2)
           .foregroundStyle(Color.gray500)
           .multilineTextAlignment(.center)
@@ -89,7 +103,7 @@ struct OnboardingView: View {
             currentPage += 1
           }
         }) {
-          Text(currentPage < OnboardingPage.allCases.count - 1 ? "다음" : "편행 시작하기")
+          Text(nextBtnText)
             .foregroundColor(.white)
             .frame(maxWidth: .infinity)
             .padding()
@@ -102,7 +116,7 @@ struct OnboardingView: View {
       .navigationTitle("")
       .toolbar {
         ToolbarItem(placement: .navigationBarTrailing) {
-          Button("건너뛰기") {
+          Button(skipBtnText) {
             // 건너뛰기 버튼 액션
           }
           .foregroundStyle(Color.green500)
