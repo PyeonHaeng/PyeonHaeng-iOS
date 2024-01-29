@@ -85,11 +85,10 @@ private struct PriceView: View {
       HStack(spacing: 4) {
         Text(verbatim: "개당")
           .font(.c3)
-          .foregroundStyle(Color.gray900)
         Text(verbatim: "900원")
           .font(.h4)
-          .foregroundStyle(Color.gray900)
       }
+      .foregroundStyle(Color.gray900)
     }
   }
 }
