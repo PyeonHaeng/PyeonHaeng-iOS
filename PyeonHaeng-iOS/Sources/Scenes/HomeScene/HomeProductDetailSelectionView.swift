@@ -32,14 +32,13 @@ struct HomeProductDetailSelectionView: View {
         HStack {
           Text(verbatim: "All")
             .font(.title2)
-            .foregroundStyle(Color.gray400)
             .frame(height: Metrics.textHeight)
           Image(systemName: "arrowtriangle.down.fill")
             .resizable()
             .scaledToFill()
             .frame(width: Metrics.iconWidth, height: Metrics.iconHeight)
-            .foregroundStyle(Color.gray400)
         }
+        .foregroundStyle(Color.gray400)
         .padding(
           .init(
             top: Metrics.promotionButtonPaddingTop,
