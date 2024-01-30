@@ -30,9 +30,38 @@ public extension ShapeStyle where Self == Color {
   static var green800: Color { .init(.green800) }
   static var green900: Color { .init(.green900) }
 
-  static var pyeonHaengBlue: Color { .init(.pyeonHaengBlue) }
-  static var pyeonHaengGreen: Color { .init(.pyeonHaengGreen) }
-  static var pyeonHaengRed: Color { .init(.pyeonHaengRed) }
-  static var pyeonHaengYellow: Color { .init(.pyeonHaengYellow) }
+  static var blue050: Color { .init(.blue050) }
+  static var blue100: Color { .init(.blue100) }
+  static var blue200: Color { .init(.blue200) }
+  static var blue300: Color { .init(.blue300) }
+  static var blue400: Color { .init(.blue400) }
+  static var blue500: Color { .init(.blue500) }
+  static var blue600: Color { .init(.blue600) }
+  static var blue700: Color { .init(.blue700) }
+  static var blue800: Color { .init(.blue800) }
+  static var blue900: Color { .init(.blue900) }
+
+  static var yellow050: Color { .init(.yellow050) }
+  static var yellow100: Color { .init(.yellow100) }
+  static var yellow200: Color { .init(.yellow200) }
+  static var yellow300: Color { .init(.yellow300) }
+  static var yellow400: Color { .init(.yellow400) }
+  static var yellow500: Color { .init(.yellow500) }
+  static var yellow600: Color { .init(.yellow600) }
+  static var yellow700: Color { .init(.yellow700) }
+  static var yellow800: Color { .init(.yellow800) }
+  static var yellow900: Color { .init(.yellow900) }
+
+  static var red050: Color { .init(.red050) }
+  static var red100: Color { .init(.red100) }
+  static var red200: Color { .init(.red200) }
+  static var red300: Color { .init(.red300) }
+  static var red400: Color { .init(.red400) }
+  static var red500: Color { .init(.red500) }
+  static var red600: Color { .init(.red600) }
+  static var red700: Color { .init(.red700) }
+  static var red800: Color { .init(.red800) }
+  static var red900: Color { .init(.red900) }
+
   static var blur: Color { .init(.blur) }
 }
