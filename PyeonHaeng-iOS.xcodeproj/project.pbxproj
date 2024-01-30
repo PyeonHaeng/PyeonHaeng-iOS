@@ -11,6 +11,7 @@
 		BA0564092B6248EA003D6DC7 /* HomeAPI in Frameworks */ = {isa = PBXBuildFile; productRef = BA0564082B6248EA003D6DC7 /* HomeAPI */; };
 		BA05640B2B6248EA003D6DC7 /* HomeAPISupport in Frameworks */ = {isa = PBXBuildFile; productRef = BA05640A2B6248EA003D6DC7 /* HomeAPISupport */; };
 		BA05640D2B6248EA003D6DC7 /* Network in Frameworks */ = {isa = PBXBuildFile; productRef = BA05640C2B6248EA003D6DC7 /* Network */; };
+		BA0623D82B68E51400A0A3B2 /* Log in Frameworks */ = {isa = PBXBuildFile; productRef = BA0623D72B68E51400A0A3B2 /* Log */; };
 		BA28F17C2B6155450052855E /* PyeonHaeng_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA28F17B2B6155450052855E /* PyeonHaeng_iOSTests.swift */; };
 		BA28F1852B6155810052855E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA28F1842B6155810052855E /* OnboardingView.swift */; };
 		BA28F1882B6155910052855E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA28F1872B6155910052855E /* HomeView.swift */; };
@@ -104,6 +105,7 @@
 			files = (
 				BA05640D2B6248EA003D6DC7 /* Network in Frameworks */,
 				BA05640B2B6248EA003D6DC7 /* HomeAPISupport in Frameworks */,
+				BA0623D82B68E51400A0A3B2 /* Log in Frameworks */,
 				BA0564092B6248EA003D6DC7 /* HomeAPI in Frameworks */,
 				BAB569612B639F3000D1E0F9 /* DesignSystem in Frameworks */,
 			);
@@ -339,6 +341,7 @@
 				BA05640A2B6248EA003D6DC7 /* HomeAPISupport */,
 				BA05640C2B6248EA003D6DC7 /* Network */,
 				BAB569602B639F3000D1E0F9 /* DesignSystem */,
+				BA0623D72B68E51400A0A3B2 /* Log */,
 			);
 			productName = "PyeonHaeng-iOS";
 			productReference = BAA4D9A92B5A1795005999F8 /* PyeonHaeng-iOS.app */;
@@ -766,6 +769,10 @@
 		BA05640C2B6248EA003D6DC7 /* Network */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Network;
+		};
+		BA0623D72B68E51400A0A3B2 /* Log */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Log;
 		};
 		BAB569602B639F3000D1E0F9 /* DesignSystem */ = {
 			isa = XCSwiftPackageProductDependency;
