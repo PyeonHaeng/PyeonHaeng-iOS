@@ -6,7 +6,7 @@
 
 import SwiftUI
 
-public extension Text {
+public extension View {
   func font(_ style: PyeonHaengFont) -> some View {
     let setting = fontSetting(for: style)
     let uiFont = UIFont(name: setting.name, size: setting.size) ?? .systemFont(ofSize: setting.size)
