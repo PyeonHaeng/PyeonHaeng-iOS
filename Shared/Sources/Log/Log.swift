@@ -14,19 +14,18 @@ public enum Log {
   /// Log를 생성합니다.
   /// - Parameter category: Log를 구분하는 Category
   public static func make(_ context: some CustomStringConvertible, with logger: Logger, at level: Level) {
-    let message = context.description
     #if DEBUG
       switch level {
-      case .notice:
-        logger.notice("\(message)")
       case .debug:
-        logger.debug("\(message)")
+        logger.debug("\(context.description)")
       case .info:
-        logger.info("\(message)")
+        logger.info("\(context.description)")
+      case .notice:
+        logger.notice("\(context.description)")
       case .warning:
-        logger.warning("\(message)")
+        logger.warning("\(context.description)")
       case .fault:
-        logger.fault("\(message)")
+        logger.fault("\(context.description)")
       }
     #endif
   }
@@ -36,14 +35,18 @@ public enum Log {
 
 public extension Log {
   enum Level {
-    /// Writes a message to the log using the default log type.
-    case notice
     /// Writes a debug message to the log.
     case debug
+
     /// Writes an informative message to the log.
     case info
+
+    /// Writes a message to the log using the default log type.
+    case notice
+
     /// Writes information about a warning to the log.
     case warning
+
     /// Writes a message to the log about a bug that occurs when your app executes.
     case fault
   }
