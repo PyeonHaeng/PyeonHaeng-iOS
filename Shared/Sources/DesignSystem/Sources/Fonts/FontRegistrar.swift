@@ -12,16 +12,11 @@ import Foundation
 
 /// `FontRegistrar` 열거형은 커스텀 폰트를 등록하는 데 사용됩니다.
 public enum FontRegistrar {
-  /// 이 메서드는 `Pretendard`와 `DolDam` 폰트를 등록합니다.
+  /// 이 메서드는 편행 폰트인 `Pretendard`를 등록합니다.
   /// 각각의 폰트 이름을 순회하면서 `registerFont` 메서드를 호출하여 폰트를 등록합니다.
   public static func registerFonts() {
     // Pretendard 폰트 등록
     for fontName in Pretendard.allCases.map(\.rawValue) {
-      registerFont(bundle: .module, fontName: fontName, fontExtension: "otf")
-    }
-
-    // DolDam 폰트 등록
-    for fontName in DolDam.allCases.map(\.rawValue) {
       registerFont(bundle: .module, fontName: fontName, fontExtension: "otf")
     }
   }

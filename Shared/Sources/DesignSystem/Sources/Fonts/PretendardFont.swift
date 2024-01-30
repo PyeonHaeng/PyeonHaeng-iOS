@@ -1,5 +1,5 @@
 //
-//  PretendardDolDamFonts.swift
+//  PretendardFont.swift
 //
 //
 //  Created by 홍승현 on 1/30/24.
@@ -24,10 +24,4 @@ enum Pretendard: String, CaseIterable {
   case extraLight = "Pretendard-ExtraLight"
 
   case thin = "Pretendard-Thin"
-}
-
-// MARK: - DolDam
-
-enum DolDam: String, CaseIterable {
-  case `default` = "EF_jejudoldam"
 }
