@@ -23,16 +23,16 @@ struct PromotionTagView: View {
   }
 }
 
-#Preview(traits: .sizeThatFitsLayout) {
-  PromotionTagView(promotionTag: .none)
-}
-
 private extension PromotionTagView {
   var color: Color {
     switch promotionTag {
-    case .onePlus: .pyeonHaengRed
-    case .twoPlus: .pyeonHaengBlue
+    case .onePlus: .red500
+    case .twoPlus: .blue500
     case .none: .gray400
     }
   }
+}
+
+#Preview(traits: .sizeThatFitsLayout) {
+  PromotionTagView(promotionTag: .none)
 }
