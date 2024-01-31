@@ -19,8 +19,8 @@ public struct Product {
   public let name: String
 
   /// 행사 정보
-  public let promotion: String
+  public let promotion: Promotion
 
   /// 편의점
-  public let convenienceStore: String
+  public let convenienceStore: ConvenienceStore
 }
