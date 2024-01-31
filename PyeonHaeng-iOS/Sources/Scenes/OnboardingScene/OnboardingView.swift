@@ -128,7 +128,7 @@ struct OnboardingView: View {
             .frame(maxWidth: .infinity)
             .padding()
             .background(Color.green500)
-            .cornerRadius(10)
+            .clipShape(.rect(cornerRadius: 10))
             .padding(.horizontal, 20)
         }
         .padding(.bottom, 8)
@@ -165,7 +165,7 @@ private struct CustomPageControl: View {
         Rectangle()
           .frame(width: index == currentPage ? 24 : 6, height: 6)
           .foregroundStyle(index == currentPage ? Color.green500 : Color.gray100)
-          .cornerRadius(3)
+          .clipShape(.rect(cornerRadius: 3))
           .onTapGesture {
             withAnimation {
               currentPage = index // 해당 인덱스로 페이지 변경
