@@ -75,6 +75,7 @@
 		BA28F19B2B61572A0052855E /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
 		BA28F19C2B61572A0052855E /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
 		BA28F1A72B6157E90052855E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA4EA35A2B6A00F70003DCE7 /* Entity */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Entity; sourceTree = "<group>"; };
 		BAA4D9A92B5A1795005999F8 /* PyeonHaeng-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PyeonHaeng-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAA4D9AC2B5A1795005999F8 /* PyeonHaengApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PyeonHaengApp.swift; sourceTree = "<group>"; };
 		BAA4D9AE2B5A1795005999F8 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
@@ -246,6 +247,7 @@
 		BAA4D9A02B5A1795005999F8 = {
 			isa = PBXGroup;
 			children = (
+				BA4EA35A2B6A00F70003DCE7 /* Entity */,
 				BABFEA6F2B6399C30084C0EC /* Shared */,
 				BA0564032B6219D4003D6DC7 /* APIService */,
 				BA0564022B62179A003D6DC7 /* Core */,
