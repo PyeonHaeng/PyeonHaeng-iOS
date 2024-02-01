@@ -37,6 +37,7 @@ extension HomeService: HomeServiceRepresentable {
 private extension Product {
   init(dto: ProductResponse) {
     self.init(
+      id: dto.id,
       imageURL: dto.imageURL,
       price: dto.price,
       name: dto.name,

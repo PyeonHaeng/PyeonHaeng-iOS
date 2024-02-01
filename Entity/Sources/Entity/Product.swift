@@ -8,7 +8,10 @@
 import Foundation
 
 /// 편의점 행사 제품에 대한 Entity Model입니다.
-public struct Product {
+public struct Product: Identifiable {
+  /// 제품 고유 Identifier
+  public let id: Int
+
   /// 이미지 URL
   public let imageURL: URL
 
@@ -25,12 +28,14 @@ public struct Product {
   public let convenienceStore: ConvenienceStore
 
   public init(
+    id: Int,
     imageURL: URL,
     price: Int,
     name: String,
     promotion: Promotion,
     convenienceStore: ConvenienceStore
   ) {
+    self.id = id
     self.imageURL = imageURL
     self.price = price
     self.name = name
