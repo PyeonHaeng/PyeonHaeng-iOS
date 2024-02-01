@@ -11,6 +11,7 @@ import SwiftUI
 
 struct HomeProductListView: View {
   private let items = Array(repeating: "펩시 제로 라임 250ml", count: 10)
+  @EnvironmentObject var viewModel: HomeViewModel
 
   var body: some View {
     List(items, id: \.self) { item in
