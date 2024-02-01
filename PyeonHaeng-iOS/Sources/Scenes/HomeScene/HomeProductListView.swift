@@ -5,17 +5,22 @@
 //  Created by 홍승현 on 1/28/24.
 //
 
+import Entity
 import SwiftUI
 
 // MARK: - HomeProductListView
 
 struct HomeProductListView: View {
-  private let items = Array(repeating: "펩시 제로 라임 250ml", count: 10)
   @EnvironmentObject var viewModel: HomeViewModel
 
   var body: some View {
-    List(items, id: \.self) { item in
+    List(viewModel.products) { item in
       ProductRow(product: item)
+    }
+    .onAppear {
+      Task {
+        try await viewModel.fetchProducts()
+      }
     }
     .listStyle(.plain)
     .scrollIndicators(.hidden)
@@ -25,11 +30,15 @@ struct HomeProductListView: View {
 // MARK: - ProductRow
 
 struct ProductRow: View {
-  let product: String
+  private let product: Product
+
+  init(product: Product) {
+    self.product = product
+  }
 
   var body: some View {
     HStack(spacing: 16) {
-      ProductImageView()
+      ProductImageView(product: product)
       ProductDetailsView(product: product)
     }
     .padding(.vertical, 16)
@@ -42,33 +51,47 @@ struct ProductRow: View {
 // MARK: - ProductImageView
 
 private struct ProductImageView: View {
+  private let product: Product
+
+  init(product: Product) {
+    self.product = product
+  }
+
   var body: some View {
-    Image(systemName: "photo") // 이미지를 추가합니다.
-      .resizable()
-      .scaledToFit()
-      .frame(width: 70, height: 70)
-      .padding(.all, 12)
+    AsyncImage(url: product.imageURL) { image in
+      image
+        .resizable()
+        .scaledToFit()
+        .frame(width: 70, height: 70)
+        .padding(.all, 12)
+    } placeholder: {
+      ProgressView()
+    }
   }
 }
 
 // MARK: - ProductDetailsView
 
 private struct ProductDetailsView: View {
-  let product: String
+  private let product: Product
+
+  init(product: Product) {
+    self.product = product
+  }
 
   var body: some View {
     VStack(alignment: .leading, spacing: 16) {
       VStack(alignment: .leading, spacing: 8) {
-        Text(verbatim: "1+1")
+        Text(verbatim: product.promotion.rawValue)
           .font(.b3)
           .padding(.horizontal, 8)
           .background(.red500.opacity(0.1))
           .foregroundColor(.red500)
           .cornerRadius(5)
-        Text(product)
+        Text(verbatim: product.name)
           .font(.title1)
       }
-      PriceView()
+      PriceView(product: product)
     }
   }
 }
@@ -76,24 +99,26 @@ private struct ProductDetailsView: View {
 // MARK: - PriceView
 
 private struct PriceView: View {
+  private let product: Product
+
+  init(product: Product) {
+    self.product = product
+  }
+
   var body: some View {
     HStack(spacing: 10) {
       Spacer()
-      Text(verbatim: "1800원")
+      Text(verbatim: "\(product.price.toStringWithComma())원")
         .font(.x2)
         .strikethrough()
         .foregroundColor(Color.gray200)
       HStack(spacing: 4) {
-        Text(verbatim: "개당")
+        Text("개당")
           .font(.c3)
-        Text(verbatim: "900원")
+        Text(verbatim: "\(Int(product.price / 2).toStringWithComma())원")
           .font(.h4)
       }
       .foregroundStyle(Color.gray900)
     }
   }
-}
-
-#Preview {
-  HomeProductListView()
 }
