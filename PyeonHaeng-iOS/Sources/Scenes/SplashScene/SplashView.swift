@@ -16,20 +16,18 @@ struct SplashView: View {
   }
 
   var body: some View {
-    Group {
-      if showingSplash {
-        Text(verbatim: "SplashView")
-          .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-              withAnimation {
-                showingSplash = false
-              }
+    if showingSplash {
+      Text(verbatim: "SplashView")
+        .onAppear {
+          DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            withAnimation {
+              showingSplash = false
             }
           }
-      } else {
-        HomeView()
-          .environmentObject(HomeViewModel(service: dependency.homeService))
-      }
+        }
+    } else {
+      HomeView()
+        .environmentObject(HomeViewModel(service: dependency.homeService))
     }
   }
 }
