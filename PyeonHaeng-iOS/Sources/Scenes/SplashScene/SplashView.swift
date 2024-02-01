@@ -8,6 +8,13 @@
 import SwiftUI
 
 struct SplashView: View {
+  @State private var showingSplash: Bool = true
+  private let dependency: HomeDependency
+
+  init(dependency: HomeDependency) {
+    self.dependency = dependency
+  }
+
   var body: some View {
     Text("")
   }
