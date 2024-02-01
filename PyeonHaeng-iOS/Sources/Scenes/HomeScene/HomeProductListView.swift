@@ -108,14 +108,14 @@ private struct PriceView: View {
   var body: some View {
     HStack(spacing: 10) {
       Spacer()
-      Text(verbatim: "\(product.price.toStringWithComma())원")
+      Text("\(product.price)원")
         .font(.x2)
         .strikethrough()
         .foregroundColor(Color.gray200)
       HStack(spacing: 4) {
         Text("개당")
           .font(.c3)
-        Text(verbatim: "\(Int(product.price / 2).toStringWithComma())원")
+        Text("\(Int(product.price / 2))원")
           .font(.h4)
       }
       .foregroundStyle(Color.gray900)
