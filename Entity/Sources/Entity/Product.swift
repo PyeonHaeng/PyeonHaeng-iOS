@@ -23,4 +23,18 @@ public struct Product {
 
   /// 편의점
   public let convenienceStore: ConvenienceStore
+
+  public init(
+    imageURL: URL,
+    price: Int,
+    name: String,
+    promotion: Promotion,
+    convenienceStore: ConvenienceStore
+  ) {
+    self.imageURL = imageURL
+    self.price = price
+    self.name = name
+    self.promotion = promotion
+    self.convenienceStore = convenienceStore
+  }
 }
