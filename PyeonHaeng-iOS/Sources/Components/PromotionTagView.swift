@@ -26,9 +26,9 @@ struct PromotionTagView: View {
 private extension PromotionTagView {
   var color: Color {
     switch promotionTag {
-    case .onePlus: .red500
-    case .twoPlus: .blue500
-    case .none: .gray400
+    case .onePlus: .systemRed500
+    case .twoPlus: .systemBlue500
+    case .none: .gray500
     }
   }
 }
