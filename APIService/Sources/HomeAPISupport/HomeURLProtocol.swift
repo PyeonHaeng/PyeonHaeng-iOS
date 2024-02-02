@@ -6,10 +6,14 @@
 //
 
 import Foundation
+import HomeAPI
 import Network
 
 public final class HomeURLProtocol: URLProtocol {
-  private let fileName = "HomeProductResponse"
+  private lazy var mockData: [String: Data?] = [
+    HomeEndPoint.fetchCount(.init(convenienceStore: .gs25)).path: loadMockData(fileName: "HomeProductResponse"),
+    HomeEndPoint.fetchProducts(.init(store: .gs25, promotion: .allItems, order: .normal, pageSize: 0, offset: 0)).path: loadMockData(fileName: "HomeProductCountResponse"),
+  ]
 
   override public class func canInit(with _: URLRequest) -> Bool {
     true
@@ -21,8 +25,9 @@ public final class HomeURLProtocol: URLProtocol {
 
   override public func startLoading() {
     defer { client?.urlProtocolDidFinishLoading(self) }
-    if let data = loadMockData(fileName: fileName),
-       let url = request.url,
+    if let url = request.url,
+       let mockData = mockData[url.path(percentEncoded: true)],
+       let data = mockData,
        let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil) {
       client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
       client?.urlProtocol(self, didLoad: data)

@@ -10,7 +10,7 @@ import Network
 
 // MARK: - HomeEndPoint
 
-enum HomeEndPoint {
+public enum HomeEndPoint {
   case fetchProducts(ProductRequest)
   case fetchCount(ProductCountRequest)
 }
@@ -18,11 +18,11 @@ enum HomeEndPoint {
 // MARK: EndPoint
 
 extension HomeEndPoint: EndPoint {
-  var method: HTTPMethod {
+  public var method: HTTPMethod {
     .get
   }
 
-  var path: String {
+  public var path: String {
     switch self {
     case .fetchProducts:
       "v2/products"
@@ -31,7 +31,7 @@ extension HomeEndPoint: EndPoint {
     }
   }
 
-  var parameters: HTTPParameter {
+  public var parameters: HTTPParameter {
     switch self {
     case let .fetchProducts(requestModel):
       .query(requestModel)
@@ -40,7 +40,7 @@ extension HomeEndPoint: EndPoint {
     }
   }
 
-  var headers: [String: String] {
+  public var headers: [String: String] {
     ["Content-Type": "application/json"]
   }
 }
