@@ -9,11 +9,11 @@ import Foundation
 import Network
 
 struct HomeEndPoint: EndPoint {
-  var method: HTTPMethod
+  let method: HTTPMethod = .get
 
-  var path: String
+  let path: String = "v2/products"
 
-  var parameters: Network.HTTPParameter
+  let parameters: HTTPParameter = .plain
 
-  var headers: [String: String]
+  let headers: [String: String] = ["Content-Type": "application/json"]
 }
