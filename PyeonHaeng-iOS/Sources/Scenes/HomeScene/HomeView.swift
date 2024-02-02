@@ -56,7 +56,3 @@ private extension HomeView {
     static let horizontal: CGFloat = 20
   }
 }
-
-#Preview {
-  HomeView()
-}
