@@ -15,7 +15,7 @@ struct HomeView: View {
     NavigationStack {
       VStack {
         HomeProductDetailSelectionView()
-        HomeProductSorterView(count: 12)
+        HomeProductSorterView()
         HomeProductListView()
       }
       .padding(.horizontal, Metrics.horizontal)
