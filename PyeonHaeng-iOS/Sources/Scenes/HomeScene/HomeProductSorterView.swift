@@ -5,6 +5,7 @@
 //  Created by 홍승현 on 1/28/24.
 //
 
+import DesignSystem
 import SwiftUI
 
 struct HomeProductSorterView: View {
@@ -20,7 +21,9 @@ struct HomeProductSorterView: View {
         .font(.title2)
       Spacer()
       Button {} label: {
-        Image(systemName: "arrow.up.arrow.down")
+        Image.arrowDownArrowUp
+          .renderingMode(.template)
+          .foregroundStyle(.gray200)
       }
     }
     .padding(.all, 8)

@@ -23,8 +23,7 @@ struct HomeView: View {
       .toolbar {
         ToolbarItem(placement: .topBarLeading) {
           HStack {
-            Image(systemName: "storefront")
-              .foregroundStyle(Color.gray900)
+            Image.store
           }
         }
 
@@ -33,15 +32,13 @@ struct HomeView: View {
             ProductSearchView()
               .toolbarRole(.editor)
           } label: {
-            Image(systemName: "magnifyingglass")
-              .foregroundStyle(Color.gray900)
+            Image.magnifyingglass
           }
           NavigationLink {
             SettingsView()
               .toolbarRole(.editor)
           } label: {
-            Image(systemName: "gear")
-              .foregroundStyle(Color.gray900)
+            Image.gearshape
           }
         }
       }

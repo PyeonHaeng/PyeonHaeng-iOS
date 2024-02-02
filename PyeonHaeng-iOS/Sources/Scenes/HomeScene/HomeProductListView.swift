@@ -5,6 +5,7 @@
 //  Created by 홍승현 on 1/28/24.
 //
 
+import DesignSystem
 import Entity
 import SwiftUI
 
@@ -16,6 +17,7 @@ struct HomeProductListView: View {
   var body: some View {
     List(viewModel.products) { item in
       ProductRow(product: item)
+        .listRowInsets(.init())
     }
     .onAppear {
       Task {
@@ -63,7 +65,7 @@ private struct ProductImageView: View {
         .resizable()
         .scaledToFit()
         .frame(width: 70, height: 70)
-        .padding(.all, 12)
+        .padding(.all, 13)
     } placeholder: {
       ProgressView()
     }
@@ -81,7 +83,7 @@ private struct ProductDetailsView: View {
 
   var body: some View {
     VStack(alignment: .leading, spacing: 16) {
-      VStack(alignment: .leading, spacing: 8) {
+      VStack(alignment: .leading, spacing: 4) {
         Text(verbatim: product.promotion.rawValue)
           .font(.b3)
           .padding(.horizontal, 8)
@@ -111,14 +113,14 @@ private struct PriceView: View {
       Text(verbatim: "\(product.price.formatted())원")
         .font(.x2)
         .strikethrough()
-        .foregroundColor(Color.gray200)
+        .foregroundColor(.gray100)
       HStack(spacing: 4) {
         Text("개당")
           .font(.c3)
         Text(verbatim: "\(Int(product.price / 2).formatted())원")
           .font(.h4)
       }
-      .foregroundStyle(Color.gray900)
+      .foregroundStyle(.gray900)
     }
   }
 }
