@@ -25,6 +25,8 @@ struct HomeProductSorterView: View {
           .renderingMode(.template)
           .foregroundStyle(.gray200)
       }
+      .accessibilityLabel("정렬")
+      .accessibilityHint("더블 탭하여 정렬 기준을 바꿔보세요")
     }
     .padding(.all, 8)
   }

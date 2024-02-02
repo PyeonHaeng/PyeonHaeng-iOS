@@ -21,8 +21,10 @@ struct HomeProductDetailSelectionView: View {
           Image.chevronDown
             .renderingMode(.template)
             .foregroundStyle(.gray300)
+            .accessibilityHidden(true)
         }
       }
+      .accessibilityHint("더블 탭하여 편의점을 선택하세요")
 
       Spacer()
 
@@ -44,6 +46,7 @@ struct HomeProductDetailSelectionView: View {
           )
         )
       }
+      .accessibilityHint("더블 탭하여 할인 조건을 선택하세요")
       .overlay {
         RoundedRectangle(cornerRadius: Metrics.promotionButtonCornerRadius)
           .stroke()

@@ -34,12 +34,16 @@ struct HomeView: View {
           } label: {
             Image.magnifyingglass
           }
+          .accessibilityLabel("검색")
+          .accessibilityHint("더블 탭하여 제품을 검색하세요")
           NavigationLink {
             SettingsView()
               .toolbarRole(.editor)
           } label: {
             Image.gearshape
           }
+          .accessibilityLabel("설정")
+          .accessibilityHint("더블 탭하여 설정에 관한 기능을 확인하세요")
         }
       }
     }
