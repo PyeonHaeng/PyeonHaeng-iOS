@@ -8,12 +8,39 @@
 import Foundation
 import Network
 
-struct HomeEndPoint: EndPoint {
-  let method: HTTPMethod = .get
+// MARK: - HomeEndPoint
 
-  let path: String = "v2/products"
+enum HomeEndPoint {
+  case fetchProducts(ProductRequest)
+  case fetchCount(ProductCountRequest)
+}
 
-  let parameters: HTTPParameter = .plain
+// MARK: EndPoint
 
-  let headers: [String: String] = ["Content-Type": "application/json"]
+extension HomeEndPoint: EndPoint {
+  var method: HTTPMethod {
+    .get
+  }
+
+  var path: String {
+    switch self {
+    case .fetchProducts:
+      "v2/products"
+    case .fetchCount:
+      "v2/products/count"
+    }
+  }
+
+  var parameters: HTTPParameter {
+    switch self {
+    case let .fetchProducts(requestModel):
+      .query(requestModel)
+    case let .fetchCount(requestModel):
+      .query(requestModel)
+    }
+  }
+
+  var headers: [String: String] {
+    ["Content-Type": "application/json"]
+  }
 }

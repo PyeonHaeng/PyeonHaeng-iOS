@@ -12,7 +12,7 @@ import Network
 // MARK: - HomeServiceRepresentable
 
 public protocol HomeServiceRepresentable {
-  func fetchProductList() async throws -> [Product]
+  func fetchProductList(request: ProductRequest) async throws -> [Product]
 }
 
 // MARK: - HomeService
@@ -28,8 +28,8 @@ public struct HomeService {
 // MARK: HomeServiceRepresentable
 
 extension HomeService: HomeServiceRepresentable {
-  public func fetchProductList() async throws -> [Product] {
-    let products: [ProductResponse] = try await network.request(with: HomeEndPoint())
+  public func fetchProductList(request: ProductRequest) async throws -> [Product] {
+    let products: [ProductResponse] = try await network.request(with: HomeEndPoint.fetchProducts(request))
     return products.map(Product.init)
   }
 }
