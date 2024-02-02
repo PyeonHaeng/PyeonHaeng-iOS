@@ -30,7 +30,7 @@ struct HomeView: View {
 
         ToolbarItemGroup(placement: .topBarTrailing) {
           NavigationLink {
-            ProductInfoView()
+            ProductSearchView()
               .toolbarRole(.editor)
           } label: {
             Image(systemName: "magnifyingglass")
