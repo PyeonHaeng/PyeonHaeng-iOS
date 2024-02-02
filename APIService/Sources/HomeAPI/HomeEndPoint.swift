@@ -25,9 +25,9 @@ extension HomeEndPoint: EndPoint {
   public var path: String {
     switch self {
     case .fetchProducts:
-      "v2/products"
+      "/v2/products"
     case .fetchCount:
-      "v2/products/count"
+      "/v2/products/count"
     }
   }
 

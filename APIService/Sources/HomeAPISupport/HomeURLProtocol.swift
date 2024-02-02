@@ -11,8 +11,12 @@ import Network
 
 public final class HomeURLProtocol: URLProtocol {
   private lazy var mockData: [String: Data?] = [
-    HomeEndPoint.fetchCount(.init(convenienceStore: .gs25)).path: loadMockData(fileName: "HomeProductResponse"),
-    HomeEndPoint.fetchProducts(.init(store: .gs25, promotion: .allItems, order: .normal, pageSize: 0, offset: 0)).path: loadMockData(fileName: "HomeProductCountResponse"),
+    HomeEndPoint.fetchProducts(
+      .init(store: .gs25, promotion: .allItems, order: .normal, pageSize: 0, offset: 0)
+    ).path: loadMockData(fileName: "HomeProductResponse"),
+    HomeEndPoint.fetchCount(
+      .init(convenienceStore: .gs25)
+    ).path: loadMockData(fileName: "HomeProductCountResponse"),
   ]
 
   override public class func canInit(with _: URLRequest) -> Bool {
