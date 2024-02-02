@@ -13,54 +13,26 @@ import OSLog
 public enum Log {
   /// Log를 생성합니다.
   /// - Parameter category: Log를 구분하는 Category
-  public static func make(_ context: some CustomStringConvertible, with logger: Logger, at level: Level) {
+  public static func make(with category: LogCategory) -> Logger? {
     #if DEBUG
-      switch level {
-      case .debug:
-        logger.debug("\(context.description)")
-      case .info:
-        logger.info("\(context.description)")
-      case .notice:
-        logger.notice("\(context.description)")
-      case .warning:
-        logger.warning("\(context.description)")
-      case .fault:
-        logger.fault("\(context.description)")
-      }
+      Logger(subsystem: .bundleIdentifier, category: category.rawValue)
+    #else
+      nil
     #endif
   }
 }
 
-// MARK: Log.Level
+// MARK: - LogCategory
 
-public extension Log {
-  enum Level {
-    /// Writes a debug message to the log.
-    case debug
-
-    /// Writes an informative message to the log.
-    case info
-
-    /// Writes a message to the log using the default log type.
-    case notice
-
-    /// Writes information about a warning to the log.
-    case warning
-
-    /// Writes a message to the log about a bug that occurs when your app executes.
-    case fault
-  }
-}
-
-public extension Logger {
+public enum LogCategory: String {
   /// 네트워크 로그를 작성할 때 사용합니다.
-  static let network = Logger(subsystem: .bundleIdentifier, category: "network")
+  case network
 
   /// 뷰에 관한 로그를 작성할 때 사용합니다.
-  static let view = Logger(subsystem: .bundleIdentifier, category: "view")
+  case view
 
   /// 뷰모델에 관한 로그를 작성할 때 사용합니다.
-  static let viewModel = Logger(subsystem: .bundleIdentifier, category: "viewModel")
+  case viewModel
 }
 
 private extension String {

@@ -5,6 +5,7 @@
 //  Created by 홍승현 on 1/28/24.
 //
 
+import DesignSystem
 import Entity
 import SwiftUI
 
@@ -82,12 +83,7 @@ private struct ProductDetailsView: View {
   var body: some View {
     VStack(alignment: .leading, spacing: 16) {
       VStack(alignment: .leading, spacing: 8) {
-        Text(verbatim: product.promotion.rawValue)
-          .font(.b3)
-          .padding(.horizontal, 8)
-          .background(.red500.opacity(0.1))
-          .foregroundColor(.red500)
-          .cornerRadius(5)
+        PromotionTagView(promotionTag: .onePlus)
         Text(verbatim: product.name)
           .font(.title1)
       }

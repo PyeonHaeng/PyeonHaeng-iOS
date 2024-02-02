@@ -30,38 +30,53 @@ public extension ShapeStyle where Self == Color {
   static var green800: Color { .init(.green800) }
   static var green900: Color { .init(.green900) }
 
-  static var blue050: Color { .init(.blue050) }
-  static var blue100: Color { .init(.blue100) }
-  static var blue200: Color { .init(.blue200) }
-  static var blue300: Color { .init(.blue300) }
-  static var blue400: Color { .init(.blue400) }
-  static var blue500: Color { .init(.blue500) }
-  static var blue600: Color { .init(.blue600) }
-  static var blue700: Color { .init(.blue700) }
-  static var blue800: Color { .init(.blue800) }
-  static var blue900: Color { .init(.blue900) }
+  static var systemBlue050: Color { .init(.systemBlue050) }
+  static var systemBlue100: Color { .init(.systemBlue100) }
+  static var systemBlue200: Color { .init(.systemBlue200) }
+  static var systemBlue300: Color { .init(.systemBlue300) }
+  static var systemBlue400: Color { .init(.systemBlue400) }
+  static var systemBlue500: Color { .init(.systemBlue500) }
+  static var systemBlue600: Color { .init(.systemBlue600) }
+  static var systemBlue700: Color { .init(.systemBlue700) }
+  static var systemBlue800: Color { .init(.systemBlue800) }
+  static var systemBlue900: Color { .init(.systemBlue900) }
 
-  static var yellow050: Color { .init(.yellow050) }
-  static var yellow100: Color { .init(.yellow100) }
-  static var yellow200: Color { .init(.yellow200) }
-  static var yellow300: Color { .init(.yellow300) }
-  static var yellow400: Color { .init(.yellow400) }
-  static var yellow500: Color { .init(.yellow500) }
-  static var yellow600: Color { .init(.yellow600) }
-  static var yellow700: Color { .init(.yellow700) }
-  static var yellow800: Color { .init(.yellow800) }
-  static var yellow900: Color { .init(.yellow900) }
+  static var systemGreen050: Color { .init(.systemGreen050) }
+  static var systemGreen100: Color { .init(.systemGreen100) }
+  static var systemGreen200: Color { .init(.systemGreen200) }
+  static var systemGreen300: Color { .init(.systemGreen300) }
+  static var systemGreen400: Color { .init(.systemGreen400) }
+  static var systemGreen500: Color { .init(.systemGreen500) }
+  static var systemGreen600: Color { .init(.systemGreen600) }
+  static var systemGreen700: Color { .init(.systemGreen700) }
+  static var systemGreen800: Color { .init(.systemGreen800) }
+  static var systemGreen900: Color { .init(.systemGreen900) }
 
-  static var red050: Color { .init(.red050) }
-  static var red100: Color { .init(.red100) }
-  static var red200: Color { .init(.red200) }
-  static var red300: Color { .init(.red300) }
-  static var red400: Color { .init(.red400) }
-  static var red500: Color { .init(.red500) }
-  static var red600: Color { .init(.red600) }
-  static var red700: Color { .init(.red700) }
-  static var red800: Color { .init(.red800) }
-  static var red900: Color { .init(.red900) }
+  static var systemRed050: Color { .init(.systemRed050) }
+  static var systemRed100: Color { .init(.systemRed100) }
+  static var systemRed200: Color { .init(.systemRed200) }
+  static var systemRed300: Color { .init(.systemRed300) }
+  static var systemRed400: Color { .init(.systemRed400) }
+  static var systemRed500: Color { .init(.systemRed500) }
+  static var systemRed600: Color { .init(.systemRed600) }
+  static var systemRed700: Color { .init(.systemRed700) }
+  static var systemRed800: Color { .init(.systemRed800) }
+  static var systemRed900: Color { .init(.systemRed900) }
+
+  static var systemYellow050: Color { .init(.systemYellow050) }
+  static var systemYellow100: Color { .init(.systemYellow100) }
+  static var systemYellow200: Color { .init(.systemYellow200) }
+  static var systemYellow300: Color { .init(.systemYellow300) }
+  static var systemYellow400: Color { .init(.systemYellow400) }
+  static var systemYellow500: Color { .init(.systemYellow500) }
+  static var systemYellow600: Color { .init(.systemYellow600) }
+  static var systemYellow700: Color { .init(.systemYellow700) }
+  static var systemYellow800: Color { .init(.systemYellow800) }
+  static var systemYellow900: Color { .init(.systemYellow900) }
 
   static var blur: Color { .init(.blur) }
+
+  // Semantic Colors
+
+  static var primary: Color { .green500 }
 }
