@@ -25,17 +25,7 @@ struct ProductInfoLineGraphView: View {
   }
   
   private var points: [CGPoint] {
-    var points = [CGPoint]()
-    points.append(CGPoint(x: .zero, y: Metrics.maxHeight))
-    for (index, price) in prices.enumerated() {
-      var progress = (CGFloat(price) / CGFloat(prices.max() ?? 0))
-      progress *= progress == 1 ? 1.0 : 0.8
-      let pathHeight = Metrics.maxHeight + (1 - progress) * Metrics.maxHeight
-      let pathWidth = interval * CGFloat(index + 1)
-      points.append(CGPoint(x: pathWidth, y: pathHeight))
-    }
-    points.append(CGPoint(x: width, y: Metrics.maxHeight))
-    return points
+    calculatePoints()
   }
   
   // MARK: - View
@@ -43,36 +33,9 @@ struct ProductInfoLineGraphView: View {
   var body: some View {
     GeometryReader { reader in
       ZStack {
-        Path { $0.addLines(points) }
-          .stroke(.green500, style: StrokeStyle(lineWidth: 2.0))
-        
-        Path { path in
-          points.dropFirst().dropLast().forEach { point in
-            var point = point
-            point.x -= Metrics.symbolWidth / 2
-            point.y -= Metrics.symbolWidth / 2
-            path.addEllipse(in: CGRect(
-              origin: point,
-              size: CGSize(width: Metrics.symbolWidth, height: Metrics.symbolWidth)
-            ))
-          }
-        }
-        .fill(.green500)
-        .stroke(.white, lineWidth: 1.0)
-        
-        LinearGradient(stops: [
-          Gradient.Stop(color: .green500.opacity(0.1), location: 0.0),
-          Gradient.Stop(color: .green500.opacity(0), location: 1.0),
-        ], startPoint: UnitPoint(x: 0.5, y: 0), endPoint: UnitPoint(x: 0.5, y: 1))
-        .clipShape(
-          Path { path in
-            path.addLines(points)
-            path.addLine(to: CGPoint(x: width, y: height))
-            path.addLine(to: CGPoint(x: 0, y: height))
-            path.addLine(to: CGPoint.zero)
-            path.addLine(to: points.first!)
-          }
-        )
+        lineGraph()
+        circleSymbols()
+        gradientBackground()
       }
       .gesture(DragGesture().onChanged { value in
         let translation = value.location.x
@@ -80,19 +43,7 @@ struct ProductInfoLineGraphView: View {
         offset = CGSize(width: points[index].x - Metrics.panelWidth / 2, height: 0)
       })
       .overlay(alignment: .bottomLeading) {
-        VStack(spacing: 0) {
-          Text(verbatim: "2023.11")
-            .font(.c4)
-            .foregroundStyle(.gray400)
-          Text(verbatim: "1,250원")
-            .font(.b1)
-            .foregroundStyle(.gray900)
-          Rectangle()
-            .foregroundStyle(.gray100)
-            .frame(width: 1.0, height: Metrics.panelPoleHeight)
-        }
-        .frame(width: Metrics.panelWidth, height: Metrics.panelHeight)
-        .offset(offset)
+        productPanel()
       }
       .onAppear {
         width = reader.size.width
@@ -101,6 +52,88 @@ struct ProductInfoLineGraphView: View {
       }
     }
     .frame(height: Metrics.frameHeight)
+  }
+}
+
+// MARK: Helpers
+
+private extension ProductInfoLineGraphView {
+  func calculatePoints() -> [CGPoint] {
+    var points = [CGPoint]()
+    points.append(CGPoint(x: .zero, y: Metrics.maxHeight))
+    
+    for (index, price) in prices.enumerated() {
+      let progress = calculateProgress(for: price)
+      let pathHeight = Metrics.maxHeight + (1 - progress) * Metrics.maxHeight
+      let pathWidth = interval * CGFloat(index + 1)
+      points.append(CGPoint(x: pathWidth, y: pathHeight))
+    }
+    
+    points.append(CGPoint(x: width, y: Metrics.maxHeight))
+    return points
+  }
+  
+  func calculateProgress(for price: Int) -> CGFloat {
+    var progress = (CGFloat(price) / CGFloat(prices.max() ?? 0))
+    progress *= progress == 1 ? 1.0 : 0.8
+    return progress
+  }
+}
+
+// MARK: UI Helpers
+
+private extension ProductInfoLineGraphView {
+  func lineGraph() -> some View {
+    Path { $0.addLines(points) }
+      .stroke(.green500, style: StrokeStyle(lineWidth: 2.0))
+  }
+  
+  func circleSymbols() -> some View {
+    Path { path in
+      points.dropFirst().dropLast().forEach { point in
+        var point = point
+        point.x -= Metrics.symbolWidth / 2
+        point.y -= Metrics.symbolWidth / 2
+        path.addEllipse(in: CGRect(
+          origin: point,
+          size: CGSize(width: Metrics.symbolWidth, height: Metrics.symbolWidth)
+        ))
+      }
+    }
+    .fill(.green500)
+    .stroke(.white, lineWidth: 1.0)
+  }
+  
+  func gradientBackground() -> some View {
+    LinearGradient(stops: [
+      Gradient.Stop(color: .green500.opacity(0.1), location: 0.0),
+      Gradient.Stop(color: .green500.opacity(0), location: 1.0),
+    ], startPoint: UnitPoint(x: 0.5, y: 0), endPoint: UnitPoint(x: 0.5, y: 1))
+    .clipShape(
+      Path { path in
+        path.addLines(points)
+        path.addLine(to: CGPoint(x: width, y: height))
+        path.addLine(to: CGPoint(x: 0, y: height))
+        path.addLine(to: CGPoint.zero)
+        path.addLine(to: points.first!)
+      }
+    )
+  }
+  
+  func productPanel() -> some View {
+    VStack(spacing: 0) {
+      Text(verbatim: "2023.11")
+        .font(.c4)
+        .foregroundStyle(.gray400)
+      Text(verbatim: "1,250원")
+        .font(.b1)
+        .foregroundStyle(.gray900)
+      Rectangle()
+        .foregroundStyle(.gray100)
+        .frame(width: 1.0, height: Metrics.panelPoleHeight)
+    }
+    .frame(width: Metrics.panelWidth, height: Metrics.panelHeight)
+    .offset(offset)
   }
 }
 
