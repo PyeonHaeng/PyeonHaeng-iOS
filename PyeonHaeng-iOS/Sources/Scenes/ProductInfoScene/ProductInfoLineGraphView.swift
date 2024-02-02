@@ -99,9 +99,9 @@ private extension ProductInfoLineGraphView {
     for (index, price) in prices.enumerated() {
       var progress: CGFloat = 1.0
       if let maxPrice = prices.max(), maxPrice != 0 {
-        progress *= (CGFloat(price) / CGFloat(maxPrice)) == 1 ? 1.0 : 0.8
+        progress *= (CGFloat(price) / CGFloat(maxPrice)) == 1 ? .zero : 0.2
       }
-      let pathHeight = Metrics.maxHeight + ((1 - progress) * Metrics.maxHeight)
+      let pathHeight = Metrics.maxHeight + (progress * Metrics.maxHeight)
       let pathWidth = interval * CGFloat(index + 1)
       points.append(CGPoint(x: pathWidth, y: pathHeight))
     }
