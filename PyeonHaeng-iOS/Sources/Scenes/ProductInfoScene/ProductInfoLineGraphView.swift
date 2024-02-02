@@ -59,24 +59,24 @@ private extension ProductInfoLineGraphView {
   func calculatePoints() -> [CGPoint] {
     var points = [CGPoint]()
     points.append(CGPoint(x: .zero, y: Metrics.maxHeight))
-    
+
     for (index, price) in prices.enumerated() {
       let progress = calculateProgress(for: price)
       let pathHeight = Metrics.maxHeight + ((1 - progress) * Metrics.maxHeight)
       let pathWidth = interval * CGFloat(index + 1)
       points.append(CGPoint(x: pathWidth, y: pathHeight))
     }
-    
+
     points.append(CGPoint(x: width, y: Metrics.maxHeight))
     return points
   }
-  
+
   func calculateProgress(for price: Int) -> CGFloat {
     var progress = (CGFloat(price) / CGFloat(prices.max() ?? 0))
     progress *= progress == 1 ? 1.0 : 0.8
     return progress
   }
-  
+
   func calculateOffset(for location: CGFloat) {
     let index = max(min(Int((location / interval).rounded() - 1), prices.count - 1), 0)
     offset = CGSize(width: points[index + 1].x - (Metrics.panelWidth / 2), height: 0)
