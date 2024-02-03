@@ -55,6 +55,7 @@ struct ProductInfoHeader: View {
       }
       .foregroundStyle(Color.gray900)
     }
+    .padding(.bottom, 16.0)
   }
 }
 
