@@ -5,6 +5,7 @@
 //  Created by 홍승현 on 1/28/24.
 //
 
+import DesignSystem
 import SwiftUI
 
 // MARK: - HomeProductDetailSelectionView
@@ -13,32 +14,29 @@ struct HomeProductDetailSelectionView: View {
   var body: some View {
     HStack {
       Button {} label: {
-        HStack {
+        Group {
           Image.gs25
             .resizable()
             .scaledToFit()
-          Image(systemName: "chevron.down")
-            .resizable()
-            .scaledToFit()
-            .frame(width: Metrics.iconWidth, height: Metrics.iconHeight)
-            .foregroundStyle(Color.gray300)
-            .bold()
+          Image.chevronDown
+            .renderingMode(.template)
+            .foregroundStyle(.gray300)
+            .accessibilityHidden(true)
         }
       }
+      .accessibilityHint("더블 탭하여 편의점을 선택하세요")
 
       Spacer()
 
       Button {} label: {
-        HStack {
+        HStack(spacing: Metrics.buttonSpacing) {
           Text(verbatim: "All")
             .font(.title2)
-            .frame(height: Metrics.textHeight)
-          Image(systemName: "arrowtriangle.down.fill")
-            .resizable()
-            .scaledToFill()
-            .frame(width: Metrics.iconWidth, height: Metrics.iconHeight)
+          Image.arrowTriangleDownFill
+            .renderingMode(.template)
         }
-        .foregroundStyle(Color.gray400)
+        .frame(height: Metrics.textHeight)
+        .foregroundStyle(.gray400)
         .padding(
           .init(
             top: Metrics.promotionButtonPaddingTop,
@@ -48,10 +46,11 @@ struct HomeProductDetailSelectionView: View {
           )
         )
       }
+      .accessibilityHint("더블 탭하여 할인 조건을 선택하세요")
       .overlay {
         RoundedRectangle(cornerRadius: Metrics.promotionButtonCornerRadius)
           .stroke()
-          .foregroundStyle(Color.gray400)
+          .foregroundStyle(.gray400)
       }
     }
     .frame(height: Metrics.height)
@@ -62,6 +61,7 @@ struct HomeProductDetailSelectionView: View {
 
 private extension HomeProductDetailSelectionView {
   enum Metrics {
+    static let buttonSpacing: CGFloat = 2
     static let textHeight: CGFloat = 24
     static let horizontal: CGFloat = 20
     static let iconWidth: CGFloat = 8
@@ -70,7 +70,7 @@ private extension HomeProductDetailSelectionView {
     static let promotionButtonPaddingTop: CGFloat = 4
     static let promotionButtonPaddingLeading: CGFloat = 16
     static let promotionButtonPaddingBottom: CGFloat = 4
-    static let promotionButtonPaddingTrailing: CGFloat = 16
+    static let promotionButtonPaddingTrailing: CGFloat = 10
     static let promotionButtonCornerRadius: CGFloat = 16
 
     static let height: CGFloat = 56

@@ -17,6 +17,7 @@ struct HomeProductListView: View {
   var body: some View {
     List(viewModel.products) { item in
       ProductRow(product: item)
+        .listRowInsets(.init())
     }
     .onAppear {
       Task {
@@ -64,7 +65,7 @@ private struct ProductImageView: View {
         .resizable()
         .scaledToFit()
         .frame(width: 70, height: 70)
-        .padding(.all, 12)
+        .padding(.all, 13)
     } placeholder: {
       ProgressView()
     }
@@ -82,7 +83,7 @@ private struct ProductDetailsView: View {
 
   var body: some View {
     VStack(alignment: .leading, spacing: 16) {
-      VStack(alignment: .leading, spacing: 8) {
+      VStack(alignment: .leading, spacing: 4) {
         PromotionTagView(promotionTag: .onePlus)
         Text(verbatim: product.name)
           .font(.title1)
@@ -104,17 +105,20 @@ private struct PriceView: View {
   var body: some View {
     HStack(spacing: 10) {
       Spacer()
-      Text(verbatim: "\(product.price.formatted())원")
+      Text("\(product.price.formatted())원")
         .font(.x2)
         .strikethrough()
-        .foregroundColor(Color.gray200)
+        .foregroundColor(.gray100)
+        .accessibilityLabel("기존 가격")
       HStack(spacing: 4) {
         Text("개당")
           .font(.c3)
-        Text(verbatim: "\(Int(product.price / 2).formatted())원")
+          .accessibilityHidden(true)
+        Text("\(Int(product.price / 2).formatted())원")
           .font(.h4)
+          .accessibilityLabel("개당 가격")
       }
-      .foregroundStyle(Color.gray900)
+      .foregroundStyle(.gray900)
     }
   }
 }

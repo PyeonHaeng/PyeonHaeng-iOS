@@ -5,6 +5,7 @@
 //  Created by 홍승현 on 1/28/24.
 //
 
+import DesignSystem
 import SwiftUI
 
 struct HomeProductSorterView: View {
@@ -17,8 +18,12 @@ struct HomeProductSorterView: View {
         .font(.title2)
       Spacer()
       Button {} label: {
-        Image(systemName: "arrow.up.arrow.down")
+        Image.arrowDownArrowUp
+          .renderingMode(.template)
+          .foregroundStyle(.gray200)
       }
+      .accessibilityLabel("정렬")
+      .accessibilityHint("더블 탭하여 정렬 기준을 바꿔보세요")
     }
     .padding(.all, 8)
     .onAppear {

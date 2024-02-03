@@ -23,26 +23,27 @@ struct HomeView: View {
       .toolbar {
         ToolbarItem(placement: .topBarLeading) {
           HStack {
-            Image(systemName: "storefront")
-              .foregroundStyle(Color.gray900)
+            Image.store
           }
         }
 
         ToolbarItemGroup(placement: .topBarTrailing) {
           NavigationLink {
-            ProductInfoView()
+            ProductSearchView()
               .toolbarRole(.editor)
           } label: {
-            Image(systemName: "magnifyingglass")
-              .foregroundStyle(Color.gray900)
+            Image.magnifyingglass
           }
+          .accessibilityLabel("검색")
+          .accessibilityHint("더블 탭하여 제품을 검색하세요")
           NavigationLink {
             SettingsView()
               .toolbarRole(.editor)
           } label: {
-            Image(systemName: "gear")
-              .foregroundStyle(Color.gray900)
+            Image.gearshape
           }
+          .accessibilityLabel("설정")
+          .accessibilityHint("더블 탭하여 설정에 관한 기능을 확인하세요")
         }
       }
     }
