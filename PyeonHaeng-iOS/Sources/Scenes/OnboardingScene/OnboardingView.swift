@@ -65,11 +65,11 @@ struct OnboardingView: View {
     OnboardingPage(rawValue: currentPage)?.body ?? ""
   }
 
-  private var nextBtnText: String {
+  private var nextButtonText: String {
     currentPage < OnboardingPage.allCases.count - 1 ? "다음" : "편행 시작하기"
   }
 
-  private var skipBtnText: String = "건너뛰기"
+  private var skipButtonText: String = "건너뛰기"
 
   var body: some View {
     NavigationStack {
@@ -122,7 +122,7 @@ struct OnboardingView: View {
             }
           }
         }) {
-          Text(nextBtnText)
+          Text(nextButtonText)
             .font(.h5)
             .foregroundStyle(.white)
             .frame(maxWidth: .infinity)
@@ -133,10 +133,9 @@ struct OnboardingView: View {
         }
         .padding(.bottom, 8)
       }
-      .navigationTitle("")
       .toolbar {
         ToolbarItem(placement: .navigationBarTrailing) {
-          Button(skipBtnText) {
+          Button(skipButtonText) {
             // 건너뛰기 버튼 액션
           }
           .foregroundStyle(Color.green500)
