@@ -134,7 +134,7 @@ struct OnboardingView: View {
         .padding(.bottom, 8)
       }
       .toolbar {
-        ToolbarItem(placement: .navigationBarTrailing) {
+        ToolbarItem(placement: .topBarTrailing) {
           Button(skipButtonText) {
             // 건너뛰기 버튼 액션
           }
