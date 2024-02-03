@@ -260,6 +260,28 @@
         }
       }
     },
+    "이전 행사 정보" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Previous Promotions"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "過去のプロモーション"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "이전 행사 정보"
+          }
+        }
+      }
+    },
     "정렬" : {
       "localizations" : {
         "en" : {
