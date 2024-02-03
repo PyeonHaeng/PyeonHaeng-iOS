@@ -35,9 +35,9 @@ private enum OnboardingPage: Int, CaseIterable {
   var image: Image {
     switch self {
     case .first:
-      .onboarding01
+      Image("Onboarding01")
     case .second:
-      .onboarding02
+      Image("Onboarding02")
     }
   }
 
