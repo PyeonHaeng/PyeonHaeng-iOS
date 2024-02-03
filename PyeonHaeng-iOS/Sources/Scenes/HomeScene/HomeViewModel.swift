@@ -21,6 +21,19 @@ final class HomeViewModel: ObservableObject {
   }
 
   func fetchProducts() async throws {
-    try await products.append(contentsOf: service.fetchProductList())
+    // TODO: View와 연결할 때 수정해야합니다.
+    let request: ProductRequest = .init(
+      store: .gs25,
+      promotion: .buyOneGetOneFree,
+      order: .normal,
+      pageSize: 20,
+      offset: 0
+    )
+    try await products.append(contentsOf: service.fetchProductList(request: request))
+  }
+
+  func fetchProductCounts() async throws -> Int {
+    // TODO: 편의점 선택 뷰를 구성할 때 수정해야합니다.
+    try await service.fetchProductCount(request: .init(convenienceStore: .gs25))
   }
 }

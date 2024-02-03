@@ -8,11 +8,8 @@
 import SwiftUI
 
 struct HomeProductSorterView: View {
-  private let count: Int
-
-  init(count: Int) {
-    self.count = count
-  }
+  @EnvironmentObject private var viewModel: HomeViewModel
+  @State private var count: Int = 0
 
   var body: some View {
     HStack {
@@ -24,6 +21,11 @@ struct HomeProductSorterView: View {
       }
     }
     .padding(.all, 8)
+    .onAppear {
+      Task {
+        count = try await viewModel.fetchProductCounts()
+      }
+    }
   }
 
   var productCountString: AttributedString {
@@ -35,8 +37,4 @@ struct HomeProductSorterView: View {
 
     return string
   }
-}
-
-#Preview {
-  HomeProductSorterView(count: 50)
 }

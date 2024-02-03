@@ -32,7 +32,7 @@ let package = Package(
       dependencies: [
         "HomeAPI",
       ],
-      resources: [.process("HomeProductResponse.json")]
+      resources: [.process("Mocks")]
     ),
   ]
 )
