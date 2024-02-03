@@ -5,7 +5,6 @@
 //  Created by 김응철 on 1/31/24.
 //
 
-import Combine
 import DesignSystem
 import SwiftUI
 
@@ -44,19 +43,20 @@ struct ProductInfoLineGraphView: View {
         }
         .fill(.green500)
         .stroke(.white, lineWidth: 1.0)
-
-        LinearGradient(stops: [
-          Gradient.Stop(color: .green500.opacity(0.1), location: 0.0),
-          Gradient.Stop(color: .green500.opacity(0), location: 1.0),
-        ], startPoint: UnitPoint(x: 0.5, y: 0), endPoint: UnitPoint(x: 0.5, y: 1))
-          .clipShape(
-            Path { path in
-              path.move(to: .zero)
-              path.addLines(points)
-              path.addLine(to: CGPoint(x: size.width, y: size.height))
-              path.addLine(to: CGPoint(x: .zero, y: size.height))
-            }
-          )
+        
+        LinearGradient(
+          colors: [.green500.opacity(0.1), .clear],
+          startPoint: .top,
+          endPoint: .bottom
+        )
+        .clipShape(
+          Path { path in
+            path.move(to: .zero)
+            path.addLines(points)
+            path.addLine(to: CGPoint(x: size.width, y: size.height))
+            path.addLine(to: CGPoint(x: .zero, y: size.height))
+          }
+        )
       }
       .gesture(DragGesture().onChanged { value in
         let index = max(min(Int((value.location.x / interval).rounded() - 1), prices.count - 1), 0)
@@ -94,19 +94,20 @@ struct ProductInfoLineGraphView: View {
 private extension ProductInfoLineGraphView {
   func calculatePoints(interval: CGFloat, width: CGFloat) -> [CGPoint] {
     var points = [CGPoint]()
-    points.append(CGPoint(x: .zero, y: Metrics.maxHeight))
-
-    for (index, price) in prices.enumerated() {
-      var progress: CGFloat = .zero
-      if let maxPrice = prices.max(), maxPrice != 0 {
-        progress = (CGFloat(price) / CGFloat(maxPrice)) == 1 ? .zero : 0.2
+    points.append(CGPoint(x: .zero, y: Metrics.lineMaxHeightFromTop))
+    
+    if let maxPrice = prices.max(), maxPrice != 0 {
+      
+      for (index, price) in prices.enumerated() {
+        let heightFactor = 1 - (CGFloat(price) / CGFloat(maxPrice))
+        let pathHeight = Metrics.lineMaxHeightFromTop + Metrics.lineMaxHeightFromBottom * heightFactor
+        let pathWidth = interval * CGFloat(index + 1)
+        points.append(CGPoint(x: pathWidth, y: pathHeight))
       }
-      let pathHeight = Metrics.maxHeight + (progress * Metrics.maxHeight)
-      let pathWidth = interval * CGFloat(index + 1)
-      points.append(CGPoint(x: pathWidth, y: pathHeight))
+      
     }
-
-    points.append(CGPoint(x: width, y: Metrics.maxHeight))
+    
+    points.append(CGPoint(x: width, y: Metrics.lineMaxHeightFromTop))
     return points
   }
 }
@@ -115,7 +116,8 @@ private extension ProductInfoLineGraphView {
 
 private extension ProductInfoLineGraphView {
   enum Metrics {
-    static let maxHeight: CGFloat = 87.0
+    static let lineMaxHeightFromTop: CGFloat = 87.0
+    static let lineMaxHeightFromBottom: CGFloat = frameHeight - lineMaxHeightFromTop
     static let symbolWidth: CGFloat = 4.0
     static let frameHeight: CGFloat = 162.0
 
@@ -126,5 +128,5 @@ private extension ProductInfoLineGraphView {
 }
 
 #Preview(traits: .sizeThatFitsLayout) {
-  ProductInfoLineGraphView(prices: [1000, 1200, 1300, 1150])
+  ProductInfoLineGraphView(prices: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 }
