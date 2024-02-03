@@ -260,7 +260,7 @@
         }
       }
     },
-    "이전 행사 내역" : {
+    "이전 행사 정보" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -271,13 +271,13 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "過去のイベント"
+            "value" : "過去のプロモーション"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Previous Promotions"
+            "value" : "이전 행사 정보"
           }
         }
       }

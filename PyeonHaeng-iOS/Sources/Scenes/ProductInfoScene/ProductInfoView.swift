@@ -18,7 +18,7 @@ struct ProductInfoView: View {
           .navigationTitle("제품 상세")
           .navigationBarTitleDisplayMode(.inline)
 
-        Text("이전 행사 내역")
+        Text("이전 행사 정보")
           .font(.title1)
           .foregroundStyle(.gray900)
           .frame(maxWidth: .infinity, alignment: .leading)
