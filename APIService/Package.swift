@@ -1,5 +1,4 @@
 // swift-tools-version: 5.9
-// The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
 
@@ -18,12 +17,14 @@ let package = Package(
   ],
   dependencies: [
     .package(path: "../Core"),
+    .package(path: "../Entity"),
   ],
   targets: [
     .target(
       name: "HomeAPI",
       dependencies: [
         .product(name: "Network", package: "Core"),
+        .product(name: "Entity", package: "Entity"),
       ]
     ),
     .target(
@@ -31,7 +32,7 @@ let package = Package(
       dependencies: [
         "HomeAPI",
       ],
-      resources: [.process("HomeProductResponse.json")]
+      resources: [.process("Mocks")]
     ),
   ]
 )

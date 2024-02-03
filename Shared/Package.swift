@@ -11,11 +11,16 @@ let package = Package(
       name: "DesignSystem",
       targets: ["DesignSystem"]
     ),
+    .library(
+      name: "Log",
+      targets: ["Log"]
+    ),
   ],
   targets: [
     .target(
       name: "DesignSystem",
       resources: [.process("Resources")]
     ),
+    .target(name: "Log"),
   ]
 )
