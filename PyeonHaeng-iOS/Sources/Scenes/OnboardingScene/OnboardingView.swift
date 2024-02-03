@@ -52,29 +52,35 @@ private enum OnboardingPage: Int, CaseIterable {
   }
 }
 
-// MARK: - OnboardingView
+// MARK: - OnboardingViewModel
 
-struct OnboardingView: View {
-  @State private var currentPage = 0
+class OnboardingViewModel: ObservableObject {
+  @Published var currentPage: Int = 0
 
-  private var currentTitle: String {
+  fileprivate var currentTitle: String {
     OnboardingPage(rawValue: currentPage)?.title ?? ""
   }
 
-  private var currentBody: String {
+  fileprivate var currentBody: String {
     OnboardingPage(rawValue: currentPage)?.body ?? ""
   }
 
-  private var nextButtonText: String {
+  fileprivate var nextButtonText: String {
     currentPage < OnboardingPage.allCases.count - 1 ? "다음" : "편행 시작하기"
   }
 
-  private var skipButtonText: String = "건너뛰기"
+  fileprivate var skipButtonText: String = "건너뛰기"
+}
+
+// MARK: - OnboardingView
+
+struct OnboardingView: View {
+  @StateObject private var viewModel = OnboardingViewModel()
 
   var body: some View {
     NavigationStack {
       VStack {
-        TabView(selection: $currentPage) {
+        TabView(selection: $viewModel.currentPage) {
           ForEach(OnboardingPage.allCases.indices, id: \.self) { index in
             let page = OnboardingPage(rawValue: index) ?? OnboardingPage.first
             VStack {
@@ -93,36 +99,36 @@ struct OnboardingView: View {
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
 
         // 커스텀 페이지 컨트롤
-        CustomPageControl(currentPage: $currentPage, pageCount: 2)
+        CustomPageControl(currentPage: $viewModel.currentPage, pageCount: OnboardingPage.allCases.count)
           .padding(.vertical)
 
         // 본문 제목
-        Text(currentTitle)
+        Text(viewModel.currentTitle)
           .font(.h2)
           .transition(.opacity.combined(with: .slide))
-          .animation(.easeInOut, value: currentPage)
+          .animation(.easeInOut, value: viewModel.currentPage)
 
         Spacer().frame(height: 16)
 
         // 본문 내용
-        Text(currentBody)
+        Text(viewModel.currentBody)
           .font(.body2)
           .foregroundStyle(Color.gray500)
           .multilineTextAlignment(.center)
           .padding(.top, 8)
           .transition(.opacity.combined(with: .slide))
-          .animation(.easeInOut, value: currentPage)
+          .animation(.easeInOut, value: viewModel.currentPage)
 
         Spacer().frame(height: 84)
 
         Button(action: {
           withAnimation {
-            if currentPage < OnboardingPage.allCases.count - 1 {
-              currentPage += 1
+            if viewModel.currentPage < OnboardingPage.allCases.count - 1 {
+              viewModel.currentPage += 1
             }
           }
         }) {
-          Text(nextButtonText)
+          Text(viewModel.nextButtonText)
             .font(.h5)
             .foregroundStyle(.white)
             .frame(maxWidth: .infinity)
@@ -135,20 +141,13 @@ struct OnboardingView: View {
       }
       .toolbar {
         ToolbarItem(placement: .topBarTrailing) {
-          Button(skipButtonText) {
+          Button(viewModel.skipButtonText) {
             // 건너뛰기 버튼 액션
           }
           .foregroundStyle(Color.green500)
         }
       }
     }
-  }
-
-  /// Text 뷰에 애니메이션 효과를 적용하는 private 메서드
-  private func applyTextAnimation(_ content: Text) -> some View {
-    content
-      .transition(.opacity.combined(with: .slide))
-      .animation(.easeInOut, value: currentPage)
   }
 }
 
