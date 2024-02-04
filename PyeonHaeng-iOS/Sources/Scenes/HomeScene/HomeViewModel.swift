@@ -15,6 +15,7 @@ import HomeAPI
 enum HomeAction {
   case fetchMore
   case fetchCount
+  case changeOrder
 }
 
 // MARK: - HomeState
@@ -69,6 +70,10 @@ final class HomeViewModel: HomeViewModelRepresentable {
       Task {
         try await fetchProductCounts()
       }
+    case .changeOrder:
+      state.order = if state.order == .normal { .descending }
+      else if state.order == .descending { .ascending }
+      else { .normal }
     }
   }
 
