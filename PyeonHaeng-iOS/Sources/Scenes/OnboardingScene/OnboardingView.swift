@@ -16,16 +16,13 @@ struct OnboardingView: View {
     NavigationStack {
       VStack {
         TabView(selection: $viewModel.currentPage) {
-          ForEach(OnboardingPageType.allCases.indices, id: \.self) { index in
-            let page = OnboardingPageType(rawValue: index) ?? OnboardingPageType.first
+          ForEach(0 ..< viewModel.pageCount, id: \.self) { index in
             VStack {
-              Spacer().frame(height: page.spacerHeight)
-
-              Image(page.imageName)
+              Spacer().frame(height: viewModel.spacerHeight(for: index))
+              Image(viewModel.currentImageName) // 현재 페이지에 해당하는 이미지 표시
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .padding(.horizontal, 40)
-
               Spacer()
             }
             .tag(index)
@@ -34,7 +31,7 @@ struct OnboardingView: View {
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
 
         // 커스텀 페이지 컨트롤
-        OnboardingPageControl(currentPage: $viewModel.currentPage, pageCount: OnboardingPageType.allCases.count)
+        OnboardingPageControl(currentPage: $viewModel.currentPage, pageCount: viewModel.pageCount)
           .padding(.vertical)
 
         // 본문 제목
@@ -58,9 +55,7 @@ struct OnboardingView: View {
 
         Button(action: {
           withAnimation {
-            if viewModel.currentPage < OnboardingPageType.allCases.count - 1 {
-              viewModel.currentPage += 1
-            }
+            viewModel.nextPage()
           }
         }) {
           Text(viewModel.nextButtonText)

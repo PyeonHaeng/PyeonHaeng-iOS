@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9CE4B4712B6F0B57002DC446 /* OnboardingPageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE4B4702B6F0B57002DC446 /* OnboardingPageType.swift */; };
+		9CE4B4712B6F0B57002DC446 /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE4B4702B6F0B57002DC446 /* OnboardingPage.swift */; };
 		9CE4B4732B6F0BA3002DC446 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE4B4722B6F0BA3002DC446 /* OnboardingViewModel.swift */; };
 		9CE4B4752B6F78E8002DC446 /* OnboardingPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE4B4742B6F78E8002DC446 /* OnboardingPageControl.swift */; };
 		BA0564062B624646003D6DC7 /* Shared.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = BA0564052B624646003D6DC7 /* Shared.xcconfig */; };
@@ -60,7 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9CE4B4702B6F0B57002DC446 /* OnboardingPageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageType.swift; sourceTree = "<group>"; };
+		9CE4B4702B6F0B57002DC446 /* OnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
 		9CE4B4722B6F0BA3002DC446 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		9CE4B4742B6F78E8002DC446 /* OnboardingPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageControl.swift; sourceTree = "<group>"; };
 		BA0564022B62179A003D6DC7 /* Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Core; sourceTree = "<group>"; };
@@ -199,7 +199,7 @@
 		BA28F1832B6155710052855E /* OnboardingScene */ = {
 			isa = PBXGroup;
 			children = (
-				9CE4B4702B6F0B57002DC446 /* OnboardingPageType.swift */,
+				9CE4B4702B6F0B57002DC446 /* OnboardingPage.swift */,
 				9CE4B4722B6F0BA3002DC446 /* OnboardingViewModel.swift */,
 				BA28F1842B6155810052855E /* OnboardingView.swift */,
 				9CE4B4742B6F78E8002DC446 /* OnboardingPageControl.swift */,
@@ -504,7 +504,7 @@
 				9CE4B4732B6F0BA3002DC446 /* OnboardingViewModel.swift in Sources */,
 				9CE4B4752B6F78E8002DC446 /* OnboardingPageControl.swift in Sources */,
 				BA28F18E2B6156420052855E /* SettingsView.swift in Sources */,
-				9CE4B4712B6F0B57002DC446 /* OnboardingPageType.swift in Sources */,
+				9CE4B4712B6F0B57002DC446 /* OnboardingPage.swift in Sources */,
 				BAE159DE2B663A9A002DCF94 /* HomeProductSorterView.swift in Sources */,
 				BAE159D82B65FA6F002DCF94 /* HomeProductDetailSelectionView.swift in Sources */,
 				E50176262B6A204F0098D1BE /* ProductInfoLineGraphView.swift in Sources */,
