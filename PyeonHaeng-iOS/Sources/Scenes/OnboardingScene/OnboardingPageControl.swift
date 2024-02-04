@@ -10,7 +10,7 @@ import SwiftUI
 // MARK: - OnboardingPageControl
 
 struct OnboardingPageControl: View {
-  @Binding var currentPage: Int
+  @Binding private var currentPage: Int
   private var pageCount: Int
 
   init(currentPage: Binding<Int>, pageCount: Int) {

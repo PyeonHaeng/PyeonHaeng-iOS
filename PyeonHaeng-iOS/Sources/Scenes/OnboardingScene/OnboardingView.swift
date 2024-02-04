@@ -19,7 +19,7 @@ struct OnboardingView: View {
           ForEach(0 ..< viewModel.pageCount, id: \.self) { index in
             VStack {
               Spacer().frame(height: viewModel.spacerHeight(for: index))
-              Image(viewModel.currentImageName) // 현재 페이지에 해당하는 이미지 표시
+              Image(viewModel.currentImageName)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .padding(.horizontal, 40)
