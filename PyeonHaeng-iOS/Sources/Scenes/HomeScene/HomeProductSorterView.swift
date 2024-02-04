@@ -26,7 +26,7 @@ struct HomeProductSorterView<ViewModel>: View where ViewModel: HomeViewModelRepr
           .renderingMode(.template)
           .foregroundStyle(color(for: viewModel.state.order))
       }
-      .accessibilityLabel("정렬")
+      .accessibilityLabel(accessibilityLabel(for: viewModel.state.order))
       .accessibilityHint("더블 탭하여 정렬 기준을 바꿔보세요")
     }
     .padding(.all, 8)
@@ -62,6 +62,17 @@ private extension HomeProductSorterView {
     case .ascending,
          .descending:
       .green500
+    }
+  }
+
+  private func accessibilityLabel(for order: Order) -> LocalizedStringKey {
+    switch order {
+    case .normal:
+      "기본 정렬"
+    case .ascending:
+      "오름차순 정렬"
+    case .descending:
+      "내림차순 정렬"
     }
   }
 }
