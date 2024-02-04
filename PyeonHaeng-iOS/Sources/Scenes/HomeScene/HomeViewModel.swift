@@ -5,35 +5,87 @@
 //  Created by 홍승현 on 2/1/24.
 //
 
+import Combine
 import Entity
 import Foundation
 import HomeAPI
 
-// MARK: - HomeViewModel
+// MARK: - HomeAction
+
+enum HomeAction {
+  case fetchMore
+  case fetchCount
+}
+
+// MARK: - HomeState
+
+struct HomeState {
+  var products: [Product] = []
+  var count: Int = 0
+  var store: ConvenienceStore = .gs25
+  var promotion: Promotion = .allItems
+  var order: Order = .normal
+  var pageSize: Int = 20
+  var offset: Int = 0
+}
+
+// MARK: - HomeViewModelRepresentable
 
 @MainActor
-final class HomeViewModel: ObservableObject {
-  @Published var products: [Product] = []
+protocol HomeViewModelRepresentable: ObservableObject {
+  var state: HomeState { get }
+  func trigger(_ action: HomeAction)
+}
+
+// MARK: - HomeViewModel
+
+final class HomeViewModel: HomeViewModelRepresentable {
+  private let action: PassthroughSubject<HomeAction, Never> = .init()
+  private var subscriptions: Set<AnyCancellable> = []
   private let service: HomeServiceRepresentable
+
+  @Published private(set) var state: HomeState = .init()
 
   init(service: HomeServiceRepresentable) {
     self.service = service
+    action
+      .sink { [weak self] in
+        self?.render(as: $0)
+      }
+      .store(in: &subscriptions)
   }
 
-  func fetchProducts() async throws {
+  func trigger(_ action: HomeAction) {
+    self.action.send(action)
+  }
+
+  private func render(as action: HomeAction) {
+    switch action {
+    case .fetchMore:
+      Task {
+        try await fetchProducts()
+      }
+    case .fetchCount:
+      Task {
+        try await fetchProductCounts()
+      }
+    }
+  }
+
+  private func fetchProducts() async throws {
     // TODO: View와 연결할 때 수정해야합니다.
     let request: ProductRequest = .init(
-      store: .gs25,
-      promotion: .buyOneGetOneFree,
-      order: .normal,
-      pageSize: 20,
-      offset: 0
+      store: state.store,
+      promotion: state.promotion,
+      order: state.order,
+      pageSize: state.pageSize,
+      offset: state.offset
     )
-    try await products.append(contentsOf: service.fetchProductList(request: request))
+    try await state.products.append(contentsOf: service.fetchProductList(request: request))
   }
 
-  func fetchProductCounts() async throws -> Int {
+  private func fetchProductCounts() async throws {
     // TODO: 편의점 선택 뷰를 구성할 때 수정해야합니다.
-    try await service.fetchProductCount(request: .init(convenienceStore: .gs25))
+    state.count = try await service.fetchProductCount(request: .init(convenienceStore: state.store))
   }
 }

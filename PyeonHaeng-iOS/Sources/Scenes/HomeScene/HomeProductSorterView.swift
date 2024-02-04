@@ -8,9 +8,8 @@
 import DesignSystem
 import SwiftUI
 
-struct HomeProductSorterView: View {
-  @EnvironmentObject private var viewModel: HomeViewModel
-  @State private var count: Int = 0
+struct HomeProductSorterView<ViewModel>: View where ViewModel: HomeViewModelRepresentable {
+  @EnvironmentObject private var viewModel: ViewModel
 
   var body: some View {
     HStack {
@@ -27,16 +26,14 @@ struct HomeProductSorterView: View {
     }
     .padding(.all, 8)
     .onAppear {
-      Task {
-        count = try await viewModel.fetchProductCounts()
-      }
+      viewModel.trigger(.fetchCount)
     }
   }
 
   var productCountString: AttributedString {
-    var string = AttributedString(localized: "총 \(count)개의 상품이 있어요!")
+    var string = AttributedString(localized: "총 \(viewModel.state.count)개의 상품이 있어요!")
 
-    if let range = string.range(of: "\(count)") {
+    if let range = string.range(of: "\(viewModel.state.count)") {
       string[range].foregroundColor = .green500
     }
 

@@ -26,8 +26,7 @@ struct SplashView: View {
           }
         }
     } else {
-      HomeView()
-        .environmentObject(HomeViewModel(service: dependency.homeService))
+      HomeView(viewModel: HomeViewModel(service: dependency.homeService))
     }
   }
 }

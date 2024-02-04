@@ -11,18 +11,16 @@ import SwiftUI
 
 // MARK: - HomeProductListView
 
-struct HomeProductListView: View {
-  @EnvironmentObject var viewModel: HomeViewModel
+struct HomeProductListView<ViewModel>: View where ViewModel: HomeViewModelRepresentable {
+  @EnvironmentObject var viewModel: ViewModel
 
   var body: some View {
-    List(viewModel.products) { item in
+    List(viewModel.state.products) { item in
       ProductRow(product: item)
         .listRowInsets(.init())
     }
     .onAppear {
-      Task {
-        try await viewModel.fetchProducts()
-      }
+      viewModel.trigger(.fetchMore)
     }
     .listStyle(.plain)
     .scrollIndicators(.hidden)
