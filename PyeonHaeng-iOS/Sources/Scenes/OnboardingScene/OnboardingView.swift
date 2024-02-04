@@ -34,7 +34,7 @@ struct OnboardingView: View {
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
 
         // 커스텀 페이지 컨트롤
-        CustomPageControl(currentPage: $viewModel.currentPage, pageCount: OnboardingPageType.allCases.count)
+        OnboardingPageControl(currentPage: $viewModel.currentPage, pageCount: OnboardingPageType.allCases.count)
           .padding(.vertical)
 
         // 본문 제목
@@ -83,31 +83,6 @@ struct OnboardingView: View {
         }
       }
     }
-  }
-}
-
-// MARK: - CustomPageControl
-
-private struct CustomPageControl: View {
-  @Binding var currentPage: Int
-  var pageCount: Int
-
-  var body: some View {
-    HStack {
-      ForEach(0 ..< pageCount, id: \.self) { index in
-        Rectangle()
-          .frame(width: index == currentPage ? 24 : 6, height: 6)
-          .foregroundStyle(index == currentPage ? Color.green500 : Color.gray100)
-          .clipShape(.rect(cornerRadius: 3))
-          .onTapGesture {
-            withAnimation {
-              currentPage = index // 해당 인덱스로 페이지 변경
-            }
-          }
-      }
-    }
-    // 페이지 변경 시 애니메이션 효과
-    .animation(.default, value: currentPage)
   }
 }
 
