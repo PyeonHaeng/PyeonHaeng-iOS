@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9CE4B4712B6F0B57002DC446 /* OnboardingPageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE4B4702B6F0B57002DC446 /* OnboardingPageType.swift */; };
+		9CE4B4732B6F0BA3002DC446 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE4B4722B6F0BA3002DC446 /* OnboardingViewModel.swift */; };
 		BA0564062B624646003D6DC7 /* Shared.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = BA0564052B624646003D6DC7 /* Shared.xcconfig */; };
 		BA0564092B6248EA003D6DC7 /* HomeAPI in Frameworks */ = {isa = PBXBuildFile; productRef = BA0564082B6248EA003D6DC7 /* HomeAPI */; };
 		BA05640B2B6248EA003D6DC7 /* HomeAPISupport in Frameworks */ = {isa = PBXBuildFile; productRef = BA05640A2B6248EA003D6DC7 /* HomeAPISupport */; };
@@ -46,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9CE4B4702B6F0B57002DC446 /* OnboardingPageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageType.swift; sourceTree = "<group>"; };
+		9CE4B4722B6F0BA3002DC446 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		BA0564022B62179A003D6DC7 /* Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Core; sourceTree = "<group>"; };
 		BA0564032B6219D4003D6DC7 /* APIService */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = APIService; sourceTree = "<group>"; };
 		BA0564052B624646003D6DC7 /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Shared.xcconfig; path = XCConfig/Shared.xcconfig; sourceTree = SOURCE_ROOT; };
@@ -166,6 +170,8 @@
 		BA28F1832B6155710052855E /* OnboardingScene */ = {
 			isa = PBXGroup;
 			children = (
+				9CE4B4702B6F0B57002DC446 /* OnboardingPageType.swift */,
+				9CE4B4722B6F0BA3002DC446 /* OnboardingViewModel.swift */,
 				BA28F1842B6155810052855E /* OnboardingView.swift */,
 			);
 			path = OnboardingScene;
@@ -436,7 +442,9 @@
 				BA28F1882B6155910052855E /* HomeView.swift in Sources */,
 				BA28F18B2B6155BD0052855E /* ProductInfoView.swift in Sources */,
 				BA28F1912B61566E0052855E /* ProductSearchView.swift in Sources */,
+				9CE4B4732B6F0BA3002DC446 /* OnboardingViewModel.swift in Sources */,
 				BA28F18E2B6156420052855E /* SettingsView.swift in Sources */,
+				9CE4B4712B6F0B57002DC446 /* OnboardingPageType.swift in Sources */,
 				BAA4D9AF2B5A1795005999F8 /* SplashView.swift in Sources */,
 				BAA4D9AD2B5A1795005999F8 /* PyeonHaengApp.swift in Sources */,
 			);
