@@ -13,6 +13,7 @@
 		BA0564092B6248EA003D6DC7 /* HomeAPI in Frameworks */ = {isa = PBXBuildFile; productRef = BA0564082B6248EA003D6DC7 /* HomeAPI */; };
 		BA05640B2B6248EA003D6DC7 /* HomeAPISupport in Frameworks */ = {isa = PBXBuildFile; productRef = BA05640A2B6248EA003D6DC7 /* HomeAPISupport */; };
 		BA05640D2B6248EA003D6DC7 /* Network in Frameworks */ = {isa = PBXBuildFile; productRef = BA05640C2B6248EA003D6DC7 /* Network */; };
+		BA0623D82B68E51400A0A3B2 /* Log in Frameworks */ = {isa = PBXBuildFile; productRef = BA0623D72B68E51400A0A3B2 /* Log */; };
 		BA28F17C2B6155450052855E /* PyeonHaeng_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA28F17B2B6155450052855E /* PyeonHaeng_iOSTests.swift */; };
 		BA28F1852B6155810052855E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA28F1842B6155810052855E /* OnboardingView.swift */; };
 		BA28F1882B6155910052855E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA28F1872B6155910052855E /* HomeView.swift */; };
@@ -21,7 +22,6 @@
 		BA28F1912B61566E0052855E /* ProductSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA28F1902B61566E0052855E /* ProductSearchView.swift */; };
 		BA28F19D2B61572A0052855E /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA28F1932B61572A0052855E /* Pretendard-Bold.otf */; };
 		BA28F19E2B61572A0052855E /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA28F1942B61572A0052855E /* Pretendard-SemiBold.otf */; };
-		BA28F19F2B61572A0052855E /* EF_jejudoldam.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA28F1952B61572A0052855E /* EF_jejudoldam.otf */; };
 		BA28F1A02B61572A0052855E /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA28F1962B61572A0052855E /* Pretendard-Regular.otf */; };
 		BA28F1A12B61572A0052855E /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA28F1972B61572A0052855E /* Pretendard-Thin.otf */; };
 		BA28F1A22B61572A0052855E /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA28F1982B61572A0052855E /* Pretendard-Medium.otf */; };
@@ -29,12 +29,23 @@
 		BA28F1A42B61572A0052855E /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA28F19A2B61572A0052855E /* Pretendard-ExtraBold.otf */; };
 		BA28F1A52B61572A0052855E /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA28F19B2B61572A0052855E /* Pretendard-Light.otf */; };
 		BA28F1A62B61572A0052855E /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA28F19C2B61572A0052855E /* Pretendard-Black.otf */; };
+		BA4EA3602B6A37E10003DCE7 /* Entity in Frameworks */ = {isa = PBXBuildFile; productRef = BA4EA35F2B6A37E10003DCE7 /* Entity */; };
 		BAA4D9AD2B5A1795005999F8 /* PyeonHaengApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA4D9AC2B5A1795005999F8 /* PyeonHaengApp.swift */; };
 		BAA4D9AF2B5A1795005999F8 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA4D9AE2B5A1795005999F8 /* SplashView.swift */; };
 		BAA4D9B12B5A1796005999F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAA4D9B02B5A1796005999F8 /* Assets.xcassets */; };
 		BAA4D9B42B5A1796005999F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAA4D9B32B5A1796005999F8 /* Preview Assets.xcassets */; };
 		BAB569612B639F3000D1E0F9 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = BAB569602B639F3000D1E0F9 /* DesignSystem */; };
+		BAB5CF252B6B7C5A008B24BF /* AppRootComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB5CF242B6B7C5A008B24BF /* AppRootComponent.swift */; };
+		BAB5CF272B6B7CF3008B24BF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB5CF262B6B7CF3008B24BF /* HomeViewModel.swift */; };
+		BAE159D82B65FA6F002DCF94 /* HomeProductDetailSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE159D72B65FA6F002DCF94 /* HomeProductDetailSelectionView.swift */; };
+		BAE159DA2B65FC35002DCF94 /* HomeProductListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE159D92B65FC35002DCF94 /* HomeProductListView.swift */; };
+		BAE159DE2B663A9A002DCF94 /* HomeProductSorterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE159DD2B663A9A002DCF94 /* HomeProductSorterView.swift */; };
 		BAF2BEB32B61236100931AF0 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = BAF2BEB22B61236100931AF0 /* Localizable.xcstrings */; };
+		E50176262B6A204F0098D1BE /* ProductInfoLineGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50176252B6A204F0098D1BE /* ProductInfoLineGraphView.swift */; };
+		E5462C662B65677B00E9FDF2 /* PromotionTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5462C652B65677B00E9FDF2 /* PromotionTag.swift */; };
+		E5F2EC402B637D4A00EE0838 /* ProductInfoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F2EC3F2B637D4A00EE0838 /* ProductInfoHeader.swift */; };
+		E5F2EC432B648F5B00EE0838 /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F2EC422B648F5B00EE0838 /* Int+.swift */; };
+		E5F2EC452B64926100EE0838 /* PromotionTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F2EC442B64926100EE0838 /* PromotionTagView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +73,6 @@
 		BA28F1902B61566E0052855E /* ProductSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSearchView.swift; sourceTree = "<group>"; };
 		BA28F1932B61572A0052855E /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		BA28F1942B61572A0052855E /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
-		BA28F1952B61572A0052855E /* EF_jejudoldam.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EF_jejudoldam.otf; sourceTree = "<group>"; };
 		BA28F1962B61572A0052855E /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		BA28F1972B61572A0052855E /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
 		BA28F1982B61572A0052855E /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
@@ -71,13 +81,24 @@
 		BA28F19B2B61572A0052855E /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
 		BA28F19C2B61572A0052855E /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
 		BA28F1A72B6157E90052855E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA4EA35A2B6A00F70003DCE7 /* Entity */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Entity; sourceTree = "<group>"; };
 		BAA4D9A92B5A1795005999F8 /* PyeonHaeng-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PyeonHaeng-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAA4D9AC2B5A1795005999F8 /* PyeonHaengApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PyeonHaengApp.swift; sourceTree = "<group>"; };
 		BAA4D9AE2B5A1795005999F8 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		BAA4D9B02B5A1796005999F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAA4D9B32B5A1796005999F8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BAB5CF242B6B7C5A008B24BF /* AppRootComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootComponent.swift; sourceTree = "<group>"; };
+		BAB5CF262B6B7CF3008B24BF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		BABFEA6F2B6399C30084C0EC /* Shared */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Shared; sourceTree = "<group>"; };
+		BAE159D72B65FA6F002DCF94 /* HomeProductDetailSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProductDetailSelectionView.swift; sourceTree = "<group>"; };
+		BAE159D92B65FC35002DCF94 /* HomeProductListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProductListView.swift; sourceTree = "<group>"; };
+		BAE159DD2B663A9A002DCF94 /* HomeProductSorterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProductSorterView.swift; sourceTree = "<group>"; };
 		BAF2BEB22B61236100931AF0 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		E50176252B6A204F0098D1BE /* ProductInfoLineGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoLineGraphView.swift; sourceTree = "<group>"; };
+		E5462C652B65677B00E9FDF2 /* PromotionTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionTag.swift; sourceTree = "<group>"; };
+		E5F2EC3F2B637D4A00EE0838 /* ProductInfoHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoHeader.swift; sourceTree = "<group>"; };
+		E5F2EC422B648F5B00EE0838 /* Int+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
+		E5F2EC442B64926100EE0838 /* PromotionTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionTagView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +114,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA05640D2B6248EA003D6DC7 /* Network in Frameworks */,
+				BA4EA3602B6A37E10003DCE7 /* Entity in Frameworks */,
 				BA05640B2B6248EA003D6DC7 /* HomeAPISupport in Frameworks */,
+				BA0623D82B68E51400A0A3B2 /* Log in Frameworks */,
 				BA0564092B6248EA003D6DC7 /* HomeAPI in Frameworks */,
 				BAB569612B639F3000D1E0F9 /* DesignSystem in Frameworks */,
 			);
@@ -132,7 +155,11 @@
 		BA28F1712B6152EE0052855E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				E5462C652B65677B00E9FDF2 /* PromotionTag.swift */,
 				BAA4D9AC2B5A1795005999F8 /* PyeonHaengApp.swift */,
+				BAB5CF242B6B7C5A008B24BF /* AppRootComponent.swift */,
+				E5462C6B2B65CF7800E9FDF2 /* Components */,
+				E5F2EC412B648EE500EE0838 /* Extensions */,
 				BA28F1722B61532C0052855E /* Scenes */,
 			);
 			path = Sources;
@@ -181,6 +208,10 @@
 			isa = PBXGroup;
 			children = (
 				BA28F1872B6155910052855E /* HomeView.swift */,
+				BAB5CF262B6B7CF3008B24BF /* HomeViewModel.swift */,
+				BAE159D72B65FA6F002DCF94 /* HomeProductDetailSelectionView.swift */,
+				BAE159DD2B663A9A002DCF94 /* HomeProductSorterView.swift */,
+				BAE159D92B65FC35002DCF94 /* HomeProductListView.swift */,
 			);
 			path = HomeScene;
 			sourceTree = "<group>";
@@ -189,6 +220,8 @@
 			isa = PBXGroup;
 			children = (
 				BA28F18A2B6155BD0052855E /* ProductInfoView.swift */,
+				E5F2EC3F2B637D4A00EE0838 /* ProductInfoHeader.swift */,
+				E50176252B6A204F0098D1BE /* ProductInfoLineGraphView.swift */,
 			);
 			path = ProductInfoScene;
 			sourceTree = "<group>";
@@ -212,7 +245,6 @@
 		BA28F1922B6157140052855E /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				BA28F1952B61572A0052855E /* EF_jejudoldam.otf */,
 				BA28F19C2B61572A0052855E /* Pretendard-Black.otf */,
 				BA28F1932B61572A0052855E /* Pretendard-Bold.otf */,
 				BA28F19A2B61572A0052855E /* Pretendard-ExtraBold.otf */,
@@ -229,6 +261,7 @@
 		BAA4D9A02B5A1795005999F8 = {
 			isa = PBXGroup;
 			children = (
+				BA4EA35A2B6A00F70003DCE7 /* Entity */,
 				BABFEA6F2B6399C30084C0EC /* Shared */,
 				BA0564032B6219D4003D6DC7 /* APIService */,
 				BA0564022B62179A003D6DC7 /* Core */,
@@ -265,6 +298,22 @@
 				BAA4D9B32B5A1796005999F8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E5462C6B2B65CF7800E9FDF2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E5F2EC442B64926100EE0838 /* PromotionTagView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		E5F2EC412B648EE500EE0838 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E5F2EC422B648F5B00EE0838 /* Int+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,6 +357,8 @@
 				BA05640A2B6248EA003D6DC7 /* HomeAPISupport */,
 				BA05640C2B6248EA003D6DC7 /* Network */,
 				BAB569602B639F3000D1E0F9 /* DesignSystem */,
+				BA0623D72B68E51400A0A3B2 /* Log */,
+				BA4EA35F2B6A37E10003DCE7 /* Entity */,
 			);
 			productName = "PyeonHaeng-iOS";
 			productReference = BAA4D9A92B5A1795005999F8 /* PyeonHaeng-iOS.app */;
@@ -372,7 +423,6 @@
 				BA28F1A12B61572A0052855E /* Pretendard-Thin.otf in Resources */,
 				BA28F1A62B61572A0052855E /* Pretendard-Black.otf in Resources */,
 				BA28F1A52B61572A0052855E /* Pretendard-Light.otf in Resources */,
-				BA28F19F2B61572A0052855E /* EF_jejudoldam.otf in Resources */,
 				BA28F1A42B61572A0052855E /* Pretendard-ExtraBold.otf in Resources */,
 				BA28F1A02B61572A0052855E /* Pretendard-Regular.otf in Resources */,
 				BAA4D9B12B5A1796005999F8 /* Assets.xcassets in Resources */,
@@ -438,13 +488,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAE159DA2B65FC35002DCF94 /* HomeProductListView.swift in Sources */,
+				E5F2EC402B637D4A00EE0838 /* ProductInfoHeader.swift in Sources */,
 				BA28F1852B6155810052855E /* OnboardingView.swift in Sources */,
+				BAB5CF272B6B7CF3008B24BF /* HomeViewModel.swift in Sources */,
 				BA28F1882B6155910052855E /* HomeView.swift in Sources */,
+				E5F2EC452B64926100EE0838 /* PromotionTagView.swift in Sources */,
 				BA28F18B2B6155BD0052855E /* ProductInfoView.swift in Sources */,
+				E5F2EC432B648F5B00EE0838 /* Int+.swift in Sources */,
+				E5462C662B65677B00E9FDF2 /* PromotionTag.swift in Sources */,
 				BA28F1912B61566E0052855E /* ProductSearchView.swift in Sources */,
 				9CE4B4732B6F0BA3002DC446 /* OnboardingViewModel.swift in Sources */,
 				BA28F18E2B6156420052855E /* SettingsView.swift in Sources */,
 				9CE4B4712B6F0B57002DC446 /* OnboardingPageType.swift in Sources */,
+				BAE159DE2B663A9A002DCF94 /* HomeProductSorterView.swift in Sources */,
+				BAE159D82B65FA6F002DCF94 /* HomeProductDetailSelectionView.swift in Sources */,
+				E50176262B6A204F0098D1BE /* ProductInfoLineGraphView.swift in Sources */,
+				BAB5CF252B6B7C5A008B24BF /* AppRootComponent.swift in Sources */,
 				BAA4D9AF2B5A1795005999F8 /* SplashView.swift in Sources */,
 				BAA4D9AD2B5A1795005999F8 /* PyeonHaengApp.swift in Sources */,
 			);
@@ -730,6 +790,14 @@
 		BA05640C2B6248EA003D6DC7 /* Network */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Network;
+		};
+		BA0623D72B68E51400A0A3B2 /* Log */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Log;
+		};
+		BA4EA35F2B6A37E10003DCE7 /* Entity */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Entity;
 		};
 		BAB569602B639F3000D1E0F9 /* DesignSystem */ = {
 			isa = XCSwiftPackageProductDependency;
