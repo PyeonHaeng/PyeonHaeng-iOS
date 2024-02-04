@@ -19,9 +19,6 @@ struct HomeProductListView<ViewModel>: View where ViewModel: HomeViewModelRepres
       ProductRow(product: item)
         .listRowInsets(.init())
     }
-    .onAppear {
-      viewModel.trigger(.fetchMore)
-    }
     .listStyle(.plain)
     .scrollIndicators(.hidden)
   }

@@ -25,9 +25,6 @@ struct HomeProductSorterView<ViewModel>: View where ViewModel: HomeViewModelRepr
       .accessibilityHint("더블 탭하여 정렬 기준을 바꿔보세요")
     }
     .padding(.all, 8)
-    .onAppear {
-      viewModel.trigger(.fetchCount)
-    }
   }
 
   var productCountString: AttributedString {
