@@ -17,6 +17,7 @@ struct ProductInfoLineGraphView: View {
   @State var prices: [Int]
 
   @State private var offset: CGSize = .zero
+  @State private var isFirstRender: Bool = false
 
   // MARK: - View
 
@@ -78,6 +79,10 @@ struct ProductInfoLineGraphView: View {
         .offset(offset)
       }
       .onAppear {
+        isFirstRender = true
+      }
+      .onChange(of: isFirstRender) {
+        guard isFirstRender else { return }
         if let lastPoint = points.dropLast().last {
           offset = CGSize(width: lastPoint.x - (Metrics.panelWidth / 2), height: 0)
         } else {
@@ -126,5 +131,5 @@ private extension ProductInfoLineGraphView {
 }
 
 #Preview(traits: .sizeThatFitsLayout) {
-  ProductInfoLineGraphView(prices: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+  ProductInfoLineGraphView(prices: [1, 2])
 }
