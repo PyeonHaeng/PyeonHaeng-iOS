@@ -21,7 +21,7 @@ struct OnboardingView: View {
             VStack {
               Spacer().frame(height: page.spacerHeight)
 
-              page.image
+              Image(page.imageName)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .padding(.horizontal, 40)

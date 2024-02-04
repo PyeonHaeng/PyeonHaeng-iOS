@@ -5,7 +5,7 @@
 //  Created by 방현석 on 2/4/24.
 //
 
-import SwiftUI
+import Foundation
 
 // MARK: - OnboardingPageType
 
@@ -32,12 +32,12 @@ enum OnboardingPageType: Int, CaseIterable {
     }
   }
 
-  var image: Image {
+  var imageName: String {
     switch self {
     case .first:
-      Image("Onboarding01")
+      "Onboarding01"
     case .second:
-      Image("Onboarding02")
+      "Onboarding02"
     }
   }
 
