@@ -13,7 +13,7 @@ import HomeAPI
 // MARK: - HomeAction
 
 enum HomeAction {
-  case fetchMore
+  case fetchProducts
   case fetchCount
   case changeOrder
 }
@@ -62,7 +62,7 @@ final class HomeViewModel: HomeViewModelRepresentable {
 
   private func render(as action: HomeAction) {
     switch action {
-    case .fetchMore:
+    case .fetchProducts:
       Task {
         try await fetchProducts()
       }
@@ -74,6 +74,7 @@ final class HomeViewModel: HomeViewModelRepresentable {
       state.order = if state.order == .normal { .descending }
       else if state.order == .descending { .ascending }
       else { .normal }
+      trigger(.fetchProducts)
     }
   }
 
@@ -86,7 +87,7 @@ final class HomeViewModel: HomeViewModelRepresentable {
       pageSize: state.pageSize,
       offset: state.offset
     )
-    try await state.products.append(contentsOf: service.fetchProductList(request: request))
+    try await state.products = service.fetchProductList(request: request)
   }
 
   private func fetchProductCounts() async throws {

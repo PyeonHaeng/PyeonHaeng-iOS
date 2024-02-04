@@ -55,7 +55,7 @@ struct HomeView<ViewModel>: View where ViewModel: HomeViewModelRepresentable {
       }
     }
     .onAppear {
-      viewModel.trigger(.fetchMore)
+      viewModel.trigger(.fetchProducts)
       viewModel.trigger(.fetchCount)
     }
   }
