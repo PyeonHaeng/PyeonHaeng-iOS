@@ -10,14 +10,21 @@ import SwiftUI
 
 // MARK: - HomeView
 
-struct HomeView: View {
+struct HomeView<ViewModel>: View where ViewModel: HomeViewModelRepresentable {
+  @StateObject private var viewModel: ViewModel
+
+  init(viewModel: @autoclosure @escaping () -> ViewModel) {
+    _viewModel = .init(wrappedValue: viewModel())
+  }
+
   var body: some View {
     NavigationStack {
       VStack {
         HomeProductDetailSelectionView()
-        HomeProductSorterView()
-        HomeProductListView()
+        HomeProductSorterView<ViewModel>()
+        HomeProductListView<ViewModel>()
       }
+      .environmentObject(viewModel)
       .padding(.horizontal, Metrics.horizontal)
       .navigationBarTitleDisplayMode(.inline)
       .toolbar {
@@ -47,13 +54,15 @@ struct HomeView: View {
         }
       }
     }
+    .onAppear {
+      viewModel.trigger(.fetchProducts)
+      viewModel.trigger(.fetchCount)
+    }
   }
 }
 
-// MARK: HomeView.Metrics
+// MARK: - Metrics
 
-private extension HomeView {
-  enum Metrics {
-    static let horizontal: CGFloat = 20
-  }
+private enum Metrics {
+  static let horizontal: CGFloat = 20
 }

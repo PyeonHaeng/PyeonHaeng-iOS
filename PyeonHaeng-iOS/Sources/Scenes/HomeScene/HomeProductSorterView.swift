@@ -6,40 +6,73 @@
 //
 
 import DesignSystem
+import Entity
 import SwiftUI
 
-struct HomeProductSorterView: View {
-  @EnvironmentObject private var viewModel: HomeViewModel
-  @State private var count: Int = 0
+// MARK: - HomeProductSorterView
+
+struct HomeProductSorterView<ViewModel>: View where ViewModel: HomeViewModelRepresentable {
+  @EnvironmentObject private var viewModel: ViewModel
 
   var body: some View {
     HStack {
       Text(productCountString)
         .font(.title2)
       Spacer()
-      Button {} label: {
-        Image.arrowDownArrowUp
+      Button {
+        viewModel.trigger(.changeOrder)
+      } label: {
+        image(for: viewModel.state.order)
           .renderingMode(.template)
-          .foregroundStyle(.gray200)
+          .foregroundStyle(color(for: viewModel.state.order))
       }
-      .accessibilityLabel("정렬")
+      .accessibilityLabel(accessibilityLabel(for: viewModel.state.order))
       .accessibilityHint("더블 탭하여 정렬 기준을 바꿔보세요")
     }
     .padding(.all, 8)
-    .onAppear {
-      Task {
-        count = try await viewModel.fetchProductCounts()
-      }
-    }
   }
+}
 
+private extension HomeProductSorterView {
   var productCountString: AttributedString {
-    var string = AttributedString(localized: "총 \(count)개의 상품이 있어요!")
+    var string = AttributedString(localized: "총 \(viewModel.state.count)개의 상품이 있어요!")
 
-    if let range = string.range(of: "\(count)") {
+    if let range = string.range(of: "\(viewModel.state.count)") {
       string[range].foregroundColor = .green500
     }
 
     return string
+  }
+
+  private func image(for order: Order) -> Image {
+    switch order {
+    case .normal:
+      .arrowDownArrowUp
+    case .descending:
+      .arrowDownToLine
+    case .ascending:
+      .arrowUpToLine
+    }
+  }
+
+  private func color(for order: Order) -> Color {
+    switch order {
+    case .normal:
+      .gray200
+    case .ascending,
+         .descending:
+      .green500
+    }
+  }
+
+  private func accessibilityLabel(for order: Order) -> LocalizedStringKey {
+    switch order {
+    case .normal:
+      "기본 정렬"
+    case .ascending:
+      "오름차순 정렬"
+    case .descending:
+      "내림차순 정렬"
+    }
   }
 }

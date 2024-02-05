@@ -106,6 +106,29 @@
         }
       }
     },
+    "기본 정렬" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "General Sorting"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "般的な並び替え"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "기본 정렬"
+          }
+        }
+      }
+    },
     "기존 가격" : {
       "localizations" : {
         "en" : {
@@ -124,6 +147,29 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "기존 가격"
+          }
+        }
+      }
+    },
+    "내림차순 정렬" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descending Sorting"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "降順並び替え"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "내림차순 정렬"
           }
         }
       }
@@ -282,24 +328,25 @@
         }
       }
     },
-    "정렬" : {
+    "오름차순 정렬" : {
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sort"
+            "value" : "Ascending Sorting"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "並び替え"
+            "value" : "昇順並び替え"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "정렬"
+            "value" : "오름차순 정렬"
           }
         }
       }
