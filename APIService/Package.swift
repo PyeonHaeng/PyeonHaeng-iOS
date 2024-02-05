@@ -14,6 +14,10 @@ let package = Package(
       name: "HomeAPISupport",
       targets: ["HomeAPISupport"]
     ),
+    .library(
+      name: "ProductInfoAPI",
+      targets: ["ProductInfoAPI"]
+    )
   ],
   dependencies: [
     .package(path: "../Core"),
@@ -34,5 +38,12 @@ let package = Package(
       ],
       resources: [.process("Mocks")]
     ),
+    .target(
+      name: "ProductInfoAPI",
+      dependencies: [
+        .product(name: "Network", package: "Core"),
+        .product(name: "Entity", package: "Entity")
+      ]
+    )
   ]
 )
