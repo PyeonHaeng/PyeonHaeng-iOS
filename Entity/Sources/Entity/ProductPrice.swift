@@ -10,7 +10,7 @@ import Foundation
 public struct ProductPrice {
   let date: String
   let price: Int
-  
+
   public init(
     date: String,
     price: Int

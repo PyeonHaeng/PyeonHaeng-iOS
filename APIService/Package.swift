@@ -46,8 +46,6 @@ let package = Package(
       name: "ProductInfoAPI",
       dependencies: [
         "HomeAPI",
-        .product(name: "Network", package: "Core"),
-        .product(name: "Entity", package: "Entity"),
       ]
     ),
     .target(

@@ -24,9 +24,9 @@ extension ProductInfoEndPoint: EndPoint {
 
   public var path: String {
     switch self {
-    case .fetchProduct(let productID):
+    case let .fetchProduct(productID):
       "/v2/products/\(productID)"
-    case .fetchPrices(let productID):
+    case let .fetchPrices(productID):
       "/v2/products/\(productID)/price-history"
     }
   }

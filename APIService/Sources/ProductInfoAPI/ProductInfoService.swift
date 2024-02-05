@@ -31,8 +31,8 @@ public struct ProductInfoService {
 
 extension ProductInfoService: ProductInfoServiceRepresentable {
   public func fetchProduct(productID _: Int) async throws -> Product {
-    let product: ProductResponse = try await network.request(with: ProductInfoEndPoint.fetchProduct(0))
-    return product
+    let productResponse: ProductResponse = try await network.request(with: ProductInfoEndPoint.fetchProduct(0))
+    return Product(dto: productResponse)
   }
 
   public func fetchProductPrice(productID _: Int) async throws -> [ProductPrice] {

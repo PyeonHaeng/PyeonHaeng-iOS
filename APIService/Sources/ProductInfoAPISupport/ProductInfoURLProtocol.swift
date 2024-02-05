@@ -6,24 +6,24 @@
 //
 
 import Foundation
-import ProductInfoAPI
 import Network
+import ProductInfoAPI
 
 public final class ProductInfoURLProtocol: URLProtocol {
   private lazy var mockData: [String: Data?] = [
-    ProductInfoEndPoint.fetchProduct(0).path : loadMockData(fileName: "HomeProductResponse"),
-    ProductInfoEndPoint.fetchPrices(0).path : loadMockData(fileName: "ProductPriceResponse")
+    ProductInfoEndPoint.fetchProduct(0).path: loadMockData(fileName: "HomeProductResponse"),
+    ProductInfoEndPoint.fetchPrices(0).path: loadMockData(fileName: "ProductPriceResponse"),
   ]
-  
-  public override class func canInit(with request: URLRequest) -> Bool {
+
+  override public class func canInit(with _: URLRequest) -> Bool {
     true
   }
-  
-  public override class func canonicalRequest(for request: URLRequest) -> URLRequest {
+
+  override public class func canonicalRequest(for request: URLRequest) -> URLRequest {
     request
   }
-  
-  public override func startLoading() {
+
+  override public func startLoading() {
     defer { client?.urlProtocolDidFinishLoading(self) }
     if let url = request.url,
        let mockData = mockData[url.path(percentEncoded: true)],
@@ -35,7 +35,7 @@ public final class ProductInfoURLProtocol: URLProtocol {
       client?.urlProtocol(self, didFailWithError: NetworkError.urlError)
     }
   }
-  
+
   private func loadMockData(fileName: String) -> Data? {
     guard let url = Bundle.module.url(forResource: fileName, withExtension: "json")
     else {
