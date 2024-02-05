@@ -14,9 +14,6 @@ public extension Image {
   static let emart24: Image = .init(ImageResource.emart24)
   static let ministop: Image = .init(ImageResource.ministop)
 
-  static let onboarding01: Image = .init(.onboarding01)
-  static let onboarding02: Image = .init(.onboarding02)
-
   static let appstore: Image = .init(.appstore)
   static let appstoreFill: Image = .init(.appstoreFill)
   static let arrowDownArrowUp: Image = .init(.arrowDownArrowUp)
