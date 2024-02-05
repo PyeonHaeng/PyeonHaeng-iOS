@@ -8,7 +8,9 @@
 import Entity
 import Foundation
 
-struct ProductResponse: Decodable {
+// MARK: - ProductResponse
+
+public struct ProductResponse: Decodable {
   let id: Int
   let imageURL: URL
   let price: Int
@@ -23,5 +25,18 @@ struct ProductResponse: Decodable {
     case name
     case promotion
     case convenienceStore
+  }
+}
+
+public extension Product {
+  init(dto: ProductResponse) {
+    self.init(
+      id: dto.id,
+      imageURL: dto.imageURL,
+      price: dto.price,
+      name: dto.name,
+      promotion: dto.promotion,
+      convenienceStore: dto.convenienceStore
+    )
   }
 }
