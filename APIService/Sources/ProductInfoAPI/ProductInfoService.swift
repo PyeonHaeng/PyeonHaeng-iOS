@@ -44,7 +44,14 @@ extension ProductInfoService: ProductInfoServiceRepresentable {
 
 private extension ProductPrice {
   init(dto: ProductPriceResponse) {
-    self.init(date: dto.date, price: dto.price)
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy.MM"
+    let dateString = formatter.string(from: dto.date)
+
+    self.init(
+      date: dateString,
+      price: dto.price
+    )
   }
 }
 
