@@ -7,7 +7,6 @@
 
 import Entity
 import Foundation
-import HomeAPI
 import Network
 
 // MARK: - ProductInfoServiceRepresentable
@@ -31,7 +30,7 @@ public struct ProductInfoService {
 
 extension ProductInfoService: ProductInfoServiceRepresentable {
   public func fetchProduct(productID _: Int) async throws -> Product {
-    let productResponse: ProductResponse = try await network.request(with: ProductInfoEndPoint.fetchProduct(0))
+    let productResponse: ProductDetailResponse = try await network.request(with: ProductInfoEndPoint.fetchProduct(0))
     return Product(dto: productResponse)
   }
 
@@ -46,5 +45,18 @@ extension ProductInfoService: ProductInfoServiceRepresentable {
 private extension ProductPrice {
   init(dto: ProductPriceResponse) {
     self.init(date: dto.date, price: dto.price)
+  }
+}
+
+private extension Product {
+  init(dto: ProductDetailResponse) {
+    self.init(
+      id: dto.id,
+      imageURL: dto.imageURL,
+      price: dto.price,
+      name: dto.name,
+      promotion: dto.promotion,
+      convenienceStore: dto.convenienceStore
+    )
   }
 }

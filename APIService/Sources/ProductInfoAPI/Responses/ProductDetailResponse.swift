@@ -1,16 +1,14 @@
 //
-//  ProductResponse.swift
+//  ProductDetailResponse.swift
 //
 //
-//  Created by 홍승현 on 1/31/24.
+//  Created by 김응철 on 2/5/24.
 //
 
 import Entity
 import Foundation
 
-// MARK: - ProductResponse
-
-public struct ProductResponse: Decodable {
+public struct ProductDetailResponse: Decodable {
   let id: Int
   let imageURL: URL
   let price: Int
