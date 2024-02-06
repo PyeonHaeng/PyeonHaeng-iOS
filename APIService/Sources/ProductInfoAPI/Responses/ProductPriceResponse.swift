@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct ProductPriceResponse: Decodable {
+struct ProductPriceResponse: Decodable {
   let date: Date
   let price: Int
 }

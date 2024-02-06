@@ -8,7 +8,7 @@
 import Entity
 import Foundation
 
-public struct ProductDetailResponse: Decodable {
+struct ProductDetailResponse: Decodable {
   let id: Int
   let imageURL: URL
   let price: Int
