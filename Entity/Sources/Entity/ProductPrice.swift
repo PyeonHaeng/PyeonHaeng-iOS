@@ -8,14 +8,14 @@
 import Foundation
 
 public struct ProductPrice {
-  public let yearMonth: String
+  public let date: Date
   public let price: Int
 
   public init(
-    yearMonth: String,
+    date: Date,
     price: Int
   ) {
-    self.yearMonth = yearMonth
+    self.date = date
     self.price = price
   }
 }
