@@ -18,7 +18,7 @@ public enum ProductInfoEndPoint {
 // MARK: EndPoint
 
 extension ProductInfoEndPoint: EndPoint {
-  public var method: Network.HTTPMethod {
+  public var method: HTTPMethod {
     .get
   }
 
@@ -31,7 +31,7 @@ extension ProductInfoEndPoint: EndPoint {
     }
   }
 
-  public var parameters: Network.HTTPParameter {
+  public var parameters: HTTPParameter {
     .plain
   }
 

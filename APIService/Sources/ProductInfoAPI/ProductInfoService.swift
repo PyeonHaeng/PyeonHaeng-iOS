@@ -12,7 +12,7 @@ import Network
 // MARK: - ProductInfoServiceRepresentable
 
 public protocol ProductInfoServiceRepresentable {
-  func fetchProduct(productID: Int) async throws -> Product
+  func fetchProduct(productID: Int) async throws -> ProductDetail
   func fetchProductPrice(productID: Int) async throws -> [ProductPrice]
 }
 
@@ -29,9 +29,9 @@ public struct ProductInfoService {
 // MARK: ProductInfoServiceRepresentable
 
 extension ProductInfoService: ProductInfoServiceRepresentable {
-  public func fetchProduct(productID _: Int) async throws -> Product {
+  public func fetchProduct(productID _: Int) async throws -> ProductDetail {
     let productResponse: ProductDetailResponse = try await network.request(with: ProductInfoEndPoint.fetchProduct(0))
-    return Product(dto: productResponse)
+    return ProductDetail(dto: productResponse)
   }
 
   public func fetchProductPrice(productID _: Int) async throws -> [ProductPrice] {
@@ -46,16 +46,16 @@ private extension ProductPrice {
   init(dto: ProductPriceResponse) {
     let formatter = DateFormatter()
     formatter.dateFormat = "yyyy.MM"
-    let dateString = formatter.string(from: dto.date)
+    let yearMonth = formatter.string(from: dto.date)
 
     self.init(
-      date: dateString,
+      yearMonth: yearMonth,
       price: dto.price
     )
   }
 }
 
-private extension Product {
+private extension ProductDetail {
   init(dto: ProductDetailResponse) {
     self.init(
       id: dto.id,

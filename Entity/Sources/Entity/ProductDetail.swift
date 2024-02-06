@@ -1,14 +1,14 @@
 //
-//  Product.swift
+//  ProductDetail.swift
 //
 //
-//  Created by 홍승현 on 1/31/24.
+//  Created by 김응철 on 2/6/24.
 //
 
 import Foundation
 
-/// 편의점 행사 제품 리스트에 대한 Entity Model입니다.
-public struct Product: Identifiable {
+/// 편의점 행사 제품에 대한 Entity Model입니다.
+public struct ProductDetail: Identifiable {
   /// 제품 고유 Identifier
   public let id: Int
 
@@ -26,6 +26,8 @@ public struct Product: Identifiable {
 
   /// 편의점
   public let convenienceStore: ConvenienceStore
+
+  // TODO: 카테고리 상수 추가하기
 
   public init(
     id: Int,

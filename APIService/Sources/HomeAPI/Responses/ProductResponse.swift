@@ -10,7 +10,7 @@ import Foundation
 
 // MARK: - ProductResponse
 
-public struct ProductResponse: Decodable {
+struct ProductResponse: Decodable {
   let id: Int
   let imageURL: URL
   let price: Int
