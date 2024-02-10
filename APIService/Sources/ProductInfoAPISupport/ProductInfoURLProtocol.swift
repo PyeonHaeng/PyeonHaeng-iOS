@@ -6,13 +6,14 @@
 //
 
 import Foundation
+import Log
 import Network
 import ProductInfoAPI
 
 public final class ProductInfoURLProtocol: URLProtocol {
   private lazy var mockData: [String: Data?] = [
-    ProductInfoEndPoint.fetchProduct(0).path: loadMockData(fileName: "HomeProductResponse"),
-    ProductInfoEndPoint.fetchPrices(0).path: loadMockData(fileName: "ProductPriceResponse"),
+    ProductInfoEndPoint.fetchProduct(-1).path: loadMockData(fileName: "ProductInfoProductResponse"),
+    ProductInfoEndPoint.fetchPrices(-1).path: loadMockData(fileName: "ProductInfoPriceResponse"),
   ]
 
   override public class func canInit(with _: URLRequest) -> Bool {
@@ -35,6 +36,8 @@ public final class ProductInfoURLProtocol: URLProtocol {
       client?.urlProtocol(self, didFailWithError: NetworkError.urlError)
     }
   }
+
+  override public func stopLoading() {}
 
   private func loadMockData(fileName: String) -> Data? {
     guard let url = Bundle.module.url(forResource: fileName, withExtension: "json")
