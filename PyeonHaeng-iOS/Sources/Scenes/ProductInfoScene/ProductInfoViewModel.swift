@@ -21,7 +21,7 @@ enum ProductInfoAction {
 
 struct ProductInfoState {
   var product: ProductDetail = .init()
-  var productPrices: [ProductPrice] = []
+  var previousProducts: [ProductDetail] = []
 }
 
 // MARK: - ProductInfoViewModelRepresentable
@@ -39,11 +39,9 @@ final class ProductInfoViewModel: ProductInfoViewModelRepresentable {
   private let service: ProductInfoServiceRepresentable
   private var subscriptions: Set<AnyCancellable> = .init()
 
-  private let productID: Int
   @Published var state: ProductInfoState = .init()
 
-  init(productID: Int, service: ProductInfoServiceRepresentable) {
-    self.productID = productID
+  init(service: ProductInfoServiceRepresentable) {
     self.service = service
     action.sink { [weak self] action in
       self?.render(as: action)
@@ -65,10 +63,10 @@ final class ProductInfoViewModel: ProductInfoViewModelRepresentable {
   }
 
   private func fetchProductDetail() async throws {
-    state.product = try await service.fetchProduct(productID: productID)
+    try await state.product = service.fetchProduct()
   }
 
   private func fetchProductPrices() async throws {
-    state.productPrices = try await service.fetchProductPrice(productID: productID)
+    try await state.previousProducts = service.fetchProductPrice()
   }
 }
