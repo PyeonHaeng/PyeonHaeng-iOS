@@ -45,7 +45,7 @@
 		E50176262B6A204F0098D1BE /* ProductInfoLineGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50176252B6A204F0098D1BE /* ProductInfoLineGraphView.swift */; };
 		E50584532B763C8C002FDACF /* ProductInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50584522B763C8C002FDACF /* ProductInfoViewModel.swift */; };
 		E5462C662B65677B00E9FDF2 /* PromotionTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5462C652B65677B00E9FDF2 /* PromotionTag.swift */; };
-		E57F2AA42B7717EA00E12B3D /* ProductInfoAPI in Frameworks */ = {isa = PBXBuildFile; productRef = E57F2AA32B7717EA00E12B3D /* ProductInfoAPI */; };
+		E57F2AA42B7717EA00E12B3D /* ProductInfoAPI in Frameworks */ = {isa = PBXBuildFile; productRef = E57F2AA32B7717EA00E12B3D /* ProductInfoAPI */; settings = {ATTRIBUTES = (Required, ); }; };
 		E57F2AA62B7717EA00E12B3D /* ProductInfoAPISupport in Frameworks */ = {isa = PBXBuildFile; productRef = E57F2AA52B7717EA00E12B3D /* ProductInfoAPISupport */; };
 		E57F2AA82B774CA700E12B3D /* ProductInfoDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57F2AA72B774CA700E12B3D /* ProductInfoDependency.swift */; };
 		E5F2EC402B637D4A00EE0838 /* ProductInfoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F2EC3F2B637D4A00EE0838 /* ProductInfoHeader.swift */; };
