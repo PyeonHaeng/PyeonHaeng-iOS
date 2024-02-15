@@ -35,7 +35,7 @@ struct ProductInfoHeader<ViewModel>: View where ViewModel: ProductInfoViewModelR
           Text("행사 진행 편의점")
             .font(.c2)
             .padding(.top, 16.0)
-          Image.convenienceStoreImage(viewModel.state.product.convenienceStore)
+          Image._7Eleven
             .padding(.top, 2.0)
         }
         Spacer()

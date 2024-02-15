@@ -5,7 +5,6 @@
 //  Created by 홍승현 on 1/28/24.
 //
 
-import Entity
 import SwiftUI
 
 public extension Image {
@@ -80,14 +79,4 @@ public extension Image {
   static let store: Image = .init(.store)
   static let xCircleFill: Image = .init(.xCircleFill)
   static let xCircle: Image = .init(.xCircle)
-
-  static func convenienceStoreImage(_ convenienceStore: ConvenienceStore) -> Image {
-    switch convenienceStore {
-    case .cu: .cu
-    case .gs25: .gs25
-    case ._7Eleven: ._7Eleven
-    case .emart24: .emart24
-    case .ministop: .ministop
-    }
-  }
 }
