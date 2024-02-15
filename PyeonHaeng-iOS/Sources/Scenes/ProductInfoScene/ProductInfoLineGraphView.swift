@@ -12,21 +12,21 @@ import SwiftUI
 
 struct ProductInfoLineGraphView: View {
   // MARK: - Properties
-  
+
   /// 임시데이터입니다. 이 데이터는 곧 편의점 상품 데이터로 교체됩니다.
   @State var prices: [Int]
-  
+
   @State private var offset: CGSize = .zero
   @State private var isFirstRender: Bool = false
-  
+
   // MARK: - View
-  
+
   var body: some View {
     GeometryReader { reader in
       let size = reader.size
       let interval = size.width / CGFloat(prices.count + 1)
       let points = calculatePoints(interval: interval, width: size.width)
-      
+
       VStack(spacing: 4.0) {
         Text("이전 행사 정보")
           .font(.title1)
@@ -35,7 +35,7 @@ struct ProductInfoLineGraphView: View {
         ZStack {
           Path { $0.addLines(points) }
             .stroke(.green500, style: StrokeStyle(lineWidth: 2.0))
-          
+
           Path { path in
             for point in points.dropFirst().dropLast() {
               var point = point
@@ -49,7 +49,7 @@ struct ProductInfoLineGraphView: View {
           }
           .fill(.green500)
           .stroke(.white, lineWidth: 1.0)
-          
+
           LinearGradient(
             colors: [.green500.opacity(0.1), .clear],
             startPoint: .top,
@@ -107,7 +107,7 @@ private extension ProductInfoLineGraphView {
   func calculatePoints(interval: CGFloat, width: CGFloat) -> [CGPoint] {
     var points = [CGPoint]()
     points.append(CGPoint(x: .zero, y: Metrics.lineMaxHeightFromTop))
-    
+
     if let maxPrice = prices.max(), maxPrice != 0 {
       for (index, price) in prices.enumerated() {
         let heightFactor = 1 - (CGFloat(price) / CGFloat(maxPrice))
@@ -116,7 +116,7 @@ private extension ProductInfoLineGraphView {
         points.append(CGPoint(x: pathWidth, y: pathHeight))
       }
     }
-    
+
     points.append(CGPoint(x: width, y: Metrics.lineMaxHeightFromTop))
     return points
   }
@@ -131,7 +131,7 @@ private extension ProductInfoLineGraphView {
     static let symbolWidth: CGFloat = 4.0
     static let frameHeight: CGFloat = 226.0
     static let lineGraphHeight: CGFloat = 162.0
-    
+
     static let panelWidth: CGFloat = 55.0
     static let panelHeight: CGFloat = 162.0
     static let panelPoleHeight: CGFloat = 122.0
