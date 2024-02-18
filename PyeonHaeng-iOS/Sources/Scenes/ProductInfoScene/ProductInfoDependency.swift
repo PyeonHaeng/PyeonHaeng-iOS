@@ -20,10 +20,8 @@ protocol ProductInfoDependency {
 
 struct ProductInfoComponent: ProductInfoDependency {
   let productInfoService: ProductInfoServiceRepresentable
-  let productID: Int
 
   init(productID: Int) {
-    self.productID = productID
     let productInfoNetworking: Networking = {
       let configuration = URLSessionConfiguration.ephemeral
       configuration.protocolClasses = [ProductInfoURLProtocol.self]
