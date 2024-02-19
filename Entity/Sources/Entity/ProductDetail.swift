@@ -13,7 +13,7 @@ public struct ProductDetail: Identifiable {
   public let id: Int
 
   /// 이미지 URL
-  public let imageURL: URL
+  public let imageURL: URL?
 
   /// 제품 가격
   public let price: Int
@@ -31,7 +31,7 @@ public struct ProductDetail: Identifiable {
 
   public init(
     id: Int,
-    imageURL: URL,
+    imageURL: URL?,
     price: Int,
     name: String,
     promotion: Promotion,

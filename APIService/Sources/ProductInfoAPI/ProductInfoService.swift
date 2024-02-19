@@ -12,16 +12,18 @@ import Network
 // MARK: - ProductInfoServiceRepresentable
 
 public protocol ProductInfoServiceRepresentable {
-  func fetchProduct(productID: Int) async throws -> ProductDetail
-  func fetchProductPrice(productID: Int) async throws -> [ProductPrice]
+  func fetchProduct() async throws -> ProductDetail
+  func fetchProductPrice() async throws -> [ProductDetail]
 }
 
 // MARK: - ProductInfoService
 
 public struct ProductInfoService {
   private let network: Networking
+  private let productID: Int
 
-  public init(network: Networking) {
+  public init(productID: Int, network: Networking) {
+    self.productID = productID
     self.network = network
   }
 }
@@ -29,22 +31,18 @@ public struct ProductInfoService {
 // MARK: ProductInfoServiceRepresentable
 
 extension ProductInfoService: ProductInfoServiceRepresentable {
-  public func fetchProduct(productID _: Int) async throws -> ProductDetail {
-    let productResponse: ProductDetailResponse = try await network.request(with: ProductInfoEndPoint.fetchProduct(0))
-    return ProductDetail(dto: productResponse)
-  }
-
-  public func fetchProductPrice(productID _: Int) async throws -> [ProductPrice] {
-    let productPrice: [ProductPriceResponse] = try await network.request(
-      with: ProductInfoEndPoint.fetchPrices(0)
+  public func fetchProduct() async throws -> ProductDetail {
+    let response: ProductDetailResponse = try await network.request(
+      with: ProductInfoEndPoint.fetchProduct(productID)
     )
-    return productPrice.map(ProductPrice.init)
+    return ProductDetail(dto: response)
   }
-}
 
-private extension ProductPrice {
-  init(dto: ProductPriceResponse) {
-    self.init(date: dto.date, price: dto.price)
+  public func fetchProductPrice() async throws -> [ProductDetail] {
+    let response: [ProductDetailResponse] = try await network.request(
+      with: ProductInfoEndPoint.fetchPrices(productID)
+    )
+    return response.map(ProductDetail.init(dto:))
   }
 }
 
@@ -52,11 +50,11 @@ private extension ProductDetail {
   init(dto: ProductDetailResponse) {
     self.init(
       id: dto.id,
-      imageURL: dto.imageURL,
+      imageURL: dto.img,
       price: dto.price,
       name: dto.name,
-      promotion: dto.promotion,
-      convenienceStore: dto.convenienceStore
+      promotion: dto.tag,
+      convenienceStore: dto.store
     )
   }
 }

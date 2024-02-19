@@ -10,29 +10,28 @@ import SwiftUI
 
 // MARK: - ProductInfoView
 
-struct ProductInfoView: View {
+struct ProductInfoView<ViewModel>: View where ViewModel: ProductInfoViewModelRepresentable {
+  @StateObject private var viewModel: ViewModel
+
+  init(viewModel: @autoclosure @escaping () -> ViewModel) {
+    _viewModel = .init(wrappedValue: viewModel())
+  }
+
   var body: some View {
     NavigationStack {
       VStack {
-        ProductInfoHeader()
-          .navigationTitle("제품 상세")
-          .navigationBarTitleDisplayMode(.inline)
-
-        Text("이전 행사 정보")
-          .font(.title1)
-          .foregroundStyle(.gray900)
-          .frame(maxWidth: .infinity, alignment: .leading)
-          .padding(.top, 8.0)
+        ProductInfoHeader<ViewModel>()
         ProductInfoLineGraphView(prices: [1150, 1300, 1400, 1200])
-          .padding(.top, 4.0)
-
         Spacer()
       }
+      .environmentObject(viewModel)
+      .navigationTitle("제품 상세")
+      .navigationBarTitleDisplayMode(.inline)
       .padding(.horizontal, 20.0)
     }
+    .onAppear {
+      viewModel.trigger(.fetchProduct)
+      viewModel.trigger(.fetchProductPrices)
+    }
   }
-}
-
-#Preview {
-  ProductInfoView()
 }

@@ -9,19 +9,11 @@ import Entity
 import Foundation
 
 struct ProductDetailResponse: Decodable {
-  let id: Int
-  let imageURL: URL
-  let price: Int
   let name: String
-  let promotion: Promotion
-  let convenienceStore: ConvenienceStore
-
-  enum CodingKeys: String, CodingKey {
-    case id
-    case imageURL = "image_url"
-    case price
-    case name
-    case promotion
-    case convenienceStore
-  }
+  let img: URL
+  let price: Int
+  let store: ConvenienceStore
+  let tag: Promotion
+  let proinfo: Int
+  let id: Int
 }
