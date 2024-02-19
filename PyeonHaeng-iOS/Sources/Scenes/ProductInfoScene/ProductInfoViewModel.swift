@@ -20,9 +20,18 @@ enum ProductInfoAction {
 // MARK: - ProductInfoState
 
 struct ProductInfoState {
-  var product: ProductDetail = .init()
+  var product: ProductDetail = mockProduct
   var previousProducts: [ProductDetail] = []
 }
+
+private let mockProduct = ProductDetail(
+  id: 0,
+  imageURL: nil,
+  price: 0,
+  name: "",
+  promotion: .allItems,
+  convenienceStore: ._7Eleven
+)
 
 // MARK: - ProductInfoViewModelRepresentable
 
@@ -39,7 +48,7 @@ final class ProductInfoViewModel: ProductInfoViewModelRepresentable {
   private let service: ProductInfoServiceRepresentable
   private var subscriptions: Set<AnyCancellable> = .init()
 
-  @Published var state: ProductInfoState = .init()
+  @Published private(set) var state: ProductInfoState = .init()
 
   init(service: ProductInfoServiceRepresentable) {
     self.service = service

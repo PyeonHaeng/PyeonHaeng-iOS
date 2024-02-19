@@ -44,13 +44,4 @@ public struct ProductDetail: Identifiable {
     self.promotion = promotion
     self.convenienceStore = convenienceStore
   }
-
-  public init() {
-    id = -1
-    imageURL = nil
-    price = 0
-    name = ""
-    promotion = .allItems
-    convenienceStore = ._7Eleven
-  }
 }
