@@ -10,11 +10,12 @@ import SwiftUI
 
 // MARK: - ConvenienceSelectBottomSheetView
 
-struct ConvenienceSelectBottomSheetView: View {
-  @Binding private var convenienceStore: ConvenienceStore
+struct ConvenienceSelectBottomSheetView<ViewModel>: View where ViewModel: HomeViewModelRepresentable {
+  @EnvironmentObject private var viewModel: ViewModel
+  @Binding private var isPresented: Bool
 
-  init(convenienceStore: Binding<ConvenienceStore>) {
-    _convenienceStore = convenienceStore
+  init(isPresented: Binding<Bool>) {
+    _isPresented = isPresented
   }
 
   var body: some View {
@@ -24,12 +25,13 @@ struct ConvenienceSelectBottomSheetView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.horizontal, Metrics.horizontalPadding)
 
-      ForEach(ConvenienceStore.allCases, id: \.self) { convenience in
+      ForEach(ConvenienceStore.allCases, id: \.self) { store in
         Button {
-          convenienceStore = convenience
+          viewModel.trigger(.changeConvenienceStore(store))
+          isPresented = false
         } label: {
-          ConvenienceSelectItem(convenience: convenience)
-            .frame(maxWidth: .infinity, alignment: .leading)
+          ConvenienceSelectItem(convenience: store)
+            .frame(maxWidth: .infinity, minHeight: Metrics.itemHeight, alignment: .leading)
         }
       }
       .padding(.horizontal, Metrics.itemHorizontalPadding)
@@ -98,9 +100,5 @@ private enum Metrics {
   static let itemHorizontalPadding: CGFloat = 24
   static let itemHorizontalSpacing: CGFloat = 12
   static let itemSpacing: CGFloat = 4
-}
-
-#Preview {
-  @State var convenience: ConvenienceStore = ._7Eleven
-  return ConvenienceSelectBottomSheetView(convenienceStore: $convenience)
+  static let itemHeight: CGFloat = 44
 }

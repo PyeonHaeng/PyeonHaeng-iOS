@@ -10,10 +10,19 @@ import SwiftUI
 
 // MARK: - HomeProductDetailSelectionView
 
-struct HomeProductDetailSelectionView: View {
+struct HomeProductDetailSelectionView<ViewModel>: View where ViewModel: HomeViewModelRepresentable {
+  @EnvironmentObject private var viewModel: ViewModel
+  @Binding private var isPresented: Bool
+
+  init(isPresented: Binding<Bool>) {
+    _isPresented = isPresented
+  }
+
   var body: some View {
     HStack {
-      Button {} label: {
+      Button {
+        isPresented = true
+      } label: {
         Group {
           Image.gs25
             .resizable()
@@ -25,6 +34,12 @@ struct HomeProductDetailSelectionView: View {
         }
       }
       .accessibilityHint("더블 탭하여 편의점을 선택하세요")
+      .sheet(isPresented: $isPresented) {
+        ConvenienceSelectBottomSheetView<ViewModel>(isPresented: $isPresented)
+          .presentationDetents([.height(334)])
+          .presentationCornerRadius(20)
+          .presentationBackground(.regularMaterial)
+      }
 
       Spacer()
 
@@ -57,22 +72,20 @@ struct HomeProductDetailSelectionView: View {
   }
 }
 
-// MARK: HomeProductDetailSelectionView.Metrics
+// MARK: - Metrics
 
-private extension HomeProductDetailSelectionView {
-  enum Metrics {
-    static let buttonSpacing: CGFloat = 2
-    static let textHeight: CGFloat = 24
-    static let horizontal: CGFloat = 20
-    static let iconWidth: CGFloat = 8
-    static let iconHeight: CGFloat = 4
+private enum Metrics {
+  static let buttonSpacing: CGFloat = 2
+  static let textHeight: CGFloat = 24
+  static let horizontal: CGFloat = 20
+  static let iconWidth: CGFloat = 8
+  static let iconHeight: CGFloat = 4
 
-    static let promotionButtonPaddingTop: CGFloat = 4
-    static let promotionButtonPaddingLeading: CGFloat = 16
-    static let promotionButtonPaddingBottom: CGFloat = 4
-    static let promotionButtonPaddingTrailing: CGFloat = 10
-    static let promotionButtonCornerRadius: CGFloat = 16
+  static let promotionButtonPaddingTop: CGFloat = 4
+  static let promotionButtonPaddingLeading: CGFloat = 16
+  static let promotionButtonPaddingBottom: CGFloat = 4
+  static let promotionButtonPaddingTrailing: CGFloat = 10
+  static let promotionButtonCornerRadius: CGFloat = 16
 
-    static let height: CGFloat = 56
-  }
+  static let height: CGFloat = 56
 }
