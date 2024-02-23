@@ -23,8 +23,13 @@ struct AppRootComponent: HomeDependency {
 
   init() {
     let homeNetworking: Networking = {
-      let configuration = URLSessionConfiguration.ephemeral
-      configuration.protocolClasses = [HomeURLProtocol.self]
+      let configuration: URLSessionConfiguration
+      #if DEBUG
+        configuration = .ephemeral
+        configuration.protocolClasses = [HomeURLProtocol.self]
+      #else
+        configuration = .default
+      #endif
       let provider = NetworkProvider(session: URLSession(configuration: configuration))
       return provider
     }()

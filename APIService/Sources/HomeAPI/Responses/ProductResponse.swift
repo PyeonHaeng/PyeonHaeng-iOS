@@ -10,9 +10,25 @@ import Foundation
 
 // MARK: - ProductResponse
 
-struct ProductResponse: Decodable {
+struct ProductResponse: Decodable, Paginatable {
+  let count: Int
+  let hasMore: Bool
+
+  let results: [ProductItemResponse]
+
+  enum CodingKeys: String, CodingKey {
+    case count
+    case hasMore = "has_more"
+    case results
+  }
+}
+
+// MARK: - ProductItemResponse
+
+struct ProductItemResponse: Decodable {
   let id: Int
   let imageURL: URL
+  let date: Date
   let price: Int
   let name: String
   let promotion: Promotion
@@ -20,10 +36,11 @@ struct ProductResponse: Decodable {
 
   enum CodingKeys: String, CodingKey {
     case id
-    case imageURL = "image_url"
+    case imageURL = "img"
     case price
+    case date
     case name
-    case promotion
-    case convenienceStore
+    case promotion = "tag"
+    case convenienceStore = "store"
   }
 }
