@@ -36,7 +36,7 @@ struct HomeProductDetailSelectionView<ViewModel>: View where ViewModel: HomeView
       .accessibilityHint("더블 탭하여 편의점을 선택하세요")
       .sheet(isPresented: $isPresented) {
         ConvenienceSelectBottomSheetView<ViewModel>(isPresented: $isPresented)
-          .presentationDetents([.height(334)])
+          .presentationDetents([.height(Metrics.bottomSheetHeight)])
           .presentationCornerRadius(20)
           .presentationBackground(.regularMaterial)
       }
@@ -88,4 +88,5 @@ private enum Metrics {
   static let promotionButtonCornerRadius: CGFloat = 16
 
   static let height: CGFloat = 56
+  static let bottomSheetHeight: CGFloat = 334
 }
