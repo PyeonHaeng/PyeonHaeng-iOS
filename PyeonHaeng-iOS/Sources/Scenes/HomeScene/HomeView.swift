@@ -12,7 +12,6 @@ import SwiftUI
 
 struct HomeView<ViewModel>: View where ViewModel: HomeViewModelRepresentable {
   @StateObject private var viewModel: ViewModel
-  @State private var isPresented: Bool = false
 
   init(viewModel: @autoclosure @escaping () -> ViewModel) {
     _viewModel = .init(wrappedValue: viewModel())
@@ -21,7 +20,7 @@ struct HomeView<ViewModel>: View where ViewModel: HomeViewModelRepresentable {
   var body: some View {
     NavigationStack {
       VStack {
-        HomeProductDetailSelectionView<ViewModel>(isPresented: $isPresented)
+        HomeProductDetailSelectionView<ViewModel>()
         HomeProductSorterView<ViewModel>()
         HomeProductListView<ViewModel>()
       }

@@ -12,16 +12,12 @@ import SwiftUI
 
 struct HomeProductDetailSelectionView<ViewModel>: View where ViewModel: HomeViewModelRepresentable {
   @EnvironmentObject private var viewModel: ViewModel
-  @Binding private var isPresented: Bool
-
-  init(isPresented: Binding<Bool>) {
-    _isPresented = isPresented
-  }
+  @State private var convenienceStoreModalPresented: Bool = false
 
   var body: some View {
     HStack {
       Button {
-        isPresented = true
+        convenienceStoreModalPresented = true
       } label: {
         Group {
           Image.gs25
@@ -34,8 +30,8 @@ struct HomeProductDetailSelectionView<ViewModel>: View where ViewModel: HomeView
         }
       }
       .accessibilityHint("더블 탭하여 편의점을 선택하세요")
-      .sheet(isPresented: $isPresented) {
-        ConvenienceSelectBottomSheetView<ViewModel>(isPresented: $isPresented)
+      .sheet(isPresented: convenienceStoreModalPresented) {
+        ConvenienceSelectBottomSheetView<ViewModel>(isPresented: $convenienceStoreModalPresented)
           .presentationDetents([.height(Metrics.bottomSheetHeight)])
           .presentationCornerRadius(20)
           .presentationBackground(.regularMaterial)
