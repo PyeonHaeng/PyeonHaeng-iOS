@@ -17,6 +17,7 @@ enum HomeAction {
   case fetchProducts
   case fetchCount
   case changeOrder
+  case changeConvenienceStore(ConvenienceStore)
 }
 
 // MARK: - HomeState
@@ -79,6 +80,9 @@ final class HomeViewModel: HomeViewModelRepresentable {
       state.order = if state.order == .normal { .descending }
       else if state.order == .descending { .ascending }
       else { .normal }
+      trigger(.fetchProducts)
+    case let .changeConvenienceStore(store):
+      state.store = store
       trigger(.fetchProducts)
     }
   }
