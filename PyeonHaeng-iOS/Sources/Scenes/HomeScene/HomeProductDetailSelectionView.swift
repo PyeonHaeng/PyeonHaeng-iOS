@@ -30,8 +30,8 @@ struct HomeProductDetailSelectionView<ViewModel>: View where ViewModel: HomeView
         }
       }
       .accessibilityHint("더블 탭하여 편의점을 선택하세요")
-      .sheet(isPresented: convenienceStoreModalPresented) {
-        ConvenienceSelectBottomSheetView<ViewModel>(isPresented: $convenienceStoreModalPresented)
+      .sheet(isPresented: $convenienceStoreModalPresented) {
+        ConvenienceSelectBottomSheetView<ViewModel>()
           .presentationDetents([.height(Metrics.bottomSheetHeight)])
           .presentationCornerRadius(20)
           .presentationBackground(.regularMaterial)

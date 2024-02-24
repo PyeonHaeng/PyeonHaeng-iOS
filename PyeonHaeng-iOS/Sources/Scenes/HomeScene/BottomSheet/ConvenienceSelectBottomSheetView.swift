@@ -12,11 +12,7 @@ import SwiftUI
 
 struct ConvenienceSelectBottomSheetView<ViewModel>: View where ViewModel: HomeViewModelRepresentable {
   @EnvironmentObject private var viewModel: ViewModel
-  @Binding private var isPresented: Bool
-
-  init(isPresented: Binding<Bool>) {
-    _isPresented = isPresented
-  }
+  @Environment(\.dismiss) private var dismiss
 
   var body: some View {
     VStack(spacing: Metrics.itemSpacing) {
@@ -28,7 +24,7 @@ struct ConvenienceSelectBottomSheetView<ViewModel>: View where ViewModel: HomeVi
       ForEach(ConvenienceStore.allCases, id: \.self) { store in
         Button {
           viewModel.trigger(.changeConvenienceStore(store))
-          isPresented = false
+          dismiss()
         } label: {
           ConvenienceSelectItem(convenience: store)
             .frame(maxWidth: .infinity, minHeight: Metrics.itemHeight, alignment: .leading)
