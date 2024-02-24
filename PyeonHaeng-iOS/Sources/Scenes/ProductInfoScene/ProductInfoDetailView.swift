@@ -73,7 +73,7 @@ private struct DetailView: View {
     }
     .foregroundStyle(Color.gray900)
   }
-  
+
   func promotionTag(for promotion: Promotion) -> PromotionTag {
     switch promotion {
     case .allItems:
