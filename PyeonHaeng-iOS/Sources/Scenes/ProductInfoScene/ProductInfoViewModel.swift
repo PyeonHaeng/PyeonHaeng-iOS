@@ -20,18 +20,9 @@ enum ProductInfoAction {
 // MARK: - ProductInfoState
 
 struct ProductInfoState {
-  var product: ProductDetail = mockProduct
-  var previousProducts: [ProductDetail] = []
+  var product: DetailProduct = .init()
+  var previousProducts: [DetailProduct] = []
 }
-
-private let mockProduct = ProductDetail(
-  id: 0,
-  imageURL: nil,
-  price: 0,
-  name: "",
-  promotion: .allItems,
-  convenienceStore: ._7Eleven
-)
 
 // MARK: - ProductInfoViewModelRepresentable
 
@@ -76,6 +67,6 @@ final class ProductInfoViewModel: ProductInfoViewModelRepresentable {
   }
 
   private func fetchProductPrices() async throws {
-    try await state.previousProducts = service.fetchProductPrice()
+    try await state.previousProducts = service.fetchProductPrice().reversed()
   }
 }

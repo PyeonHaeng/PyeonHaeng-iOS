@@ -26,7 +26,7 @@ struct ProductInfoDetailView<ViewModel>: View where ViewModel: ProductInfoViewMo
 // MARK: - ImageView
 
 private struct ImageView: View {
-  let product: ProductDetail
+  let product: DetailProduct
 
   var body: some View {
     AsyncImage(url: product.imageURL) { image in
@@ -46,7 +46,7 @@ private struct ImageView: View {
 // MARK: - DetailView
 
 private struct DetailView: View {
-  let product: ProductDetail
+  let product: DetailProduct
 
   var body: some View {
     Text(product.name)

@@ -21,7 +21,7 @@ struct ProductInfoView<ViewModel>: View where ViewModel: ProductInfoViewModelRep
     NavigationStack {
       VStack {
         ProductInfoDetailView<ViewModel>()
-        ProductInfoLineGraphView(prices: [1150, 1300, 1400, 1200])
+        ProductInfoLineGraphView<ViewModel>()
         Spacer()
       }
       .environmentObject(viewModel)
