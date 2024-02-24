@@ -11,7 +11,7 @@ import SwiftUI
 public enum ConvenienceStore: String, Codable {
   case cu = "CU"
   case gs25 = "GS25"
-  case _7Eleven = "7-ElEVEN"
+  case _7Eleven = "7-ELEVEn"
   case emart24
   case ministop = "MINISTOP"
 }

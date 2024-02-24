@@ -9,6 +9,7 @@ import Combine
 import Entity
 import Foundation
 import HomeAPI
+import Log
 
 // MARK: - HomeAction
 
@@ -64,7 +65,11 @@ final class HomeViewModel: HomeViewModelRepresentable {
     switch action {
     case .fetchProducts:
       Task {
-        try await fetchProducts()
+        do {
+          try await fetchProducts()
+        } catch {
+          Log.make(with: .viewModel)?.error("\(String(describing: error))")
+        }
       }
     case .fetchCount:
       Task {
@@ -87,7 +92,9 @@ final class HomeViewModel: HomeViewModelRepresentable {
       pageSize: state.pageSize,
       offset: state.offset
     )
-    try await state.products = service.fetchProductList(request: request)
+
+    let paginatedModel = try await service.fetchProductList(request: request)
+    state.products = paginatedModel.results
   }
 
   private func fetchProductCounts() async throws {
