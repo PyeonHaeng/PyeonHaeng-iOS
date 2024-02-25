@@ -20,7 +20,7 @@ struct HomeView<ViewModel>: View where ViewModel: HomeViewModelRepresentable {
   var body: some View {
     NavigationStack {
       VStack {
-        HomeProductDetailSelectionView()
+        HomeProductDetailSelectionView<ViewModel>()
         HomeProductSorterView<ViewModel>()
         HomeProductListView<ViewModel>()
       }
