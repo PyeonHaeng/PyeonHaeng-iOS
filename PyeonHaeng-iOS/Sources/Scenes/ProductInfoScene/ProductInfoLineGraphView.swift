@@ -29,7 +29,7 @@ struct ProductInfoLineGraphView<ViewModel>: View where ViewModel: ProductInfoVie
   }
 
   // MARK: - View
-
+  
   var body: some View {
     GeometryReader { reader in
       VStack(spacing: Metrics.spacing) {
@@ -41,7 +41,7 @@ struct ProductInfoLineGraphView<ViewModel>: View where ViewModel: ProductInfoVie
         }
         .onChange(of: viewModel.state.previousProducts) { _, newProducts in
           frameSize = reader.size
-          getSymbolLocations(newProducts)
+          updateSymbolLocations(newProducts)
           offset = CGSize(
             width: symbolLocations[newProducts.count].x - (Metrics.panelWidth / 2),
             height: 0
@@ -85,7 +85,7 @@ private extension ProductInfoLineGraphView {
     locations.append(CGPoint(x: frameSize.width, y: Metrics.lineMaxHeightFromTop))
     symbolLocations = locations
   }
-
+  
   func viewDidDrag(_ value: DragGesture.Value) {
     let index = max(min(Int((
       value.location.x / interval).rounded() - 1
