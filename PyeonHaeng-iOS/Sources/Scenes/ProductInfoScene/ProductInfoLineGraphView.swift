@@ -6,138 +6,214 @@
 //
 
 import DesignSystem
+import Entity
+import Log
 import SwiftUI
 
 // MARK: - ProductInfoLineGraphView
 
-struct ProductInfoLineGraphView: View {
-  // MARK: - Properties
-
-  /// 임시데이터입니다. 이 데이터는 곧 편의점 상품 데이터로 교체됩니다.
-  @State var prices: [Int]
+struct ProductInfoLineGraphView<ViewModel>: View where ViewModel: ProductInfoViewModelRepresentable {
+  @EnvironmentObject private var viewModel: ViewModel
 
   @State private var offset: CGSize = .zero
-  @State private var isFirstRender: Bool = false
+  @State private var index: Int = 0
+  @State private var frameSize: CGSize = .zero
+  @State private var symbolLocations: [CGPoint] = []
+
+  private var interval: CGFloat {
+    frameSize.width / CGFloat(viewModel.state.previousProducts.count + 1)
+  }
+
+  private var previousDetailProductsCount: Int {
+    viewModel.state.previousProducts.count
+  }
 
   // MARK: - View
 
   var body: some View {
     GeometryReader { reader in
-      let size = reader.size
-      let interval = size.width / CGFloat(prices.count + 1)
-      let points = calculatePoints(interval: interval, width: size.width)
-
-      VStack(spacing: 4.0) {
-        Text("이전 행사 정보")
-          .font(.title1)
-          .foregroundStyle(.gray900)
-          .frame(maxWidth: .infinity, alignment: .leading)
+      VStack(spacing: Metrics.spacing) {
+        TextView()
         ZStack {
-          Path { $0.addLines(points) }
-            .stroke(.green500, style: StrokeStyle(lineWidth: 2.0))
-
-          Path { path in
-            for point in points.dropFirst().dropLast() {
-              var point = point
-              point.x -= Metrics.symbolWidth / 2
-              point.y -= Metrics.symbolWidth / 2
-              path.addEllipse(in: CGRect(
-                origin: point,
-                size: CGSize(width: Metrics.symbolWidth, height: Metrics.symbolWidth)
-              ))
-            }
-          }
-          .fill(.green500)
-          .stroke(.white, lineWidth: 1.0)
-
-          LinearGradient(
-            colors: [.green500.opacity(0.1), .clear],
-            startPoint: .top,
-            endPoint: .bottom
+          LineGraphView(locations: symbolLocations)
+          LineGraphSymbolView(locations: symbolLocations)
+          BackgroundGradientView(locations: symbolLocations, frameSize: frameSize)
+        }
+        .onChange(of: viewModel.state.previousProducts) { _, newProducts in
+          frameSize = reader.size
+          updateSymbolLocations(newProducts)
+          offset = CGSize(
+            width: symbolLocations[newProducts.count].x - (Metrics.panelWidth / 2),
+            height: 0
           )
-          .clipShape(
-            Path { path in
-              path.move(to: .zero)
-              path.addLines(points)
-              path.addLine(to: CGPoint(x: size.width, y: size.height))
-              path.addLine(to: CGPoint(x: .zero, y: size.height))
-            }
+          index = newProducts.count - 1
+        }
+        .gesture(DragGesture().onChanged { viewDidDrag($0) })
+        .overlay(alignment: .bottomLeading) {
+          LineGraphPanelView(
+            position: (offset, index),
+            products: viewModel.state.previousProducts
           )
         }
       }
-      .gesture(DragGesture().onChanged { value in
-        let index = max(min(Int((value.location.x / interval).rounded() - 1), prices.count - 1), 0)
-        offset = CGSize(width: points[index + 1].x - (Metrics.panelWidth / 2), height: 0)
-      })
-      .overlay(alignment: .bottomLeading) {
-        VStack(spacing: 0) {
-          Text(verbatim: "2023.11")
-            .font(.c4)
-            .foregroundStyle(.gray400)
-          Text(verbatim: "1,250원")
-            .font(.b1)
-            .foregroundStyle(.gray900)
-          Rectangle()
-            .foregroundStyle(.gray100)
-            .frame(width: 1.0, height: Metrics.panelPoleHeight)
-        }
-        .frame(width: Metrics.panelWidth, height: Metrics.panelHeight)
-        .offset(offset)
-      }
-      .onAppear {
-        isFirstRender = true
-      }
-      .onChange(of: isFirstRender) {
-        guard isFirstRender else { return }
-        if let lastPoint = points.dropLast().last {
-          offset = CGSize(width: lastPoint.x - (Metrics.panelWidth / 2), height: 0)
-        } else {
-          // TODO: 이전 행사 내역이 하나도 없을 때, UI를 숨길 것인지, 아니면 다른 조치 방법이 있는지?
-        }
-      }
+      .padding(EdgeInsets(
+        top: Metrics.paddingTop,
+        leading: .zero,
+        bottom: Metrics.paddingBottom,
+        trailing: .zero
+      ))
     }
-    .padding(EdgeInsets(top: 4.0, leading: .zero, bottom: 24.0, trailing: .zero))
     .frame(height: Metrics.frameHeight)
   }
 }
 
-// MARK: Helpers
-
 private extension ProductInfoLineGraphView {
-  func calculatePoints(interval: CGFloat, width: CGFloat) -> [CGPoint] {
-    var points = [CGPoint]()
-    points.append(CGPoint(x: .zero, y: Metrics.lineMaxHeightFromTop))
+  func updateSymbolLocations(_ products: [DetailProduct]) {
+    let prices = products.map(\.price)
+    var locations = [CGPoint]()
+    locations.append(CGPoint(x: .zero, y: Metrics.lineMaxHeightFromTop))
 
     if let maxPrice = prices.max(), maxPrice != 0 {
       for (index, price) in prices.enumerated() {
         let heightFactor = 1 - (CGFloat(price) / CGFloat(maxPrice))
         let pathHeight = Metrics.lineMaxHeightFromTop + Metrics.lineMaxHeightFromBottom * heightFactor
         let pathWidth = interval * CGFloat(index + 1)
-        points.append(CGPoint(x: pathWidth, y: pathHeight))
+        locations.append(CGPoint(x: pathWidth, y: pathHeight))
       }
     }
 
-    points.append(CGPoint(x: width, y: Metrics.lineMaxHeightFromTop))
-    return points
+    locations.append(CGPoint(x: frameSize.width, y: Metrics.lineMaxHeightFromTop))
+    symbolLocations = locations
+  }
+
+  func viewDidDrag(_ value: DragGesture.Value) {
+    let index = max(min(Int((
+      value.location.x / interval).rounded() - 1
+    ), previousDetailProductsCount - 1), 0)
+    self.index = index
+    offset = CGSize(width: symbolLocations[index + 1].x - (Metrics.panelWidth / 2), height: 0)
   }
 }
 
-// MARK: ProductInfoLineGraphView.Metrics
+// MARK: - TextView
 
-private extension ProductInfoLineGraphView {
-  enum Metrics {
-    static let lineMaxHeightFromTop: CGFloat = 87.0
-    static let lineMaxHeightFromBottom: CGFloat = lineGraphHeight - lineMaxHeightFromTop
-    static let symbolWidth: CGFloat = 4.0
-    static let frameHeight: CGFloat = 226.0
-    static let lineGraphHeight: CGFloat = 162.0
-
-    static let panelWidth: CGFloat = 55.0
-    static let panelHeight: CGFloat = 162.0
-    static let panelPoleHeight: CGFloat = 122.0
+private struct TextView: View {
+  var body: some View {
+    Text("이전 행사 정보")
+      .font(.title1)
+      .foregroundStyle(.gray900)
+      .frame(maxWidth: .infinity, alignment: .leading)
   }
 }
 
-#Preview(traits: .sizeThatFitsLayout) {
-  ProductInfoLineGraphView(prices: [1, 2])
+// MARK: - LineGraphView
+
+private struct LineGraphView: View {
+  let locations: [CGPoint]
+
+  var body: some View {
+    Path { $0.addLines(locations) }
+      .stroke(.green500, style: StrokeStyle(lineWidth: 2.0))
+  }
+}
+
+// MARK: - LineGraphSymbolView
+
+private struct LineGraphSymbolView: View {
+  let locations: [CGPoint]
+
+  var body: some View {
+    Path { path in
+      for point in locations.dropFirst().dropLast() {
+        var point = point
+        point.x -= Metrics.symbolWidth / 2
+        point.y -= Metrics.symbolWidth / 2
+        path.addEllipse(in: CGRect(
+          origin: point,
+          size: CGSize(width: Metrics.symbolWidth, height: Metrics.symbolWidth)
+        ))
+      }
+    }
+    .fill(.green500)
+    .stroke(.white, lineWidth: 1.0)
+  }
+}
+
+// MARK: - LineGraphPanelView
+
+private struct LineGraphPanelView: View {
+  let position: (offset: CGSize, index: Int)
+  let product: DetailProduct
+
+  init(
+    position: (offset: CGSize, index: Int),
+    products: [DetailProduct]
+  ) {
+    self.position = position
+    product = products[position.index]
+  }
+
+  var body: some View {
+    VStack(spacing: .zero) {
+      Text(verbatim: "\(formatted(product.date))")
+        .font(.c4)
+        .foregroundStyle(.gray400)
+      Text("\((product.price / 2).formatted())원")
+        .font(.b1)
+        .foregroundStyle(.gray900)
+      Rectangle()
+        .foregroundStyle(.gray100)
+        .frame(width: 1.0, height: Metrics.panelPoleHeight)
+    }
+    .frame(width: Metrics.panelWidth, height: Metrics.panelHeight)
+    .offset(position.offset)
+  }
+
+  func formatted(_ date: Date) -> String {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy.MM"
+    return formatter.string(from: date)
+  }
+}
+
+// MARK: - BackgroundGradientView
+
+private struct BackgroundGradientView: View {
+  let locations: [CGPoint]
+  let frameSize: CGSize
+
+  var body: some View {
+    LinearGradient(
+      colors: [.green500.opacity(0.1), .clear],
+      startPoint: .top,
+      endPoint: .bottom
+    )
+    .clipShape(
+      Path { path in
+        path.move(to: .zero)
+        path.addLines(locations)
+        path.addLine(to: CGPoint(x: frameSize.width, y: frameSize.height))
+        path.addLine(to: CGPoint(x: .zero, y: frameSize.height))
+      }
+    )
+  }
+}
+
+// MARK: - Metrics
+
+private enum Metrics {
+  static let spacing: CGFloat = 4.0
+
+  static let paddingTop = 4.0
+  static let paddingBottom = 24.0
+
+  static let lineMaxHeightFromTop: CGFloat = 87.0
+  static let lineMaxHeightFromBottom: CGFloat = lineGraphHeight - lineMaxHeightFromTop
+  static let symbolWidth: CGFloat = 4.0
+  static let frameHeight: CGFloat = 226.0
+  static let lineGraphHeight: CGFloat = 162.0
+
+  static let panelWidth: CGFloat = 60.0
+  static let panelHeight: CGFloat = 162.0
+  static let panelPoleHeight: CGFloat = 122.0
 }
