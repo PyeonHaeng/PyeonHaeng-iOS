@@ -68,7 +68,7 @@ struct ProductInfoLineGraphView<ViewModel>: View where ViewModel: ProductInfoVie
 }
 
 private extension ProductInfoLineGraphView {
-  func getSymbolLocations(_ products: [DetailProduct]) {
+  func updateSymbolLocations(_ products: [DetailProduct]) {
     let prices = products.map(\.price)
     var locations = [CGPoint]()
     locations.append(CGPoint(x: .zero, y: Metrics.lineMaxHeightFromTop))
