@@ -12,7 +12,7 @@ import Network
 // MARK: - HomeServiceRepresentable
 
 public protocol HomeServiceRepresentable {
-  func fetchProductList(request: ProductRequest) async throws -> [Product]
+  func fetchProductList(request: ProductRequest) async throws -> Paginated<Product>
   func fetchProductCount(request: ProductCountRequest) async throws -> Int
 }
 
@@ -29,9 +29,9 @@ public struct HomeService {
 // MARK: HomeServiceRepresentable
 
 extension HomeService: HomeServiceRepresentable {
-  public func fetchProductList(request: ProductRequest) async throws -> [Product] {
-    let products: [ProductResponse] = try await network.request(with: HomeEndPoint.fetchProducts(request))
-    return products.map(Product.init)
+  public func fetchProductList(request: ProductRequest) async throws -> Paginated<Product> {
+    let response: ProductResponse = try await network.request(with: HomeEndPoint.fetchProducts(request))
+    return Paginated<Product>(dto: response)
   }
 
   public func fetchProductCount(request: ProductCountRequest) async throws -> Int {
@@ -40,8 +40,18 @@ extension HomeService: HomeServiceRepresentable {
   }
 }
 
-private extension Product {
+private extension Paginated where Model == Product {
   init(dto: ProductResponse) {
+    self.init(
+      count: dto.count,
+      hasMore: dto.hasMore,
+      results: dto.results.map(Product.init)
+    )
+  }
+}
+
+private extension Product {
+  init(dto: ProductItemResponse) {
     self.init(
       id: dto.id,
       imageURL: dto.imageURL,
