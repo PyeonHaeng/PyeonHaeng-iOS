@@ -177,15 +177,10 @@ private struct LineGraphPanelView: View {
     .opacity(isHidden ? 0 : 1)
   }
 
-  func formatted(_ dateString: String) -> String {
-    var returnString = ""
+  func formatted(_ date: Date) -> String {
     let formatter = DateFormatter()
-    formatter.dateFormat = "yyyy-MM-dd"
-    if let date = formatter.date(from: dateString) {
-      formatter.dateFormat = "yyyy.MM"
-      returnString = formatter.string(from: date)
-    }
-    return returnString
+    formatter.dateFormat = "yyyy.MM"
+    return formatter.string(from: date)
   }
 }
 

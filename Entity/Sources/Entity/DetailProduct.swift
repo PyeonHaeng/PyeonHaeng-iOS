@@ -28,7 +28,7 @@ public struct DetailProduct: Identifiable, Equatable {
   public let convenienceStore: ConvenienceStore
 
   /// 날짜
-  public let date: String
+  public let date: Date
 
   // TODO: 카테고리 상수 추가하기
 
@@ -39,7 +39,7 @@ public struct DetailProduct: Identifiable, Equatable {
     name: String,
     promotion: Promotion,
     convenienceStore: ConvenienceStore,
-    date: String
+    date: Date
   ) {
     self.id = id
     self.imageURL = imageURL
@@ -57,6 +57,6 @@ public struct DetailProduct: Identifiable, Equatable {
     name = ""
     promotion = .buyOneGetOneFree
     convenienceStore = ._7Eleven
-    date = ""
+    date = .distantPast
   }
 }

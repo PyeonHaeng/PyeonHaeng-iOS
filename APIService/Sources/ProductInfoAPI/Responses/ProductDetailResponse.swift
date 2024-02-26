@@ -15,6 +15,6 @@ struct ProductDetailResponse: Decodable {
   let store: ConvenienceStore
   let tag: Promotion
   let proinfo: Int
-  let date: String
+  let date: Date
   let id: Int
 }
