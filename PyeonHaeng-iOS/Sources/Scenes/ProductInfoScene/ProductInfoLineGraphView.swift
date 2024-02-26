@@ -29,7 +29,7 @@ struct ProductInfoLineGraphView<ViewModel>: View where ViewModel: ProductInfoVie
   }
 
   // MARK: - View
-  
+
   var body: some View {
     GeometryReader { reader in
       VStack(spacing: Metrics.spacing) {
@@ -85,7 +85,7 @@ private extension ProductInfoLineGraphView {
     locations.append(CGPoint(x: frameSize.width, y: Metrics.lineMaxHeightFromTop))
     symbolLocations = locations
   }
-  
+
   func viewDidDrag(_ value: DragGesture.Value) {
     let index = max(min(Int((
       value.location.x / interval).rounded() - 1
@@ -144,20 +144,13 @@ private struct LineGraphSymbolView: View {
 private struct LineGraphPanelView: View {
   let position: (offset: CGSize, index: Int)
   let product: DetailProduct
-  let isHidden: Bool
 
   init(
     position: (offset: CGSize, index: Int),
     products: [DetailProduct]
   ) {
     self.position = position
-    if products.isEmpty {
-      isHidden = true
-      product = .init()
-    } else {
-      isHidden = false
-      product = products[position.index]
-    }
+    product = products[position.index]
   }
 
   var body: some View {
@@ -174,7 +167,6 @@ private struct LineGraphPanelView: View {
     }
     .frame(width: Metrics.panelWidth, height: Metrics.panelHeight)
     .offset(position.offset)
-    .opacity(isHidden ? 0 : 1)
   }
 
   func formatted(_ date: Date) -> String {

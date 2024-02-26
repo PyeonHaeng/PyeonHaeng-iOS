@@ -20,9 +20,19 @@ enum ProductInfoAction {
 // MARK: - ProductInfoState
 
 struct ProductInfoState {
-  var product: DetailProduct = .init()
+  var product: DetailProduct = mockProduct
   var previousProducts: [DetailProduct] = []
 }
+
+private let mockProduct = DetailProduct(
+  id: 0,
+  imageURL: nil,
+  price: 0,
+  name: "",
+  promotion: .buyOneGetOneFree,
+  convenienceStore: ._7Eleven,
+  date: .distantPast
+)
 
 // MARK: - ProductInfoViewModelRepresentable
 

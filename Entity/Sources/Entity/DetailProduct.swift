@@ -49,14 +49,4 @@ public struct DetailProduct: Identifiable, Equatable {
     self.convenienceStore = convenienceStore
     self.date = date
   }
-
-  public init() {
-    id = 0
-    imageURL = nil
-    price = 0
-    name = ""
-    promotion = .buyOneGetOneFree
-    convenienceStore = ._7Eleven
-    date = .distantPast
-  }
 }
