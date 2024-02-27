@@ -260,6 +260,29 @@
         }
       }
     },
+    "건너뛰기" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skip"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "スキップ"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "건너뛰기"
+          }
+        }
+      }
+    },
     "검색" : {
       "localizations" : {
         "en" : {
@@ -346,6 +369,52 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "내림차순 정렬"
+          }
+        }
+      }
+    },
+    "다양한 편의점의 1+1, 2+1 행사 제품 정보로\n알뜰하고 합리적으로 소비할수 있어요." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save money and shop wisely with various convenience store promotions such as 1+1, 2+1 offers."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1+1、2+1などの様々なコンビニエンスストアのプロモーションでお得に買い物をしましょう。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "다양한 편의점의 1+1, 2+1 행사 제품 정보로\n알뜰하고 합리적으로 소비할수 있어요."
+          }
+        }
+      }
+    },
+    "다음" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Next"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "次へ"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "다음"
           }
         }
       }
@@ -482,6 +551,29 @@
         }
       }
     },
+    "수많은 혜택을 한곳에서" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Find numerous benefits in one place"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "たくさんの特典を1か所で見つけてください"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "수많은 혜택을 한곳에서"
+          }
+        }
+      }
+    },
     "오름차순 정렬" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -614,6 +706,52 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "편의점 브랜드 선택"
+          }
+        }
+      }
+    },
+    "편행 시작하기" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start PyeonHaeng"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ピョンヘン・スタート"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "편행 시작하기"
+          }
+        }
+      }
+    },
+    "하나사면 하나 더" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buy one, get one free"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1つ購入すると1つ無料"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "하나 사면 하나 더"
           }
         }
       }
