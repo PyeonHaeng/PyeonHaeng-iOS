@@ -306,28 +306,6 @@
         }
       }
     },
-    "이전 행사 정보" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Previous Promotions"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "過去のプロモーション"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "이전 행사 정보"
-          }
-        }
-      }
-    },
     "오름차순 정렬" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -347,6 +325,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "오름차순 정렬"
+          }
+        }
+      }
+    },
+    "이전 행사 정보" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Previous Promotions"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "過去のプロモーション"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "이전 행사 정보"
           }
         }
       }
