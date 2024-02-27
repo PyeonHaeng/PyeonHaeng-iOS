@@ -1,19 +1,19 @@
 //
-//  Product.swift
+//  DetailProduct.swift
 //
 //
-//  Created by 홍승현 on 1/31/24.
+//  Created by 김응철 on 2/6/24.
 //
 
 import Foundation
 
-/// 편의점 행사 제품 리스트에 대한 Entity Model입니다.
-public struct Product: Identifiable {
+/// 편의점 행사 제품에 대한 Entity Model입니다.
+public struct DetailProduct: Identifiable, Equatable {
   /// 제품 고유 Identifier
   public let id: Int
 
   /// 이미지 URL
-  public let imageURL: URL
+  public let imageURL: URL?
 
   /// 제품 가격
   public let price: Int
@@ -27,13 +27,19 @@ public struct Product: Identifiable {
   /// 편의점
   public let convenienceStore: ConvenienceStore
 
+  /// 날짜
+  public let date: Date
+
+  // TODO: 카테고리 상수 추가하기
+
   public init(
     id: Int,
-    imageURL: URL,
+    imageURL: URL?,
     price: Int,
     name: String,
     promotion: Promotion,
-    convenienceStore: ConvenienceStore
+    convenienceStore: ConvenienceStore,
+    date: Date
   ) {
     self.id = id
     self.imageURL = imageURL
@@ -41,5 +47,6 @@ public struct Product: Identifiable {
     self.name = name
     self.promotion = promotion
     self.convenienceStore = convenienceStore
+    self.date = date
   }
 }

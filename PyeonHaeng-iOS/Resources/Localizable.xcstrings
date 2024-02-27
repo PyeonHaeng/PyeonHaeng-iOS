@@ -39,6 +39,86 @@
         }
       }
     },
+    "7-Eleven" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "7-Eleven"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "세븐일레븐"
+          }
+        }
+      }
+    },
+    "CU" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CU"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "씨유"
+          }
+        }
+      }
+    },
+    "Emart 24" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Emart 24"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "이마트 24"
+          }
+        }
+      }
+    },
+    "GS25" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GS25"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "지에스 25"
+          }
+        }
+      }
+    },
+    "Ministop" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ministop"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "미니스톱"
+          }
+        }
+      }
+    },
     "개당" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -106,6 +186,29 @@
         }
       }
     },
+    "기본 정렬" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "General Sorting"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "般的な並び替え"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "기본 정렬"
+          }
+        }
+      }
+    },
     "기존 가격" : {
       "localizations" : {
         "en" : {
@@ -124,6 +227,29 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "기존 가격"
+          }
+        }
+      }
+    },
+    "내림차순 정렬" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descending Sorting"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "降順並び替え"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "내림차순 정렬"
           }
         }
       }
@@ -260,6 +386,29 @@
         }
       }
     },
+    "오름차순 정렬" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ascending Sorting"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "昇順並び替え"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "오름차순 정렬"
+          }
+        }
+      }
+    },
     "이전 행사 정보" : {
       "localizations" : {
         "en" : {
@@ -278,28 +427,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "이전 행사 정보"
-          }
-        }
-      }
-    },
-    "정렬" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sort"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "並び替え"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "정렬"
           }
         }
       }
@@ -369,6 +496,28 @@
                 }
               }
             }
+          }
+        }
+      }
+    },
+    "편의점 브랜드 선택" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose Store Brand"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "コンビニのブランドを選ぶ"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "편의점 브랜드 선택"
           }
         }
       }
