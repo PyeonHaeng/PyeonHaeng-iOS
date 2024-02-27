@@ -10,21 +10,21 @@ import SwiftUI
 
 // MARK: - SettingsItem
 
-private enum SettingsItem: String, CaseIterable {
-  case alarm = "알림"
-  case notice = "공지사항"
-  case inquiry = "문의하기"
-  case leaveReview = "리뷰 남기기"
-  case versionInfo = "버전 정보"
-  case credits = "만든 사람들"
+private enum SettingsItem: LocalizedStringKey, CaseIterable {
+  case notifications = "Notifications"
+  case announcements = "Announcements"
+  case contacts = "Contact Us"
+  case leaveReview = "Leave a Review"
+  case versionInfo = "Version Info"
+  case credits = "Credits"
 
   var iconName: Image {
     switch self {
-    case .alarm:
+    case .notifications:
       .bell
-    case .notice:
+    case .announcements:
       .speaker
-    case .inquiry:
+    case .contacts:
       .notePencil
     case .leaveReview:
       .appstore
@@ -43,7 +43,7 @@ struct SettingsView: View {
     List {
       ForEach(SettingsItem.allCases, id: \.self) { item in
         switch item {
-        case .alarm:
+        case .notifications:
           // TODO: 알림 설정 추가해야 합니다.
           Toggle(isOn: .constant(false)) {
             HStack {
