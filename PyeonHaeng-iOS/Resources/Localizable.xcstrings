@@ -676,7 +676,30 @@
           }
         }
       }
-    }
+    },
+    "세븐일레븐, CU, 이마트 24, GS 25, 미니스톱의\n수많은 행사정보를 ‘편행’한곳에서 만나보세요." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Explore abundant promotional information from 7-Eleven, CU, Emart 24, GS 25, and Ministop in one place."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "7-Eleven、CU、Emart 24、GS 25、Ministopの多くのプロモーション情報を1か所でご覧ください。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "세븐일레븐, CU, 이마트 24, GS 25, 미니스톱의\n수많은 행사정보를 ‘편행’한곳에서 만나보세요."
+          }
+        }
+      }
+    },
+
   },
   "version" : "1.0"
 }
