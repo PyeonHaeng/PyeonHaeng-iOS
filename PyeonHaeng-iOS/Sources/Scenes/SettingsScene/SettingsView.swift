@@ -10,7 +10,7 @@ import SwiftUI
 
 // MARK: - SettingsItem
 
-private enum SettingsItem: String, CaseIterable {
+private enum SettingsItem: LocalizedStringKey, CaseIterable {
   case notifications = "Notifications"
   case announcements = "Announcements"
   case contacts = "Contact Us"
