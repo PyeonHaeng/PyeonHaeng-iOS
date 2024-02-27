@@ -20,8 +20,8 @@ struct ProductInfoView<ViewModel>: View where ViewModel: ProductInfoViewModelRep
   var body: some View {
     NavigationStack {
       VStack {
-        ProductInfoHeader<ViewModel>()
-        ProductInfoLineGraphView(prices: [1150, 1300, 1400, 1200])
+        ProductInfoDetailView<ViewModel>()
+        ProductInfoLineGraphView<ViewModel>()
         Spacer()
       }
       .environmentObject(viewModel)

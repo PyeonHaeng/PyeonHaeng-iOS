@@ -30,6 +30,7 @@
 		BA28F1A42B61572A0052855E /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA28F19A2B61572A0052855E /* Pretendard-ExtraBold.otf */; };
 		BA28F1A52B61572A0052855E /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA28F19B2B61572A0052855E /* Pretendard-Light.otf */; };
 		BA28F1A62B61572A0052855E /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA28F19C2B61572A0052855E /* Pretendard-Black.otf */; };
+		BA402F7E2B85E31800E86AAD /* ConvenienceSelectBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA402F7D2B85E31800E86AAD /* ConvenienceSelectBottomSheetView.swift */; };
 		BA4EA3602B6A37E10003DCE7 /* Entity in Frameworks */ = {isa = PBXBuildFile; productRef = BA4EA35F2B6A37E10003DCE7 /* Entity */; };
 		BAA4D9AD2B5A1795005999F8 /* PyeonHaengApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA4D9AC2B5A1795005999F8 /* PyeonHaengApp.swift */; };
 		BAA4D9AF2B5A1795005999F8 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA4D9AE2B5A1795005999F8 /* SplashView.swift */; };
@@ -48,7 +49,7 @@
 		E57F2AA42B7717EA00E12B3D /* ProductInfoAPI in Frameworks */ = {isa = PBXBuildFile; productRef = E57F2AA32B7717EA00E12B3D /* ProductInfoAPI */; settings = {ATTRIBUTES = (Required, ); }; };
 		E57F2AA62B7717EA00E12B3D /* ProductInfoAPISupport in Frameworks */ = {isa = PBXBuildFile; productRef = E57F2AA52B7717EA00E12B3D /* ProductInfoAPISupport */; };
 		E57F2AA82B774CA700E12B3D /* ProductInfoDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57F2AA72B774CA700E12B3D /* ProductInfoDependency.swift */; };
-		E5F2EC402B637D4A00EE0838 /* ProductInfoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F2EC3F2B637D4A00EE0838 /* ProductInfoHeader.swift */; };
+		E5F2EC402B637D4A00EE0838 /* ProductInfoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F2EC3F2B637D4A00EE0838 /* ProductInfoDetailView.swift */; };
 		E5F2EC432B648F5B00EE0838 /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F2EC422B648F5B00EE0838 /* Int+.swift */; };
 		E5F2EC452B64926100EE0838 /* PromotionTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F2EC442B64926100EE0838 /* PromotionTagView.swift */; };
 /* End PBXBuildFile section */
@@ -87,6 +88,7 @@
 		BA28F19B2B61572A0052855E /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
 		BA28F19C2B61572A0052855E /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
 		BA28F1A72B6157E90052855E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA402F7D2B85E31800E86AAD /* ConvenienceSelectBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvenienceSelectBottomSheetView.swift; sourceTree = "<group>"; };
 		BA4EA35A2B6A00F70003DCE7 /* Entity */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Entity; sourceTree = "<group>"; };
 		BAA4D9A92B5A1795005999F8 /* PyeonHaeng-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PyeonHaeng-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAA4D9AC2B5A1795005999F8 /* PyeonHaengApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PyeonHaengApp.swift; sourceTree = "<group>"; };
@@ -104,7 +106,7 @@
 		E50584522B763C8C002FDACF /* ProductInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoViewModel.swift; sourceTree = "<group>"; };
 		E5462C652B65677B00E9FDF2 /* PromotionTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionTag.swift; sourceTree = "<group>"; };
 		E57F2AA72B774CA700E12B3D /* ProductInfoDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoDependency.swift; sourceTree = "<group>"; };
-		E5F2EC3F2B637D4A00EE0838 /* ProductInfoHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoHeader.swift; sourceTree = "<group>"; };
+		E5F2EC3F2B637D4A00EE0838 /* ProductInfoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoDetailView.swift; sourceTree = "<group>"; };
 		E5F2EC422B648F5B00EE0838 /* Int+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
 		E5F2EC442B64926100EE0838 /* PromotionTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionTagView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -218,6 +220,7 @@
 		BA28F1862B61558C0052855E /* HomeScene */ = {
 			isa = PBXGroup;
 			children = (
+				BA402F7C2B85E2DE00E86AAD /* BottomSheet */,
 				BA28F1872B6155910052855E /* HomeView.swift */,
 				BAB5CF262B6B7CF3008B24BF /* HomeViewModel.swift */,
 				BAE159D72B65FA6F002DCF94 /* HomeProductDetailSelectionView.swift */,
@@ -233,7 +236,7 @@
 				E57F2AA72B774CA700E12B3D /* ProductInfoDependency.swift */,
 				BA28F18A2B6155BD0052855E /* ProductInfoView.swift */,
 				E50584522B763C8C002FDACF /* ProductInfoViewModel.swift */,
-				E5F2EC3F2B637D4A00EE0838 /* ProductInfoHeader.swift */,
+				E5F2EC3F2B637D4A00EE0838 /* ProductInfoDetailView.swift */,
 				E50176252B6A204F0098D1BE /* ProductInfoLineGraphView.swift */,
 			);
 			path = ProductInfoScene;
@@ -269,6 +272,14 @@
 				BA28F1972B61572A0052855E /* Pretendard-Thin.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		BA402F7C2B85E2DE00E86AAD /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				BA402F7D2B85E31800E86AAD /* ConvenienceSelectBottomSheetView.swift */,
+			);
+			path = BottomSheet;
 			sourceTree = "<group>";
 		};
 		BAA4D9A02B5A1795005999F8 = {
@@ -504,7 +515,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAE159DA2B65FC35002DCF94 /* HomeProductListView.swift in Sources */,
+				E5F2EC402B637D4A00EE0838 /* ProductInfoDetailView.swift in Sources */,
 				E5F2EC402B637D4A00EE0838 /* ProductInfoHeader.swift in Sources */,
+				BA402F7E2B85E31800E86AAD /* ConvenienceSelectBottomSheetView.swift in Sources */,
 				BA28F1852B6155810052855E /* OnboardingView.swift in Sources */,
 				BAB5CF272B6B7CF3008B24BF /* HomeViewModel.swift in Sources */,
 				BA28F1882B6155910052855E /* HomeView.swift in Sources */,
