@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C1E33D42B8DC487003A6606 /* ProductInfoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F2EC3F2B637D4A00EE0838 /* ProductInfoDetailView.swift */; };
 		9CE4B4712B6F0B57002DC446 /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE4B4702B6F0B57002DC446 /* OnboardingPage.swift */; };
 		9CE4B4732B6F0BA3002DC446 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE4B4722B6F0BA3002DC446 /* OnboardingViewModel.swift */; };
 		9CE4B4752B6F78E8002DC446 /* OnboardingPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE4B4742B6F78E8002DC446 /* OnboardingPageControl.swift */; };
@@ -49,7 +50,6 @@
 		E57F2AA42B7717EA00E12B3D /* ProductInfoAPI in Frameworks */ = {isa = PBXBuildFile; productRef = E57F2AA32B7717EA00E12B3D /* ProductInfoAPI */; settings = {ATTRIBUTES = (Required, ); }; };
 		E57F2AA62B7717EA00E12B3D /* ProductInfoAPISupport in Frameworks */ = {isa = PBXBuildFile; productRef = E57F2AA52B7717EA00E12B3D /* ProductInfoAPISupport */; };
 		E57F2AA82B774CA700E12B3D /* ProductInfoDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57F2AA72B774CA700E12B3D /* ProductInfoDependency.swift */; };
-		E5F2EC402B637D4A00EE0838 /* ProductInfoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F2EC3F2B637D4A00EE0838 /* ProductInfoDetailView.swift */; };
 		E5F2EC432B648F5B00EE0838 /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F2EC422B648F5B00EE0838 /* Int+.swift */; };
 		E5F2EC452B64926100EE0838 /* PromotionTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F2EC442B64926100EE0838 /* PromotionTagView.swift */; };
 /* End PBXBuildFile section */
@@ -514,9 +514,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C1E33D42B8DC487003A6606 /* ProductInfoDetailView.swift in Sources */,
 				BAE159DA2B65FC35002DCF94 /* HomeProductListView.swift in Sources */,
-				E5F2EC402B637D4A00EE0838 /* ProductInfoDetailView.swift in Sources */,
-				E5F2EC402B637D4A00EE0838 /* ProductInfoHeader.swift in Sources */,
 				BA402F7E2B85E31800E86AAD /* ConvenienceSelectBottomSheetView.swift in Sources */,
 				BA28F1852B6155810052855E /* OnboardingView.swift in Sources */,
 				BAB5CF272B6B7CF3008B24BF /* HomeViewModel.swift in Sources */,
