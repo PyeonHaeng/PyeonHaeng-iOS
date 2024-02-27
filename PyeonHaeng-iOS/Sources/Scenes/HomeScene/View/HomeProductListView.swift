@@ -15,9 +15,13 @@ struct HomeProductListView<ViewModel>: View where ViewModel: HomeViewModelRepres
   @EnvironmentObject var viewModel: ViewModel
 
   var body: some View {
-    List(viewModel.state.products) { item in
-      ProductRow(product: item)
-        .listRowInsets(.init())
+    List {
+      ForEach(viewModel.state.products) { item in
+        ProductRow(product: item)
+          .listRowInsets(.init())
+      }
+      ProgressView()
+        .progressViewStyle(.circular)
     }
     .listStyle(.plain)
     .scrollIndicators(.hidden)
@@ -116,4 +120,8 @@ private struct PriceView: View {
       .foregroundStyle(.gray900)
     }
   }
+}
+
+#Preview {
+  HomeView(viewModel: HomeViewModel(service: AppRootComponent().homeService))
 }
