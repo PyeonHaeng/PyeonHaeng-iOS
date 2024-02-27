@@ -71,6 +71,8 @@ public extension Image {
   static let mapFill: Image = .init(.mapFill)
   static let map: Image = .init(.map)
 
+  static let notePencil: Image = .init(.notepencil)
+
   static let scopeFill: Image = .init(.scopeFill)
   static let scope: Image = .init(.scope)
   static let speakerFill: Image = .init(.speakerFill)

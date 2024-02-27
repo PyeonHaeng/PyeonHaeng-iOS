@@ -5,11 +5,88 @@
 //  Created by 홍승현 on 1/24/24.
 //
 
+import DesignSystem
 import SwiftUI
+
+// MARK: - SettingsItem
+
+private enum SettingsItem: LocalizedStringKey, CaseIterable {
+  case notifications = "Notifications"
+  case announcements = "Announcements"
+  case contacts = "Contact Us"
+  case leaveReview = "Leave a Review"
+  case versionInfo = "Version Info"
+  case credits = "Credits"
+
+  var iconName: Image {
+    switch self {
+    case .notifications:
+      .bell
+    case .announcements:
+      .speaker
+    case .contacts:
+      .notePencil
+    case .leaveReview:
+      .appstore
+    case .versionInfo:
+      .infoCircle
+    case .credits:
+      .faceWinking
+    }
+  }
+}
+
+// MARK: - SettingsView
 
 struct SettingsView: View {
   var body: some View {
-    Text("")
+    List {
+      ForEach(SettingsItem.allCases, id: \.self) { item in
+        switch item {
+        case .notifications:
+          // TODO: 알림 설정 추가해야 합니다.
+          Toggle(isOn: .constant(false)) {
+            HStack {
+              item.iconName
+              Text(item.rawValue)
+            }
+          }
+
+        case .versionInfo:
+          HStack {
+            item.iconName
+            Text(item.rawValue)
+            Spacer()
+            Text(verbatim: "v2.0.0")
+              .font(.c2)
+          }
+
+        default:
+          HStack {
+            NavigationLink {} label: {
+              item.iconName
+              Text(item.rawValue)
+            }
+          }
+        }
+      }
+      .frame(height: Metrics.itemHeight)
+      .padding(.vertical, Metrics.itemVerticalPadding)
+      .listRowSeparator(.hidden)
+    }
+    .listStyle(.plain)
+    .scrollDisabled(true)
+    .navigationTitle("설정")
+    .navigationBarTitleDisplayMode(.inline)
+  }
+}
+
+// MARK: SettingsView.Metrics
+
+private extension SettingsView {
+  enum Metrics {
+    static let itemHeight: CGFloat = 56
+    static let itemVerticalPadding: CGFloat = 4
   }
 }
 
