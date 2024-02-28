@@ -20,8 +20,18 @@ struct HomeProductListView<ViewModel>: View where ViewModel: HomeViewModelRepres
         ProductRow(product: item)
           .listRowInsets(.init())
       }
-      ProgressView()
-        .progressViewStyle(.circular)
+      switch viewModel.state.productConfiguration.loadingState {
+      case .idle,
+           .isLoading:
+        ProgressView()
+          .progressViewStyle(.circular)
+          .frame(maxWidth: .infinity)
+          .onAppear {
+            viewModel.trigger(.loadMoreProducts)
+          }
+      case .loadedAll:
+        EmptyView()
+      }
     }
     .listStyle(.plain)
     .scrollIndicators(.hidden)

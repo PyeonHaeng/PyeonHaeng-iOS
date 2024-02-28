@@ -15,6 +15,7 @@ import Log
 
 enum HomeAction {
   case fetchProducts
+  case loadMoreProducts
   case fetchCount
   case changeOrder
   case changeConvenienceStore(ConvenienceStore)
@@ -67,30 +68,49 @@ final class HomeViewModel: HomeViewModelRepresentable {
   // MARK: Helper Methods
 
   private func render(as action: HomeAction) {
-    switch action {
-    case .fetchProducts:
+    // 비동기 함수를 실행합니다. 만약 오류가 발생하면 Log로 값을 확인할 수 있습니다.
+    func performAsyncAction(_ action: @escaping () async throws -> Void) {
       Task {
         do {
-          try await fetchProducts()
+          try await action()
         } catch {
           Log.make(with: .viewModel)?.error("\(String(describing: error))")
         }
       }
-    case .fetchCount:
-      Task {
-        try await fetchProductCounts()
+    }
+
+    switch action {
+    case .fetchProducts:
+      performAsyncAction { [weak self] in
+        try await self?.fetchProducts(replace: true)
       }
+
+    case .loadMoreProducts:
+      performAsyncAction { [weak self] in
+        try await self?.fetchProducts(replace: false)
+      }
+
+    case .fetchCount:
+      performAsyncAction { [weak self] in
+        try await self?.fetchProductCounts()
+      }
+
     case .changeOrder:
       state.productConfiguration.toggleOrder()
       trigger(.fetchProducts)
+
     case let .changeConvenienceStore(store):
       state.productConfiguration.change(convenienceStore: store)
       trigger(.fetchProducts)
     }
   }
 
-  private func fetchProducts() async throws {
-    // TODO: View와 연결할 때 수정해야합니다.
+  /// 제품 목록을 가져옵니다.
+  /// - Parameter replace: 덮어씌울건지, 아니면 추가로 덧댈건지 판단합니다. `replace`가 `true`라면 새롭게 덮어씌우고, `false`라면 이어서 덧댑니다.
+  private func fetchProducts(replace: Bool) async throws {
+    guard state.productConfiguration.loadingState == .idle else { return }
+    state.productConfiguration.startLoading()
+
     let request: ProductRequest = .init(
       store: state.productConfiguration.store,
       promotion: state.productConfiguration.promotion,
@@ -100,7 +120,17 @@ final class HomeViewModel: HomeViewModelRepresentable {
     )
 
     let paginatedModel = try await service.fetchProductList(request: request)
-    state.products = paginatedModel.results
+
+    defer {
+      // 다음에 요청하기 위해 설정해야할 메타데이터 업데이트
+      state.productConfiguration.update(meta: paginatedModel)
+    }
+
+    if replace {
+      state.products = paginatedModel.results
+    } else {
+      state.products.append(contentsOf: paginatedModel.results)
+    }
   }
 
   private func fetchProductCounts() async throws {

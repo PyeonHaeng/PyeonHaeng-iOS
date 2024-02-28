@@ -16,9 +16,31 @@ struct ProductConfiguration {
   private(set) var order: Order = .normal
   let pageSize: Int = 20
   private(set) var offset: Int = 0
+  private(set) var loadingState: PagingState = .idle
 }
 
+// MARK: ProductConfiguration.PagingState
+
 extension ProductConfiguration {
+  enum PagingState {
+    case idle
+    case isLoading
+    case loadedAll
+  }
+}
+
+// MARK: Mutating Functions
+
+extension ProductConfiguration {
+  mutating func startLoading() {
+    loadingState = .isLoading
+  }
+
+  mutating func update(meta paginatedModel: some Paginatable) {
+    loadingState = paginatedModel.hasMore ? .idle : .loadedAll
+    offset += 1
+  }
+
   /// 편의점을 변경합니다.
   /// - Parameter store: 변경할 편의점
   mutating func change(convenienceStore store: ConvenienceStore) {
