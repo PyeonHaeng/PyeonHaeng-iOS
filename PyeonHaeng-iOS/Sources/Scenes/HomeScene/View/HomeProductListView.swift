@@ -59,14 +59,23 @@ private struct ProductImageView: View {
   }
 
   var body: some View {
-    AsyncImage(url: product.imageURL) { image in
-      image
-        .resizable()
-        .scaledToFit()
-        .frame(width: 70, height: 70)
-        .padding(.all, 13)
-    } placeholder: {
-      ProgressView()
+    AsyncImage(url: product.imageURL) { phase in
+      if let image = phase.image {
+        image
+          .resizable()
+          .scaledToFit()
+          .frame(width: 70, height: 70)
+          .padding(.all, 13)
+      } else if phase.error != nil {
+        Image.textLogo
+          .resizable()
+          .scaledToFit()
+          .frame(width: 40, height: 30)
+          .padding(.horizontal, (96 - 40) / 2)
+          .padding(.vertical, (96 - 30) / 2)
+      } else {
+        ProgressView()
+      }
     }
   }
 }
