@@ -102,7 +102,7 @@ private struct ProductDetailsView: View {
   var body: some View {
     VStack(alignment: .leading, spacing: 16) {
       VStack(alignment: .leading, spacing: 4) {
-        PromotionTagView(promotionTag: .onePlus)
+        PromotionTagView(promotion: product.promotion)
         Text(verbatim: product.name)
           .font(.title1)
       }
