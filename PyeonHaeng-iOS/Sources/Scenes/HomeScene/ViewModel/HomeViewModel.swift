@@ -24,12 +24,7 @@ enum HomeAction {
 
 struct HomeState {
   var products: [Product] = []
-  var count: Int = 0
-  var store: ConvenienceStore = .gs25
-  var promotion: Promotion = .allItems
-  var order: Order = .normal
-  var pageSize: Int = 20
-  var offset: Int = 0
+  var productConfiguration: ProductConfiguration = .init()
 }
 
 // MARK: - HomeViewModelRepresentable
@@ -43,11 +38,15 @@ protocol HomeViewModelRepresentable: ObservableObject {
 // MARK: - HomeViewModel
 
 final class HomeViewModel: HomeViewModelRepresentable {
+  // MARK: Properties
+
   private let action: PassthroughSubject<HomeAction, Never> = .init()
   private var subscriptions: Set<AnyCancellable> = []
   private let service: HomeServiceRepresentable
 
   @Published private(set) var state: HomeState = .init()
+
+  // MARK: Initializations
 
   init(service: HomeServiceRepresentable) {
     self.service = service
@@ -58,9 +57,13 @@ final class HomeViewModel: HomeViewModelRepresentable {
       .store(in: &subscriptions)
   }
 
+  // MARK: Public Methods
+
   func trigger(_ action: HomeAction) {
     self.action.send(action)
   }
+
+  // MARK: Helper Methods
 
   private func render(as action: HomeAction) {
     switch action {
@@ -77,24 +80,20 @@ final class HomeViewModel: HomeViewModelRepresentable {
         try await fetchProductCounts()
       }
     case .changeOrder:
-      state.order = if state.order == .normal { .descending }
-      else if state.order == .descending { .ascending }
-      else { .normal }
-      trigger(.fetchProducts)
+      state.productConfiguration.toggleOrder()
     case let .changeConvenienceStore(store):
-      state.store = store
-      trigger(.fetchProducts)
+      state.productConfiguration.change(convenienceStore: store)
     }
   }
 
   private func fetchProducts() async throws {
     // TODO: View와 연결할 때 수정해야합니다.
     let request: ProductRequest = .init(
-      store: state.store,
-      promotion: state.promotion,
-      order: state.order,
-      pageSize: state.pageSize,
-      offset: state.offset
+      store: state.productConfiguration.store,
+      promotion: state.productConfiguration.promotion,
+      order: state.productConfiguration.order,
+      pageSize: state.productConfiguration.pageSize,
+      offset: state.productConfiguration.offset
     )
 
     let paginatedModel = try await service.fetchProductList(request: request)
@@ -103,6 +102,7 @@ final class HomeViewModel: HomeViewModelRepresentable {
 
   private func fetchProductCounts() async throws {
     // TODO: 편의점 선택 뷰를 구성할 때 수정해야합니다.
-    state.count = try await service.fetchProductCount(request: .init(convenienceStore: state.store))
+    let productCount = try await service.fetchProductCount(request: .init(convenienceStore: state.productConfiguration.store))
+    state.productConfiguration.change(searchingCount: productCount)
   }
 }

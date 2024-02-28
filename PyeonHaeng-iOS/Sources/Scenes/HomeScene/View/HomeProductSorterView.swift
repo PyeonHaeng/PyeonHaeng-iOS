@@ -22,11 +22,11 @@ struct HomeProductSorterView<ViewModel>: View where ViewModel: HomeViewModelRepr
       Button {
         viewModel.trigger(.changeOrder)
       } label: {
-        image(for: viewModel.state.order)
+        image(for: viewModel.state.productConfiguration.order)
           .renderingMode(.template)
-          .foregroundStyle(color(for: viewModel.state.order))
+          .foregroundStyle(color(for: viewModel.state.productConfiguration.order))
       }
-      .accessibilityLabel(accessibilityLabel(for: viewModel.state.order))
+      .accessibilityLabel(accessibilityLabel(for: viewModel.state.productConfiguration.order))
       .accessibilityHint("더블 탭하여 정렬 기준을 바꿔보세요")
     }
     .padding(.all, 8)
@@ -35,9 +35,9 @@ struct HomeProductSorterView<ViewModel>: View where ViewModel: HomeViewModelRepr
 
 private extension HomeProductSorterView {
   var productCountString: AttributedString {
-    var string = AttributedString(localized: "총 \(viewModel.state.count)개의 상품이 있어요!")
+    var string = AttributedString(localized: "총 \(viewModel.state.productConfiguration.count)개의 상품이 있어요!")
 
-    if let range = string.range(of: "\(viewModel.state.count)") {
+    if let range = string.range(of: "\(viewModel.state.productConfiguration.count)") {
       string[range].foregroundColor = .green500
     }
 
