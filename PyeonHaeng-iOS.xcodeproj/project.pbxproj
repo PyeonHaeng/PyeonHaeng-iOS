@@ -53,7 +53,6 @@
 		E57F2AA62B7717EA00E12B3D /* ProductInfoAPISupport in Frameworks */ = {isa = PBXBuildFile; productRef = E57F2AA52B7717EA00E12B3D /* ProductInfoAPISupport */; };
 		E57F2AA82B774CA700E12B3D /* ProductInfoDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57F2AA72B774CA700E12B3D /* ProductInfoDependency.swift */; };
 		E5F2EC402B637D4A00EE0838 /* ProductInfoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F2EC3F2B637D4A00EE0838 /* ProductInfoDetailView.swift */; };
-		E5F2EC432B648F5B00EE0838 /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F2EC422B648F5B00EE0838 /* Int+.swift */; };
 		E5F2EC452B64926100EE0838 /* PromotionTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F2EC442B64926100EE0838 /* PromotionTagView.swift */; };
 /* End PBXBuildFile section */
 
@@ -112,7 +111,6 @@
 		E5462C652B65677B00E9FDF2 /* PromotionTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionTag.swift; sourceTree = "<group>"; };
 		E57F2AA72B774CA700E12B3D /* ProductInfoDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoDependency.swift; sourceTree = "<group>"; };
 		E5F2EC3F2B637D4A00EE0838 /* ProductInfoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoDetailView.swift; sourceTree = "<group>"; };
-		E5F2EC422B648F5B00EE0838 /* Int+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
 		E5F2EC442B64926100EE0838 /* PromotionTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionTagView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -176,7 +174,6 @@
 				BAA4D9AC2B5A1795005999F8 /* PyeonHaengApp.swift */,
 				BAB5CF242B6B7C5A008B24BF /* AppRootComponent.swift */,
 				E5462C6B2B65CF7800E9FDF2 /* Components */,
-				E5F2EC412B648EE500EE0838 /* Extensions */,
 				BA28F1722B61532C0052855E /* Scenes */,
 			);
 			path = Sources;
@@ -361,14 +358,6 @@
 				E5F2EC442B64926100EE0838 /* PromotionTagView.swift */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		E5F2EC412B648EE500EE0838 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				E5F2EC422B648F5B00EE0838 /* Int+.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -556,7 +545,6 @@
 				BA28F1882B6155910052855E /* HomeView.swift in Sources */,
 				E5F2EC452B64926100EE0838 /* PromotionTagView.swift in Sources */,
 				BA28F18B2B6155BD0052855E /* ProductInfoView.swift in Sources */,
-				E5F2EC432B648F5B00EE0838 /* Int+.swift in Sources */,
 				E5462C662B65677B00E9FDF2 /* PromotionTag.swift in Sources */,
 				E50584532B763C8C002FDACF /* ProductInfoViewModel.swift in Sources */,
 				BA28F1912B61566E0052855E /* ProductSearchView.swift in Sources */,
