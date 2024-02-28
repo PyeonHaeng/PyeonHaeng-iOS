@@ -81,8 +81,10 @@ final class HomeViewModel: HomeViewModelRepresentable {
       }
     case .changeOrder:
       state.productConfiguration.toggleOrder()
+      trigger(.fetchProducts)
     case let .changeConvenienceStore(store):
       state.productConfiguration.change(convenienceStore: store)
+      trigger(.fetchProducts)
     }
   }
 
