@@ -49,9 +49,9 @@ private extension HomeProductSorterView {
     case .normal:
       .arrowDownArrowUp
     case .descending:
-      .arrowDownToLine
+        .arrowUpToLine
     case .ascending:
-      .arrowUpToLine
+        .arrowDownToLine
     }
   }
 

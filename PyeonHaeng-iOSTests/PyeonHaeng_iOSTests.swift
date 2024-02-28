@@ -59,10 +59,10 @@ final class ProductConfigurationTests: XCTestCase {
   func testToggleOrderUpdatesOrderCorrectly() {
     // Act and Assert
     sut?.toggleOrder()
-    XCTAssertEqual(sut?.order, .descending, "order should be .descending after first toggle")
+    XCTAssertEqual(sut?.order, .ascending, "order should be .ascending after first toggle")
 
     sut?.toggleOrder()
-    XCTAssertEqual(sut?.order, .ascending, "order should be .ascending after second toggle")
+    XCTAssertEqual(sut?.order, .descending, "order should be .descending after second toggle")
 
     sut?.toggleOrder()
     XCTAssertEqual(sut?.order, .normal, "order should return to .normal after third toggle")

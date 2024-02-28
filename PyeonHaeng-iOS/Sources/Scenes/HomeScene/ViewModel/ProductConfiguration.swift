@@ -53,8 +53,8 @@ extension ProductConfiguration {
 
   /// 정렬을 주어진 로직대로 토글링합니다.
   mutating func toggleOrder() {
-    order = if order == .normal { .descending }
-    else if order == .descending { .ascending }
+    order = if order == .normal { .ascending }
+    else if order == .ascending { .descending }
     else { .normal }
   }
 }
