@@ -5,7 +5,6 @@
 //  Created by 홍승현 on 2/1/24.
 //
 
-import Combine
 import Entity
 import Foundation
 import HomeAPI
@@ -42,8 +41,6 @@ protocol HomeViewModelRepresentable: ObservableObject {
 final class HomeViewModel: HomeViewModelRepresentable {
   // MARK: Properties
 
-  private let action: PassthroughSubject<HomeAction, Never> = .init()
-  private var subscriptions: Set<AnyCancellable> = []
   private let service: HomeServiceRepresentable
 
   @Published private(set) var state: HomeState = .init()
@@ -52,46 +49,41 @@ final class HomeViewModel: HomeViewModelRepresentable {
 
   init(service: HomeServiceRepresentable) {
     self.service = service
-    action
-      .sink { [weak self] in
-        self?.render(as: $0)
-      }
-      .store(in: &subscriptions)
   }
 
   // MARK: Public Methods
 
   func trigger(_ action: HomeAction) {
-    self.action.send(action)
+    Task {
+      await handle(action)
+    }
   }
 
   // MARK: Helper Methods
 
-  private func render(as action: HomeAction) {
+  private func handle(_ action: HomeAction) async {
     // 비동기 함수를 실행합니다. 만약 오류가 발생하면 Log로 값을 확인할 수 있습니다.
-    func performAsyncAction(_ action: @escaping () async throws -> Void) {
-      Task {
-        do {
-          try await action()
-        } catch {
-          Log.make(with: .viewModel)?.error("\(String(describing: error))")
-        }
+    func performAsyncAction(_ action: @escaping () async throws -> Void) async {
+      do {
+        try await action()
+      } catch {
+        Log.make(with: .viewModel)?.error("\(String(describing: error))")
       }
     }
 
     switch action {
     case .fetchProducts:
-      performAsyncAction { [weak self] in
+      await performAsyncAction { [weak self] in
         try await self?.fetchProducts(replace: true)
       }
 
     case .loadMoreProducts:
-      performAsyncAction { [weak self] in
+      await performAsyncAction { [weak self] in
         try await self?.fetchProducts(replace: false)
       }
 
     case .fetchCount:
-      performAsyncAction { [weak self] in
+      await performAsyncAction { [weak self] in
         try await self?.fetchProductCounts()
       }
 
