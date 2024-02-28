@@ -16,7 +16,6 @@ struct ProductConfiguration {
   private(set) var order: Order = .normal
   let pageSize: Int = 20
   private(set) var offset: Int = 0
-  private(set) var count: Int = 0
 }
 
 extension ProductConfiguration {
@@ -35,11 +34,5 @@ extension ProductConfiguration {
     order = if order == .normal { .descending }
     else if order == .descending { .ascending }
     else { .normal }
-  }
-
-  /// 현재 검색되는 제품군의 총 개수를 변경합니다.
-  /// - Parameter searchingCount: 제품군의 총 개수
-  mutating func change(searchingCount: Int) {
-    count = searchingCount
   }
 }

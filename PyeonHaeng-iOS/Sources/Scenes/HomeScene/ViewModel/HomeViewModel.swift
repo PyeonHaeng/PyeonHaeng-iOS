@@ -24,6 +24,7 @@ enum HomeAction {
 
 struct HomeState {
   var products: [Product] = []
+  var totalCount: Int = 0
   var productConfiguration: ProductConfiguration = .init()
 }
 
@@ -104,7 +105,7 @@ final class HomeViewModel: HomeViewModelRepresentable {
 
   private func fetchProductCounts() async throws {
     // TODO: 편의점 선택 뷰를 구성할 때 수정해야합니다.
-    let productCount = try await service.fetchProductCount(request: .init(convenienceStore: state.productConfiguration.store))
-    state.productConfiguration.change(searchingCount: productCount)
+    let total = try await service.fetchProductCount(request: .init(convenienceStore: state.productConfiguration.store))
+    state.totalCount = total
   }
 }
