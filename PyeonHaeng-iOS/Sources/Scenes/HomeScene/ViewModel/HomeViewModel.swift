@@ -63,7 +63,7 @@ final class HomeViewModel: HomeViewModelRepresentable {
 
   private func handle(_ action: HomeAction) async {
     // 비동기 함수를 실행합니다. 만약 오류가 발생하면 Log로 값을 확인할 수 있습니다.
-    func performAsyncAction(_ action: @escaping () async throws -> Void) async {
+    func performAsyncAction(_ action: () async throws -> Void) async {
       do {
         try await action()
       } catch {
@@ -73,18 +73,18 @@ final class HomeViewModel: HomeViewModelRepresentable {
 
     switch action {
     case .fetchProducts:
-      await performAsyncAction { [weak self] in
-        try await self?.fetchProducts(replace: true)
+      await performAsyncAction {
+        try await fetchProducts(replace: true)
       }
 
     case .loadMoreProducts:
-      await performAsyncAction { [weak self] in
-        try await self?.fetchProducts(replace: false)
+      await performAsyncAction {
+        try await fetchProducts(replace: false)
       }
 
     case .fetchCount:
-      await performAsyncAction { [weak self] in
-        try await self?.fetchProductCounts()
+      await performAsyncAction {
+        try await fetchProductCounts()
       }
 
     case .changeOrder:
