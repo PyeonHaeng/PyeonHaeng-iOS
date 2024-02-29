@@ -15,11 +15,17 @@ struct HomeProductListView<ViewModel>: View where ViewModel: HomeViewModelRepres
   @EnvironmentObject var viewModel: ViewModel
 
   var body: some View {
-    List(viewModel.state.products) { item in
-      ProductRow(product: item)
-        .listRowInsets(.init())
+    ScrollView {
+      LazyVStack {
+        Spacer()
+          .frame(height: 96)
+        ForEach(viewModel.state.products) { item in
+          ProductRow(product: item)
+            .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
+          Divider()
+        }
+      }
     }
-    .listStyle(.plain)
     .scrollIndicators(.hidden)
   }
 }
