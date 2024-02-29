@@ -22,7 +22,7 @@ struct PyeonHaengApp: App {
       SplashView(dependency: appComponent)
     }
   }
-  
+
   /// NavigationBar Appreance를 설정합니다.
   ///
   /// 스크롤할 때 Navigation Toolbar가 회색으로 변경되는 현상 등을 편행 앱에 맞게 재구성합니다.
