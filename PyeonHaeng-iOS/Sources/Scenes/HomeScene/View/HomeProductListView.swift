@@ -15,25 +15,29 @@ struct HomeProductListView<ViewModel>: View where ViewModel: HomeViewModelRepres
   @EnvironmentObject var viewModel: ViewModel
 
   var body: some View {
-    List {
-      ForEach(viewModel.state.products) { item in
-        ProductRow(product: item)
-          .listRowInsets(.init())
-      }
-      switch viewModel.state.productConfiguration.loadingState {
-      case .idle,
-           .isLoading:
-        ProgressView()
-          .progressViewStyle(.circular)
-          .frame(maxWidth: .infinity)
-          .onAppear {
-            viewModel.trigger(.loadMoreProducts)
-          }
-      case .loadedAll:
-        EmptyView()
+    ScrollView {
+      LazyVStack {
+        Spacer()
+          .frame(height: 96)
+        ForEach(viewModel.state.products) { item in
+          ProductRow(product: item)
+            .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
+          Divider()
+        }
+        switch viewModel.state.productConfiguration.loadingState {
+        case .idle,
+             .isLoading:
+          ProgressView()
+            .progressViewStyle(.circular)
+            .frame(maxWidth: .infinity)
+            .onAppear {
+              viewModel.trigger(.loadMoreProducts)
+            }
+        case .loadedAll:
+          EmptyView()
+        }
       }
     }
-    .listStyle(.plain)
     .scrollIndicators(.hidden)
   }
 }
