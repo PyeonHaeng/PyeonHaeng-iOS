@@ -19,10 +19,23 @@ struct HomeView<ViewModel>: View where ViewModel: HomeViewModelRepresentable {
 
   var body: some View {
     NavigationStack {
-      VStack {
-        HomeProductDetailSelectionView<ViewModel>()
-        HomeProductSorterView<ViewModel>()
+      ZStack {
         HomeProductListView<ViewModel>()
+
+        VStack(spacing: 0) {
+          VStack {
+            HomeProductDetailSelectionView<ViewModel>()
+            HomeProductSorterView<ViewModel>()
+          }
+          .background(
+            LinearGradient(
+              colors: [.white, .white.opacity(0.9)],
+              startPoint: .top,
+              endPoint: .bottom
+            )
+          )
+          Spacer()
+        }
       }
       .environmentObject(viewModel)
       .padding(.horizontal, Metrics.horizontal)
