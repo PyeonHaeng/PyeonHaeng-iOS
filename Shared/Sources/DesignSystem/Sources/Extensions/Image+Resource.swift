@@ -79,6 +79,9 @@ public extension Image {
   static let speaker: Image = .init(.speaker)
   static let storeFill: Image = .init(.storeFill)
   static let store: Image = .init(.store)
+
+  static let textLogo: Image = .init(.textLogo)
+
   static let xCircleFill: Image = .init(.xCircleFill)
   static let xCircle: Image = .init(.xCircle)
 }

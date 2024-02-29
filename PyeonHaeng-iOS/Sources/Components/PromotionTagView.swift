@@ -6,6 +6,7 @@
 //
 
 import DesignSystem
+import Entity
 import SwiftUI
 
 // MARK: - PromotionTagView
@@ -21,6 +22,19 @@ struct PromotionTagView: View {
       .foregroundStyle(color)
       .background(backgroundColor)
       .clipShape(.rect(cornerRadius: 6))
+  }
+}
+
+extension PromotionTagView {
+  init(promotion: Promotion) {
+    switch promotion {
+    case .buyOneGetOneFree:
+      promotionTag = .onePlus
+    case .buyTwoGetOneFree:
+      promotionTag = .twoPlus
+    default:
+      promotionTag = .none
+    }
   }
 }
 

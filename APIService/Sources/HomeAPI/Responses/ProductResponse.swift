@@ -27,7 +27,7 @@ struct ProductResponse: Decodable, Paginatable {
 
 struct ProductItemResponse: Decodable {
   let id: Int
-  let imageURL: URL
+  let imageURL: URL?
   let date: Date
   let price: Int
   let name: String
