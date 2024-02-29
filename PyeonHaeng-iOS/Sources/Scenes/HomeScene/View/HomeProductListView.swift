@@ -24,6 +24,18 @@ struct HomeProductListView<ViewModel>: View where ViewModel: HomeViewModelRepres
             .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
           Divider()
         }
+        switch viewModel.state.productConfiguration.loadingState {
+        case .idle,
+             .isLoading:
+          ProgressView()
+            .progressViewStyle(.circular)
+            .frame(maxWidth: .infinity)
+            .onAppear {
+              viewModel.trigger(.loadMoreProducts)
+            }
+        case .loadedAll:
+          EmptyView()
+        }
       }
     }
     .scrollIndicators(.hidden)
@@ -61,15 +73,32 @@ private struct ProductImageView: View {
   }
 
   var body: some View {
-    AsyncImage(url: product.imageURL) { image in
-      image
-        .resizable()
-        .scaledToFit()
-        .frame(width: 70, height: 70)
-        .padding(.all, 13)
-    } placeholder: {
-      ProgressView()
+    AsyncImage(url: product.imageURL) { phase in
+      if let image = phase.image {
+        image
+          .resizable()
+          .scaledToFit()
+          .frame(width: Metrics.originalImageSize, height: Metrics.originalImageSize)
+          .padding(.all, (Metrics.totalImageSize - Metrics.originalImageSize) * 0.5)
+      } else if phase.error != nil {
+        Image.textLogo
+          .resizable()
+          .scaledToFit()
+          .frame(width: Metrics.textLogoWidth, height: Metrics.textLogoHeight)
+          .padding(.horizontal, (Metrics.totalImageSize - Metrics.textLogoWidth) / 2)
+          .padding(.vertical, (Metrics.totalImageSize - Metrics.textLogoHeight) / 2)
+      } else {
+        ProgressView()
+          .frame(width: Metrics.totalImageSize, height: Metrics.totalImageSize)
+      }
     }
+  }
+
+  private enum Metrics {
+    static let textLogoWidth: CGFloat = 40
+    static let textLogoHeight: CGFloat = 30
+    static let originalImageSize: CGFloat = 70
+    static let totalImageSize: CGFloat = 96
   }
 }
 
@@ -85,7 +114,7 @@ private struct ProductDetailsView: View {
   var body: some View {
     VStack(alignment: .leading, spacing: 16) {
       VStack(alignment: .leading, spacing: 4) {
-        PromotionTagView(promotionTag: .onePlus)
+        PromotionTagView(promotion: product.promotion)
         Text(verbatim: product.name)
           .font(.title1)
       }
@@ -122,4 +151,8 @@ private struct PriceView: View {
       .foregroundStyle(.gray900)
     }
   }
+}
+
+#Preview {
+  HomeView(viewModel: HomeViewModel(service: AppRootComponent().homeService))
 }

@@ -32,6 +32,9 @@
 		BA28F1A62B61572A0052855E /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA28F19C2B61572A0052855E /* Pretendard-Black.otf */; };
 		BA402F7E2B85E31800E86AAD /* ConvenienceSelectBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA402F7D2B85E31800E86AAD /* ConvenienceSelectBottomSheetView.swift */; };
 		BA4EA3602B6A37E10003DCE7 /* Entity in Frameworks */ = {isa = PBXBuildFile; productRef = BA4EA35F2B6A37E10003DCE7 /* Entity */; };
+		BA849A342B8F4F36004495BF /* ProductConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8E83232B8EF83B00FE968C /* ProductConfiguration.swift */; };
+		BA849A372B8F4FC0004495BF /* MockPaginatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA849A362B8F4FC0004495BF /* MockPaginatable.swift */; };
+		BA8E83242B8EF83B00FE968C /* ProductConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8E83232B8EF83B00FE968C /* ProductConfiguration.swift */; };
 		BAA4D9AD2B5A1795005999F8 /* PyeonHaengApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA4D9AC2B5A1795005999F8 /* PyeonHaengApp.swift */; };
 		BAA4D9AF2B5A1795005999F8 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA4D9AE2B5A1795005999F8 /* SplashView.swift */; };
 		BAA4D9B12B5A1796005999F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAA4D9B02B5A1796005999F8 /* Assets.xcassets */; };
@@ -50,7 +53,6 @@
 		E57F2AA62B7717EA00E12B3D /* ProductInfoAPISupport in Frameworks */ = {isa = PBXBuildFile; productRef = E57F2AA52B7717EA00E12B3D /* ProductInfoAPISupport */; };
 		E57F2AA82B774CA700E12B3D /* ProductInfoDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57F2AA72B774CA700E12B3D /* ProductInfoDependency.swift */; };
 		E5F2EC402B637D4A00EE0838 /* ProductInfoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F2EC3F2B637D4A00EE0838 /* ProductInfoDetailView.swift */; };
-		E5F2EC432B648F5B00EE0838 /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F2EC422B648F5B00EE0838 /* Int+.swift */; };
 		E5F2EC452B64926100EE0838 /* PromotionTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F2EC442B64926100EE0838 /* PromotionTagView.swift */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +92,8 @@
 		BA28F1A72B6157E90052855E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA402F7D2B85E31800E86AAD /* ConvenienceSelectBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvenienceSelectBottomSheetView.swift; sourceTree = "<group>"; };
 		BA4EA35A2B6A00F70003DCE7 /* Entity */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Entity; sourceTree = "<group>"; };
+		BA849A362B8F4FC0004495BF /* MockPaginatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPaginatable.swift; sourceTree = "<group>"; };
+		BA8E83232B8EF83B00FE968C /* ProductConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductConfiguration.swift; sourceTree = "<group>"; };
 		BAA4D9A92B5A1795005999F8 /* PyeonHaeng-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PyeonHaeng-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAA4D9AC2B5A1795005999F8 /* PyeonHaengApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PyeonHaengApp.swift; sourceTree = "<group>"; };
 		BAA4D9AE2B5A1795005999F8 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
@@ -107,7 +111,6 @@
 		E5462C652B65677B00E9FDF2 /* PromotionTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionTag.swift; sourceTree = "<group>"; };
 		E57F2AA72B774CA700E12B3D /* ProductInfoDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoDependency.swift; sourceTree = "<group>"; };
 		E5F2EC3F2B637D4A00EE0838 /* ProductInfoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoDetailView.swift; sourceTree = "<group>"; };
-		E5F2EC422B648F5B00EE0838 /* Int+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
 		E5F2EC442B64926100EE0838 /* PromotionTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionTagView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,7 +174,6 @@
 				BAA4D9AC2B5A1795005999F8 /* PyeonHaengApp.swift */,
 				BAB5CF242B6B7C5A008B24BF /* AppRootComponent.swift */,
 				E5462C6B2B65CF7800E9FDF2 /* Components */,
-				E5F2EC412B648EE500EE0838 /* Extensions */,
 				BA28F1722B61532C0052855E /* Scenes */,
 			);
 			path = Sources;
@@ -193,6 +195,7 @@
 		BA28F17A2B6155450052855E /* PyeonHaeng-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				BA849A352B8F4FB0004495BF /* Mocks */,
 				BA28F17B2B6155450052855E /* PyeonHaeng_iOSTests.swift */,
 			);
 			path = "PyeonHaeng-iOSTests";
@@ -221,11 +224,8 @@
 			isa = PBXGroup;
 			children = (
 				BA402F7C2B85E2DE00E86AAD /* BottomSheet */,
-				BA28F1872B6155910052855E /* HomeView.swift */,
-				BAB5CF262B6B7CF3008B24BF /* HomeViewModel.swift */,
-				BAE159D72B65FA6F002DCF94 /* HomeProductDetailSelectionView.swift */,
-				BAE159DD2B663A9A002DCF94 /* HomeProductSorterView.swift */,
-				BAE159D92B65FC35002DCF94 /* HomeProductListView.swift */,
+				BAAB925C2B8DF279007F757D /* View */,
+				BAAB925B2B8DF271007F757D /* ViewModel */,
 			);
 			path = HomeScene;
 			sourceTree = "<group>";
@@ -282,6 +282,14 @@
 			path = BottomSheet;
 			sourceTree = "<group>";
 		};
+		BA849A352B8F4FB0004495BF /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				BA849A362B8F4FC0004495BF /* MockPaginatable.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		BAA4D9A02B5A1795005999F8 = {
 			isa = PBXGroup;
 			children = (
@@ -324,20 +332,32 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		BAAB925B2B8DF271007F757D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BAB5CF262B6B7CF3008B24BF /* HomeViewModel.swift */,
+				BA8E83232B8EF83B00FE968C /* ProductConfiguration.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BAAB925C2B8DF279007F757D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BAE159D72B65FA6F002DCF94 /* HomeProductDetailSelectionView.swift */,
+				BAE159D92B65FC35002DCF94 /* HomeProductListView.swift */,
+				BAE159DD2B663A9A002DCF94 /* HomeProductSorterView.swift */,
+				BA28F1872B6155910052855E /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		E5462C6B2B65CF7800E9FDF2 /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				E5F2EC442B64926100EE0838 /* PromotionTagView.swift */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		E5F2EC412B648EE500EE0838 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				E5F2EC422B648F5B00EE0838 /* Int+.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -506,6 +526,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA849A372B8F4FC0004495BF /* MockPaginatable.swift in Sources */,
+				BA849A342B8F4F36004495BF /* ProductConfiguration.swift in Sources */,
 				BA28F17C2B6155450052855E /* PyeonHaeng_iOSTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -516,14 +538,13 @@
 			files = (
 				BAE159DA2B65FC35002DCF94 /* HomeProductListView.swift in Sources */,
 				E5F2EC402B637D4A00EE0838 /* ProductInfoDetailView.swift in Sources */,
-				E5F2EC402B637D4A00EE0838 /* ProductInfoHeader.swift in Sources */,
+				E5F2EC402B637D4A00EE0838 /* ProductInfoDetailView.swift in Sources */,
 				BA402F7E2B85E31800E86AAD /* ConvenienceSelectBottomSheetView.swift in Sources */,
 				BA28F1852B6155810052855E /* OnboardingView.swift in Sources */,
 				BAB5CF272B6B7CF3008B24BF /* HomeViewModel.swift in Sources */,
 				BA28F1882B6155910052855E /* HomeView.swift in Sources */,
 				E5F2EC452B64926100EE0838 /* PromotionTagView.swift in Sources */,
 				BA28F18B2B6155BD0052855E /* ProductInfoView.swift in Sources */,
-				E5F2EC432B648F5B00EE0838 /* Int+.swift in Sources */,
 				E5462C662B65677B00E9FDF2 /* PromotionTag.swift in Sources */,
 				E50584532B763C8C002FDACF /* ProductInfoViewModel.swift in Sources */,
 				BA28F1912B61566E0052855E /* ProductSearchView.swift in Sources */,
@@ -537,6 +558,7 @@
 				E50176262B6A204F0098D1BE /* ProductInfoLineGraphView.swift in Sources */,
 				BAB5CF252B6B7C5A008B24BF /* AppRootComponent.swift in Sources */,
 				BAA4D9AF2B5A1795005999F8 /* SplashView.swift in Sources */,
+				BA8E83242B8EF83B00FE968C /* ProductConfiguration.swift in Sources */,
 				BAA4D9AD2B5A1795005999F8 /* PyeonHaengApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
