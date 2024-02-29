@@ -74,19 +74,27 @@ private struct ProductImageView: View {
         image
           .resizable()
           .scaledToFit()
-          .frame(width: 70, height: 70)
-          .padding(.all, 13)
+          .frame(width: Metrics.originalImageSize, height: Metrics.originalImageSize)
+          .padding(.all, (Metrics.totalImageSize - Metrics.originalImageSize) * 0.5)
       } else if phase.error != nil {
         Image.textLogo
           .resizable()
           .scaledToFit()
-          .frame(width: 40, height: 30)
-          .padding(.horizontal, (96 - 40) / 2)
-          .padding(.vertical, (96 - 30) / 2)
+          .frame(width: Metrics.textLogoWidth, height: Metrics.textLogoHeight)
+          .padding(.horizontal, (Metrics.totalImageSize - Metrics.textLogoWidth) / 2)
+          .padding(.vertical, (Metrics.totalImageSize - Metrics.textLogoHeight) / 2)
       } else {
         ProgressView()
+          .frame(width: Metrics.totalImageSize, height: Metrics.totalImageSize)
       }
     }
+  }
+
+  private enum Metrics {
+    static let textLogoWidth: CGFloat = 40
+    static let textLogoHeight: CGFloat = 30
+    static let originalImageSize: CGFloat = 70
+    static let totalImageSize: CGFloat = 96
   }
 }
 
