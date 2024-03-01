@@ -1,5 +1,5 @@
 //
-//  ProductSearchView.swift
+//  SearchView.swift
 //  PyeonHaeng-iOS
 //
 //  Created by 홍승현 on 1/24/24.
@@ -8,7 +8,7 @@
 import DesignSystem
 import SwiftUI
 
-// MARK: - ProductSearchView
+// MARK: - SearchView
 
 struct SearchView: View {
   var body: some View {
@@ -60,6 +60,8 @@ private struct SearchTextField: View {
     }
   }
 }
+
+// MARK: - SearchHeaderView
 
 private struct SearchHeaderView: View {
   var body: some View {
