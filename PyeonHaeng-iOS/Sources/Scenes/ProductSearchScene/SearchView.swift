@@ -10,14 +10,22 @@ import SwiftUI
 
 // MARK: - ProductSearchView
 
-struct ProductSearchView: View {
+struct SearchView: View {
   var body: some View {
-    Text("")
-      .toolbar {
-        ToolbarItem(placement: .principal) {
-          SearchTextField()
+    ScrollView {
+      LazyVStack {
+        Section {
+          SearchListCardView()
+        } header: {
+          SearchHeaderView()
         }
       }
+    }
+    .toolbar {
+      ToolbarItem(placement: .principal) {
+        SearchTextField()
+      }
+    }
   }
 }
 
@@ -53,6 +61,17 @@ private struct SearchTextField: View {
   }
 }
 
+private struct SearchHeaderView: View {
+  var body: some View {
+    HStack(spacing: 8.0) {
+      Image._7Eleven
+      Text(verbatim: "3")
+        .font(.title2)
+    }
+    .frame(maxWidth: .infinity, alignment: .leading)
+  }
+}
+
 // MARK: - Metrics
 
 private enum Metrics {
@@ -69,5 +88,5 @@ private enum Metrics {
 }
 
 #Preview {
-  ProductSearchView()
+  SearchView()
 }
