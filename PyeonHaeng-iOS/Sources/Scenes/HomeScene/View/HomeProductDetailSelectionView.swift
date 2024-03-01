@@ -20,7 +20,7 @@ struct HomeProductDetailSelectionView<ViewModel>: View where ViewModel: HomeView
         convenienceStoreModalPresented = true
       } label: {
         Group {
-          Image.gs25
+          convenienceImageView()
             .resizable()
             .scaledToFit()
           Image.chevronDown
@@ -65,6 +65,21 @@ struct HomeProductDetailSelectionView<ViewModel>: View where ViewModel: HomeView
       }
     }
     .frame(height: Metrics.height)
+  }
+
+  private func convenienceImageView() -> Image {
+    switch viewModel.state.productConfiguration.store {
+    case .cu:
+      .cu
+    case .gs25:
+      .gs25
+    case ._7Eleven:
+      ._7Eleven
+    case .emart24:
+      .emart24
+    case .ministop:
+      .ministop
+    }
   }
 }
 
