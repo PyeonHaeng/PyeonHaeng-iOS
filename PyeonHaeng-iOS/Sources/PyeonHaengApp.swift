@@ -31,9 +31,14 @@ struct PyeonHaengApp: App {
     let appearance = UINavigationBarAppearance()
     appearance.backgroundColor = .white // 배경색을 하얀색으로 설정
     appearance.shadowColor = .clear // 그림자 제거
+    appearance.titleTextAttributes = [
+      .foregroundColor: UIColor(Color.gray900),
+      .font: UIFont(name: "Pretendard-Bold", size: 18) ?? .init(),
+    ] // 타이틀 설정
 
     // 기본 및 스크롤 엣지 외관에 적용
     UINavigationBar.appearance().standardAppearance = appearance
     UINavigationBar.appearance().scrollEdgeAppearance = appearance
+    UINavigationBar.appearance().compactAppearance = appearance
   }
 }
