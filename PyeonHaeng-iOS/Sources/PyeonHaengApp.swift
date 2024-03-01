@@ -27,27 +27,12 @@ struct PyeonHaengApp: App {
   ///
   /// 스크롤할 때 Navigation Toolbar가 회색으로 변경되는 현상 등을 편행 앱에 맞게 재구성합니다.
   private func setupNavigationBarAppearance() {
-    // 뒤로가기 버튼 구성
-    let backButtonAppearance = UIBarButtonItemAppearance()
-    backButtonAppearance.normal.titleTextAttributes = [
-      .foregroundColor: UIColor.clear,
-    ]
-    let tintColor = UIColor(Color.gray900)
-    let backButtonImage: UIImage? = .backButtonImage?
-      .withTintColor(tintColor, renderingMode: .alwaysOriginal)
-      .withAlignmentRectInsets(UIEdgeInsets(top: 0, left: -8, bottom: 0, right: 0))
-
     // 네비게이션 바 스크롤 엣지 외관을 설정하기 위한 UINavigationBarAppearance 객체 생성
     let appearance = UINavigationBarAppearance()
-    appearance.backButtonAppearance = backButtonAppearance
     appearance.backgroundColor = .white // 배경색을 하얀색으로 설정
     appearance.shadowColor = .clear // 그림자 제거
-    appearance.setBackIndicatorImage(
-      backButtonImage,
-      transitionMaskImage: backButtonImage
-    ) // 뒤로가기 버튼 설정
     appearance.titleTextAttributes = [
-      .foregroundColor: tintColor,
+      .foregroundColor: UIColor(Color.gray900),
       .font: UIFont(name: "Pretendard-Bold", size: 18) ?? .init(),
     ] // 타이틀 설정
 
