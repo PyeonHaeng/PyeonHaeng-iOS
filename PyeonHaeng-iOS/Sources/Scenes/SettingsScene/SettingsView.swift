@@ -57,7 +57,7 @@ struct SettingsView: View {
             item.iconName
             Text(item.rawValue)
             Spacer()
-            Text(verbatim: "v2.0.0")
+            Text(verbatim: .version ?? "-")
               .font(.c2)
           }
 
@@ -81,7 +81,13 @@ struct SettingsView: View {
   }
 }
 
-// MARK: SettingsView.Metrics
+private extension String {
+  static var version: String? {
+    Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
+  }
+}
+
+// MARK: - SettingsView.Metrics
 
 private extension SettingsView {
   enum Metrics {
