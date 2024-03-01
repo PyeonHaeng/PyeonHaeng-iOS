@@ -50,6 +50,7 @@
 		E50584532B763C8C002FDACF /* ProductInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50584522B763C8C002FDACF /* ProductInfoViewModel.swift */; };
 		E5462C662B65677B00E9FDF2 /* PromotionTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5462C652B65677B00E9FDF2 /* PromotionTag.swift */; };
 		E55DD5122B91DE9500AA63C0 /* SearchListCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55DD5112B91DE9500AA63C0 /* SearchListCardView.swift */; };
+		E57654D92B90D78900E92F3A /* Shared in Resources */ = {isa = PBXBuildFile; fileRef = BABFEA6F2B6399C30084C0EC /* Shared */; };
 		E57F2AA42B7717EA00E12B3D /* ProductInfoAPI in Frameworks */ = {isa = PBXBuildFile; productRef = E57F2AA32B7717EA00E12B3D /* ProductInfoAPI */; settings = {ATTRIBUTES = (Required, ); }; };
 		E57F2AA62B7717EA00E12B3D /* ProductInfoAPISupport in Frameworks */ = {isa = PBXBuildFile; productRef = E57F2AA52B7717EA00E12B3D /* ProductInfoAPISupport */; };
 		E57F2AA82B774CA700E12B3D /* ProductInfoDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57F2AA72B774CA700E12B3D /* ProductInfoDependency.swift */; };
@@ -465,6 +466,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E57654D92B90D78900E92F3A /* Shared in Resources */,
 				BAA4D9B42B5A1796005999F8 /* Preview Assets.xcassets in Resources */,
 				BA28F19D2B61572A0052855E /* Pretendard-Bold.otf in Resources */,
 				BA28F1A32B61572A0052855E /* Pretendard-ExtraLight.otf in Resources */,
