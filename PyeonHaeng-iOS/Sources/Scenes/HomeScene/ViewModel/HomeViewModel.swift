@@ -90,10 +90,12 @@ final class HomeViewModel: HomeViewModelRepresentable {
     case .changeOrder:
       state.productConfiguration.toggleOrder()
       trigger(.fetchProducts)
+      trigger(.fetchCount)
 
     case let .changeConvenienceStore(store):
       state.productConfiguration.change(convenienceStore: store)
       trigger(.fetchProducts)
+      trigger(.fetchCount)
     }
   }
 
@@ -126,8 +128,12 @@ final class HomeViewModel: HomeViewModelRepresentable {
   }
 
   private func fetchProductCounts() async throws {
-    // TODO: 편의점 선택 뷰를 구성할 때 수정해야합니다.
-    let total = try await service.fetchProductCount(request: .init(convenienceStore: state.productConfiguration.store))
+    let total = try await service.fetchProductCount(
+      request: .init(
+        convenienceStore: state.productConfiguration.store,
+        promotion: state.productConfiguration.promotion
+      )
+    )
     state.totalCount = total
   }
 }
