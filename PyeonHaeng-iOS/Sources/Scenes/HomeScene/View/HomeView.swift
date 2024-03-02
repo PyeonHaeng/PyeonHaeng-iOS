@@ -49,7 +49,7 @@ struct HomeView<ViewModel>: View where ViewModel: HomeViewModelRepresentable {
 
         ToolbarItemGroup(placement: .topBarTrailing) {
           NavigationLink {
-            ProductSearchView()
+            SearchView()
               .toolbarRole(.editor)
           } label: {
             Image.magnifyingglass
