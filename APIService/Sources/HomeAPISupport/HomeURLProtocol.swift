@@ -15,7 +15,7 @@ public final class HomeURLProtocol: URLProtocol {
       .init(store: .gs25, promotion: .allItems, order: .normal, pageSize: 0, offset: 0)
     ).path: loadMockData(fileName: "HomeProductResponse"),
     HomeEndPoint.fetchCount(
-      .init(convenienceStore: .gs25)
+      .init(convenienceStore: .gs25, promotion: .allItems)
     ).path: loadMockData(fileName: "HomeProductCountResponse"),
   ]
 
