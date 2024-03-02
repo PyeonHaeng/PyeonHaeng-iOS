@@ -5,6 +5,7 @@
 //  Created by 홍승현 on 3/2/24.
 //
 
+import DesignSystem
 import Entity
 import SwiftUI
 
@@ -23,6 +24,7 @@ struct PromotionSelectBottomSheetView<ViewModel>: View where ViewModel: HomeView
       titleView
       promotionButtons
     }
+    .foregroundStyle(.gray900)
     .padding(.top, Metrics.topPadding)
     .padding(.bottom, Metrics.bottomPadding)
   }
@@ -43,6 +45,7 @@ struct PromotionSelectBottomSheetView<ViewModel>: View where ViewModel: HomeView
         dismiss()
       } label: {
         Text(promotion.displayName)
+          .font(.body2)
           .frame(maxWidth: .infinity, minHeight: Metrics.itemHeight, alignment: .leading)
       }
     }
