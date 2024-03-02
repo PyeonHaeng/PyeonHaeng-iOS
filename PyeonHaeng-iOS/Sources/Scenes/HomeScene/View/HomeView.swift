@@ -29,7 +29,7 @@ struct HomeView<ViewModel>: View where ViewModel: HomeViewModelRepresentable {
           }
           .background(
             LinearGradient(
-              colors: [.white, .white.opacity(0.9)],
+              colors: [.init(.systemBackground), .init(.systemBackground).opacity(0.9)],
               startPoint: .top,
               endPoint: .bottom
             )
