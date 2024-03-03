@@ -1,0 +1,36 @@
+{
+  "count": 3,
+  "has_more": false,
+  "results": [
+    {
+      "name": "칠성)펩시콜라제로355ml",
+      "img": "https://www.7-eleven.co.kr/upload/product/8801056/175900.1.jpg",
+      "price": 1900,
+      "store": "7-ELEVEn",
+      "tag": "1+1",
+      "proinfo": 0,
+      "date": "2024-02-01T00:00:00Z",
+      "id": 84462
+    },
+    {
+      "name": "롯데)펩시콜라캔355ML",
+      "img": "https://image.woodongs.com/imgsvr/item/GD_8801056150013_007.jpg",
+      "price": 1900,
+      "store": "GS25",
+      "tag": "1+1",
+      "proinfo": 0,
+      "date": "2024-02-01T00:00:00Z",
+      "id": 81629
+    },
+    {
+      "name": "칠성)펩시콜라제로355ml",
+      "img": "https://www.ministop.co.kr/MiniStopHomePage/page/pic.do?n=event1plus1.[YOUXY1LS_]1plus1_160.jpg",
+      "price": 1900,
+      "store": "MINISTOP",
+      "tag": "1+1",
+      "proinfo": 0,
+      "date": "2024-02-01T00:00:00Z",
+      "id": 85911
+    }
+  ]
+}

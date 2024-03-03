@@ -22,6 +22,14 @@ let package = Package(
       name: "ProductInfoAPISupport",
       targets: ["ProductInfoAPISupport"]
     ),
+    .library(
+      name: "SearchAPI",
+      targets: ["SearchAPI"]
+    ),
+    .library(
+      name: "SearchAPISupport",
+      targets: ["SearchAPISupport"]
+    ),
   ],
   dependencies: [
     .package(path: "../Core"),
@@ -53,6 +61,20 @@ let package = Package(
       name: "ProductInfoAPISupport",
       dependencies: [
         "ProductInfoAPI",
+      ],
+      resources: [.process("Mocks")]
+    ),
+    .target(
+      name: "SearchAPI",
+      dependencies: [
+        .product(name: "Network", package: "Core"),
+        .product(name: "Entity", package: "Entity"),
+      ]
+    ),
+    .target(
+      name: "SearchAPISupport",
+      dependencies: [
+        "SearchAPI",
       ],
       resources: [.process("Mocks")]
     ),
