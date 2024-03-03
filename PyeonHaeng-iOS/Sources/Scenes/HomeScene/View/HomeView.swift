@@ -73,6 +73,7 @@ struct HomeView<ViewModel>: View where ViewModel: HomeViewModelRepresentable {
         }
       }
     }
+    .tint(.accent)
     .onAppear {
       viewModel.trigger(.fetchProducts)
       viewModel.trigger(.fetchCount)
