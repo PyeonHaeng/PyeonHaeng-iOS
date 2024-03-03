@@ -18,6 +18,7 @@ enum HomeAction {
   case fetchCount
   case changeOrder
   case changeConvenienceStore(ConvenienceStore)
+  case changePromotion(Promotion)
 }
 
 // MARK: - HomeState
@@ -94,6 +95,11 @@ final class HomeViewModel: HomeViewModelRepresentable {
 
     case let .changeConvenienceStore(store):
       state.productConfiguration.change(convenienceStore: store)
+      trigger(.fetchProducts)
+      trigger(.fetchCount)
+
+    case let .changePromotion(promotion):
+      state.productConfiguration.change(promotion: promotion)
       trigger(.fetchProducts)
       trigger(.fetchCount)
     }

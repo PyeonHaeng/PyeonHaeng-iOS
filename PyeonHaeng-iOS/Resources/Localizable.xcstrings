@@ -40,6 +40,38 @@
         }
       }
     },
+    "1+1" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1+1"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1+1"
+          }
+        }
+      }
+    },
+    "2+1" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2+1"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2+1"
+          }
+        }
+      }
+    },
     "7-Eleven" : {
       "localizations" : {
         "ja" : {
@@ -52,6 +84,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "세븐일레븐"
+          }
+        }
+      }
+    },
+    "All(View All)" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "All（全て表示）"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "All(전체보기)"
           }
         }
       }
@@ -196,6 +244,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "알림"
+          }
+        }
+      }
+    },
+    "Select Promotion Items" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "プロモション商品選択"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "행사 품목 선택"
           }
         }
       }

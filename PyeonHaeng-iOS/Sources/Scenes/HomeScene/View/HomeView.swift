@@ -29,7 +29,7 @@ struct HomeView<ViewModel>: View where ViewModel: HomeViewModelRepresentable {
           }
           .background(
             LinearGradient(
-              colors: [.white, .white.opacity(0.9)],
+              colors: [.init(.systemBackground), .init(.systemBackground).opacity(0.9)],
               startPoint: .top,
               endPoint: .bottom
             )
@@ -44,6 +44,8 @@ struct HomeView<ViewModel>: View where ViewModel: HomeViewModelRepresentable {
         ToolbarItem(placement: .topBarLeading) {
           HStack {
             Image.store
+              .renderingMode(.template)
+              .foregroundStyle(.gray900)
           }
         }
 
@@ -53,6 +55,8 @@ struct HomeView<ViewModel>: View where ViewModel: HomeViewModelRepresentable {
               .toolbarRole(.editor)
           } label: {
             Image.magnifyingglass
+              .renderingMode(.template)
+              .foregroundStyle(.gray900)
           }
           .accessibilityLabel("검색")
           .accessibilityHint("더블 탭하여 제품을 검색하세요")
@@ -61,6 +65,8 @@ struct HomeView<ViewModel>: View where ViewModel: HomeViewModelRepresentable {
               .toolbarRole(.editor)
           } label: {
             Image.gearshape
+              .renderingMode(.template)
+              .foregroundStyle(.gray900)
           }
           .accessibilityLabel("설정")
           .accessibilityHint("더블 탭하여 설정에 관한 기능을 확인하세요")

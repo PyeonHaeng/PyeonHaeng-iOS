@@ -29,7 +29,7 @@ struct PyeonHaengApp: App {
   private func setupNavigationBarAppearance() {
     // 네비게이션 바 스크롤 엣지 외관을 설정하기 위한 UINavigationBarAppearance 객체 생성
     let appearance = UINavigationBarAppearance()
-    appearance.backgroundColor = .white // 배경색을 하얀색으로 설정
+    appearance.backgroundColor = .systemBackground // 배경색을 하얀색으로 설정
     appearance.shadowColor = .clear // 그림자 제거
     appearance.titleTextAttributes = [
       .foregroundColor: UIColor(Color.gray900),

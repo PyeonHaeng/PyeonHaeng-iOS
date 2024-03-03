@@ -13,6 +13,7 @@ import SwiftUI
 struct HomeProductDetailSelectionView<ViewModel>: View where ViewModel: HomeViewModelRepresentable {
   @EnvironmentObject private var viewModel: ViewModel
   @State private var convenienceStoreModalPresented: Bool = false
+  @State private var promotionModalPresented: Bool = false
 
   var body: some View {
     HStack {
@@ -32,14 +33,16 @@ struct HomeProductDetailSelectionView<ViewModel>: View where ViewModel: HomeView
       .accessibilityHint("더블 탭하여 편의점을 선택하세요")
       .sheet(isPresented: $convenienceStoreModalPresented) {
         ConvenienceSelectBottomSheetView<ViewModel>()
-          .presentationDetents([.height(Metrics.bottomSheetHeight)])
+          .presentationDetents([.height(Metrics.convenienceBottomSheetHeight)])
           .presentationCornerRadius(20)
           .presentationBackground(.regularMaterial)
       }
 
       Spacer()
 
-      Button {} label: {
+      Button {
+        promotionModalPresented = true
+      } label: {
         HStack(spacing: Metrics.buttonSpacing) {
           Text(verbatim: "All")
             .font(.title2)
@@ -62,6 +65,12 @@ struct HomeProductDetailSelectionView<ViewModel>: View where ViewModel: HomeView
         RoundedRectangle(cornerRadius: Metrics.promotionButtonCornerRadius)
           .stroke()
           .foregroundStyle(.gray400)
+      }
+      .sheet(isPresented: $promotionModalPresented) {
+        PromotionSelectBottomSheetView<ViewModel>()
+          .presentationDetents([.height(Metrics.promotionBottomSheetHeight)])
+          .presentationCornerRadius(20)
+          .presentationBackground(.regularMaterial)
       }
     }
     .frame(height: Metrics.height)
@@ -99,5 +108,6 @@ private enum Metrics {
   static let promotionButtonCornerRadius: CGFloat = 16
 
   static let height: CGFloat = 56
-  static let bottomSheetHeight: CGFloat = 334
+  static let convenienceBottomSheetHeight: CGFloat = 334
+  static let promotionBottomSheetHeight: CGFloat = 238
 }

@@ -5,6 +5,7 @@
 //  Created by 홍승현 on 2/21/24.
 //
 
+import DesignSystem
 import Entity
 import SwiftUI
 
@@ -32,6 +33,7 @@ struct ConvenienceSelectBottomSheetView<ViewModel>: View where ViewModel: HomeVi
       }
       .padding(.horizontal, Metrics.itemHorizontalPadding)
     }
+    .foregroundStyle(.gray900)
     .padding(.top, Metrics.topPadding)
     .padding(.bottom, Metrics.bottomPadding)
   }
@@ -50,6 +52,7 @@ private struct ConvenienceSelectItem: View {
     HStack(spacing: Metrics.itemHorizontalSpacing) {
       convenienceImageView()
       convenienceText()
+        .font(.body2)
     }
   }
 
