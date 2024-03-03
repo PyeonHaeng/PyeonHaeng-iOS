@@ -10,7 +10,13 @@ import SwiftUI
 
 // MARK: - SearchView
 
-struct SearchView: View {
+struct SearchView<ViewModel>: View where ViewModel: SearchViewModelRepresentable {
+  @StateObject private var viewModel: ViewModel
+
+  init(viewModel: @autoclosure @escaping () -> ViewModel) {
+    _viewModel = .init(wrappedValue: viewModel())
+  }
+
   var body: some View {
     ScrollView {
       LazyVStack {
@@ -87,8 +93,4 @@ private enum Metrics {
   static let cornerRadius = 8.0
 
   static let removeButtonSize = 32.0
-}
-
-#Preview {
-  SearchView()
 }
