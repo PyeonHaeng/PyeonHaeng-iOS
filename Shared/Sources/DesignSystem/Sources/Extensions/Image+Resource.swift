@@ -85,9 +85,3 @@ public extension Image {
   static let xCircleFill: Image = .init(.xCircleFill)
   static let xCircle: Image = .init(.xCircle)
 }
-
-public extension UIImage {
-  static var backButtonImage: UIImage? {
-    UIImage(resource: .chevronLeftLarge)
-  }
-}
