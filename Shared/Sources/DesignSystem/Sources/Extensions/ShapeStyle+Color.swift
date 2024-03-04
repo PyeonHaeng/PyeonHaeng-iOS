@@ -78,5 +78,5 @@ public extension ShapeStyle where Self == Color {
 
   // Semantic Colors
 
-  static var primary: Color { .green500 }
+  static var pyeonHaengPrimary: Color { .green500 }
 }

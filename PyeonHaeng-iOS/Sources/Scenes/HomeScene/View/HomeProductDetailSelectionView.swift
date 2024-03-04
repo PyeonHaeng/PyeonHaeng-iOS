@@ -56,7 +56,7 @@ struct HomeProductDetailSelectionView<ViewModel>: View where ViewModel: HomeView
           .renderingMode(.template)
       }
       .frame(height: Metrics.textHeight)
-      .foregroundStyle(.gray400)
+      .foregroundStyle(viewModel.state.productConfiguration.promotion == .allItems ? .gray400 : .white)
       .padding(
         .init(
           top: Metrics.promotionButtonPaddingTop,
@@ -67,10 +67,13 @@ struct HomeProductDetailSelectionView<ViewModel>: View where ViewModel: HomeView
       )
     }
     .accessibilityHint("더블 탭하여 할인 조건을 선택하세요")
+    .background(
+      RoundedRectangle(cornerRadius: Metrics.promotionButtonCornerRadius)
+        .fill(viewModel.state.productConfiguration.promotion == .allItems ? .clear : .pyeonHaengPrimary)
+    )
     .overlay {
       RoundedRectangle(cornerRadius: Metrics.promotionButtonCornerRadius)
-        .stroke()
-        .foregroundStyle(.gray400)
+        .stroke(viewModel.state.productConfiguration.promotion == .allItems ? .gray400 : .clear)
     }
     .sheet(isPresented: $promotionModalPresented) {
       PromotionSelectBottomSheetView<ViewModel>()
