@@ -48,10 +48,10 @@ struct HomeView<ViewModel>: View where ViewModel: HomeViewModelRepresentable {
               .foregroundStyle(.gray900)
           }
         }
-
         ToolbarItemGroup(placement: .topBarTrailing) {
           NavigationLink {
-            SearchView()
+            let component = SearchViewComponent()
+            SearchView(viewModel: SearchViewModel(service: component.searchService))
               .toolbarRole(.editor)
           } label: {
             Image.magnifyingglass
