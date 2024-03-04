@@ -17,63 +17,68 @@ struct HomeProductDetailSelectionView<ViewModel>: View where ViewModel: HomeView
 
   var body: some View {
     HStack {
-      Button {
-        convenienceStoreModalPresented = true
-      } label: {
-        Group {
-          convenienceImageView()
-            .resizable()
-            .scaledToFit()
-          Image.chevronDown
-            .renderingMode(.template)
-            .foregroundStyle(.gray300)
-            .accessibilityHidden(true)
-        }
-      }
-      .accessibilityHint("더블 탭하여 편의점을 선택하세요")
-      .sheet(isPresented: $convenienceStoreModalPresented) {
-        ConvenienceSelectBottomSheetView<ViewModel>()
-          .presentationDetents([.height(Metrics.convenienceBottomSheetHeight)])
-          .presentationCornerRadius(20)
-          .presentationBackground(.regularMaterial)
-      }
-
+      convenienceStoreButton
       Spacer()
-
-      Button {
-        promotionModalPresented = true
-      } label: {
-        HStack(spacing: Metrics.buttonSpacing) {
-          Text(verbatim: "All")
-            .font(.title2)
-          Image.arrowTriangleDownFill
-            .renderingMode(.template)
-        }
-        .frame(height: Metrics.textHeight)
-        .foregroundStyle(.gray400)
-        .padding(
-          .init(
-            top: Metrics.promotionButtonPaddingTop,
-            leading: Metrics.promotionButtonPaddingLeading,
-            bottom: Metrics.promotionButtonPaddingBottom,
-            trailing: Metrics.promotionButtonPaddingTrailing
-          )
-        )
-      }
-      .accessibilityHint("더블 탭하여 할인 조건을 선택하세요")
-      .overlay {
-        RoundedRectangle(cornerRadius: Metrics.promotionButtonCornerRadius)
-          .stroke()
-          .foregroundStyle(.gray400)
-      }
-      .sheet(isPresented: $promotionModalPresented) {
-        PromotionSelectBottomSheetView<ViewModel>()
-          .presentationDetents([.height(Metrics.promotionBottomSheetHeight)])
-          .presentationCornerRadius(20)
-          .presentationBackground(.regularMaterial)
-      }
+      promotionButton
     }
     .frame(height: Metrics.height)
+  }
+
+  private var convenienceStoreButton: some View {
+    Button {
+      convenienceStoreModalPresented = true
+    } label: {
+      Group {
+        convenienceImageView()
+          .resizable()
+          .scaledToFit()
+        Image.chevronDown
+          .renderingMode(.template)
+          .foregroundStyle(.gray300)
+          .accessibilityHidden(true)
+      }
+    }
+    .accessibilityHint("더블 탭하여 편의점을 선택하세요")
+    .sheet(isPresented: $convenienceStoreModalPresented) {
+      ConvenienceSelectBottomSheetView<ViewModel>()
+        .bottomSheetPresentation(height: Metrics.convenienceBottomSheetHeight)
+    }
+  }
+
+  private var promotionButton: some View {
+    Button {
+      promotionModalPresented = true
+    } label: {
+      HStack(spacing: Metrics.buttonSpacing) {
+        Text(verbatim: viewModel.state.productConfiguration.promotion.rawValue)
+          .font(.title2)
+        Image.arrowTriangleDownFill
+          .renderingMode(.template)
+      }
+      .frame(height: Metrics.textHeight)
+      .foregroundStyle(viewModel.state.productConfiguration.promotion == .allItems ? .gray400 : .white)
+      .padding(
+        .init(
+          top: Metrics.promotionButtonPaddingTop,
+          leading: Metrics.promotionButtonPaddingLeading,
+          bottom: Metrics.promotionButtonPaddingBottom,
+          trailing: Metrics.promotionButtonPaddingTrailing
+        )
+      )
+    }
+    .accessibilityHint("더블 탭하여 할인 조건을 선택하세요")
+    .background(
+      RoundedRectangle(cornerRadius: Metrics.promotionButtonCornerRadius)
+        .fill(viewModel.state.productConfiguration.promotion == .allItems ? .clear : .pyeonHaengPrimary)
+    )
+    .overlay {
+      RoundedRectangle(cornerRadius: Metrics.promotionButtonCornerRadius)
+        .stroke(viewModel.state.productConfiguration.promotion == .allItems ? .gray400 : .clear)
+    }
+    .sheet(isPresented: $promotionModalPresented) {
+      PromotionSelectBottomSheetView<ViewModel>()
+        .bottomSheetPresentation(height: Metrics.promotionBottomSheetHeight)
+    }
   }
 
   private func convenienceImageView() -> Image {
@@ -89,6 +94,14 @@ struct HomeProductDetailSelectionView<ViewModel>: View where ViewModel: HomeView
     case .ministop:
       .ministop
     }
+  }
+}
+
+extension View {
+  func bottomSheetPresentation(height: CGFloat) -> some View {
+    presentationDetents([.height(height)])
+      .presentationCornerRadius(20)
+      .presentationBackground(.regularMaterial)
   }
 }
 

@@ -41,7 +41,7 @@ public struct NetworkProvider: Networking {
       case let .query(data):
         var components = URLComponents(string: url.absoluteString)
         components?.queryItems = data.toDictionary.map { URLQueryItem(name: $0, value: "\($1)") }
-        request.url = components?.url
+        request.url = URL(string: components?.url?.absoluteString.replacingOccurrences(of: "+", with: "%2B") ?? "")
       }
     } catch {
       throw NetworkError.encodeError
