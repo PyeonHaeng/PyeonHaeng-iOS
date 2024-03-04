@@ -41,9 +41,7 @@ struct HomeProductDetailSelectionView<ViewModel>: View where ViewModel: HomeView
     .accessibilityHint("더블 탭하여 편의점을 선택하세요")
     .sheet(isPresented: $convenienceStoreModalPresented) {
       ConvenienceSelectBottomSheetView<ViewModel>()
-        .presentationDetents([.height(Metrics.convenienceBottomSheetHeight)])
-        .presentationCornerRadius(20)
-        .presentationBackground(.regularMaterial)
+        .bottomSheetPresentation(height: Metrics.convenienceBottomSheetHeight)
     }
   }
 
@@ -76,9 +74,7 @@ struct HomeProductDetailSelectionView<ViewModel>: View where ViewModel: HomeView
     }
     .sheet(isPresented: $promotionModalPresented) {
       PromotionSelectBottomSheetView<ViewModel>()
-        .presentationDetents([.height(Metrics.promotionBottomSheetHeight)])
-        .presentationCornerRadius(20)
-        .presentationBackground(.regularMaterial)
+        .bottomSheetPresentation(height: Metrics.promotionBottomSheetHeight)
     }
   }
 
@@ -95,6 +91,14 @@ struct HomeProductDetailSelectionView<ViewModel>: View where ViewModel: HomeView
     case .ministop:
       .ministop
     }
+  }
+}
+
+extension View {
+  func bottomSheetPresentation(height: CGFloat) -> some View {
+    presentationDetents([.height(height)])
+      .presentationCornerRadius(20)
+      .presentationBackground(.regularMaterial)
   }
 }
 
