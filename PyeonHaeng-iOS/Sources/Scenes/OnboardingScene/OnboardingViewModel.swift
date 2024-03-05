@@ -14,11 +14,11 @@ final class OnboardingViewModel: ObservableObject {
   private let totalPages = 2
 
   private let pages: [OnboardingPage] = [
-    OnboardingPage(title: "하나사면 하나 더",
-                   body: "다양한 편의점의 1+1, 2+1 행사 제품 정보로\n알뜰하고 합리적으로 소비할수 있어요.",
+    OnboardingPage(title: NSLocalizedString("하나사면 하나 더", comment: ""),
+                   body: NSLocalizedString("다양한 편의점의 1+1, 2+1 행사 제품 정보로\n알뜰하고 합리적으로 소비할수 있어요.", comment: ""),
                    imageName: "Onboarding01"),
-    OnboardingPage(title: "수많은 혜택을 한곳에서",
-                   body: "세븐일레븐, CU, 이마트 24, GS 25, 미니스톱의\n수많은 행사정보를 ‘편행’한곳에서 만나보세요.",
+    OnboardingPage(title: NSLocalizedString("수많은 혜택을 한곳에서", comment: ""),
+                   body: NSLocalizedString("세븐일레븐, CU, 이마트 24, GS 25, 미니스톱의\n수많은 행사정보를 ‘편행’한곳에서 만나보세요.", comment: ""),
                    imageName: "Onboarding02"),
   ]
 
@@ -51,10 +51,10 @@ final class OnboardingViewModel: ObservableObject {
   }
 
   var nextButtonText: String {
-    currentPage < pages.count - 1 ? "다음" : "편행 시작하기"
+    currentPage < pages.count - 1 ? NSLocalizedString("다음", comment: "") : NSLocalizedString("편행 시작하기", comment: "")
   }
 
-  var skipButtonText: String = "건너뛰기"
+  var skipButtonText: String = NSLocalizedString("건너뛰기", comment: "")
 
   /// 다음 페이지로 이동
   func nextPage() {
