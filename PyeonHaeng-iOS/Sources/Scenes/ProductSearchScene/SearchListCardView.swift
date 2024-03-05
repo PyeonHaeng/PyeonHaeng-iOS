@@ -5,24 +5,31 @@
 //  Created by 김응철 on 3/1/24.
 //
 
+import Entity
 import SwiftUI
 
 // MARK: - SearchListCardView
 
 struct SearchListCardView: View {
+  let product: SearchProduct
+
   var body: some View {
     HStack {
-      SearchImageView()
-      SearchDetailView()
+      SearchImageView(product: product)
+      SearchDetailView(product: product)
     }
+    .padding(.vertical, Metrics.verticalPadding)
+    .padding(.horizontal, Metrics.horizontalPadding)
   }
 }
 
 // MARK: - SearchImageView
 
 private struct SearchImageView: View {
+  let product: SearchProduct
+
   var body: some View {
-    AsyncImage(url: nil) { phase in
+    AsyncImage(url: product.imageURL) { phase in
       if let image = phase.image {
         image
           .resizable()
@@ -38,49 +45,48 @@ private struct SearchImageView: View {
     }
     .frame(width: Metrics.totalImageSize, height: Metrics.totalImageSize)
   }
-
-  enum Metrics {
-    static let imageSize = 70.0
-    static let totalImageSize = 96.0
-  }
 }
 
 // MARK: - SearchDetailView
 
 private struct SearchDetailView: View {
+  let product: SearchProduct
+
   var body: some View {
-    VStack(alignment: .leading) {
-      PromotionTagView(promotion: .buyOneGetOneFree)
-        .padding(.bottom, Metrics.promotionTagViewBottomPadding)
-      Text(verbatim: "펩시 제로 라임 250ml")
+    VStack(alignment: .leading, spacing: 8.0) {
+      PromotionTagView(promotion: product.promotion)
+      Text(product.name)
         .font(.title1)
         .foregroundStyle(.gray900)
-        .frame(maxWidth: .infinity, minHeight: 19, maxHeight: 19, alignment: .leading)
-        .padding(.bottom, Metrics.productTitleBottomPadding)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.bottom, 8.0)
       HStack {
-        Text(verbatim: "1,800원")
+        Text("\(product.price.formatted())원")
           .font(.x2)
           .strikethrough()
           .foregroundColor(.gray100)
-          .padding(.trailing, Metrics.previousPriceTrailingPadding)
-        Text(verbatim: "개당")
+        Text("개당")
           .font(.c3)
           .foregroundColor(.gray900)
-        Text(verbatim: "1,250원")
+        Text("\(Int(product.price / 2).formatted())원")
           .font(.h4)
           .foregroundColor(.gray900)
       }
+      .padding(.zero)
       .frame(maxWidth: .infinity, alignment: .trailing)
     }
   }
-
-  enum Metrics {
-    static let promotionTagViewBottomPadding = 8.0
-    static let productTitleBottomPadding = 16.0
-    static let previousPriceTrailingPadding = 10.0
-  }
 }
 
-#Preview {
-  SearchListCardView()
+// MARK: - Metrics
+
+private enum Metrics {
+  static let productTitleBottomPadding = 16.0
+  static let previousPriceTrailingPadding = 10.0
+
+  static let verticalPadding = 20.0
+  static let horizontalPadding = 16.0
+
+  static let imageSize = 70.0
+  static let totalImageSize = 96.0
 }
