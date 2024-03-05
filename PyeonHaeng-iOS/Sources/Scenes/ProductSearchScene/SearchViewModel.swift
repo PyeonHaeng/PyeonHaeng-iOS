@@ -21,7 +21,7 @@ enum SearchAction {
 
 struct SearchState {
   var currentText = ""
-  var products = [SearchProduct]()
+  var products = [ConvenienceStore: [SearchProduct]]()
   var offset = 0
   var hasMore = false
 
@@ -101,10 +101,13 @@ final class SearchViewModel: SearchViewModelRepresentable {
 
     state.hasMore = paginatedModel.hasMore
     state.offset += 1
+
+    let results = Dictionary(grouping: paginatedModel.results, by: { $0.convenienceStore })
+
     if isReplace {
-      state.products = paginatedModel.results
+      state.products = results
     } else {
-      state.products.append(contentsOf: paginatedModel.results)
+//      state.products.append(contentsOf: results)
     }
   }
 }
