@@ -93,7 +93,7 @@ private struct SearchHeaderView: View {
 
   var body: some View {
     HStack(spacing: 8.0) {
-      store.image
+      convenienceImageView()
         .resizable()
         .scaledToFit()
         .frame(height: 32.0)
@@ -102,6 +102,21 @@ private struct SearchHeaderView: View {
         .foregroundStyle(.green500)
     }
     .frame(maxWidth: .infinity, alignment: .bottomLeading)
+  }
+
+  private func convenienceImageView() -> Image {
+    switch store {
+    case .cu:
+      .cu
+    case .gs25:
+      .gs25
+    case ._7Eleven:
+      ._7Eleven
+    case .emart24:
+      .emart24
+    case .ministop:
+      .ministop
+    }
   }
 }
 
