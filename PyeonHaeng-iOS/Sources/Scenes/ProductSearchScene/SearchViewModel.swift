@@ -106,8 +106,6 @@ final class SearchViewModel: SearchViewModelRepresentable {
 
     if isReplace {
       state.products = results
-    } else {
-//      state.products.append(contentsOf: results)
     }
   }
 }

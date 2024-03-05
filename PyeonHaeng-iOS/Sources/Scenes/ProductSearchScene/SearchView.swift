@@ -97,7 +97,7 @@ private struct SearchHeaderView: View {
         .resizable()
         .scaledToFit()
         .frame(height: 32.0)
-      Text("\(productsCount)")
+      Text(verbatim: "\(productsCount)")
         .font(.title2)
         .foregroundStyle(.green500)
     }

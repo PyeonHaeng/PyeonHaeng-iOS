@@ -72,7 +72,6 @@ private struct SearchDetailView: View {
           .font(.h4)
           .foregroundColor(.gray900)
       }
-      .padding(.zero)
       .frame(maxWidth: .infinity, alignment: .trailing)
     }
   }
