@@ -120,41 +120,78 @@ public struct CachedAsyncImage<Content: View>: View {
 // MARK: CachedAsyncImage.ImageLoadingError
 
 private extension CachedAsyncImage {
-  enum ImageLoadingError: Error {
+  enum ImageLoadingError: LocalizedError {
+    case metricsUnavailable
     case invalidImageData
     case imageCreationFailed
     case downsampleFailed
+
+    var errorDescription: String? {
+      switch self {
+      case .metricsUnavailable:
+        "Metrics for the URLSession task are unavailable."
+      case .invalidImageData:
+        "The data received from the server is not valid image data."
+      case .imageCreationFailed:
+        "Failed to create an image from the data."
+      case .downsampleFailed:
+        "Failed to downsample the image."
+      }
+    }
   }
 }
 
 // MARK: - Caching Part
 
 private extension CachedAsyncImage {
+  /// Fetches an image from a remote server asynchronously, returning the image and its loading metrics.
+  /// Optionally downsamples the image if a target size is provided.
+  /// - Parameters:
+  ///   - request: The `URLRequest` to fetch the image.
+  ///   - session: The `URLSession` used for network request.
+  /// - Returns: A tuple containing the `Image` and its associated `URLSessionTaskMetrics`.
+  /// - Throws: An error if the image cannot be fetched or created from the data.
   func remoteImage(from request: URLRequest, session: URLSession) async throws -> (Image, URLSessionTaskMetrics) {
     let controller = SessionController()
 
     let (data, _) = try await session.data(for: request, delegate: controller)
-    let metrics = controller.metrics!
+
+    guard let metrics = controller.metrics
+    else {
+      throw ImageLoadingError.metricsUnavailable
+    }
 
     if metrics.redirectCount > 0,
        let lastResponse = metrics.transactionMetrics.last?.response {
       let requests = metrics.transactionMetrics.map(\.request)
-      requests.forEach(session.configuration.urlCache!.removeCachedResponse(for:))
+      for request in requests {
+        session.configuration.urlCache?.removeCachedResponse(for: request)
+      }
       let lastCachedResponse = CachedURLResponse(response: lastResponse, data: data)
-      session.configuration.urlCache!.storeCachedResponse(lastCachedResponse, for: request)
+      session.configuration.urlCache?.storeCachedResponse(lastCachedResponse, for: request)
+    }
+
+    if let pointSize {
+      return try (downsample(imageAt: data, to: pointSize), metrics)
     }
 
     return try (image(from: data), metrics)
   }
 
-  /// URL로 캐싱되어있는 데이터가 있다면 이미지로 불러옵니다.
+  /// Tries to load an image from cache data for a given request. Optionally downsamples the image if a target size is provided.
+  /// - Parameters:
+  ///   - request: The `URLRequest` associated with the cached image.
+  ///   - cache: The `URLCache` where the image data might be stored.
+  /// - Returns: The `Image` if it exists and can be created from the cached data, `nil` otherwise.
+  /// - Throws: An error if the image cannot be created from the cached data.
   func cachedImage(from request: URLRequest, cache: URLCache) throws -> Image? {
     guard let cachedResponse = cache.cachedResponse(for: request) else { return nil }
+
     if let pointSize {
       return try downsample(imageAt: cachedResponse.data, to: pointSize)
-    } else {
-      return try image(from: cachedResponse.data)
     }
+
+    return try image(from: cachedResponse.data)
   }
 
   /// Converts data to an Image type.
