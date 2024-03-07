@@ -50,7 +50,7 @@ public struct CachedAsyncImage<Content: View>: View {
 
   public init(
     url: URL?,
-    urlCache: URLCache,
+    urlCache: URLCache = .imageCache,
     scale: CGFloat = 1,
     downsampleSize: CGSize? = nil,
     transaction: Transaction = Transaction(),

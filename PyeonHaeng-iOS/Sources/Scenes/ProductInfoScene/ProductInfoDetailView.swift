@@ -29,7 +29,7 @@ private struct ImageView: View {
   let product: DetailProduct
 
   var body: some View {
-    AsyncImage(url: product.imageURL) { image in
+    CachedAsyncImage(url: product.imageURL) { image in
       image
         .resizable()
         .scaledToFit()

@@ -5,6 +5,7 @@
 //  Created by 김응철 on 3/1/24.
 //
 
+import DesignSystem
 import Entity
 import SwiftUI
 
@@ -29,7 +30,7 @@ private struct SearchImageView: View {
   let product: SearchProduct
 
   var body: some View {
-    AsyncImage(url: product.imageURL) { phase in
+    CachedAsyncImage(url: product.imageURL) { phase in
       if let image = phase.image {
         image
           .resizable()
