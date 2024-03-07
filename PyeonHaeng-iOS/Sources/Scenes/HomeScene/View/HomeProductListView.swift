@@ -73,7 +73,13 @@ private struct ProductImageView: View {
   }
 
   var body: some View {
-    AsyncImage(url: product.imageURL) { phase in
+    CachedAsyncImage(
+      url: product.imageURL,
+      downsampleSize: .init(
+        width: Metrics.originalImageSize,
+        height: Metrics.originalImageSize
+      )
+    ) { phase in
       if let image = phase.image {
         image
           .resizable()
