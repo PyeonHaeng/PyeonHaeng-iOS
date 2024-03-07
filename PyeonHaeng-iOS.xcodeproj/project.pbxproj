@@ -15,6 +15,7 @@
 		BA05640B2B6248EA003D6DC7 /* HomeAPISupport in Frameworks */ = {isa = PBXBuildFile; productRef = BA05640A2B6248EA003D6DC7 /* HomeAPISupport */; };
 		BA05640D2B6248EA003D6DC7 /* Network in Frameworks */ = {isa = PBXBuildFile; productRef = BA05640C2B6248EA003D6DC7 /* Network */; };
 		BA0623D82B68E51400A0A3B2 /* Log in Frameworks */ = {isa = PBXBuildFile; productRef = BA0623D72B68E51400A0A3B2 /* Log */; };
+		BA1688E02B99B85500A8F462 /* NoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1688DF2B99B85500A8F462 /* NoticeView.swift */; };
 		BA28F17C2B6155450052855E /* PyeonHaeng_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA28F17B2B6155450052855E /* PyeonHaeng_iOSTests.swift */; };
 		BA28F1852B6155810052855E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA28F1842B6155810052855E /* OnboardingView.swift */; };
 		BA28F1882B6155910052855E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA28F1872B6155910052855E /* HomeView.swift */; };
@@ -80,6 +81,7 @@
 		BA0564022B62179A003D6DC7 /* Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Core; sourceTree = "<group>"; };
 		BA0564032B6219D4003D6DC7 /* APIService */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = APIService; sourceTree = "<group>"; };
 		BA0564052B624646003D6DC7 /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Shared.xcconfig; path = XCConfig/Shared.xcconfig; sourceTree = SOURCE_ROOT; };
+		BA1688DF2B99B85500A8F462 /* NoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeView.swift; sourceTree = "<group>"; };
 		BA28F1792B6155450052855E /* PyeonHaeng-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PyeonHaeng-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA28F17B2B6155450052855E /* PyeonHaeng_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PyeonHaeng_iOSTests.swift; sourceTree = "<group>"; };
 		BA28F1842B6155810052855E /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -171,6 +173,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BA1688EB2B99D0B700A8F462 /* Notice */ = {
+			isa = PBXGroup;
+			children = (
+				BA1688DF2B99B85500A8F462 /* NoticeView.swift */,
+			);
+			path = Notice;
+			sourceTree = "<group>";
+		};
 		BA28F1702B6152E90052855E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -260,6 +270,7 @@
 		BA28F18C2B6155EC0052855E /* SettingsScene */ = {
 			isa = PBXGroup;
 			children = (
+				BA1688EB2B99D0B700A8F462 /* Notice */,
 				BA28F18D2B6156420052855E /* SettingsView.swift */,
 			);
 			path = SettingsScene;
@@ -578,6 +589,7 @@
 				9CE4B4712B6F0B57002DC446 /* OnboardingPage.swift in Sources */,
 				E52F371B2B947DC8000EBAD5 /* SearchViewModel.swift in Sources */,
 				BAE159DE2B663A9A002DCF94 /* HomeProductSorterView.swift in Sources */,
+				BA1688E02B99B85500A8F462 /* NoticeView.swift in Sources */,
 				BAE159D82B65FA6F002DCF94 /* HomeProductDetailSelectionView.swift in Sources */,
 				E50176262B6A204F0098D1BE /* ProductInfoLineGraphView.swift in Sources */,
 				BAB5CF252B6B7C5A008B24BF /* AppRootComponent.swift in Sources */,
