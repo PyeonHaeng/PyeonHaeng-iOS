@@ -14,15 +14,19 @@ public struct CachedAsyncImage<Content: View>: View {
   private let content: (AsyncImagePhase) -> Content
   private let transaction: Transaction
   private let scale: CGFloat
+  private let pointSize: CGSize?
   private let urlSession: URLSession
   private let urlRequest: URLRequest?
+
+  // MARK: Initializations
 
   public init(
     url: URL?,
     urlCache: URLCache = .imageCache,
-    scale: CGFloat = 1
+    scale: CGFloat = 1,
+    downsampleSize: CGSize? = nil
   ) where Content == Image {
-    self.init(url: url, urlCache: urlCache, scale: scale) { phase in
+    self.init(url: url, urlCache: urlCache, scale: scale, downsampleSize: downsampleSize) { phase in
       phase.image ?? Image(uiImage: .init())
     }
   }
@@ -31,10 +35,11 @@ public struct CachedAsyncImage<Content: View>: View {
     url: URL?,
     urlCache: URLCache = .imageCache,
     scale: CGFloat = 1,
+    downsampleSize: CGSize? = nil,
     @ViewBuilder content: @escaping (Image) -> I,
     @ViewBuilder placeholder: @escaping () -> P
   ) where Content == _ConditionalContent<I, P>, I: View, P: View {
-    self.init(url: url, urlCache: urlCache, scale: scale) { phase in
+    self.init(url: url, urlCache: urlCache, scale: scale, downsampleSize: downsampleSize) { phase in
       if let image = phase.image {
         content(image)
       } else {
@@ -47,6 +52,7 @@ public struct CachedAsyncImage<Content: View>: View {
     url: URL?,
     urlCache: URLCache,
     scale: CGFloat = 1,
+    downsampleSize: CGSize? = nil,
     transaction: Transaction = Transaction(),
     @ViewBuilder content: @escaping (AsyncImagePhase) -> Content
   ) {
@@ -57,6 +63,7 @@ public struct CachedAsyncImage<Content: View>: View {
     self.urlRequest = urlRequest
     self.content = content
     self.scale = scale
+    pointSize = downsampleSize
     self.transaction = transaction
 
     _phase = State(wrappedValue: .empty)
@@ -73,10 +80,14 @@ public struct CachedAsyncImage<Content: View>: View {
     }
   }
 
+  // MARK: Body
+
   public var body: some View {
     content(phase)
       .task(id: urlRequest, load)
   }
+
+  // MARK: Privates
 
   @Sendable
   private func load() async {
@@ -106,10 +117,14 @@ public struct CachedAsyncImage<Content: View>: View {
   }
 }
 
-// MARK: CachedAsyncImage.LoadingError
+// MARK: CachedAsyncImage.ImageLoadingError
 
 private extension CachedAsyncImage {
-  struct LoadingError: Error {}
+  enum ImageLoadingError: Error {
+    case invalidImageData
+    case imageCreationFailed
+    case downsampleFailed
+  }
 }
 
 // MARK: - Caching Part
@@ -135,17 +150,51 @@ private extension CachedAsyncImage {
   /// URL로 캐싱되어있는 데이터가 있다면 이미지로 불러옵니다.
   func cachedImage(from request: URLRequest, cache: URLCache) throws -> Image? {
     guard let cachedResponse = cache.cachedResponse(for: request) else { return nil }
-    return try image(from: cachedResponse.data)
+    if let pointSize {
+      return try downsample(imageAt: cachedResponse.data, to: pointSize)
+    } else {
+      return try image(from: cachedResponse.data)
+    }
   }
 
-  /// data타입을 Image타입으로 변환합니다. 만약 image로 가져올 수 없다면 Error를 내보냅니다.
+  /// Converts data to an Image type.
   /// - Parameter data: Image data
+  /// - Throws: `ImageLoadingError` if image cannot be created.
   func image(from data: Data) throws -> Image {
     if let uiImage = UIImage(data: data, scale: scale) {
       return Image(uiImage: uiImage)
     } else {
-      throw LoadingError()
+      throw ImageLoadingError.invalidImageData
     }
+  }
+
+  /// Downscales the image at the specified data to a certain size.
+  /// - Parameters:
+  ///   - imageData: The data of the image to display.
+  ///   - pointSize: The target size to downsample the image to.
+  /// - Throws: `ImageLoadingError` if the image cannot be downsampled.
+  func downsample(imageAt imageData: Data, to pointSize: CGSize) throws -> Image {
+    let imageSourceOptions = [kCGImageSourceShouldCache: false] as CFDictionary
+    guard let imageSource = CGImageSourceCreateWithData(imageData as CFData, imageSourceOptions)
+    else {
+      throw ImageLoadingError.imageCreationFailed
+    }
+
+    let maxDimensionInPixels = max(pointSize.width, pointSize.height) * scale
+
+    let downsampleOptions = [
+      kCGImageSourceCreateThumbnailFromImageAlways: true,
+      kCGImageSourceShouldCacheImmediately: true,
+      kCGImageSourceCreateThumbnailWithTransform: true,
+      kCGImageSourceThumbnailMaxPixelSize: maxDimensionInPixels,
+    ] as CFDictionary
+
+    guard let downsampledImage = CGImageSourceCreateThumbnailAtIndex(imageSource, 0, downsampleOptions)
+    else {
+      throw ImageLoadingError.downsampleFailed
+    }
+
+    return Image(uiImage: UIImage(cgImage: downsampledImage))
   }
 }
 
