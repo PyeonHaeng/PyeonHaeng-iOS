@@ -69,6 +69,14 @@ private struct SettingsRow: View {
           .font(.c2)
       }
 
+    case .announcements:
+      NavigationLink {
+        NoticeView()
+          .toolbarRole(.editor)
+      } label: {
+        subject
+      }
+
     default:
       NavigationLink {} label: {
         subject
