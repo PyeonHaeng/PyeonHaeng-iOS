@@ -19,29 +19,53 @@ struct SearchView<ViewModel>: View where ViewModel: SearchViewModelRepresentable
   }
 
   var body: some View {
-    ScrollView {
-      LazyVStack(spacing: .zero) {
-        ForEach(Array(viewModel.state.products), id: \.key) { key, items in
-          Section {
-            ForEach(items) { item in
-              SearchListCardView(product: item)
+    Group {
+      if viewModel.state.isNothing {
+        Image.faceCrying
+          .resizable()
+          .renderingMode(.template)
+          .foregroundStyle(.gray400)
+          .frame(width: 56, height: 56)
+        Text("검색 결과가 없어요.")
+          .font(.title1)
+          .foregroundStyle(.gray400)
+        VStack(alignment: .leading) {
+          Text("• 단어의 철자가 정확한지 확인해 보세요.")
+          Text("• 검색어의 단어 수를 줄이거나,")
+          Text("일반적인 검색어로 다시 검색해 보세요.")
+            .padding(.leading, 10.0)
+        }
+        .font(.c3)
+        .foregroundStyle(.gray200)
+      } else {
+        ScrollView {
+          if viewModel.state.isNothing {
+          } else {
+            LazyVStack(spacing: .zero) {
+              ForEach(Array(viewModel.state.products), id: \.key) { key, items in
+                Section {
+                  ForEach(items) { item in
+                    SearchListCardView(product: item)
+                  }
+                } header: {
+                  SearchHeaderView(
+                    store: key,
+                    productsCount: items.count
+                  )
+                  .padding(.horizontal, Metrics.horizontalPadding)
+                  .padding(.top, Metrics.headerTopPadding)
+                } footer: {
+                  Rectangle()
+                    .foregroundStyle(.gray050)
+                    .frame(maxWidth: .infinity, maxHeight: 10)
+                }
+              }
             }
-          } header: {
-            SearchHeaderView(
-              store: key,
-              productsCount: items.count
-            )
-            .padding(.horizontal, Metrics.horizontalPadding)
-            .padding(.top, Metrics.headerTopPadding)
-          } footer: {
-            Rectangle()
-              .foregroundStyle(.gray050)
-              .frame(maxWidth: .infinity, maxHeight: 10)
           }
         }
+        .scrollIndicators(.hidden)
       }
     }
-    .scrollIndicators(.hidden)
     .toolbar {
       ToolbarItem(placement: .principal) {
         SearchTextField<ViewModel>()
