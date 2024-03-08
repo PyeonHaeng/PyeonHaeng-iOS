@@ -12,17 +12,26 @@ struct NoticeView: View {
   var body: some View {
     NavigationStack {
       List(0 ..< 10) { _ in
-        VStack(alignment: .leading, spacing: 2) {
-          Text(verbatim: "2023.10.18")
-            .foregroundStyle(.gray200)
-            .font(.c4)
-          Text(verbatim: "프로토 타입 완성, 전기 자동차로 해양을 가로지르는 세계 최장 다리 건설 예정")
-            .lineLimit(1)
-            .foregroundStyle(.gray900)
-            .font(.body2)
+        ZStack {
+          NavigationLink {
+            NoticeDetailView()
+              .toolbarRole(.editor)
+          } label: {
+            EmptyView()
+          }
+          .opacity(0)
+          VStack(alignment: .leading, spacing: 2) {
+            Text(verbatim: "2023.10.18")
+              .foregroundStyle(.gray200)
+              .font(.c4)
+            Text(verbatim: "프로토 타입 완성, 전기 자동차로 해양을 가로지르는 세계 최장 다리 건설 예정")
+              .lineLimit(1)
+              .foregroundStyle(.gray900)
+              .font(.body2)
+          }
+          .padding(.top, 8)
+          .padding(.bottom, 12)
         }
-        .padding(.top, 8)
-        .padding(.bottom, 12)
       }
       .navigationTitle("Announcements")
       .navigationBarTitleDisplayMode(.inline)
