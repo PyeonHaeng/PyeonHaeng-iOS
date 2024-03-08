@@ -34,12 +34,13 @@ private struct SearchImageView: View {
       if let image = phase.image {
         image
           .resizable()
-          .scaledToFill()
+          .scaledToFit()
           .frame(width: Metrics.imageSize, height: Metrics.imageSize)
       } else if phase.error != nil {
         Image.textLogo
           .resizable()
-          .frame(width: 40, height: 30)
+          .scaledToFit()
+          .frame(width: Metrics.textLogoWidth, height: Metrics.textLogoHeight)
       } else {
         ProgressView()
       }
@@ -54,13 +55,13 @@ private struct SearchDetailView: View {
   let product: SearchProduct
 
   var body: some View {
-    VStack(alignment: .leading, spacing: 8.0) {
+    VStack(alignment: .leading, spacing: Metrics.detailVStackSpacing) {
       PromotionTagView(promotion: product.promotion)
       Text(product.name)
         .font(.title1)
         .foregroundStyle(.gray900)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.bottom, 8.0)
+        .padding(.bottom, Metrics.detailVStackSpacing)
       HStack {
         Text("\(product.price.formatted())원")
           .font(.x2)
@@ -86,6 +87,10 @@ private enum Metrics {
 
   static let verticalPadding = 20.0
   static let horizontalPadding = 16.0
+  static let detailVStackSpacing = 8.0
+
+  static let textLogoWidth = 40.0
+  static let textLogoHeight = 30.0
 
   static let imageSize = 70.0
   static let totalImageSize = 96.0
