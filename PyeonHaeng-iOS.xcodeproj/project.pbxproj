@@ -32,6 +32,7 @@
 		BA28F1A62B61572A0052855E /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA28F19C2B61572A0052855E /* Pretendard-Black.otf */; };
 		BA402F7E2B85E31800E86AAD /* ConvenienceSelectBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA402F7D2B85E31800E86AAD /* ConvenienceSelectBottomSheetView.swift */; };
 		BA4EA3602B6A37E10003DCE7 /* Entity in Frameworks */ = {isa = PBXBuildFile; productRef = BA4EA35F2B6A37E10003DCE7 /* Entity */; };
+		BA5E51932B9AC8510036209A /* NoticeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5E51922B9AC8510036209A /* NoticeDetailView.swift */; };
 		BA849A342B8F4F36004495BF /* ProductConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8E83232B8EF83B00FE968C /* ProductConfiguration.swift */; };
 		BA849A372B8F4FC0004495BF /* MockPaginatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA849A362B8F4FC0004495BF /* MockPaginatable.swift */; };
 		BA8E83242B8EF83B00FE968C /* ProductConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8E83232B8EF83B00FE968C /* ProductConfiguration.swift */; };
@@ -101,6 +102,7 @@
 		BA28F1A72B6157E90052855E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA402F7D2B85E31800E86AAD /* ConvenienceSelectBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvenienceSelectBottomSheetView.swift; sourceTree = "<group>"; };
 		BA4EA35A2B6A00F70003DCE7 /* Entity */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Entity; sourceTree = "<group>"; };
+		BA5E51922B9AC8510036209A /* NoticeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeDetailView.swift; sourceTree = "<group>"; };
 		BA849A362B8F4FC0004495BF /* MockPaginatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPaginatable.swift; sourceTree = "<group>"; };
 		BA8E83232B8EF83B00FE968C /* ProductConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductConfiguration.swift; sourceTree = "<group>"; };
 		BAA4D9A92B5A1795005999F8 /* PyeonHaeng-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PyeonHaeng-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				BA1688DF2B99B85500A8F462 /* NoticeView.swift */,
+				BA5E51922B9AC8510036209A /* NoticeDetailView.swift */,
 			);
 			path = Notice;
 			sourceTree = "<group>";
@@ -572,6 +575,7 @@
 				E5028D5D2B96BA9F00B36C16 /* ProductInfoDetailView.swift in Sources */,
 				E5028D5C2B96BA9400B36C16 /* SearchView.swift in Sources */,
 				BAE159DA2B65FC35002DCF94 /* HomeProductListView.swift in Sources */,
+				BA5E51932B9AC8510036209A /* NoticeDetailView.swift in Sources */,
 				BA402F7E2B85E31800E86AAD /* ConvenienceSelectBottomSheetView.swift in Sources */,
 				BA28F1852B6155810052855E /* OnboardingView.swift in Sources */,
 				BAB5CF272B6B7CF3008B24BF /* HomeViewModel.swift in Sources */,

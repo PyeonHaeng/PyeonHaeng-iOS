@@ -13,7 +13,10 @@ struct NoticeView: View {
     NavigationStack {
       List(0 ..< 10) { _ in
         ZStack {
-          NavigationLink {} label: {
+          NavigationLink {
+            NoticeDetailView()
+              .toolbarRole(.editor)
+          } label: {
             EmptyView()
           }
           .opacity(0)
