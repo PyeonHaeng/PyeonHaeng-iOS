@@ -18,6 +18,7 @@ private struct TextBlock: Identifiable {
 // MARK: - NoticeDetailView
 
 struct NoticeDetailView: View {
+  // TODO: API 연결 시 지울 예정입니다.
   private let noticeContent: String = """
   안녕하세요 편행팀입니다~
   새로워진 2024년을 맞아 편행이 새단장으로 여러분을 찾아왔습니다. 앞으로도 우리 자주 만나요!
@@ -70,7 +71,7 @@ private struct BulletTextView: View {
 
   /// Calculated spacing to apply before the bullet symbol for alignment.
   private let spacingCount: CGFloat
-  
+
   /// Initializes the view with text content, automatically adjusting spacing based on leading spaces.
   ///
   /// - Parameter content: The bullet-prefixed content, optionally with leading spaces.
