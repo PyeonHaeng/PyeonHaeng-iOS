@@ -436,6 +436,28 @@
         }
       }
     },
+    "검색할 상품이름을 입력해주세요" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "enter the product name to search."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "検索する商品名を入力してください。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "검색할 상품이름을 입력해주세요."
+          }
+        }
+      }
+    },
     "기본 정렬" : {
       "extractionState" : "manual",
       "localizations" : {

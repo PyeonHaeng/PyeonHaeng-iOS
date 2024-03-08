@@ -25,8 +25,8 @@ struct SearchView<ViewModel>: View where ViewModel: SearchViewModelRepresentable
         Image.faceCrying
           .resizable()
           .renderingMode(.template)
+          .frame(width: Metrics.noSearchImageSize, height: Metrics.noSearchImageSize)
           .foregroundStyle(.gray400)
-          .frame(width: 56, height: 56)
         Text("검색 결과가 없어요.")
           .font(.title1)
           .foregroundStyle(.gray400)
@@ -40,26 +40,23 @@ struct SearchView<ViewModel>: View where ViewModel: SearchViewModelRepresentable
         .foregroundStyle(.gray200)
       } else {
         ScrollView {
-          if viewModel.state.isNothing {
-          } else {
-            LazyVStack(spacing: .zero) {
-              ForEach(Array(viewModel.state.products), id: \.key) { key, items in
-                Section {
-                  ForEach(items) { item in
-                    SearchListCardView(product: item)
-                  }
-                } header: {
-                  SearchHeaderView(
-                    store: key,
-                    productsCount: items.count
-                  )
-                  .padding(.horizontal, Metrics.horizontalPadding)
-                  .padding(.top, Metrics.headerTopPadding)
-                } footer: {
-                  Rectangle()
-                    .foregroundStyle(.gray050)
-                    .frame(maxWidth: .infinity, maxHeight: 10)
+          LazyVStack(spacing: .zero) {
+            ForEach(Array(viewModel.state.products), id: \.key) { key, items in
+              Section {
+                ForEach(items) { item in
+                  SearchListCardView(product: item)
                 }
+              } header: {
+                SearchHeaderView(
+                  store: key,
+                  productsCount: items.count
+                )
+                .padding(.horizontal, Metrics.horizontalPadding)
+                .padding(.top, Metrics.headerTopPadding)
+              } footer: {
+                Rectangle()
+                  .foregroundStyle(.gray050)
+                  .frame(maxWidth: .infinity, maxHeight: 10)
               }
             }
           }
@@ -85,7 +82,7 @@ private struct SearchTextField<ViewModel>: View where ViewModel: SearchViewModel
 
   var body: some View {
     ZStack {
-      TextField(Metrics.placeholder, text: $text)
+      TextField("검색할 상품이름을 입력해주세요", text: $text)
         .font(.b1)
         .frame(maxWidth: .infinity, maxHeight: Metrics.textFieldHeight)
         .padding(.vertical, Metrics.textFieldVerticalPadding)
@@ -149,8 +146,6 @@ private struct SearchHeaderView: View {
 // MARK: - Metrics
 
 private enum Metrics {
-  static let placeholder = "검색할 상품이름을 입력해주세요"
-
   static let textFieldVerticalPadding = 8.0
   static let textFieldLeadingPadding = 12.0
   static let textFieldTrailingPadding = 40.0
