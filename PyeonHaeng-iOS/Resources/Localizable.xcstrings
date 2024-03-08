@@ -40,6 +40,50 @@
         }
       }
     },
+    "• 검색어의 단어 수를 줄이거나," : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Reduce the number of search terms or,"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• 検索語の数を減らすか、"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "검색어의 단어수를 줄이거나,"
+          }
+        }
+      }
+    },
+    "• 단어의 철자가 정확한지 확인해 보세요." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Please check if the word and spelling are accurate."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• 単語とスペルが正確かどうかを確認してください。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "단어의 철자가 정확한지 확인해보세요."
+          }
+        }
+      }
+    },
     "1+1" : {
       "localizations" : {
         "ja" : {
@@ -370,6 +414,28 @@
         }
       }
     },
+    "검색 결과가 없어요." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No search results found."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• 検索結果が見つかりません。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "검색 결과가 없어요."
+          }
+        }
+      }
+    },
     "기본 정렬" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -680,6 +746,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "이전 행사 정보"
+          }
+        }
+      }
+    },
+    "일반적인 검색어로 다시 검색해 보세요." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Try searching again with common keywords."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "一般的なキーワードで再検索してみてください。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "일반적인 검색어로 다시 검색해 보세요."
           }
         }
       }
