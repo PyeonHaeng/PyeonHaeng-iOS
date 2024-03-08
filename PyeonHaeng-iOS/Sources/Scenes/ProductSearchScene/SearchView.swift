@@ -13,6 +13,7 @@ import SwiftUI
 
 struct SearchView<ViewModel>: View where ViewModel: SearchViewModelRepresentable {
   @StateObject private var viewModel: ViewModel
+  @State private var text: String = ""
 
   init(viewModel: @autoclosure @escaping () -> ViewModel) {
     _viewModel = .init(wrappedValue: viewModel())
@@ -68,9 +69,10 @@ struct SearchView<ViewModel>: View where ViewModel: SearchViewModelRepresentable
     }
     .toolbar {
       ToolbarItem(placement: .principal) {
-        SearchTextField<ViewModel>()
+        SearchTextField<ViewModel>(text: $text)
       }
     }
+    .scrollDismissesKeyboard(.immediately)
     .environmentObject(viewModel)
   }
 }
@@ -78,12 +80,12 @@ struct SearchView<ViewModel>: View where ViewModel: SearchViewModelRepresentable
 // MARK: - SearchTextField
 
 private struct SearchTextField<ViewModel>: View where ViewModel: SearchViewModelRepresentable {
-  @State private var textInput: String = ""
+  @Binding var text: String
   @EnvironmentObject private var viewModel: ViewModel
 
   var body: some View {
     ZStack {
-      TextField(Metrics.placeholder, text: $textInput)
+      TextField(Metrics.placeholder, text: $text)
         .font(.b1)
         .frame(maxWidth: .infinity, maxHeight: Metrics.textFieldHeight)
         .padding(.vertical, Metrics.textFieldVerticalPadding)
@@ -92,13 +94,13 @@ private struct SearchTextField<ViewModel>: View where ViewModel: SearchViewModel
         .overlay {
           RoundedRectangle(cornerRadius: Metrics.cornerRadius)
             .stroke(
-              textInput.isEmpty ? Color.gray200 : Color.green500,
+              text.isEmpty ? Color.gray200 : Color.green500,
               lineWidth: Metrics.textFieldBorderWidth
             )
         }
-        .onSubmit { viewModel.trigger(.textChanged(textInput)) }
+        .onSubmit { viewModel.trigger(.textChanged(text)) }
       Button(action: {
-        textInput = ""
+        text = ""
       }) {
         Image.xCircleFill
           .renderingMode(.template)
@@ -155,6 +157,8 @@ private enum Metrics {
   static let textFieldHeight = 28.0
   static let textFieldBorderWidth = 1.0
   static let cornerRadius = 8.0
+
+  static let noSearchImageSize = 56.0
 
   static let horizontalPadding = 20.0
   static let headerTopPadding = 24.0
