@@ -24,6 +24,7 @@ struct SearchState {
   var offset = 0
   var hasMore = false
   var isNothing = false
+  var isLoading = false
 }
 
 // MARK: - SearchViewModelRepresentable
@@ -88,8 +89,10 @@ final class SearchViewModel: SearchViewModelRepresentable {
       offset: state.offset
     )
 
+    state.isLoading = true
     let paginatedModel = try await service.fetchSearchList(request: request)
     let results = Dictionary(grouping: paginatedModel.results, by: { $0.convenienceStore })
+    state.isLoading = false
     state.hasMore = paginatedModel.hasMore
     state.offset += 1
     state.products = results
