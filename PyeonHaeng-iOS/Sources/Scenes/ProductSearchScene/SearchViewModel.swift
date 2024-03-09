@@ -28,6 +28,7 @@ struct SearchState {
 
 // MARK: - SearchViewModelRepresentable
 
+@MainActor
 protocol SearchViewModelRepresentable: ObservableObject {
   var state: SearchState { get }
   func trigger(_ action: SearchAction)
@@ -59,7 +60,6 @@ final class SearchViewModel: SearchViewModelRepresentable {
     }
   }
 
-  @MainActor
   private func handle(_ action: SearchAction) async {
     // 비동기 함수를 실행합니다. 만약 오류가 발생하면 Log로 값을 확인할 수 있습니다.
     func performAsyncAction(_ action: () async throws -> Void) async {
@@ -80,7 +80,6 @@ final class SearchViewModel: SearchViewModelRepresentable {
     }
   }
 
-  @MainActor
   private func fetchSearchList() async throws {
     let request = SearchProductRequest(
       name: state.currentText,
