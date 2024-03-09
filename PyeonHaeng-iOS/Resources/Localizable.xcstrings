@@ -782,13 +782,13 @@
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "一般的なキーワードで再検索してみてください。"
           }
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "일반적인 검색어로 다시 검색해 보세요."
           }
         }
