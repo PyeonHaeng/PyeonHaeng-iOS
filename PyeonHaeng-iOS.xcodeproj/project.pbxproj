@@ -10,6 +10,8 @@
 		9CE4B4712B6F0B57002DC446 /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE4B4702B6F0B57002DC446 /* OnboardingPage.swift */; };
 		9CE4B4732B6F0BA3002DC446 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE4B4722B6F0BA3002DC446 /* OnboardingViewModel.swift */; };
 		9CE4B4752B6F78E8002DC446 /* OnboardingPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE4B4742B6F78E8002DC446 /* OnboardingPageControl.swift */; };
+		BA001A722B9DAECE00450AFF /* NoticeAPI in Frameworks */ = {isa = PBXBuildFile; productRef = BA001A712B9DAECE00450AFF /* NoticeAPI */; };
+		BA001A742B9DAECE00450AFF /* NoticeAPISupport in Frameworks */ = {isa = PBXBuildFile; productRef = BA001A732B9DAECE00450AFF /* NoticeAPISupport */; };
 		BA0564062B624646003D6DC7 /* Shared.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = BA0564052B624646003D6DC7 /* Shared.xcconfig */; };
 		BA0564092B6248EA003D6DC7 /* HomeAPI in Frameworks */ = {isa = PBXBuildFile; productRef = BA0564082B6248EA003D6DC7 /* HomeAPI */; };
 		BA05640B2B6248EA003D6DC7 /* HomeAPISupport in Frameworks */ = {isa = PBXBuildFile; productRef = BA05640A2B6248EA003D6DC7 /* HomeAPISupport */; };
@@ -143,8 +145,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA05640D2B6248EA003D6DC7 /* Network in Frameworks */,
+				BA001A742B9DAECE00450AFF /* NoticeAPISupport in Frameworks */,
 				E57F2AA62B7717EA00E12B3D /* ProductInfoAPISupport in Frameworks */,
 				E57F2AA42B7717EA00E12B3D /* ProductInfoAPI in Frameworks */,
+				BA001A722B9DAECE00450AFF /* NoticeAPI in Frameworks */,
 				BA4EA3602B6A37E10003DCE7 /* Entity in Frameworks */,
 				BA05640B2B6248EA003D6DC7 /* HomeAPISupport in Frameworks */,
 				BA0623D82B68E51400A0A3B2 /* Log in Frameworks */,
@@ -440,6 +444,8 @@
 				E57F2AA52B7717EA00E12B3D /* ProductInfoAPISupport */,
 				E55DD5172B9370D100AA63C0 /* SearchAPI */,
 				E55DD5192B9370D100AA63C0 /* SearchAPISupport */,
+				BA001A712B9DAECE00450AFF /* NoticeAPI */,
+				BA001A732B9DAECE00450AFF /* NoticeAPISupport */,
 			);
 			productName = "PyeonHaeng-iOS";
 			productReference = BAA4D9A92B5A1795005999F8 /* PyeonHaeng-iOS.app */;
@@ -873,6 +879,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		BA001A712B9DAECE00450AFF /* NoticeAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NoticeAPI;
+		};
+		BA001A732B9DAECE00450AFF /* NoticeAPISupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NoticeAPISupport;
+		};
 		BA0564082B6248EA003D6DC7 /* HomeAPI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = HomeAPI;

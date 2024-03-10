@@ -1,0 +1,18 @@
+{
+  "count": 2,
+  "has_more": false,
+  "result": [
+    {
+      "title": "test test",
+      "body": null,
+      "date": "2024-02-25T19:41:11Z",
+      "id": 1
+    },
+    {
+      "title": "테스트 제목",
+      "body": null,
+      "date": "2024-02-26T20:35:48Z",
+      "id": 2
+    }
+  ]
+}
