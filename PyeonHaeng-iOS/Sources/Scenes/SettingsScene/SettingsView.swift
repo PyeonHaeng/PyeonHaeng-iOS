@@ -73,7 +73,7 @@ private struct SettingsRow: View {
       }
 
     case .contacts:
-      MailRowItem()
+      MailRowItem(deviceProvider: SystemDeviceProvider())
 
     default:
       NavigationLink {} label: {
