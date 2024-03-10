@@ -15,6 +15,7 @@
 		BA05640B2B6248EA003D6DC7 /* HomeAPISupport in Frameworks */ = {isa = PBXBuildFile; productRef = BA05640A2B6248EA003D6DC7 /* HomeAPISupport */; };
 		BA05640D2B6248EA003D6DC7 /* Network in Frameworks */ = {isa = PBXBuildFile; productRef = BA05640C2B6248EA003D6DC7 /* Network */; };
 		BA0623D82B68E51400A0A3B2 /* Log in Frameworks */ = {isa = PBXBuildFile; productRef = BA0623D72B68E51400A0A3B2 /* Log */; };
+		BA097F0E2B9CA82A002D3E1E /* MailSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA097F0D2B9CA82A002D3E1E /* MailSheetView.swift */; };
 		BA1688E02B99B85500A8F462 /* NoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1688DF2B99B85500A8F462 /* NoticeView.swift */; };
 		BA28F17C2B6155450052855E /* PyeonHaeng_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA28F17B2B6155450052855E /* PyeonHaeng_iOSTests.swift */; };
 		BA28F1852B6155810052855E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA28F1842B6155810052855E /* OnboardingView.swift */; };
@@ -47,6 +48,7 @@
 		BAE159D82B65FA6F002DCF94 /* HomeProductDetailSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE159D72B65FA6F002DCF94 /* HomeProductDetailSelectionView.swift */; };
 		BAE159DA2B65FC35002DCF94 /* HomeProductListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE159D92B65FC35002DCF94 /* HomeProductListView.swift */; };
 		BAE159DE2B663A9A002DCF94 /* HomeProductSorterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE159DD2B663A9A002DCF94 /* HomeProductSorterView.swift */; };
+		BAE7A1E62B9D7CA70022FEBB /* MailRowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE7A1E52B9D7CA70022FEBB /* MailRowItem.swift */; };
 		BAF2BEB32B61236100931AF0 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = BAF2BEB22B61236100931AF0 /* Localizable.xcstrings */; };
 		E50176262B6A204F0098D1BE /* ProductInfoLineGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50176252B6A204F0098D1BE /* ProductInfoLineGraphView.swift */; };
 		E5028D5C2B96BA9400B36C16 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA28F1902B61566E0052855E /* SearchView.swift */; };
@@ -82,6 +84,7 @@
 		BA0564022B62179A003D6DC7 /* Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Core; sourceTree = "<group>"; };
 		BA0564032B6219D4003D6DC7 /* APIService */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = APIService; sourceTree = "<group>"; };
 		BA0564052B624646003D6DC7 /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Shared.xcconfig; path = XCConfig/Shared.xcconfig; sourceTree = SOURCE_ROOT; };
+		BA097F0D2B9CA82A002D3E1E /* MailSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailSheetView.swift; sourceTree = "<group>"; };
 		BA1688DF2B99B85500A8F462 /* NoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeView.swift; sourceTree = "<group>"; };
 		BA28F1792B6155450052855E /* PyeonHaeng-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PyeonHaeng-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA28F17B2B6155450052855E /* PyeonHaeng_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PyeonHaeng_iOSTests.swift; sourceTree = "<group>"; };
@@ -117,6 +120,7 @@
 		BAE159D72B65FA6F002DCF94 /* HomeProductDetailSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProductDetailSelectionView.swift; sourceTree = "<group>"; };
 		BAE159D92B65FC35002DCF94 /* HomeProductListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProductListView.swift; sourceTree = "<group>"; };
 		BAE159DD2B663A9A002DCF94 /* HomeProductSorterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProductSorterView.swift; sourceTree = "<group>"; };
+		BAE7A1E52B9D7CA70022FEBB /* MailRowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailRowItem.swift; sourceTree = "<group>"; };
 		BAF2BEB22B61236100931AF0 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		E50176252B6A204F0098D1BE /* ProductInfoLineGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoLineGraphView.swift; sourceTree = "<group>"; };
 		E50584522B763C8C002FDACF /* ProductInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoViewModel.swift; sourceTree = "<group>"; };
@@ -173,6 +177,15 @@
 				E55DD5152B936DD200AA63C0 /* SearchAPI */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BA097F0C2B9CA820002D3E1E /* Mail */ = {
+			isa = PBXGroup;
+			children = (
+				BA097F0D2B9CA82A002D3E1E /* MailSheetView.swift */,
+				BAE7A1E52B9D7CA70022FEBB /* MailRowItem.swift */,
+			);
+			path = Mail;
 			sourceTree = "<group>";
 		};
 		BA1688EB2B99D0B700A8F462 /* Notice */ = {
@@ -273,6 +286,7 @@
 		BA28F18C2B6155EC0052855E /* SettingsScene */ = {
 			isa = PBXGroup;
 			children = (
+				BA097F0C2B9CA820002D3E1E /* Mail */,
 				BA1688EB2B99D0B700A8F462 /* Notice */,
 				BA28F18D2B6156420052855E /* SettingsView.swift */,
 			);
@@ -573,6 +587,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5028D5D2B96BA9F00B36C16 /* ProductInfoDetailView.swift in Sources */,
+				BAE7A1E62B9D7CA70022FEBB /* MailRowItem.swift in Sources */,
 				E5028D5C2B96BA9400B36C16 /* SearchView.swift in Sources */,
 				BAE159DA2B65FC35002DCF94 /* HomeProductListView.swift in Sources */,
 				BA5E51932B9AC8510036209A /* NoticeDetailView.swift in Sources */,
@@ -591,6 +606,7 @@
 				E57F2AA82B774CA700E12B3D /* ProductInfoDependency.swift in Sources */,
 				E55DD5122B91DE9500AA63C0 /* SearchListCardView.swift in Sources */,
 				9CE4B4712B6F0B57002DC446 /* OnboardingPage.swift in Sources */,
+				BA097F0E2B9CA82A002D3E1E /* MailSheetView.swift in Sources */,
 				E52F371B2B947DC8000EBAD5 /* SearchViewModel.swift in Sources */,
 				BAE159DE2B663A9A002DCF94 /* HomeProductSorterView.swift in Sources */,
 				BA1688E02B99B85500A8F462 /* NoticeView.swift in Sources */,
