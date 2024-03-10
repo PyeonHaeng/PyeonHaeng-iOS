@@ -10,23 +10,13 @@ import Foundation
 
 // MARK: - ProductConfiguration
 
-struct ProductConfiguration {
+struct ProductConfiguration: PagingProvider {
   private(set) var store: ConvenienceStore = .gs25
   private(set) var promotion: Promotion = .allItems
   private(set) var order: Order = .normal
   let pageSize: Int = 20
   private(set) var offset: Int = 0
   private(set) var loadingState: PagingState = .idle
-}
-
-// MARK: ProductConfiguration.PagingState
-
-extension ProductConfiguration {
-  enum PagingState {
-    case idle
-    case isLoading
-    case loadedAll
-  }
 }
 
 // MARK: Mutating Functions

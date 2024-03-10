@@ -108,7 +108,7 @@ final class HomeViewModel: HomeViewModelRepresentable {
   /// 제품 목록을 가져옵니다.
   /// - Parameter replace: 덮어씌울건지, 아니면 추가로 덧댈건지 판단합니다. `replace`가 `true`라면 새롭게 덮어씌우고, `false`라면 이어서 덧댑니다.
   private func fetchProducts(replace: Bool) async throws {
-    guard state.productConfiguration.loadingState == .idle else { return }
+    guard state.productConfiguration.canLoad() else { return }
     state.productConfiguration.startLoading()
 
     let request: ProductRequest = .init(
