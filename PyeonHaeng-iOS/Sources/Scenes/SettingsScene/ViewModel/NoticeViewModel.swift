@@ -20,7 +20,7 @@ enum NoticeAction {
 // MARK: - NoticeState
 
 struct NoticeState {
-  var products: [Notice] = []
+  var noticeList: [Notice] = []
 }
 
 // MARK: - NoticeViewModelRepresentable
@@ -86,7 +86,7 @@ final class NoticeViewModel: NoticeViewModelRepresentable {
 
   /// 공지 목록을 가져옵니다.
   /// - Parameter replace: 덮어씌울건지, 아니면 추가로 덧댈건지 판단합니다. `replace`가 `true`라면 새롭게 덮어씌우고, `false`라면 이어서 덧댑니다.
-  private func fetchNotice(replace _: Bool) async throws {
+  private func fetchNotice(replace: Bool) async throws {
     guard pagingProvider.canLoad() else { return }
     pagingProvider.startLoading()
 
@@ -97,7 +97,15 @@ final class NoticeViewModel: NoticeViewModelRepresentable {
 
     let paginatedModel = try await service.fetchNoticeList(request: request)
 
-    // 다음에 요청하기 위해 설정해야할 메타데이터 업데이트
-    pagingProvider.update(meta: paginatedModel)
+    defer {
+      // 다음에 요청하기 위해 설정해야할 메타데이터 업데이트
+      pagingProvider.update(meta: paginatedModel)
+    }
+
+    if replace {
+      state.noticeList = paginatedModel.results
+    } else {
+      state.noticeList.append(contentsOf: paginatedModel.results)
+    }
   }
 }
