@@ -61,6 +61,7 @@ private struct SettingsRow: View {
         Spacer()
         Text(verbatim: .version ?? "-")
           .font(.c2)
+          .accessibilityLabel(Text(verbatim: "\(.version ?? "Unknown") Version"))
       }
 
     case .announcements:
@@ -86,7 +87,9 @@ private struct SettingsRow: View {
       image(from: item)
         .renderingMode(.template)
         .foregroundStyle(.gray900)
+        .accessibilityHidden(true)
       Text(item.rawValue)
+        .font(.b1)
     }
   }
 
