@@ -17,7 +17,7 @@
 		BA0623D82B68E51400A0A3B2 /* Log in Frameworks */ = {isa = PBXBuildFile; productRef = BA0623D72B68E51400A0A3B2 /* Log */; };
 		BA097F0E2B9CA82A002D3E1E /* MailSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA097F0D2B9CA82A002D3E1E /* MailSheetView.swift */; };
 		BA1688E02B99B85500A8F462 /* NoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1688DF2B99B85500A8F462 /* NoticeView.swift */; };
-		BA28F17C2B6155450052855E /* PyeonHaeng_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA28F17B2B6155450052855E /* PyeonHaeng_iOSTests.swift */; };
+		BA28F17C2B6155450052855E /* ProductConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA28F17B2B6155450052855E /* ProductConfigurationTests.swift */; };
 		BA28F1852B6155810052855E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA28F1842B6155810052855E /* OnboardingView.swift */; };
 		BA28F1882B6155910052855E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA28F1872B6155910052855E /* HomeView.swift */; };
 		BA28F18B2B6155BD0052855E /* ProductInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA28F18A2B6155BD0052855E /* ProductInfoView.swift */; };
@@ -50,6 +50,9 @@
 		BAE159DE2B663A9A002DCF94 /* HomeProductSorterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE159DD2B663A9A002DCF94 /* HomeProductSorterView.swift */; };
 		BAE7A1E62B9D7CA70022FEBB /* MailRowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE7A1E52B9D7CA70022FEBB /* MailRowItem.swift */; };
 		BAE7A1E82B9DA0360022FEBB /* DeviceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE7A1E72B9DA0360022FEBB /* DeviceProvider.swift */; };
+		BAE7A1EA2B9DA4960022FEBB /* MockDeviceInformationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE7A1E92B9DA4960022FEBB /* MockDeviceInformationProvider.swift */; };
+		BAE7A1EB2B9DA4A50022FEBB /* DeviceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE7A1E72B9DA0360022FEBB /* DeviceProvider.swift */; };
+		BAE7A1ED2B9DA5090022FEBB /* DeviceInformationProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE7A1EC2B9DA5090022FEBB /* DeviceInformationProviderTests.swift */; };
 		BAF2BEB32B61236100931AF0 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = BAF2BEB22B61236100931AF0 /* Localizable.xcstrings */; };
 		E50176262B6A204F0098D1BE /* ProductInfoLineGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50176252B6A204F0098D1BE /* ProductInfoLineGraphView.swift */; };
 		E5028D5C2B96BA9400B36C16 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA28F1902B61566E0052855E /* SearchView.swift */; };
@@ -88,7 +91,7 @@
 		BA097F0D2B9CA82A002D3E1E /* MailSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailSheetView.swift; sourceTree = "<group>"; };
 		BA1688DF2B99B85500A8F462 /* NoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeView.swift; sourceTree = "<group>"; };
 		BA28F1792B6155450052855E /* PyeonHaeng-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PyeonHaeng-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BA28F17B2B6155450052855E /* PyeonHaeng_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PyeonHaeng_iOSTests.swift; sourceTree = "<group>"; };
+		BA28F17B2B6155450052855E /* ProductConfigurationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductConfigurationTests.swift; sourceTree = "<group>"; };
 		BA28F1842B6155810052855E /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		BA28F1872B6155910052855E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		BA28F18A2B6155BD0052855E /* ProductInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoView.swift; sourceTree = "<group>"; };
@@ -123,6 +126,8 @@
 		BAE159DD2B663A9A002DCF94 /* HomeProductSorterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProductSorterView.swift; sourceTree = "<group>"; };
 		BAE7A1E52B9D7CA70022FEBB /* MailRowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailRowItem.swift; sourceTree = "<group>"; };
 		BAE7A1E72B9DA0360022FEBB /* DeviceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceProvider.swift; sourceTree = "<group>"; };
+		BAE7A1E92B9DA4960022FEBB /* MockDeviceInformationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDeviceInformationProvider.swift; sourceTree = "<group>"; };
+		BAE7A1EC2B9DA5090022FEBB /* DeviceInformationProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInformationProviderTests.swift; sourceTree = "<group>"; };
 		BAF2BEB22B61236100931AF0 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		E50176252B6A204F0098D1BE /* ProductInfoLineGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoLineGraphView.swift; sourceTree = "<group>"; };
 		E50584522B763C8C002FDACF /* ProductInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoViewModel.swift; sourceTree = "<group>"; };
@@ -240,7 +245,8 @@
 			isa = PBXGroup;
 			children = (
 				BA849A352B8F4FB0004495BF /* Mocks */,
-				BA28F17B2B6155450052855E /* PyeonHaeng_iOSTests.swift */,
+				BA28F17B2B6155450052855E /* ProductConfigurationTests.swift */,
+				BAE7A1EC2B9DA5090022FEBB /* DeviceInformationProviderTests.swift */,
 			);
 			path = "PyeonHaeng-iOSTests";
 			sourceTree = "<group>";
@@ -336,6 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				BA849A362B8F4FC0004495BF /* MockPaginatable.swift */,
+				BAE7A1E92B9DA4960022FEBB /* MockDeviceInformationProvider.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -580,8 +587,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA849A372B8F4FC0004495BF /* MockPaginatable.swift in Sources */,
+				BAE7A1EA2B9DA4960022FEBB /* MockDeviceInformationProvider.swift in Sources */,
 				BA849A342B8F4F36004495BF /* ProductConfiguration.swift in Sources */,
-				BA28F17C2B6155450052855E /* PyeonHaeng_iOSTests.swift in Sources */,
+				BA28F17C2B6155450052855E /* ProductConfigurationTests.swift in Sources */,
+				BAE7A1EB2B9DA4A50022FEBB /* DeviceProvider.swift in Sources */,
+				BAE7A1ED2B9DA5090022FEBB /* DeviceInformationProviderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
