@@ -38,12 +38,6 @@ struct SettingsView: View {
   }
 }
 
-private extension String {
-  static var version: String? {
-    Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
-  }
-}
-
 // MARK: - SettingsRow
 
 private struct SettingsRow: View {
@@ -67,6 +61,7 @@ private struct SettingsRow: View {
         Spacer()
         Text(verbatim: .version ?? "-")
           .font(.c2)
+          .accessibilityLabel(Text(verbatim: "\(.version ?? "Unknown") Version"))
       }
 
     case .announcements:
@@ -76,6 +71,9 @@ private struct SettingsRow: View {
       } label: {
         subject
       }
+
+    case .contacts:
+      MailRowItem(deviceProvider: SystemDeviceProvider())
 
     default:
       NavigationLink {} label: {
@@ -89,7 +87,9 @@ private struct SettingsRow: View {
       image(from: item)
         .renderingMode(.template)
         .foregroundStyle(.gray900)
+        .accessibilityHidden(true)
       Text(item.rawValue)
+        .font(.b1)
     }
   }
 
@@ -117,6 +117,12 @@ private extension SettingsView {
   enum Metrics {
     static let itemHeight: CGFloat = 56
     static let itemVerticalPadding: CGFloat = 4
+  }
+}
+
+private extension String {
+  static var version: String? {
+    Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
   }
 }
 
