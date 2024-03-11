@@ -1,5 +1,5 @@
 //
-//  PyeonHaeng_iOSTests.swift
+//  ProductConfigurationTests.swift
 //  PyeonHaeng-iOSTests
 //
 //  Created by 홍승현 on 1/24/24.

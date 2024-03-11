@@ -164,6 +164,38 @@
         }
       }
     },
+    "Cannot Send Mail" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "メールを送信できません"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "메일을 보낼 수 없음"
+          }
+        }
+      }
+    },
+    "Close" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "閉じる"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "닫기"
+          }
+        }
+      }
+    },
     "Contact Us" : {
       "localizations" : {
         "ja" : {
@@ -292,6 +324,22 @@
         }
       }
     },
+    "Open App Store" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App Storeを開く"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "앱 스토어 열기"
+          }
+        }
+      }
+    },
     "Select Promotion Items" : {
       "localizations" : {
         "ja" : {
@@ -320,6 +368,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "버전 정보"
+          }
+        }
+      }
+    },
+    "Your device is not configured to send mail.\nWould you like to install a mail app from the App Store?" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "お使いのデバイスはメールを送信するために設定されていません。App Storeからメールアプリをインストールしますか？"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "기기에서 메일을 보낼 수 있도록 설정되어 있지 않아요. 앱 스토어에서 메일 앱을 설치할까요?"
           }
         }
       }
@@ -446,13 +510,13 @@
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "検索する商品名を入力してください。"
           }
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "검색할 상품이름을 입력해주세요."
           }
         }
