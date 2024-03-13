@@ -135,7 +135,6 @@
 		E52F371C2B94D239000EBAD5 /* SearchViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewComponent.swift; sourceTree = "<group>"; };
 		E5462C652B65677B00E9FDF2 /* PromotionTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionTag.swift; sourceTree = "<group>"; };
 		E55DD5112B91DE9500AA63C0 /* SearchListCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListCardView.swift; sourceTree = "<group>"; };
-		E55DD5152B936DD200AA63C0 /* SearchAPI */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SearchAPI; path = APIService/Sources/SearchAPI; sourceTree = "<group>"; };
 		E57F2AA72B774CA700E12B3D /* ProductInfoDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoDependency.swift; sourceTree = "<group>"; };
 		E5F2EC3F2B637D4A00EE0838 /* ProductInfoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoDetailView.swift; sourceTree = "<group>"; };
 		E5F2EC442B64926100EE0838 /* PromotionTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionTagView.swift; sourceTree = "<group>"; };
@@ -176,14 +175,6 @@
 			);
 			name = XCConfig;
 			path = "PyeonHaeng-iOS/XCConfig";
-			sourceTree = "<group>";
-		};
-		BA0564072B6248EA003D6DC7 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E55DD5152B936DD200AA63C0 /* SearchAPI */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		BA097F0C2B9CA820002D3E1E /* Mail */ = {
