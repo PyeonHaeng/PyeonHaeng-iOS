@@ -33,6 +33,8 @@
 		BA28F1A62B61572A0052855E /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA28F19C2B61572A0052855E /* Pretendard-Black.otf */; };
 		BA402F7E2B85E31800E86AAD /* ConvenienceSelectBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA402F7D2B85E31800E86AAD /* ConvenienceSelectBottomSheetView.swift */; };
 		BA4EA3602B6A37E10003DCE7 /* Entity in Frameworks */ = {isa = PBXBuildFile; productRef = BA4EA35F2B6A37E10003DCE7 /* Entity */; };
+		BA4FB9C52BA1BC5B00ED03C4 /* NoticeAPI in Frameworks */ = {isa = PBXBuildFile; productRef = BA4FB9C42BA1BC5B00ED03C4 /* NoticeAPI */; };
+		BA4FB9C72BA1BC5B00ED03C4 /* NoticeAPISupport in Frameworks */ = {isa = PBXBuildFile; productRef = BA4FB9C62BA1BC5B00ED03C4 /* NoticeAPISupport */; };
 		BA5E51932B9AC8510036209A /* NoticeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5E51922B9AC8510036209A /* NoticeDetailView.swift */; };
 		BA849A342B8F4F36004495BF /* ProductConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8E83232B8EF83B00FE968C /* ProductConfiguration.swift */; };
 		BA849A372B8F4FC0004495BF /* MockPaginatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA849A362B8F4FC0004495BF /* MockPaginatable.swift */; };
@@ -153,8 +155,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA05640D2B6248EA003D6DC7 /* Network in Frameworks */,
+				BA4FB9C72BA1BC5B00ED03C4 /* NoticeAPISupport in Frameworks */,
 				E57F2AA62B7717EA00E12B3D /* ProductInfoAPISupport in Frameworks */,
 				E57F2AA42B7717EA00E12B3D /* ProductInfoAPI in Frameworks */,
+				BA4FB9C52BA1BC5B00ED03C4 /* NoticeAPI in Frameworks */,
 				BA4EA3602B6A37E10003DCE7 /* Entity in Frameworks */,
 				BA05640B2B6248EA003D6DC7 /* HomeAPISupport in Frameworks */,
 				BA0623D82B68E51400A0A3B2 /* Log in Frameworks */,
@@ -329,6 +333,13 @@
 			path = BottomSheet;
 			sourceTree = "<group>";
 		};
+		BA4FB9C32BA1BC5B00ED03C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BA849A352B8F4FB0004495BF /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
@@ -349,7 +360,7 @@
 				BAA4D9AB2B5A1795005999F8 /* PyeonHaeng-iOS */,
 				BA28F17A2B6155450052855E /* PyeonHaeng-iOSTests */,
 				BA0564042B624629003D6DC7 /* XCConfig */,
-				BA0564072B6248EA003D6DC7 /* Frameworks */,
+				BA4FB9C32BA1BC5B00ED03C4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -455,6 +466,8 @@
 				E57F2AA52B7717EA00E12B3D /* ProductInfoAPISupport */,
 				E55DD5172B9370D100AA63C0 /* SearchAPI */,
 				E55DD5192B9370D100AA63C0 /* SearchAPISupport */,
+				BA4FB9C42BA1BC5B00ED03C4 /* NoticeAPI */,
+				BA4FB9C62BA1BC5B00ED03C4 /* NoticeAPISupport */,
 			);
 			productName = "PyeonHaeng-iOS";
 			productReference = BAA4D9A92B5A1795005999F8 /* PyeonHaeng-iOS.app */;
@@ -913,6 +926,14 @@
 		BA4EA35F2B6A37E10003DCE7 /* Entity */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Entity;
+		};
+		BA4FB9C42BA1BC5B00ED03C4 /* NoticeAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NoticeAPI;
+		};
+		BA4FB9C62BA1BC5B00ED03C4 /* NoticeAPISupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NoticeAPISupport;
 		};
 		BAB569602B639F3000D1E0F9 /* DesignSystem */ = {
 			isa = XCSwiftPackageProductDependency;
