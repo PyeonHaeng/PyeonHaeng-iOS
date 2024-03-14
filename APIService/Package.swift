@@ -15,6 +15,14 @@ let package = Package(
       targets: ["HomeAPISupport"]
     ),
     .library(
+      name: "NoticeAPI",
+      targets: ["NoticeAPI"]
+    ),
+    .library(
+      name: "NoticeAPISupport",
+      targets: ["NoticeAPISupport"]
+    ),
+    .library(
       name: "ProductInfoAPI",
       targets: ["ProductInfoAPI"]
     ),
@@ -47,6 +55,20 @@ let package = Package(
       name: "HomeAPISupport",
       dependencies: [
         "HomeAPI",
+      ],
+      resources: [.process("Mocks")]
+    ),
+    .target(
+      name: "NoticeAPI",
+      dependencies: [
+        .product(name: "Network", package: "Core"),
+        .product(name: "Entity", package: "Entity"),
+      ]
+    ),
+    .target(
+      name: "NoticeAPISupport",
+      dependencies: [
+        "NoticeAPI",
       ],
       resources: [.process("Mocks")]
     ),
