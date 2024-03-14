@@ -23,8 +23,13 @@ struct ProductInfoComponent: ProductInfoDependency {
 
   init(productID: Int) {
     let productInfoNetworking: Networking = {
-      let configuration = URLSessionConfiguration.ephemeral
-      configuration.protocolClasses = [ProductInfoURLProtocol.self]
+      var configuration = URLSessionConfiguration.ephemeral
+      #if DEBUG
+        configuration = .ephemeral
+        configuration.protocolClasses = [ProductInfoURLProtocol.self]
+      #else
+        configuration = .default
+      #endif
       let provider = NetworkProvider(session: URLSession(configuration: configuration))
       return provider
     }()
