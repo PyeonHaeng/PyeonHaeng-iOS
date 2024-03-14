@@ -90,12 +90,17 @@ final class SearchViewModel: SearchViewModelRepresentable {
     )
 
     state.isLoading = true
-    let paginatedModel = try await service.fetchSearchList(request: request)
-    let results = Dictionary(grouping: paginatedModel.results, by: { $0.convenienceStore })
+    do {
+      let paginatedModel = try await service.fetchSearchList(request: request)
+      let results = Dictionary(grouping: paginatedModel.results, by: { $0.convenienceStore })
+      state.products = results
+      // 값이 비어있지 않을 때
+      state.isNothing = false
+    } catch {
+      // 값이 비어있을 때
+      state.isNothing = true
+    }
+    // 로딩 종료
     state.isLoading = false
-    state.hasMore = paginatedModel.hasMore
-    state.offset += 1
-    state.products = results
-    state.isNothing = results.isEmpty
   }
 }
