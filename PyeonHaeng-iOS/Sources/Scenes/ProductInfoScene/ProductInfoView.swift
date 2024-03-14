@@ -18,20 +18,22 @@ struct ProductInfoView<ViewModel>: View where ViewModel: ProductInfoViewModelRep
   }
 
   var body: some View {
-    NavigationStack {
-      VStack {
+    VStack {
+      if viewModel.state.isLoading {
+        ProgressView()
+          .containerRelativeFrame(.vertical)
+      } else {
         ProductInfoDetailView<ViewModel>()
         ProductInfoLineGraphView<ViewModel>()
         Spacer()
       }
-      .environmentObject(viewModel)
-      .navigationTitle("제품 상세")
-      .navigationBarTitleDisplayMode(.inline)
-      .padding(.horizontal, 20.0)
     }
+    .environmentObject(viewModel)
+    .navigationTitle("제품 상세")
+    .navigationBarTitleDisplayMode(.inline)
+    .padding(.horizontal, 20.0)
     .onAppear {
       viewModel.trigger(.fetchProduct)
-      viewModel.trigger(.fetchProductPrices)
     }
   }
 }
