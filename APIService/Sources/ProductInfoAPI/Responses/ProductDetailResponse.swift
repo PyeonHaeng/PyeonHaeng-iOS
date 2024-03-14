@@ -8,7 +8,16 @@
 import Entity
 import Foundation
 
+// MARK: - ProductDetailResponse
+
 struct ProductDetailResponse: Decodable {
+  let count: Int
+  let results: [ProductDetailItemResponse]
+}
+
+// MARK: - ProductDetailItemResponse
+
+struct ProductDetailItemResponse: Decodable {
   let name: String
   let img: URL
   let price: Int
