@@ -36,7 +36,7 @@ extension ProductInfoService: ProductInfoServiceRepresentable {
       with: ProductInfoEndPoint.fetchProduct(productID)
     )
     if let item = response.results.first {
-      return DetailProduct.init(dto: item)
+      return DetailProduct(dto: item)
     } else {
       return DetailProduct(id: 0, imageURL: nil, price: 0, name: "", promotion: .allItems, convenienceStore: ._7Eleven, date: .distantPast)
     }
