@@ -14,13 +14,13 @@ import ProductInfoAPI
 
 enum ProductInfoAction {
   case fetchProduct
-  case fetchProductPrices
 }
 
 // MARK: - ProductInfoState
 
 struct ProductInfoState {
   var product: DetailProduct = mockProduct
+  var isLoading = true
   var previousProducts: [DetailProduct] = []
 }
 
@@ -66,17 +66,20 @@ final class ProductInfoViewModel: ProductInfoViewModelRepresentable {
   private func render(as action: ProductInfoAction) {
     switch action {
     case .fetchProduct:
-      Task { try await fetchProductDetail() }
-    case .fetchProductPrices:
-      Task { try await fetchProductPrices() }
+      Task {
+        try await fetchProductDetail()
+        try await fetchProductPrices()
+      }
     }
   }
 
   private func fetchProductDetail() async throws {
+    state.isLoading = true
     try await state.product = service.fetchProduct()
   }
 
   private func fetchProductPrices() async throws {
     try await state.previousProducts = service.fetchProductPrice().reversed()
+    state.isLoading = false
   }
 }

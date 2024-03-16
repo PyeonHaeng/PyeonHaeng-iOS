@@ -24,6 +24,7 @@ struct SearchState {
   var offset = 0
   var hasMore = false
   var isNothing = false
+  var isLoading = false
 }
 
 // MARK: - SearchViewModelRepresentable
@@ -88,11 +89,18 @@ final class SearchViewModel: SearchViewModelRepresentable {
       offset: state.offset
     )
 
-    let paginatedModel = try await service.fetchSearchList(request: request)
-    let results = Dictionary(grouping: paginatedModel.results, by: { $0.convenienceStore })
-    state.hasMore = paginatedModel.hasMore
-    state.offset += 1
-    state.products = results
-    state.isNothing = results.isEmpty
+    state.isLoading = true
+    do {
+      let paginatedModel = try await service.fetchSearchList(request: request)
+      let results = Dictionary(grouping: paginatedModel.results, by: { $0.convenienceStore })
+      state.products = results
+      // 값이 비어있지 않을 때
+      state.isNothing = false
+    } catch {
+      // 값이 비어있을 때
+      state.isNothing = true
+    }
+    // 로딩 종료
+    state.isLoading = false
   }
 }

@@ -39,14 +39,14 @@ struct ProductInfoLineGraphView<ViewModel>: View where ViewModel: ProductInfoVie
           LineGraphSymbolView(locations: symbolLocations)
           BackgroundGradientView(locations: symbolLocations, frameSize: frameSize)
         }
-        .onChange(of: viewModel.state.previousProducts) { _, newProducts in
+        .onAppear {
           frameSize = reader.size
-          updateSymbolLocations(newProducts)
+          updateSymbolLocations(viewModel.state.previousProducts)
           offset = CGSize(
-            width: symbolLocations[newProducts.count].x - (Metrics.panelWidth / 2),
-            height: 0
+            width: symbolLocations[viewModel.state.previousProducts.count].x - (Metrics.panelWidth / 2),
+            height: .zero
           )
-          index = newProducts.count - 1
+          index = viewModel.state.previousProducts.count - 1
         }
         .gesture(DragGesture().onChanged { viewDidDrag($0) })
         .overlay(alignment: .bottomLeading) {
@@ -75,7 +75,7 @@ private extension ProductInfoLineGraphView {
 
     if let maxPrice = prices.max(), maxPrice != 0 {
       for (index, price) in prices.enumerated() {
-        let heightFactor = 1 - (CGFloat(price) / CGFloat(maxPrice))
+        let heightFactor = (1 - (CGFloat(price) / CGFloat(maxPrice))) * 4
         let pathHeight = Metrics.lineMaxHeightFromTop + Metrics.lineMaxHeightFromBottom * heightFactor
         let pathWidth = interval * CGFloat(index + 1)
         locations.append(CGPoint(x: pathWidth, y: pathHeight))

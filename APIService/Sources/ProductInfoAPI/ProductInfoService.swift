@@ -35,19 +35,23 @@ extension ProductInfoService: ProductInfoServiceRepresentable {
     let response: ProductDetailResponse = try await network.request(
       with: ProductInfoEndPoint.fetchProduct(productID)
     )
-    return DetailProduct(dto: response)
+    if let item = response.results.first {
+      return DetailProduct(dto: item)
+    } else {
+      return DetailProduct(id: 0, imageURL: nil, price: 0, name: "", promotion: .allItems, convenienceStore: ._7Eleven, date: .distantPast)
+    }
   }
 
   public func fetchProductPrice() async throws -> [DetailProduct] {
-    let response: [ProductDetailResponse] = try await network.request(
+    let response: ProductDetailPricesResponse = try await network.request(
       with: ProductInfoEndPoint.fetchPrices(productID)
     )
-    return response.map(DetailProduct.init(dto:))
+    return response.results.map(DetailProduct.init(dto:))
   }
 }
 
 private extension DetailProduct {
-  init(dto: ProductDetailResponse) {
+  init(dto: ProductDetailItemResponse) {
     self.init(
       id: dto.id,
       imageURL: dto.img,

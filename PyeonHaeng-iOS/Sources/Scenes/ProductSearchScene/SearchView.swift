@@ -20,50 +20,67 @@ struct SearchView<ViewModel>: View where ViewModel: SearchViewModelRepresentable
   }
 
   var body: some View {
-    Group {
-      if viewModel.state.isNothing {
-        Image.faceCrying
-          .resizable()
-          .renderingMode(.template)
-          .frame(width: Metrics.noSearchImageSize, height: Metrics.noSearchImageSize)
-          .foregroundStyle(.gray400)
-        Text("검색 결과가 없어요.")
-          .font(.title1)
-          .foregroundStyle(.gray400)
-        VStack(alignment: .leading) {
-          Text("• 단어의 철자가 정확한지 확인해 보세요.")
-          Text("• 검색어의 단어 수를 줄이거나,")
-          Text("일반적인 검색어로 다시 검색해 보세요.")
-            .padding(.leading, 10.0)
-        }
-        .font(.c3)
-        .foregroundStyle(.gray200)
+    ScrollView {
+      if viewModel.state.isLoading {
+        ProgressView()
+          .progressViewStyle(.circular)
+          .containerRelativeFrame(.vertical)
       } else {
-        ScrollView {
-          LazyVStack(spacing: .zero) {
-            ForEach(Array(viewModel.state.products), id: \.key) { key, items in
-              Section {
-                ForEach(items) { item in
-                  SearchListCardView(product: item)
+        Group {
+          if viewModel.state.isNothing {
+            VStack {
+              Image.faceCrying
+                .resizable()
+                .renderingMode(.template)
+                .frame(width: Metrics.noSearchImageSize, height: Metrics.noSearchImageSize)
+                .foregroundStyle(.gray400)
+              Text("검색 결과가 없어요.")
+                .font(.title1)
+                .foregroundStyle(.gray400)
+              VStack(alignment: .leading) {
+                Text("• 단어의 철자가 정확한지 확인해 보세요.")
+                Text("• 검색어의 단어 수를 줄이거나,")
+                Text("일반적인 검색어로 다시 검색해 보세요.")
+                  .padding(.leading, 10.0)
+              }
+            }
+            .font(.c3)
+            .foregroundStyle(.gray200)
+            .containerRelativeFrame(.vertical)
+          } else {
+            LazyVStack(spacing: .zero) {
+              ForEach(Array(viewModel.state.products), id: \.key) { key, items in
+                Section {
+                  ForEach(items) { item in
+                    NavigationLink {
+                      ProductInfoView(
+                        viewModel: ProductInfoViewModel(
+                          service: ProductInfoComponent(productID: item.id).productInfoService
+                        )
+                      )
+                    } label: {
+                      SearchListCardView(product: item)
+                    }
+                  }
+                } header: {
+                  SearchHeaderView(
+                    store: key,
+                    productsCount: items.count
+                  )
+                  .padding(.horizontal, Metrics.horizontalPadding)
+                  .padding(.top, Metrics.headerTopPadding)
+                } footer: {
+                  Rectangle()
+                    .foregroundStyle(.gray050)
+                    .frame(maxWidth: .infinity, maxHeight: 10)
                 }
-              } header: {
-                SearchHeaderView(
-                  store: key,
-                  productsCount: items.count
-                )
-                .padding(.horizontal, Metrics.horizontalPadding)
-                .padding(.top, Metrics.headerTopPadding)
-              } footer: {
-                Rectangle()
-                  .foregroundStyle(.gray050)
-                  .frame(maxWidth: .infinity, maxHeight: 10)
               }
             }
           }
         }
-        .scrollIndicators(.hidden)
       }
     }
+    .scrollIndicators(.hidden)
     .toolbar {
       ToolbarItem(placement: .principal) {
         SearchTextField<ViewModel>(text: $text)
