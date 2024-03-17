@@ -81,6 +81,7 @@ public extension Image {
   static let store: Image = .init(.store)
 
   static let textLogo: Image = .init(.textLogo)
+  static let splashLogo: Image = .init(.splashLogo)
 
   static let xCircleFill: Image = .init(.xCircleFill)
   static let xCircle: Image = .init(.xCircle)

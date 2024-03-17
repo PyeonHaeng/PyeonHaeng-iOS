@@ -995,6 +995,28 @@
         }
       }
     },
+    "합리적인 편의점 소비의 시작!" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The start of rational convenience store consumption!"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "合理的なコンビニエンスストアの消費の始まり！"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "합리적인 편의점 소비의 시작!"
+          }
+        }
+      }
+    },
     "행사 진행 편의점" : {
       "extractionState" : "manual",
       "localizations" : {
