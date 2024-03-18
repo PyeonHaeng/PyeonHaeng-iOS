@@ -1,5 +1,5 @@
 //
-//  AppRootComponent.swift
+//  HomeComponent.swift
 //  PyeonHaeng-iOS
 //
 //  Created by 홍승현 on 2/1/24.
@@ -10,15 +10,15 @@ import HomeAPI
 import HomeAPISupport
 import Network
 
-// MARK: - HomeDependency
+// MARK: - AppRootDependency
 
-protocol HomeDependency {
+protocol AppRootDependency {
   var homeService: HomeServiceRepresentable { get }
 }
 
-// MARK: - AppRootComponent
+// MARK: - HomeComponent
 
-struct HomeComponent: HomeDependency {
+struct HomeComponent: AppRootDependency {
   let homeService: HomeServiceRepresentable
 
   init() {

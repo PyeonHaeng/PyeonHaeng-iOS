@@ -10,9 +10,9 @@ import SwiftUI
 
 struct SplashView: View {
   @State private var showingSplash: Bool = true
-  private let dependency: HomeDependency
+  private let dependency: AppRootDependency
 
-  init(dependency: HomeDependency) {
+  init(dependency: AppRootDependency) {
     self.dependency = dependency
   }
 
@@ -40,5 +40,5 @@ struct SplashView: View {
 }
 
 #Preview {
-  SplashView(dependency: AppRootComponent())
+  SplashView(dependency: HomeComponent())
 }
