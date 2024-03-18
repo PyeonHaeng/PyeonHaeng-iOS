@@ -18,7 +18,7 @@ protocol HomeDependency {
 
 // MARK: - AppRootComponent
 
-struct AppRootComponent: HomeDependency {
+struct HomeComponent: HomeDependency {
   let homeService: HomeServiceRepresentable
 
   init() {

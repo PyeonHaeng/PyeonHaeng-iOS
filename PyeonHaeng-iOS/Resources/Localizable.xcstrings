@@ -434,7 +434,6 @@
       }
     },
     "건너뛰기" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -614,7 +613,6 @@
       }
     },
     "다음" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -764,6 +762,29 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "설정"
+          }
+        }
+      }
+    },
+    "세븐일레븐, CU, 이마트 24, GS 25, 미니스톱의 수많은 행사정보를 ‘편행’한곳에서 만나보세요." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Explore the promotions from various convenience stores such as 7-Eleven, CU, Emart 24, GS 25, Mini Stop all in one place with 'Pyunhaeng'."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "セブンイレブン、CU、イマート24、GS25、ミニストップなど、様々なコンビニのプロモーション情報を「편행（ピョンハン）」で一か所にまとめて見つけてください。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "세븐일레븐, CU, 이마트 24, GS 25, 미니스톱의\\n수많은 행사정보를 ‘편행’한곳에서 만나보세요."
           }
         }
       }
@@ -950,7 +971,6 @@
       }
     },
     "편행 시작하기" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
