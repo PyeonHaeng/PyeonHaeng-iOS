@@ -1,5 +1,5 @@
 //
-//  AppRootComponent.swift
+//  Services.swift
 //  PyeonHaeng-iOS
 //
 //  Created by 홍승현 on 2/1/24.
@@ -12,21 +12,9 @@ import Network
 import NoticeAPI
 import NoticeAPISupport
 
-// MARK: - HomeDependency
+// MARK: - Services
 
-protocol HomeDependency {
-  var homeService: HomeServiceRepresentable { get }
-}
-
-// MARK: - NoticeDependency
-
-protocol NoticeDependency {
-  var noticeService: NoticeServiceRepresentable { get }
-}
-
-// MARK: - AppRootComponent
-
-struct AppRootComponent: HomeDependency, NoticeDependency {
+struct Services {
   let homeService: HomeServiceRepresentable
   let noticeService: NoticeServiceRepresentable
 
