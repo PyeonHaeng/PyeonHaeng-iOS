@@ -1,5 +1,5 @@
 //
-//  HomeComponent.swift
+//  AppRootComponent.swift
 //  PyeonHaeng-iOS
 //
 //  Created by 홍승현 on 2/1/24.
@@ -16,7 +16,7 @@ protocol AppRootDependency {
   var homeService: HomeServiceRepresentable { get }
 }
 
-// MARK: - HomeComponent
+// MARK: - AppRootComponent
 
 struct AppRootComponent: AppRootDependency {
   let homeService: HomeServiceRepresentable
