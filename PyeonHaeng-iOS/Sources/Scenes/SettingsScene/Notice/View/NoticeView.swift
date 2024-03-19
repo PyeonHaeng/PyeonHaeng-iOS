@@ -10,6 +10,11 @@ import SwiftUI
 
 struct NoticeView<ViewModel>: View where ViewModel: NoticeViewModelRepresentable {
   @StateObject private var viewModel: ViewModel
+  private let dateFormatter: DateFormatter = {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy.MM.dd"
+    return dateFormatter
+  }()
 
   init(viewModel: @autoclosure @escaping () -> ViewModel) {
     _viewModel = .init(wrappedValue: viewModel())
@@ -17,8 +22,8 @@ struct NoticeView<ViewModel>: View where ViewModel: NoticeViewModelRepresentable
 
   var body: some View {
     NavigationStack {
-      List(0 ..< 10) { _ in
-        ZStack {
+      List(viewModel.state.noticeList) { notice in
+        ZStack(alignment: .leading) {
           NavigationLink {
             NoticeDetailView()
               .toolbarRole(.editor)
@@ -27,10 +32,10 @@ struct NoticeView<ViewModel>: View where ViewModel: NoticeViewModelRepresentable
           }
           .opacity(0)
           VStack(alignment: .leading, spacing: 2) {
-            Text(verbatim: "2023.10.18")
+            Text(verbatim: dateFormatter.string(from: notice.date))
               .foregroundStyle(.gray200)
               .font(.c4)
-            Text(verbatim: "프로토 타입 완성, 전기 자동차로 해양을 가로지르는 세계 최장 다리 건설 예정")
+            Text(verbatim: notice.title)
               .lineLimit(1)
               .foregroundStyle(.gray900)
               .font(.body2)
@@ -38,6 +43,9 @@ struct NoticeView<ViewModel>: View where ViewModel: NoticeViewModelRepresentable
           .padding(.top, 8)
           .padding(.bottom, 12)
         }
+      }
+      .onAppear {
+        viewModel.trigger(.fetchNoticeList)
       }
       .navigationTitle("Announcements")
       .navigationBarTitleDisplayMode(.inline)

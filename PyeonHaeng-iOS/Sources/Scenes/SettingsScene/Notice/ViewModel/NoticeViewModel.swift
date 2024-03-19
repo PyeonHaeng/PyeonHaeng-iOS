@@ -77,6 +77,7 @@ final class NoticeViewModel: NoticeViewModelRepresentable {
 
   /// 공지 목록을 가져옵니다.
   private func fetchNotice() async throws {
+    guard state.noticeConfiguration.loadingState == .idle else { return }
     state.noticeConfiguration.startLoading()
     let noticeList = try await service.fetchNoticeList(
       request: .init(

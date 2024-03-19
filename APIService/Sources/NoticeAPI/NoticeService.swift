@@ -47,6 +47,7 @@ private extension Paginated where Model == Notice {
 private extension Notice {
   init(dto: NoticeItemResponse) {
     self.init(
+      id: dto.id,
       date: dto.date,
       title: dto.title
     )
