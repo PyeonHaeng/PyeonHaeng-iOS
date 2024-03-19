@@ -17,6 +17,8 @@
 		BA0623D82B68E51400A0A3B2 /* Log in Frameworks */ = {isa = PBXBuildFile; productRef = BA0623D72B68E51400A0A3B2 /* Log */; };
 		BA097F0E2B9CA82A002D3E1E /* MailSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA097F0D2B9CA82A002D3E1E /* MailSheetView.swift */; };
 		BA1688E02B99B85500A8F462 /* NoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1688DF2B99B85500A8F462 /* NoticeView.swift */; };
+		BA1989762BA9536A0083B4BE /* NoticeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1989752BA9536A0083B4BE /* NoticeViewModel.swift */; };
+		BA19897A2BA95C040083B4BE /* NoticeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1989792BA95C040083B4BE /* NoticeConfiguration.swift */; };
 		BA28F17C2B6155450052855E /* ProductConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA28F17B2B6155450052855E /* ProductConfigurationTests.swift */; };
 		BA28F1852B6155810052855E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA28F1842B6155810052855E /* OnboardingView.swift */; };
 		BA28F1882B6155910052855E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA28F1872B6155910052855E /* HomeView.swift */; };
@@ -92,6 +94,8 @@
 		BA0564052B624646003D6DC7 /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Shared.xcconfig; path = XCConfig/Shared.xcconfig; sourceTree = SOURCE_ROOT; };
 		BA097F0D2B9CA82A002D3E1E /* MailSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailSheetView.swift; sourceTree = "<group>"; };
 		BA1688DF2B99B85500A8F462 /* NoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeView.swift; sourceTree = "<group>"; };
+		BA1989752BA9536A0083B4BE /* NoticeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewModel.swift; sourceTree = "<group>"; };
+		BA1989792BA95C040083B4BE /* NoticeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeConfiguration.swift; sourceTree = "<group>"; };
 		BA28F1792B6155450052855E /* PyeonHaeng-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PyeonHaeng-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA28F17B2B6155450052855E /* ProductConfigurationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductConfigurationTests.swift; sourceTree = "<group>"; };
 		BA28F1842B6155810052855E /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -194,10 +198,28 @@
 		BA1688EB2B99D0B700A8F462 /* Notice */ = {
 			isa = PBXGroup;
 			children = (
+				BA1989782BA953800083B4BE /* View */,
+				BA1989772BA9537B0083B4BE /* ViewModel */,
+			);
+			path = Notice;
+			sourceTree = "<group>";
+		};
+		BA1989772BA9537B0083B4BE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BA1989752BA9536A0083B4BE /* NoticeViewModel.swift */,
+				BA1989792BA95C040083B4BE /* NoticeConfiguration.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BA1989782BA953800083B4BE /* View */ = {
+			isa = PBXGroup;
+			children = (
 				BA1688DF2B99B85500A8F462 /* NoticeView.swift */,
 				BA5E51922B9AC8510036209A /* NoticeDetailView.swift */,
 			);
-			path = Notice;
+			path = View;
 			sourceTree = "<group>";
 		};
 		BA28F1702B6152E90052855E /* Resources */ = {
@@ -604,6 +626,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5028D5D2B96BA9F00B36C16 /* ProductInfoDetailView.swift in Sources */,
+				BA1989762BA9536A0083B4BE /* NoticeViewModel.swift in Sources */,
 				BAE7A1E62B9D7CA70022FEBB /* MailRowItem.swift in Sources */,
 				E5028D5C2B96BA9400B36C16 /* SearchView.swift in Sources */,
 				BAE159DA2B65FC35002DCF94 /* HomeProductListView.swift in Sources */,
@@ -618,6 +641,7 @@
 				E50584532B763C8C002FDACF /* ProductInfoViewModel.swift in Sources */,
 				BAB720342B9325F200C2CA1A /* PromotionSelectBottomSheetView.swift in Sources */,
 				9CE4B4732B6F0BA3002DC446 /* OnboardingViewModel.swift in Sources */,
+				BA19897A2BA95C040083B4BE /* NoticeConfiguration.swift in Sources */,
 				9CE4B4752B6F78E8002DC446 /* OnboardingPageControl.swift in Sources */,
 				BA28F18E2B6156420052855E /* SettingsView.swift in Sources */,
 				E57F2AA82B774CA700E12B3D /* ProductInfoDependency.swift in Sources */,
