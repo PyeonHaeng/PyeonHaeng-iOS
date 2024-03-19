@@ -10,11 +10,7 @@ import SwiftUI
 
 struct SplashView: View {
   @State private var showingSplash: Bool = true
-  private let dependency: AppRootDependency
-
-  init(dependency: AppRootDependency) {
-    self.dependency = dependency
-  }
+  @Environment(\.injected) private var container
 
   var body: some View {
     if showingSplash {
@@ -34,11 +30,7 @@ struct SplashView: View {
         }
       }
     } else {
-      HomeView(viewModel: HomeViewModel(service: dependency.homeService))
+      HomeView(viewModel: HomeViewModel(service: container.appRootComponent.homeService))
     }
   }
-}
-
-#Preview {
-  SplashView(dependency: AppRootComponent())
 }
