@@ -19,6 +19,7 @@
 		BA1688E02B99B85500A8F462 /* NoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1688DF2B99B85500A8F462 /* NoticeView.swift */; };
 		BA1989762BA9536A0083B4BE /* NoticeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1989752BA9536A0083B4BE /* NoticeViewModel.swift */; };
 		BA19897A2BA95C040083B4BE /* NoticeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1989792BA95C040083B4BE /* NoticeConfiguration.swift */; };
+		BA19897C2BA95E8C0083B4BE /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA19897B2BA95E8C0083B4BE /* DIContainer.swift */; };
 		BA28F17C2B6155450052855E /* ProductConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA28F17B2B6155450052855E /* ProductConfigurationTests.swift */; };
 		BA28F1852B6155810052855E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA28F1842B6155810052855E /* OnboardingView.swift */; };
 		BA28F1882B6155910052855E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA28F1872B6155910052855E /* HomeView.swift */; };
@@ -96,6 +97,7 @@
 		BA1688DF2B99B85500A8F462 /* NoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeView.swift; sourceTree = "<group>"; };
 		BA1989752BA9536A0083B4BE /* NoticeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewModel.swift; sourceTree = "<group>"; };
 		BA1989792BA95C040083B4BE /* NoticeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeConfiguration.swift; sourceTree = "<group>"; };
+		BA19897B2BA95E8C0083B4BE /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		BA28F1792B6155450052855E /* PyeonHaeng-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PyeonHaeng-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA28F17B2B6155450052855E /* ProductConfigurationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductConfigurationTests.swift; sourceTree = "<group>"; };
 		BA28F1842B6155810052855E /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 			children = (
 				E5462C652B65677B00E9FDF2 /* PromotionTag.swift */,
 				BAA4D9AC2B5A1795005999F8 /* PyeonHaengApp.swift */,
+				BA19897B2BA95E8C0083B4BE /* DIContainer.swift */,
 				BAB5CF242B6B7C5A008B24BF /* AppRootComponent.swift */,
 				E5462C6B2B65CF7800E9FDF2 /* Components */,
 				BA28F1722B61532C0052855E /* Scenes */,
@@ -632,6 +635,7 @@
 				BAE159DA2B65FC35002DCF94 /* HomeProductListView.swift in Sources */,
 				BA5E51932B9AC8510036209A /* NoticeDetailView.swift in Sources */,
 				BA402F7E2B85E31800E86AAD /* ConvenienceSelectBottomSheetView.swift in Sources */,
+				BA19897C2BA95E8C0083B4BE /* DIContainer.swift in Sources */,
 				BA28F1852B6155810052855E /* OnboardingView.swift in Sources */,
 				BAB5CF272B6B7CF3008B24BF /* HomeViewModel.swift in Sources */,
 				BA28F1882B6155910052855E /* HomeView.swift in Sources */,

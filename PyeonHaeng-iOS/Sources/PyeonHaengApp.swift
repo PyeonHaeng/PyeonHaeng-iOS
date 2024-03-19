@@ -20,6 +20,7 @@ struct PyeonHaengApp: App {
   var body: some Scene {
     WindowGroup {
       SplashView(dependency: appComponent)
+        .environment(\.injected, DIContainer(appRootComponent: appComponent))
     }
   }
 

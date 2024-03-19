@@ -8,7 +8,13 @@
 import DesignSystem
 import SwiftUI
 
-struct NoticeView: View {
+struct NoticeView<ViewModel>: View where ViewModel: NoticeViewModelRepresentable {
+  @StateObject private var viewModel: ViewModel
+
+  init(viewModel: @autoclosure @escaping () -> ViewModel) {
+    _viewModel = .init(wrappedValue: viewModel())
+  }
+
   var body: some View {
     NavigationStack {
       List(0 ..< 10) { _ in
@@ -39,8 +45,4 @@ struct NoticeView: View {
       .padding(.vertical, 8)
     }
   }
-}
-
-#Preview {
-  NoticeView()
 }
