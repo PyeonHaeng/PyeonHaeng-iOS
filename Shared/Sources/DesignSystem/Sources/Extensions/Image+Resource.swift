@@ -85,4 +85,7 @@ public extension Image {
 
   static let xCircleFill: Image = .init(.xCircleFill)
   static let xCircle: Image = .init(.xCircle)
+
+  static let onboarding1: Image = .init(.onboarding1)
+  static let onboarding2: Image = .init(.onboarding2)
 }

@@ -98,6 +98,7 @@ private struct ProductImageView: View {
           .frame(width: Metrics.totalImageSize, height: Metrics.totalImageSize)
       }
     }
+    .accessibilityHidden(true)
   }
 
   private enum Metrics {
@@ -141,20 +142,15 @@ private struct PriceView: View {
   var body: some View {
     HStack(spacing: 10) {
       Spacer()
-      Text("\(product.price.formatted())원")
+      Text("(\((product.price / 2).formatted())₩ per piece)")
         .font(.x2)
-        .strikethrough()
         .foregroundColor(.gray100)
-        .accessibilityLabel("기존 가격")
       HStack(spacing: 4) {
-        Text("개당")
-          .font(.c3)
-          .accessibilityHidden(true)
-        Text("\(Int(product.price / 2).formatted())원")
+        Text("\(product.price.formatted())₩")
           .font(.h4)
-          .accessibilityLabel("개당 가격")
+          .accessibilityHint("기존 가격")
+          .foregroundStyle(.gray900)
       }
-      .foregroundStyle(.gray900)
     }
   }
 }
