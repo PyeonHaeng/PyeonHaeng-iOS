@@ -18,6 +18,38 @@
         }
       }
     },
+    "(%@₩ per piece)" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(1個につき%@)"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(개당 %@원)"
+          }
+        }
+      }
+    },
+    "%@₩" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@₩"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@원"
+          }
+        }
+      }
+    },
     "%@원" : {
       "localizations" : {
         "en" : {
@@ -407,28 +439,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "개당"
-          }
-        }
-      }
-    },
-    "개당 가격" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Price Per Item"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "単価"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "개당 가격"
           }
         }
       }
