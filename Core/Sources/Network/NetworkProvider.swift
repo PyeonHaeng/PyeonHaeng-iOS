@@ -20,7 +20,7 @@ public struct NetworkProvider: Networking {
 
   public func request<T: Decodable>(with endPoint: EndPoint) async throws -> T {
     let urlRequest = try makeRequest(endPoint)
-    logger?.info("⬇️⬇️Requesting...⬇️⬇️\n\(urlRequest)\n⬆️⬆️=============⬆️⬆️\n")
+    logger?.debug("⬇️⬇️Requesting...⬇️⬇️\n\(urlRequest)\n⬆️⬆️=============⬆️⬆️\n")
     let dataModel = try await executeRequest(urlRequest)
     logger?.debug("⬇️⬇️Decoding...⬇️⬇️\n")
     return try decodingToModel(dataModel)
@@ -64,7 +64,7 @@ public struct NetworkProvider: Networking {
       logger?.error("⚠️⚠️===Network Connection Error==⚠️⚠️\n")
       throw error
     }
-    logger?.debug("✅✅===Req Completed===✅✅\n")
+    logger?.debug("✅✅===Req(\(request)) Completed===✅✅\n")
 
     guard let response = response as? HTTPURLResponse
     else {
