@@ -8,7 +8,7 @@
 import DesignSystem
 import SwiftUI
 
-// MARK: - OnboardingViewd
+// MARK: - OnboardingView
 
 struct OnboardingView: View {
   @State private var currentPage = 0
@@ -69,7 +69,7 @@ struct OnboardingView: View {
           .padding(.bottom, 8)
           .padding(.top, 208)
         }
-      } // ZStack
+      }
       .tabViewStyle(.page)
       .toolbar {
         ToolbarItem(placement: .topBarTrailing) {
