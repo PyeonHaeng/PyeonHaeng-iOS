@@ -12,9 +12,16 @@ let package = Package(
       targets: ["Network"]
     ),
   ],
+  dependencies: [
+    .package(path: "../Shared"),
+  ],
   targets: [
     .target(
-      name: "Network"),
+      name: "Network",
+      dependencies: [
+        .product(name: "Log", package: "Shared"),
+      ]
+    ),
     .testTarget(
       name: "CoreTests",
       dependencies: ["Network"]
