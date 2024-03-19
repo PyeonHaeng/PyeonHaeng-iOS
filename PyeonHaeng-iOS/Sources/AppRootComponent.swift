@@ -10,15 +10,15 @@ import HomeAPI
 import HomeAPISupport
 import Network
 
-// MARK: - HomeDependency
+// MARK: - AppRootDependency
 
-protocol HomeDependency {
+protocol AppRootDependency {
   var homeService: HomeServiceRepresentable { get }
 }
 
 // MARK: - AppRootComponent
 
-struct AppRootComponent: HomeDependency {
+struct AppRootComponent: AppRootDependency {
   let homeService: HomeServiceRepresentable
 
   init() {

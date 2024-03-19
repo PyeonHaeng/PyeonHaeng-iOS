@@ -12,6 +12,8 @@ import SwiftUI
 
 struct HomeView<ViewModel>: View where ViewModel: HomeViewModelRepresentable {
   @StateObject private var viewModel: ViewModel
+  @State private var isOnboardingSheetOpen = false
+  @AppStorage("isFirstLaunch") private var isFirstLaunch: Bool = false
 
   init(viewModel: @autoclosure @escaping () -> ViewModel) {
     _viewModel = .init(wrappedValue: viewModel())
@@ -21,7 +23,6 @@ struct HomeView<ViewModel>: View where ViewModel: HomeViewModelRepresentable {
     NavigationStack {
       ZStack {
         HomeProductListView<ViewModel>()
-
         VStack(spacing: 0) {
           VStack {
             HomeProductDetailSelectionView<ViewModel>()
@@ -74,7 +75,14 @@ struct HomeView<ViewModel>: View where ViewModel: HomeViewModelRepresentable {
       }
     }
     .tint(.accent)
+    .fullScreenCover(isPresented: $isOnboardingSheetOpen) {
+      OnboardingView()
+    }
     .onAppear {
+      if !isFirstLaunch {
+        isOnboardingSheetOpen = true
+        isFirstLaunch = true
+      }
       viewModel.trigger(.fetchProducts)
       viewModel.trigger(.fetchCount)
     }
