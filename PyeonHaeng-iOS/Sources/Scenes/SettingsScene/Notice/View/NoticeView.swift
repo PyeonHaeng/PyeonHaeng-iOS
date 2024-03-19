@@ -33,7 +33,7 @@ struct NoticeView<ViewModel>: View where ViewModel: NoticeViewModelRepresentable
           .opacity(0)
           VStack(alignment: .leading, spacing: 2) {
             Text(verbatim: dateFormatter.string(from: notice.date))
-              .foregroundStyle(.gray200)
+              .foregroundStyle(.gray300)
               .font(.c4)
             Text(verbatim: notice.title)
               .lineLimit(1)
