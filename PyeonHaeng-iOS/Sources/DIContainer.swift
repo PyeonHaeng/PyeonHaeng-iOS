@@ -10,11 +10,11 @@ import SwiftUI
 // MARK: - DIContainer
 
 struct DIContainer: EnvironmentKey {
-  let appRootComponent: Services
+  let services: Services
 
   static var defaultValue: Self { Self.default }
 
-  private static let `default` = Self(appRootComponent: .init())
+  private static let `default` = Self(services: .init())
 }
 
 extension EnvironmentValues {

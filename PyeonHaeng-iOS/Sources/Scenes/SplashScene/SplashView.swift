@@ -30,7 +30,7 @@ struct SplashView: View {
         }
       }
     } else {
-      HomeView(viewModel: HomeViewModel(service: container.appRootComponent.homeService))
+      HomeView(viewModel: HomeViewModel(service: container.services.homeService))
     }
   }
 }

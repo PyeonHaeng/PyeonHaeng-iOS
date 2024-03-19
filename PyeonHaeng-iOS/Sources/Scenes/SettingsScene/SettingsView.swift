@@ -67,7 +67,7 @@ private struct SettingsRow: View {
 
     case .announcements:
       NavigationLink {
-        NoticeView(viewModel: NoticeViewModel(service: container.appRootComponent.noticeService))
+        NoticeView(viewModel: NoticeViewModel(service: container.services.noticeService))
           .toolbarRole(.editor)
       } label: {
         subject
