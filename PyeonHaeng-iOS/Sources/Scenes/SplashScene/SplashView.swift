@@ -40,5 +40,5 @@ struct SplashView: View {
 }
 
 #Preview {
-  SplashView(dependency: HomeComponent())
+  SplashView(dependency: AppRootComponent())
 }

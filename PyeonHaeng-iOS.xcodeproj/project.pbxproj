@@ -42,7 +42,7 @@
 		BAA4D9B12B5A1796005999F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAA4D9B02B5A1796005999F8 /* Assets.xcassets */; };
 		BAA4D9B42B5A1796005999F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAA4D9B32B5A1796005999F8 /* Preview Assets.xcassets */; };
 		BAB569612B639F3000D1E0F9 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = BAB569602B639F3000D1E0F9 /* DesignSystem */; };
-		BAB5CF252B6B7C5A008B24BF /* HomeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB5CF242B6B7C5A008B24BF /* HomeComponent.swift */; };
+		BAB5CF252B6B7C5A008B24BF /* AppRootComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB5CF242B6B7C5A008B24BF /* AppRootComponent.swift */; };
 		BAB5CF272B6B7CF3008B24BF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB5CF262B6B7CF3008B24BF /* HomeViewModel.swift */; };
 		BAB720342B9325F200C2CA1A /* PromotionSelectBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB720332B9325F200C2CA1A /* PromotionSelectBottomSheetView.swift */; };
 		BAE159D82B65FA6F002DCF94 /* HomeProductDetailSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE159D72B65FA6F002DCF94 /* HomeProductDetailSelectionView.swift */; };
@@ -116,7 +116,7 @@
 		BAA4D9AE2B5A1795005999F8 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		BAA4D9B02B5A1796005999F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAA4D9B32B5A1796005999F8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		BAB5CF242B6B7C5A008B24BF /* HomeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeComponent.swift; sourceTree = "<group>"; };
+		BAB5CF242B6B7C5A008B24BF /* AppRootComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootComponent.swift; sourceTree = "<group>"; };
 		BAB5CF262B6B7CF3008B24BF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		BAB720332B9325F200C2CA1A /* PromotionSelectBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionSelectBottomSheetView.swift; sourceTree = "<group>"; };
 		BABFEA6F2B6399C30084C0EC /* Shared */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Shared; sourceTree = "<group>"; };
@@ -214,7 +214,7 @@
 			children = (
 				E5462C652B65677B00E9FDF2 /* PromotionTag.swift */,
 				BAA4D9AC2B5A1795005999F8 /* PyeonHaengApp.swift */,
-				BAB5CF242B6B7C5A008B24BF /* HomeComponent.swift */,
+				BAB5CF242B6B7C5A008B24BF /* AppRootComponent.swift */,
 				E5462C6B2B65CF7800E9FDF2 /* Components */,
 				BA28F1722B61532C0052855E /* Scenes */,
 			);
@@ -626,7 +626,7 @@
 				BAE159D82B65FA6F002DCF94 /* HomeProductDetailSelectionView.swift in Sources */,
 				BAE7A1E82B9DA0360022FEBB /* DeviceProvider.swift in Sources */,
 				E50176262B6A204F0098D1BE /* ProductInfoLineGraphView.swift in Sources */,
-				BAB5CF252B6B7C5A008B24BF /* HomeComponent.swift in Sources */,
+				BAB5CF252B6B7C5A008B24BF /* AppRootComponent.swift in Sources */,
 				BAA4D9AF2B5A1795005999F8 /* SplashView.swift in Sources */,
 				BA8E83242B8EF83B00FE968C /* ProductConfiguration.swift in Sources */,
 				BAA4D9AD2B5A1795005999F8 /* PyeonHaengApp.swift in Sources */,

@@ -160,5 +160,5 @@ private struct PriceView: View {
 }
 
 #Preview {
-  HomeView(viewModel: HomeViewModel(service: HomeComponent().homeService))
+  HomeView(viewModel: HomeViewModel(service: AppRootComponent().homeService))
 }
