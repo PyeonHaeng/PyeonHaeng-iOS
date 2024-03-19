@@ -6,11 +6,13 @@
 //
 
 import Foundation
+import Log
 
 // MARK: - NetworkProvider
 
 public struct NetworkProvider: Networking {
   private let session: URLSession
+  private let logger = Log.make(with: .network)
 
   public init(session: URLSession) {
     self.session = session
@@ -18,7 +20,10 @@ public struct NetworkProvider: Networking {
 
   public func request<T: Decodable>(with endPoint: EndPoint) async throws -> T {
     let urlRequest = try makeRequest(endPoint)
-    return try await executeRequest(urlRequest)
+    logger?.info("⬇️⬇️Requesting...⬇️⬇️\n\(urlRequest)\n⬆️⬆️=============⬆️⬆️\n")
+    let dataModel = try await executeRequest(urlRequest)
+    logger?.debug("⬇️⬇️Decoding...⬇️⬇️\n")
+    return try decodingToModel(dataModel)
   }
 
   /// EndPoint를 통해 URLRequest를 생성합니다.
@@ -49,23 +54,60 @@ public struct NetworkProvider: Networking {
     return request
   }
 
-  private func executeRequest<T: Decodable>(_ request: URLRequest) async throws -> T {
-    let (data, response) = try await session.data(for: request)
+  private func executeRequest(_ request: URLRequest) async throws -> Data {
+    let data: Data
+    let response: URLResponse
+
+    do {
+      (data, response) = try await session.data(for: request)
+    } catch {
+      logger?.error("⚠️⚠️===Network Connection Error==⚠️⚠️\n")
+      throw error
+    }
+    logger?.debug("✅✅===Req Completed===✅✅\n")
 
     guard let response = response as? HTTPURLResponse
     else {
+      logger?.error("⚠️⚠️===HTTPResponse Error==⚠️⚠️\n")
       throw NetworkError.responseError
     }
 
     guard 200 ..< 300 ~= response.statusCode
     else {
+      logger?.error("⚠️⚠️===Response Status Code Error: \(response.statusCode)==⚠️⚠️\n")
       throw NetworkError.failedResponse(statusCode: response.statusCode)
     }
 
+    return data
+  }
+
+  /// 모델을 디코딩합니다.
+  /// - Parameter dataModel: 성공적으로 받아온 네트워크 응답 데이터
+  /// - Returns: 디코딩된 모델
+  private func decodingToModel<T: Decodable>(_ dataModel: Data) throws -> T {
+    logger?.info("⬇️⬇️===Received Data===⬇️⬇️\n\(dataModel.prettyJSONData ?? "None")\n⬆️⬆️===============⬆️⬆️\n")
     let decoder = JSONDecoder()
     decoder.dateDecodingStrategy = .iso8601
-    let decodedData = try decoder.decode(T.self, from: data)
-    return decodedData
+    do {
+      let decodedData = try decoder.decode(T.self, from: dataModel)
+      logger?.info("✅✅===Decoding Completed===✅✅\n\(String(describing: decodedData))\n")
+      return decodedData
+    } catch {
+      logger?.error("⚠️⚠️===Decoded Error: \(error)==⚠️⚠️\n")
+      throw error
+    }
+  }
+}
+
+private extension Data {
+  var prettyJSONData: String? {
+    guard let jsonObject = try? JSONSerialization.jsonObject(with: self),
+          let prettyData = try? JSONSerialization.data(withJSONObject: jsonObject, options: .prettyPrinted),
+          let prettyString = String(data: prettyData, encoding: .utf8)
+    else {
+      return nil
+    }
+    return prettyString
   }
 }
 

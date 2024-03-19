@@ -14,7 +14,7 @@ public enum Log {
   /// Log를 생성합니다.
   /// - Parameter category: Log를 구분하는 Category
   public static func make(with category: LogCategory) -> Logger? {
-    #if DEBUG
+    #if !RELEASE
       Logger(subsystem: .bundleIdentifier, category: category.rawValue)
     #else
       nil
