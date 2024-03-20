@@ -15,6 +15,7 @@ struct SearchView<ViewModel>: View where ViewModel: SearchViewModelRepresentable
   @StateObject private var viewModel: ViewModel
   @State private var text: String = ""
   @Environment(\.dismiss) private var dismiss
+  @Environment(\.injected) private var container
 
   init(viewModel: @autoclosure @escaping () -> ViewModel) {
     _viewModel = .init(wrappedValue: viewModel())
@@ -67,7 +68,7 @@ struct SearchView<ViewModel>: View where ViewModel: SearchViewModelRepresentable
                 Section {
                   ForEach(items) { item in
                     NavigationLink {
-                      ProductInfoView(viewModel: ProductInfoViewModel(service: Services(productId: item.id).productInfoService))
+                      ProductInfoView(viewModel: ProductInfoViewModel(service: container.services.productInfoService, productId: item.id))
                     } label: {
                       SearchListCardView(product: item)
                     }

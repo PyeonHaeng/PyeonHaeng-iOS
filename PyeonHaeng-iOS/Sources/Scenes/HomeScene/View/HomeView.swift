@@ -14,6 +14,7 @@ struct HomeView<ViewModel>: View where ViewModel: HomeViewModelRepresentable {
   @StateObject private var viewModel: ViewModel
   @State private var isOnboardingSheetOpen = false
   @AppStorage("isFirstLaunch") private var isFirstLaunch: Bool = false
+  @Environment(\.injected) private var container
 
   init(viewModel: @autoclosure @escaping () -> ViewModel) {
     _viewModel = .init(wrappedValue: viewModel())
@@ -51,7 +52,7 @@ struct HomeView<ViewModel>: View where ViewModel: HomeViewModelRepresentable {
         }
         ToolbarItemGroup(placement: .topBarTrailing) {
           NavigationLink {
-            SearchView(viewModel: SearchViewModel(service: Services().searchService))
+            SearchView(viewModel: SearchViewModel(service: container.services.searchService))
               .toolbarRole(.editor)
           } label: {
             Image.magnifyingglass
