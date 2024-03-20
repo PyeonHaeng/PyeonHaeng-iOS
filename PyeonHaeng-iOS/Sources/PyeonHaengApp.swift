@@ -10,7 +10,7 @@ import SwiftUI
 
 @main
 struct PyeonHaengApp: App {
-  private let appComponent = AppRootComponent()
+  private let services = Services()
 
   init() {
     FontRegistrar.registerFonts() // 앱을 실행하기 전에 폰트를 로드합니다.
@@ -19,7 +19,8 @@ struct PyeonHaengApp: App {
 
   var body: some Scene {
     WindowGroup {
-      SplashView(dependency: appComponent)
+      SplashView()
+        .environment(\.injected, DIContainer(services: services))
     }
   }
 

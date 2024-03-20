@@ -42,6 +42,7 @@ struct SettingsView: View {
 
 private struct SettingsRow: View {
   private let item: SettingsItem
+  @Environment(\.injected) private var container
 
   init(item: SettingsItem) {
     self.item = item
@@ -66,7 +67,7 @@ private struct SettingsRow: View {
 
     case .announcements:
       NavigationLink {
-        NoticeView()
+        NoticeView(viewModel: NoticeViewModel(service: container.services.noticeService))
           .toolbarRole(.editor)
       } label: {
         subject
