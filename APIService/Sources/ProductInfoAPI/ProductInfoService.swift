@@ -12,8 +12,8 @@ import Network
 // MARK: - ProductInfoServiceRepresentable
 
 public protocol ProductInfoServiceRepresentable {
-  func fetchProduct(productId: Int) async throws -> DetailProduct
-  func fetchProductPrice(productId: Int) async throws -> [DetailProduct]
+  func fetchProduct(productID: Int) async throws -> DetailProduct
+  func fetchProductPrice(productID: Int) async throws -> [DetailProduct]
 }
 
 // MARK: - ProductInfoService
@@ -28,9 +28,9 @@ public struct ProductInfoService {
 // MARK: ProductInfoServiceRepresentable
 
 extension ProductInfoService: ProductInfoServiceRepresentable {
-  public func fetchProduct(productId: Int) async throws -> DetailProduct {
+  public func fetchProduct(productID: Int) async throws -> DetailProduct {
     let response: ProductDetailResponse = try await network.request(
-      with: ProductInfoEndPoint.fetchProduct(productId)
+      with: ProductInfoEndPoint.fetchProduct(productID)
     )
     if let item = response.results.first {
       return DetailProduct(dto: item)
@@ -39,9 +39,9 @@ extension ProductInfoService: ProductInfoServiceRepresentable {
     }
   }
 
-  public func fetchProductPrice(productId: Int) async throws -> [DetailProduct] {
+  public func fetchProductPrice(productID: Int) async throws -> [DetailProduct] {
     let response: ProductDetailPricesResponse = try await network.request(
-      with: ProductInfoEndPoint.fetchPrices(productId)
+      with: ProductInfoEndPoint.fetchPrices(productID)
     )
     return response.results.map(DetailProduct.init(dto:))
   }
