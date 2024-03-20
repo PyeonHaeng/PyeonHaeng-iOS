@@ -14,12 +14,26 @@ import SwiftUI
 struct SearchView<ViewModel>: View where ViewModel: SearchViewModelRepresentable {
   @StateObject private var viewModel: ViewModel
   @State private var text: String = ""
+  @Environment(\.dismiss) private var dismiss
 
   init(viewModel: @autoclosure @escaping () -> ViewModel) {
     _viewModel = .init(wrappedValue: viewModel())
   }
 
   var body: some View {
+    HStack(spacing: 8) {
+      Button {
+        dismiss()
+      } label: {
+        Image.chevronLeftLarge
+          .resizable()
+          .scaledToFit()
+          .frame(width: 24)
+      }
+      SearchTextField<ViewModel>(text: $text)
+        .environmentObject(viewModel)
+    }
+    .padding(.horizontal, 20)
     ScrollView {
       if viewModel.state.isLoading {
         ProgressView()
@@ -53,11 +67,7 @@ struct SearchView<ViewModel>: View where ViewModel: SearchViewModelRepresentable
                 Section {
                   ForEach(items) { item in
                     NavigationLink {
-                      ProductInfoView(
-                        viewModel: ProductInfoViewModel(
-                          service: ProductInfoComponent(productID: item.id).productInfoService
-                        )
-                      )
+                      ProductInfoView(viewModel: ProductInfoViewModel(service: Services(productId: item.id).productInfoService))
                     } label: {
                       SearchListCardView(product: item)
                     }
@@ -80,12 +90,8 @@ struct SearchView<ViewModel>: View where ViewModel: SearchViewModelRepresentable
         }
       }
     }
+    .toolbar(.hidden, for: .automatic)
     .scrollIndicators(.hidden)
-    .toolbar {
-      ToolbarItem(placement: .principal) {
-        SearchTextField<ViewModel>(text: $text)
-      }
-    }
     .scrollDismissesKeyboard(.immediately)
     .environmentObject(viewModel)
   }
@@ -113,14 +119,17 @@ private struct SearchTextField<ViewModel>: View where ViewModel: SearchViewModel
             )
         }
         .onSubmit { viewModel.trigger(.textChanged(text)) }
-      Button(action: {
-        text = ""
-      }) {
-        Image.xCircleFill
-          .renderingMode(.template)
-          .foregroundStyle(.gray200)
+      if !text.isEmpty {
+        Button {
+          text = ""
+        } label: {
+          Image.xCircleFill
+            .renderingMode(.template)
+            .foregroundStyle(.gray200)
+        }
+        .frame(maxWidth: .infinity, alignment: .trailing)
+        .padding(.trailing, 8)
       }
-      .frame(maxWidth: .infinity, alignment: .trailing)
     }
   }
 }
@@ -166,7 +175,7 @@ private enum Metrics {
   static let textFieldVerticalPadding = 8.0
   static let textFieldLeadingPadding = 12.0
   static let textFieldTrailingPadding = 40.0
-  static let textFieldHeight = 28.0
+  static let textFieldHeight = 32.0
   static let textFieldBorderWidth = 1.0
   static let cornerRadius = 8.0
 
