@@ -70,6 +70,7 @@ private struct DetailView: View {
           .font(.h2)
           .frame(maxHeight: 38.0)
       }
+      .frame(maxWidth: .infinity, alignment: .trailing)
     }
     .foregroundStyle(Color.gray900)
   }
