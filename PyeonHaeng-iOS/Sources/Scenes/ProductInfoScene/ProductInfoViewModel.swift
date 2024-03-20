@@ -48,11 +48,13 @@ final class ProductInfoViewModel: ProductInfoViewModelRepresentable {
   private let action: PassthroughSubject<ProductInfoAction, Never> = .init()
   private let service: ProductInfoServiceRepresentable
   private var subscriptions: Set<AnyCancellable> = .init()
+  private let productId: Int
 
   @Published private(set) var state: ProductInfoState = .init()
 
-  init(service: ProductInfoServiceRepresentable) {
+  init(service: ProductInfoServiceRepresentable, productId: Int) {
     self.service = service
+    self.productId = productId
     action.sink { [weak self] action in
       self?.render(as: action)
     }
@@ -75,11 +77,11 @@ final class ProductInfoViewModel: ProductInfoViewModelRepresentable {
 
   private func fetchProductDetail() async throws {
     state.isLoading = true
-    try await state.product = service.fetchProduct()
+    try await state.product = service.fetchProduct(productId: productId)
   }
 
   private func fetchProductPrices() async throws {
-    try await state.previousProducts = service.fetchProductPrice().reversed()
+    try await state.previousProducts = service.fetchProductPrice(productId: productId).reversed()
     state.isLoading = false
   }
 }

@@ -24,7 +24,7 @@ struct Services {
   let productInfoService: ProductInfoServiceRepresentable
   let searchService: SearchServiceRepresentable
   
-  init(productId: Int = 0) {
+  init() {
     let homeNetworking: Networking = {
       let configuration: URLSessionConfiguration
       #if DEBUG
@@ -75,7 +75,7 @@ struct Services {
     
     homeService = HomeService(network: homeNetworking)
     noticeService = NoticeService(network: noticeNetworking)
-    productInfoService = ProductInfoService(productID: productId, network: productInfoNetworking)
+    productInfoService = ProductInfoService(network: productInfoNetworking)
     searchService = SearchService(network: searchNetworking)
   }
 }
