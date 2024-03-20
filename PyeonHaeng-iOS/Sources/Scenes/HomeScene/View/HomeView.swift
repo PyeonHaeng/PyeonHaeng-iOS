@@ -51,8 +51,7 @@ struct HomeView<ViewModel>: View where ViewModel: HomeViewModelRepresentable {
         }
         ToolbarItemGroup(placement: .topBarTrailing) {
           NavigationLink {
-            let component = SearchViewComponent()
-            SearchView(viewModel: SearchViewModel(service: component.searchService))
+            SearchView(viewModel: SearchViewModel(service: Services().searchService))
               .toolbarRole(.editor)
           } label: {
             Image.magnifyingglass
