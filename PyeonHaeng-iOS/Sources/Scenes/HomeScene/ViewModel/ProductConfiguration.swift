@@ -41,6 +41,12 @@ extension ProductConfiguration {
     offset += 1
   }
 
+  /// 페이징 관련 옵션들을 재설정합니다.
+  mutating func resetPagingOptions() {
+    offset = 0
+    loadingState = .idle
+  }
+
   /// 편의점을 변경합니다.
   /// - Parameter store: 변경할 편의점
   mutating func change(convenienceStore store: ConvenienceStore) {

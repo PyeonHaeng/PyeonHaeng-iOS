@@ -75,6 +75,7 @@ final class HomeViewModel: HomeViewModelRepresentable {
     switch action {
     case .fetchProducts:
       await performAsyncAction {
+        state.productConfiguration.resetPagingOptions()
         try await fetchProducts(replace: true)
       }
 
