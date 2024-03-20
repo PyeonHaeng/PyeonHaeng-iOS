@@ -62,7 +62,6 @@
 		E5028D5D2B96BA9F00B36C16 /* ProductInfoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F2EC3F2B637D4A00EE0838 /* ProductInfoDetailView.swift */; };
 		E50584532B763C8C002FDACF /* ProductInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50584522B763C8C002FDACF /* ProductInfoViewModel.swift */; };
 		E52F371B2B947DC8000EBAD5 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52F371A2B947DC8000EBAD5 /* SearchViewModel.swift */; };
-		E52F371D2B94D239000EBAD5 /* SearchViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52F371C2B94D239000EBAD5 /* SearchViewComponent.swift */; };
 		E5462C662B65677B00E9FDF2 /* PromotionTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5462C652B65677B00E9FDF2 /* PromotionTag.swift */; };
 		E55DD5122B91DE9500AA63C0 /* SearchListCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55DD5112B91DE9500AA63C0 /* SearchListCardView.swift */; };
 		E55DD5182B9370D100AA63C0 /* SearchAPI in Frameworks */ = {isa = PBXBuildFile; productRef = E55DD5172B9370D100AA63C0 /* SearchAPI */; };
@@ -70,7 +69,6 @@
 		E57654D92B90D78900E92F3A /* Shared in Resources */ = {isa = PBXBuildFile; fileRef = BABFEA6F2B6399C30084C0EC /* Shared */; };
 		E57F2AA42B7717EA00E12B3D /* ProductInfoAPI in Frameworks */ = {isa = PBXBuildFile; productRef = E57F2AA32B7717EA00E12B3D /* ProductInfoAPI */; settings = {ATTRIBUTES = (Required, ); }; };
 		E57F2AA62B7717EA00E12B3D /* ProductInfoAPISupport in Frameworks */ = {isa = PBXBuildFile; productRef = E57F2AA52B7717EA00E12B3D /* ProductInfoAPISupport */; };
-		E57F2AA82B774CA700E12B3D /* ProductInfoDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57F2AA72B774CA700E12B3D /* ProductInfoDependency.swift */; };
 		E5DB08EB2BA7EC7000E83910 /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DB08EA2BA7EC7000E83910 /* OnboardingPage.swift */; };
 		E5F2EC452B64926100EE0838 /* PromotionTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F2EC442B64926100EE0838 /* PromotionTagView.swift */; };
 /* End PBXBuildFile section */
@@ -137,10 +135,8 @@
 		E50176252B6A204F0098D1BE /* ProductInfoLineGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoLineGraphView.swift; sourceTree = "<group>"; };
 		E50584522B763C8C002FDACF /* ProductInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoViewModel.swift; sourceTree = "<group>"; };
 		E52F371A2B947DC8000EBAD5 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
-		E52F371C2B94D239000EBAD5 /* SearchViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewComponent.swift; sourceTree = "<group>"; };
 		E5462C652B65677B00E9FDF2 /* PromotionTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionTag.swift; sourceTree = "<group>"; };
 		E55DD5112B91DE9500AA63C0 /* SearchListCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListCardView.swift; sourceTree = "<group>"; };
-		E57F2AA72B774CA700E12B3D /* ProductInfoDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoDependency.swift; sourceTree = "<group>"; };
 		E5DB08EA2BA7EC7000E83910 /* OnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
 		E5F2EC3F2B637D4A00EE0838 /* ProductInfoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoDetailView.swift; sourceTree = "<group>"; };
 		E5F2EC442B64926100EE0838 /* PromotionTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionTagView.swift; sourceTree = "<group>"; };
@@ -300,7 +296,6 @@
 		BA28F1892B6155940052855E /* ProductInfoScene */ = {
 			isa = PBXGroup;
 			children = (
-				E57F2AA72B774CA700E12B3D /* ProductInfoDependency.swift */,
 				BA28F18A2B6155BD0052855E /* ProductInfoView.swift */,
 				E50584522B763C8C002FDACF /* ProductInfoViewModel.swift */,
 				E5F2EC3F2B637D4A00EE0838 /* ProductInfoDetailView.swift */,
@@ -322,7 +317,6 @@
 		BA28F18F2B61565F0052855E /* ProductSearchScene */ = {
 			isa = PBXGroup;
 			children = (
-				E52F371C2B94D239000EBAD5 /* SearchViewComponent.swift */,
 				BA28F1902B61566E0052855E /* SearchView.swift */,
 				E52F371A2B947DC8000EBAD5 /* SearchViewModel.swift */,
 				E55DD5112B91DE9500AA63C0 /* SearchListCardView.swift */,
@@ -645,7 +639,6 @@
 				E5DB08EB2BA7EC7000E83910 /* OnboardingPage.swift in Sources */,
 				9CE4B4752B6F78E8002DC446 /* OnboardingPageControl.swift in Sources */,
 				BA28F18E2B6156420052855E /* SettingsView.swift in Sources */,
-				E57F2AA82B774CA700E12B3D /* ProductInfoDependency.swift in Sources */,
 				E55DD5122B91DE9500AA63C0 /* SearchListCardView.swift in Sources */,
 				BA097F0E2B9CA82A002D3E1E /* MailSheetView.swift in Sources */,
 				E52F371B2B947DC8000EBAD5 /* SearchViewModel.swift in Sources */,
@@ -658,7 +651,6 @@
 				BAA4D9AF2B5A1795005999F8 /* SplashView.swift in Sources */,
 				BA8E83242B8EF83B00FE968C /* ProductConfiguration.swift in Sources */,
 				BAA4D9AD2B5A1795005999F8 /* PyeonHaengApp.swift in Sources */,
-				E52F371D2B94D239000EBAD5 /* SearchViewComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
