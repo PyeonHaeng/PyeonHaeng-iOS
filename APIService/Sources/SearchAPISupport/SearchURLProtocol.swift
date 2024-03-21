@@ -12,7 +12,7 @@ import SearchAPI
 public final class SearchURLProtocol: URLProtocol {
   private lazy var mockData: [String: Data?] = [
     SearchEndPoint.fetchProducts(
-      SearchProductRequest(name: "칠성)펩시콜라제로355ml", order: .normal, pageSize: 0, offset: 0)
+      SearchProductRequest(name: "칠성)펩시콜라제로355ml")
     ).path: loadMockData(fileName: "SearchProductResponse"),
   ]
 

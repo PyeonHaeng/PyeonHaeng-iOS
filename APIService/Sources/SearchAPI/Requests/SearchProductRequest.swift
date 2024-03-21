@@ -17,14 +17,14 @@ public struct SearchProductRequest: Encodable {
   enum CodingKeys: String, CodingKey {
     case name = "product_name"
     case order
-    case pageSize
+    case pageSize = "page_size"
     case offset
   }
 
-  public init(name: String, order: Order, pageSize: Int, offset: Int) {
+  public init(name: String) {
     self.name = name
-    self.order = order
-    self.pageSize = pageSize
-    self.offset = offset
+    self.order = .normal
+    self.pageSize = 5000
+    self.offset = 0
   }
 }
