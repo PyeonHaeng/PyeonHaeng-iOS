@@ -156,7 +156,7 @@ private struct PriceView: View {
       Spacer()
       Text("(\((product.price / 2).formatted())₩ per piece)")
         .font(.x2)
-        .foregroundColor(.gray100)
+        .foregroundColor(.gray300)
       HStack(spacing: 4) {
         Text("\(product.price.formatted())₩")
           .font(.h4)
