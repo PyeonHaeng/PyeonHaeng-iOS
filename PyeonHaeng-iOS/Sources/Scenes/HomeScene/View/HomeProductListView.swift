@@ -13,31 +13,43 @@ import SwiftUI
 
 struct HomeProductListView<ViewModel>: View where ViewModel: HomeViewModelRepresentable {
   @EnvironmentObject var viewModel: ViewModel
+  @Environment(\.injected) private var container
 
   var body: some View {
-    ScrollView {
-      LazyVStack {
-        Spacer()
-          .frame(height: 96)
-        ForEach(viewModel.state.products) { item in
+    List {
+      Spacer()
+        .frame(height: 96)
+        .listRowSeparator(.hidden)
+
+      ForEach(viewModel.state.products) { item in
+        ZStack(alignment: .leading) {
+          NavigationLink {
+            ProductInfoView(viewModel: ProductInfoViewModel(service: container.services.productInfoService, productID: item.id))
+              .toolbarRole(.editor)
+          } label: {
+            EmptyView()
+          }
+          .opacity(0)
+
           ProductRow(product: item)
-            .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
-          Divider()
-        }
-        switch viewModel.state.productConfiguration.loadingState {
-        case .idle,
-             .isLoading:
-          ProgressView()
-            .progressViewStyle(.circular)
-            .frame(maxWidth: .infinity)
-            .onAppear {
-              viewModel.trigger(.loadMoreProducts)
-            }
-        case .loadedAll:
-          EmptyView()
         }
       }
+      .listRowInsets(.init())
+
+      switch viewModel.state.productConfiguration.loadingState {
+      case .idle,
+           .isLoading:
+        ProgressView()
+          .progressViewStyle(.circular)
+          .frame(maxWidth: .infinity)
+          .onAppear {
+            viewModel.trigger(.loadMoreProducts)
+          }
+      case .loadedAll:
+        EmptyView()
+      }
     }
+    .listStyle(.plain)
     .scrollIndicators(.hidden)
   }
 }
