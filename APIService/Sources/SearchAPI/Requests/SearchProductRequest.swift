@@ -23,8 +23,8 @@ public struct SearchProductRequest: Encodable {
 
   public init(name: String) {
     self.name = name
-    self.order = .normal
-    self.pageSize = 5000
-    self.offset = 0
+    order = .normal
+    pageSize = 5000
+    offset = 0
   }
 }
