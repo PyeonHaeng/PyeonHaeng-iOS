@@ -28,10 +28,10 @@ struct Services {
     let homeNetworking: Networking = {
       let configuration: URLSessionConfiguration
       #if DEBUG
-        configuration = .ephemeral
-        configuration.protocolClasses = [HomeURLProtocol.self]
+      configuration = .ephemeral
+      configuration.protocolClasses = [HomeURLProtocol.self]
       #else
-        configuration = .default
+      configuration = .default
       #endif
       let provider = NetworkProvider(session: URLSession(configuration: configuration))
       return provider
@@ -40,10 +40,10 @@ struct Services {
     let noticeNetworking: Networking = {
       let configuration: URLSessionConfiguration
       #if DEBUG
-        configuration = .ephemeral
-        configuration.protocolClasses = [NoticeURLProtocol.self]
+      configuration = .ephemeral
+      configuration.protocolClasses = [NoticeURLProtocol.self]
       #else
-        configuration = .default
+      configuration = .default
       #endif
       let provider = NetworkProvider(session: URLSession(configuration: configuration))
       return provider
@@ -52,10 +52,10 @@ struct Services {
     let productInfoNetworking: Networking = {
       let configuration: URLSessionConfiguration
       #if DEBUG
-        configuration = .ephemeral
-        configuration.protocolClasses = [ProductInfoURLProtocol.self]
+      configuration = .ephemeral
+      configuration.protocolClasses = [ProductInfoURLProtocol.self]
       #else
-        configuration = .default
+      configuration = .default
       #endif
       let provider = NetworkProvider(session: URLSession(configuration: configuration))
       return provider
@@ -64,10 +64,10 @@ struct Services {
     let searchNetworking: Networking = {
       let configuration: URLSessionConfiguration
       #if DEBUG
-        configuration = .ephemeral
-        configuration.protocolClasses = [SearchURLProtocol.self]
+      configuration = .ephemeral
+      configuration.protocolClasses = [SearchURLProtocol.self]
       #else
-        configuration = .default
+      configuration = .default
       #endif
       let provider = NetworkProvider(session: URLSession(configuration: configuration))
       return provider
