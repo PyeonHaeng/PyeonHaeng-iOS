@@ -36,7 +36,7 @@ struct HomeProductListView<ViewModel>: View where ViewModel: HomeViewModelRepres
       .listRowInsets(.init())
       switch viewModel.state.productConfiguration.loadingState {
       case .idle,
-          .isLoading:
+           .isLoading:
         ProgressView()
           .progressViewStyle(.circular)
           .frame(maxWidth: .infinity)
