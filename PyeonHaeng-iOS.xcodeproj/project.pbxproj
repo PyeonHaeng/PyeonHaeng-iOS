@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		9CE4B4752B6F78E8002DC446 /* OnboardingPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE4B4742B6F78E8002DC446 /* OnboardingPageControl.swift */; };
-		BA0564062B624646003D6DC7 /* Shared.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = BA0564052B624646003D6DC7 /* Shared.xcconfig */; };
 		BA0564092B6248EA003D6DC7 /* HomeAPI in Frameworks */ = {isa = PBXBuildFile; productRef = BA0564082B6248EA003D6DC7 /* HomeAPI */; };
 		BA05640B2B6248EA003D6DC7 /* HomeAPISupport in Frameworks */ = {isa = PBXBuildFile; productRef = BA05640A2B6248EA003D6DC7 /* HomeAPISupport */; };
 		BA05640D2B6248EA003D6DC7 /* Network in Frameworks */ = {isa = PBXBuildFile; productRef = BA05640C2B6248EA003D6DC7 /* Network */; };
@@ -558,7 +557,6 @@
 				BA28F1A42B61572A0052855E /* Pretendard-ExtraBold.otf in Resources */,
 				BA28F1A02B61572A0052855E /* Pretendard-Regular.otf in Resources */,
 				BAA4D9B12B5A1796005999F8 /* Assets.xcassets in Resources */,
-				BA0564062B624646003D6DC7 /* Shared.xcconfig in Resources */,
 				BAF2BEB32B61236100931AF0 /* Localizable.xcstrings in Resources */,
 				BA28F1A22B61572A0052855E /* Pretendard-Medium.otf in Resources */,
 			);
