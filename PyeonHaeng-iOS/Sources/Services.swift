@@ -23,7 +23,6 @@ struct Services {
   let noticeService: NoticeServiceRepresentable
   let productInfoService: ProductInfoServiceRepresentable
   let searchService: SearchServiceRepresentable
-  
   init() {
     let homeNetworking: Networking = {
       let configuration: URLSessionConfiguration
@@ -69,7 +68,6 @@ struct Services {
       let provider = NetworkProvider(session: URLSession(configuration: configuration))
       return provider
     }()
-    
     homeService = HomeService(network: homeNetworking)
     noticeService = NoticeService(network: noticeNetworking)
     productInfoService = ProductInfoService(network: productInfoNetworking)
