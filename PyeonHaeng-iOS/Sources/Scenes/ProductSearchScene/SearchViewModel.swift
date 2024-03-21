@@ -21,8 +21,6 @@ enum SearchAction {
 struct SearchState {
   var currentText = ""
   var products = [ConvenienceStore: [SearchProduct]]()
-  var offset = 0
-  var hasMore = false
   var isNothing = false
   var isLoading = false
 }
@@ -74,7 +72,6 @@ final class SearchViewModel: SearchViewModelRepresentable {
     switch action {
     case let .textChanged(text):
       state.currentText = text
-      state.offset = 0
       await performAsyncAction {
         try await fetchSearchList()
       }
@@ -82,12 +79,7 @@ final class SearchViewModel: SearchViewModelRepresentable {
   }
 
   private func fetchSearchList() async throws {
-    let request = SearchProductRequest(
-      name: state.currentText,
-      order: .normal,
-      pageSize: 50,
-      offset: state.offset
-    )
+    let request = SearchProductRequest(name: state.currentText)
 
     state.isLoading = true
     do {
