@@ -36,7 +36,6 @@ struct Services {
       let provider = NetworkProvider(session: URLSession(configuration: configuration))
       return provider
     }()
-    
     let noticeNetworking: Networking = {
       let configuration: URLSessionConfiguration
       #if DEBUG
@@ -48,7 +47,6 @@ struct Services {
       let provider = NetworkProvider(session: URLSession(configuration: configuration))
       return provider
     }()
-    
     let productInfoNetworking: Networking = {
       let configuration: URLSessionConfiguration
       #if DEBUG
@@ -60,7 +58,6 @@ struct Services {
       let provider = NetworkProvider(session: URLSession(configuration: configuration))
       return provider
     }()
-    
     let searchNetworking: Networking = {
       let configuration: URLSessionConfiguration
       #if DEBUG
