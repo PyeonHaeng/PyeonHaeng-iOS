@@ -136,6 +136,7 @@ private struct ProductDetailsView: View {
         PromotionTagView(promotion: product.promotion)
         Text(verbatim: product.name)
           .font(.title1)
+          .foregroundStyle(.gray900)
       }
       PriceView(product: product)
     }
