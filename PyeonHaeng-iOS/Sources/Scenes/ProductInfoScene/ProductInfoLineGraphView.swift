@@ -49,6 +49,9 @@ struct ProductInfoLineGraphView<ViewModel>: View where ViewModel: ProductInfoVie
           index = viewModel.state.previousProducts.count - 1
         }
         .gesture(DragGesture().onChanged { viewDidDrag($0) })
+        .sensoryFeedback(trigger: offset) { _, _ in
+          .impact()
+        }
         .overlay(alignment: .bottomLeading) {
           LineGraphPanelView(
             position: (offset, index),
