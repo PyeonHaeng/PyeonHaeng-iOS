@@ -34,8 +34,10 @@ private struct ImageView: View {
         .resizable()
         .scaledToFit()
     } placeholder: {
-      // TODO: 편행 기본 이미지 추가
-      ProgressView()
+      Image.textLogo
+        .resizable()
+        .scaledToFit()
+        .padding(100)
     }
     .frame(maxWidth: .infinity, maxHeight: Metrics.imageHeight)
     .padding(.top, Metrics.imagePaddingTop)

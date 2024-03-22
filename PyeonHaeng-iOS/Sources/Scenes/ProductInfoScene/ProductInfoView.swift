@@ -28,12 +28,12 @@ struct ProductInfoView<ViewModel>: View where ViewModel: ProductInfoViewModelRep
           ProductInfoLineGraphView<ViewModel>()
           Spacer()
         }
-      }      
+      }
+      .padding(.horizontal, 20.0)
     }
     .environmentObject(viewModel)
     .navigationTitle("제품 상세")
     .navigationBarTitleDisplayMode(.inline)
-    .padding(.horizontal, 20.0)
     .onAppear {
       viewModel.trigger(.fetchProduct)
     }
