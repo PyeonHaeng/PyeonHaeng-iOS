@@ -63,12 +63,21 @@ private struct DetailView: View {
       }
       Spacer()
       HStack(spacing: Metrics.horizontalSpacing) {
-        PromotionTagView(promotionTag: promotionTag(for: product.promotion))
-        Text("개당")
-          .font(.c1)
-        Text("\(Int(product.price / 2).formatted())원")
-          .font(.h2)
-          .frame(maxHeight: 38.0)
+        Group {
+          PromotionTagView(promotionTag: promotionTag(for: product.promotion))
+          Text("개당")
+            .font(.c1)
+        }
+        .padding(.bottom, -12)
+        VStack(alignment: .trailing, spacing: .zero) {
+          Text("\(product.price.formatted())원")
+            .font(.x2)
+            .foregroundStyle(.gray100)
+            .strikethrough(color: .gray100)
+            .padding(.bottom, -4)
+          Text("\(Int(product.price / 2).formatted())원")
+            .font(.h2)
+        }
       }
       .frame(maxWidth: .infinity, alignment: .trailing)
     }
