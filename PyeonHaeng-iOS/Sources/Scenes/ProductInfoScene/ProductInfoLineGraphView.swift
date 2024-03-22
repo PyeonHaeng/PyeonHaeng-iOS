@@ -161,7 +161,7 @@ private struct LineGraphPanelView: View {
       Text(verbatim: "\(formatted(product.date))")
         .font(.c4)
         .foregroundStyle(.gray400)
-      Text("\((product.price / 2).formatted())원")
+      Text("\(product.price.formatted())원")
         .font(.b1)
         .foregroundStyle(.gray900)
       Rectangle()

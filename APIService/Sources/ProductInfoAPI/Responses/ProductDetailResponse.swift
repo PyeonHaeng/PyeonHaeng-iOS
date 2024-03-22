@@ -19,7 +19,7 @@ struct ProductDetailResponse: Decodable {
 
 struct ProductDetailItemResponse: Decodable {
   let name: String
-  let img: URL
+  let img: URL?
   let price: Int
   let store: ConvenienceStore
   let tag: Promotion

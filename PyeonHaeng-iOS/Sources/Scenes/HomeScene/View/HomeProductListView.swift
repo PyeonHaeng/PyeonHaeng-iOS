@@ -98,16 +98,13 @@ private struct ProductImageView: View {
           .scaledToFit()
           .frame(width: Metrics.originalImageSize, height: Metrics.originalImageSize)
           .padding(.all, (Metrics.totalImageSize - Metrics.originalImageSize) * 0.5)
-      } else if phase.error != nil {
+      } else {
         Image.textLogo
           .resizable()
           .scaledToFit()
           .frame(width: Metrics.textLogoWidth, height: Metrics.textLogoHeight)
           .padding(.horizontal, (Metrics.totalImageSize - Metrics.textLogoWidth) / 2)
           .padding(.vertical, (Metrics.totalImageSize - Metrics.textLogoHeight) / 2)
-      } else {
-        ProgressView()
-          .frame(width: Metrics.totalImageSize, height: Metrics.totalImageSize)
       }
     }
     .accessibilityHidden(true)
