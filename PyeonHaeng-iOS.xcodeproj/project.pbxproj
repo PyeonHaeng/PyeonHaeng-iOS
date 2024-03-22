@@ -52,6 +52,8 @@
 		BAE159D82B65FA6F002DCF94 /* HomeProductDetailSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE159D72B65FA6F002DCF94 /* HomeProductDetailSelectionView.swift */; };
 		BAE159DA2B65FC35002DCF94 /* HomeProductListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE159D92B65FC35002DCF94 /* HomeProductListView.swift */; };
 		BAE159DE2B663A9A002DCF94 /* HomeProductSorterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE159DD2B663A9A002DCF94 /* HomeProductSorterView.swift */; };
+		BAE5ADB02BAD61D000176ADE /* CreditsAPI in Frameworks */ = {isa = PBXBuildFile; productRef = BAE5ADAF2BAD61D000176ADE /* CreditsAPI */; };
+		BAE5ADB22BAD61D000176ADE /* CreditsAPISupport in Frameworks */ = {isa = PBXBuildFile; productRef = BAE5ADB12BAD61D000176ADE /* CreditsAPISupport */; };
 		BAE7A1E62B9D7CA70022FEBB /* MailRowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE7A1E52B9D7CA70022FEBB /* MailRowItem.swift */; };
 		BAE7A1E82B9DA0360022FEBB /* DeviceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE7A1E72B9DA0360022FEBB /* DeviceProvider.swift */; };
 		BAE7A1EA2B9DA4960022FEBB /* MockDeviceInformationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE7A1E92B9DA4960022FEBB /* MockDeviceInformationProvider.swift */; };
@@ -156,6 +158,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAE5ADB22BAD61D000176ADE /* CreditsAPISupport in Frameworks */,
 				BA05640D2B6248EA003D6DC7 /* Network in Frameworks */,
 				BA4FB9C72BA1BC5B00ED03C4 /* NoticeAPISupport in Frameworks */,
 				E57F2AA62B7717EA00E12B3D /* ProductInfoAPISupport in Frameworks */,
@@ -165,6 +168,7 @@
 				BA05640B2B6248EA003D6DC7 /* HomeAPISupport in Frameworks */,
 				BA0623D82B68E51400A0A3B2 /* Log in Frameworks */,
 				BA0564092B6248EA003D6DC7 /* HomeAPI in Frameworks */,
+				BAE5ADB02BAD61D000176ADE /* CreditsAPI in Frameworks */,
 				BAB569612B639F3000D1E0F9 /* DesignSystem in Frameworks */,
 				E55DD5182B9370D100AA63C0 /* SearchAPI in Frameworks */,
 				E55DD51A2B9370D100AA63C0 /* SearchAPISupport in Frameworks */,
@@ -495,6 +499,8 @@
 				E55DD5192B9370D100AA63C0 /* SearchAPISupport */,
 				BA4FB9C42BA1BC5B00ED03C4 /* NoticeAPI */,
 				BA4FB9C62BA1BC5B00ED03C4 /* NoticeAPISupport */,
+				BAE5ADAF2BAD61D000176ADE /* CreditsAPI */,
+				BAE5ADB12BAD61D000176ADE /* CreditsAPISupport */,
 			);
 			productName = "PyeonHaeng-iOS";
 			productReference = BAA4D9A92B5A1795005999F8 /* PyeonHaeng-iOS.app */;
@@ -1089,6 +1095,14 @@
 		BAB569602B639F3000D1E0F9 /* DesignSystem */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DesignSystem;
+		};
+		BAE5ADAF2BAD61D000176ADE /* CreditsAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CreditsAPI;
+		};
+		BAE5ADB12BAD61D000176ADE /* CreditsAPISupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CreditsAPISupport;
 		};
 		E55DD5172B9370D100AA63C0 /* SearchAPI */ = {
 			isa = XCSwiftPackageProductDependency;

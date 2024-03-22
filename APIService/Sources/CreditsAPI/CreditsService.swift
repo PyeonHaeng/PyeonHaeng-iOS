@@ -9,15 +9,15 @@ import Entity
 import Foundation
 import Network
 
-// MARK: - HomeServiceRepresentable
+// MARK: - CreditsServiceRepresentable
 
-public protocol HomeServiceRepresentable {
-  func fetchCredits() async throws
+public protocol CreditsServiceRepresentable {
+  func fetchCredits() async throws -> Credits
 }
 
-// MARK: - HomeService
+// MARK: - CreditsService
 
-public struct HomeService {
+public struct CreditsService {
   private let network: Networking
 
   public init(network: Networking) {
@@ -25,10 +25,21 @@ public struct HomeService {
   }
 }
 
-// MARK: HomeServiceRepresentable
+// MARK: CreditsServiceRepresentable
 
-extension HomeService: HomeServiceRepresentable {
-  public func fetchCredits() async throws {
+extension CreditsService: CreditsServiceRepresentable {
+  public func fetchCredits() async throws -> Credits {
     let response: CreditsResponse = try await network.request(with: CreditsEndPoint.fetchCredits)
+    return Credits(dto: response)
+  }
+}
+
+private extension Credits {
+  init(dto: CreditsResponse) {
+    self.init(
+      title: dto.title,
+      body: dto.body,
+      date: dto.date
+    )
   }
 }
