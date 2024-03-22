@@ -7,6 +7,14 @@ let package = Package(
   platforms: [.iOS(.v17)],
   products: [
     .library(
+      name: "CreditsAPI",
+      targets: ["CreditsAPI"]
+    ),
+    .library(
+      name: "CreditsAPISupport",
+      targets: ["CreditsAPISupport"]
+    ),
+    .library(
       name: "HomeAPI",
       targets: ["HomeAPI"]
     ),
@@ -44,6 +52,20 @@ let package = Package(
     .package(path: "../Entity"),
   ],
   targets: [
+    .target(
+      name: "CreditsAPI",
+      dependencies: [
+        .product(name: "Network", package: "Core"),
+        .product(name: "Entity", package: "Entity"),
+      ]
+    ),
+    .target(
+      name: "CreditsAPISupport",
+      dependencies: [
+        "CreditsAPI",
+      ],
+      resources: [.process("Mocks")]
+    ),
     .target(
       name: "HomeAPI",
       dependencies: [

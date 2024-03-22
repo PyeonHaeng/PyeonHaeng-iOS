@@ -36,7 +36,6 @@
 		BA4EA3602B6A37E10003DCE7 /* Entity in Frameworks */ = {isa = PBXBuildFile; productRef = BA4EA35F2B6A37E10003DCE7 /* Entity */; };
 		BA4FB9C52BA1BC5B00ED03C4 /* NoticeAPI in Frameworks */ = {isa = PBXBuildFile; productRef = BA4FB9C42BA1BC5B00ED03C4 /* NoticeAPI */; };
 		BA4FB9C72BA1BC5B00ED03C4 /* NoticeAPISupport in Frameworks */ = {isa = PBXBuildFile; productRef = BA4FB9C62BA1BC5B00ED03C4 /* NoticeAPISupport */; };
-		BA5E51932B9AC8510036209A /* NoticeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5E51922B9AC8510036209A /* NoticeDetailView.swift */; };
 		BA849A342B8F4F36004495BF /* ProductConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8E83232B8EF83B00FE968C /* ProductConfiguration.swift */; };
 		BA849A372B8F4FC0004495BF /* MockPaginatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA849A362B8F4FC0004495BF /* MockPaginatable.swift */; };
 		BA8E83242B8EF83B00FE968C /* ProductConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8E83232B8EF83B00FE968C /* ProductConfiguration.swift */; };
@@ -52,6 +51,9 @@
 		BAE159D82B65FA6F002DCF94 /* HomeProductDetailSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE159D72B65FA6F002DCF94 /* HomeProductDetailSelectionView.swift */; };
 		BAE159DA2B65FC35002DCF94 /* HomeProductListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE159D92B65FC35002DCF94 /* HomeProductListView.swift */; };
 		BAE159DE2B663A9A002DCF94 /* HomeProductSorterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE159DD2B663A9A002DCF94 /* HomeProductSorterView.swift */; };
+		BAE5ADB02BAD61D000176ADE /* CreditsAPI in Frameworks */ = {isa = PBXBuildFile; productRef = BAE5ADAF2BAD61D000176ADE /* CreditsAPI */; };
+		BAE5ADB22BAD61D000176ADE /* CreditsAPISupport in Frameworks */ = {isa = PBXBuildFile; productRef = BAE5ADB12BAD61D000176ADE /* CreditsAPISupport */; };
+		BAE5ADB92BAD660500176ADE /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE5ADB82BAD660500176ADE /* CreditsView.swift */; };
 		BAE7A1E62B9D7CA70022FEBB /* MailRowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE7A1E52B9D7CA70022FEBB /* MailRowItem.swift */; };
 		BAE7A1E82B9DA0360022FEBB /* DeviceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE7A1E72B9DA0360022FEBB /* DeviceProvider.swift */; };
 		BAE7A1EA2B9DA4960022FEBB /* MockDeviceInformationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE7A1E92B9DA4960022FEBB /* MockDeviceInformationProvider.swift */; };
@@ -113,7 +115,6 @@
 		BA28F1A72B6157E90052855E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA402F7D2B85E31800E86AAD /* ConvenienceSelectBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvenienceSelectBottomSheetView.swift; sourceTree = "<group>"; };
 		BA4EA35A2B6A00F70003DCE7 /* Entity */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Entity; sourceTree = "<group>"; };
-		BA5E51922B9AC8510036209A /* NoticeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeDetailView.swift; sourceTree = "<group>"; };
 		BA849A362B8F4FC0004495BF /* MockPaginatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPaginatable.swift; sourceTree = "<group>"; };
 		BA8E83232B8EF83B00FE968C /* ProductConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductConfiguration.swift; sourceTree = "<group>"; };
 		BAA4D9A92B5A1795005999F8 /* PyeonHaeng-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PyeonHaeng-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +130,7 @@
 		BAE159D72B65FA6F002DCF94 /* HomeProductDetailSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProductDetailSelectionView.swift; sourceTree = "<group>"; };
 		BAE159D92B65FC35002DCF94 /* HomeProductListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProductListView.swift; sourceTree = "<group>"; };
 		BAE159DD2B663A9A002DCF94 /* HomeProductSorterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProductSorterView.swift; sourceTree = "<group>"; };
+		BAE5ADB82BAD660500176ADE /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
 		BAE7A1E52B9D7CA70022FEBB /* MailRowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailRowItem.swift; sourceTree = "<group>"; };
 		BAE7A1E72B9DA0360022FEBB /* DeviceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceProvider.swift; sourceTree = "<group>"; };
 		BAE7A1E92B9DA4960022FEBB /* MockDeviceInformationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDeviceInformationProvider.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAE5ADB22BAD61D000176ADE /* CreditsAPISupport in Frameworks */,
 				BA05640D2B6248EA003D6DC7 /* Network in Frameworks */,
 				BA4FB9C72BA1BC5B00ED03C4 /* NoticeAPISupport in Frameworks */,
 				E57F2AA62B7717EA00E12B3D /* ProductInfoAPISupport in Frameworks */,
@@ -165,6 +168,7 @@
 				BA05640B2B6248EA003D6DC7 /* HomeAPISupport in Frameworks */,
 				BA0623D82B68E51400A0A3B2 /* Log in Frameworks */,
 				BA0564092B6248EA003D6DC7 /* HomeAPI in Frameworks */,
+				BAE5ADB02BAD61D000176ADE /* CreditsAPI in Frameworks */,
 				BAB569612B639F3000D1E0F9 /* DesignSystem in Frameworks */,
 				E55DD5182B9370D100AA63C0 /* SearchAPI in Frameworks */,
 				E55DD51A2B9370D100AA63C0 /* SearchAPISupport in Frameworks */,
@@ -215,7 +219,6 @@
 			isa = PBXGroup;
 			children = (
 				BA1688DF2B99B85500A8F462 /* NoticeView.swift */,
-				BA5E51922B9AC8510036209A /* NoticeDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 		BA28F18C2B6155EC0052855E /* SettingsScene */ = {
 			isa = PBXGroup;
 			children = (
+				BAE5ADB32BAD638200176ADE /* Credits */,
 				BAB8C3AB2BAC7A09003DF3CC /* LeaveReview */,
 				BA097F0C2B9CA820002D3E1E /* Mail */,
 				BA1688EB2B99D0B700A8F462 /* Notice */,
@@ -438,6 +442,14 @@
 			path = LeaveReview;
 			sourceTree = "<group>";
 		};
+		BAE5ADB32BAD638200176ADE /* Credits */ = {
+			isa = PBXGroup;
+			children = (
+				BAE5ADB82BAD660500176ADE /* CreditsView.swift */,
+			);
+			path = Credits;
+			sourceTree = "<group>";
+		};
 		E5462C6B2B65CF7800E9FDF2 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -495,6 +507,8 @@
 				E55DD5192B9370D100AA63C0 /* SearchAPISupport */,
 				BA4FB9C42BA1BC5B00ED03C4 /* NoticeAPI */,
 				BA4FB9C62BA1BC5B00ED03C4 /* NoticeAPISupport */,
+				BAE5ADAF2BAD61D000176ADE /* CreditsAPI */,
+				BAE5ADB12BAD61D000176ADE /* CreditsAPISupport */,
 			);
 			productName = "PyeonHaeng-iOS";
 			productReference = BAA4D9A92B5A1795005999F8 /* PyeonHaeng-iOS.app */;
@@ -635,7 +649,6 @@
 				BAE7A1E62B9D7CA70022FEBB /* MailRowItem.swift in Sources */,
 				E5028D5C2B96BA9400B36C16 /* SearchView.swift in Sources */,
 				BAE159DA2B65FC35002DCF94 /* HomeProductListView.swift in Sources */,
-				BA5E51932B9AC8510036209A /* NoticeDetailView.swift in Sources */,
 				BA402F7E2B85E31800E86AAD /* ConvenienceSelectBottomSheetView.swift in Sources */,
 				BA19897C2BA95E8C0083B4BE /* DIContainer.swift in Sources */,
 				BA28F1852B6155810052855E /* OnboardingView.swift in Sources */,
@@ -643,6 +656,7 @@
 				BA28F1882B6155910052855E /* HomeView.swift in Sources */,
 				E5F2EC452B64926100EE0838 /* PromotionTagView.swift in Sources */,
 				BA28F18B2B6155BD0052855E /* ProductInfoView.swift in Sources */,
+				BAE5ADB92BAD660500176ADE /* CreditsView.swift in Sources */,
 				E5462C662B65677B00E9FDF2 /* PromotionTag.swift in Sources */,
 				E50584532B763C8C002FDACF /* ProductInfoViewModel.swift in Sources */,
 				BAB720342B9325F200C2CA1A /* PromotionSelectBottomSheetView.swift in Sources */,
@@ -1089,6 +1103,14 @@
 		BAB569602B639F3000D1E0F9 /* DesignSystem */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DesignSystem;
+		};
+		BAE5ADAF2BAD61D000176ADE /* CreditsAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CreditsAPI;
+		};
+		BAE5ADB12BAD61D000176ADE /* CreditsAPISupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CreditsAPISupport;
 		};
 		E55DD5172B9370D100AA63C0 /* SearchAPI */ = {
 			isa = XCSwiftPackageProductDependency;

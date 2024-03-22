@@ -79,8 +79,11 @@ private struct SettingsRow: View {
     case .leaveReview:
       LeaveReviewView()
 
-    default:
-      NavigationLink {} label: {
+    case .credits:
+      NavigationLink {
+        CreditsView()
+          .toolbarRole(.editor)
+      } label: {
         subject
       }
     }
