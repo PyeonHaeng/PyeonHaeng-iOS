@@ -45,6 +45,7 @@ private struct SearchImageView: View {
         ProgressView()
       }
     }
+    .accessibilityHidden(true)
     .frame(width: Metrics.totalImageSize, height: Metrics.totalImageSize)
   }
 }
@@ -62,17 +63,17 @@ private struct SearchDetailView: View {
         .foregroundStyle(.gray900)
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.bottom, Metrics.detailVStackSpacing)
-      HStack {
-        Text("\(product.price.formatted())원")
+      HStack(spacing: 10) {
+        Spacer()
+        Text("(\((product.price / 2).formatted())₩ per piece)")
           .font(.x2)
-          .strikethrough()
-          .foregroundColor(.gray100)
-        Text("개당")
-          .font(.c3)
-          .foregroundColor(.gray900)
-        Text("\(Int(product.price / 2).formatted())원")
-          .font(.h4)
-          .foregroundColor(.gray900)
+          .foregroundColor(.gray300)
+        HStack(spacing: 4) {
+          Text("\(product.price.formatted())₩")
+            .font(.h4)
+            .accessibilityHint("기존 가격")
+            .foregroundStyle(.gray900)
+        }
       }
       .frame(maxWidth: .infinity, alignment: .trailing)
     }
