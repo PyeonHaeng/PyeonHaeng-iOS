@@ -9,6 +9,18 @@ import DesignSystem
 import Entity
 import SwiftUI
 
+
+extension UINavigationController: ObservableObject, UIGestureRecognizerDelegate {
+  open override func viewDidLoad() {
+    super.viewDidLoad()
+    interactivePopGestureRecognizer?.delegate = self
+  }
+  
+  public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+    return viewControllers.count > 1
+  }
+}
+
 // MARK: - SearchView
 
 struct SearchView<ViewModel>: View where ViewModel: SearchViewModelRepresentable {
@@ -91,7 +103,7 @@ struct SearchView<ViewModel>: View where ViewModel: SearchViewModelRepresentable
         }
       }
     }
-    .toolbar(.hidden, for: .automatic)
+    .toolbar(.hidden, for: .navigationBar)
     .scrollIndicators(.hidden)
     .scrollDismissesKeyboard(.immediately)
     .environmentObject(viewModel)

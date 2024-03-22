@@ -89,7 +89,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "검색어의 단어수를 줄이거나,"
+            "value" : "• 검색어의 단어수를 줄이거나,"
           }
         }
       }
@@ -111,7 +111,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "단어의 철자가 정확한지 확인해보세요."
+            "value" : "• 단어의 철자가 정확한지 확인해보세요."
           }
         }
       }
