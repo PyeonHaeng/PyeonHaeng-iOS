@@ -14,7 +14,7 @@ import SwiftUI
 struct MailRowItem: View {
   @State private var isMailPresented: Bool = false
   @State private var showAlert: Bool = false
-  @Environment(\.openURL) var openURL
+  @Environment(\.openURL) private var openURL
 
   private let deviceProvider: DeviceInformationProvider
 

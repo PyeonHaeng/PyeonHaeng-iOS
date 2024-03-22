@@ -76,6 +76,9 @@ private struct SettingsRow: View {
     case .contacts:
       MailRowItem(deviceProvider: SystemDeviceProvider())
 
+    case .leaveReview:
+      LeaveReviewView()
+
     default:
       NavigationLink {} label: {
         subject
