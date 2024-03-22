@@ -9,18 +9,6 @@ import DesignSystem
 import Entity
 import SwiftUI
 
-
-extension UINavigationController: ObservableObject, UIGestureRecognizerDelegate {
-  open override func viewDidLoad() {
-    super.viewDidLoad()
-    interactivePopGestureRecognizer?.delegate = self
-  }
-  
-  public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-    return viewControllers.count > 1
-  }
-}
-
 // MARK: - SearchView
 
 struct SearchView<ViewModel>: View where ViewModel: SearchViewModelRepresentable {
@@ -34,19 +22,6 @@ struct SearchView<ViewModel>: View where ViewModel: SearchViewModelRepresentable
   }
 
   var body: some View {
-    HStack(spacing: 8) {
-      Button {
-        dismiss()
-      } label: {
-        Image.chevronLeftLarge
-          .resizable()
-          .scaledToFit()
-          .frame(width: 24)
-      }
-      SearchTextField<ViewModel>(text: $text)
-        .environmentObject(viewModel)
-    }
-    .padding(.horizontal, 20)
     ScrollView {
       if viewModel.state.isLoading {
         ProgressView()
@@ -103,7 +78,11 @@ struct SearchView<ViewModel>: View where ViewModel: SearchViewModelRepresentable
         }
       }
     }
-    .toolbar(.hidden, for: .navigationBar)
+    .toolbar {
+      ToolbarItem(placement: .principal) {
+        SearchTextField<ViewModel>(text: $text)
+      }
+    }
     .scrollIndicators(.hidden)
     .scrollDismissesKeyboard(.immediately)
     .environmentObject(viewModel)
@@ -188,7 +167,7 @@ private enum Metrics {
   static let textFieldVerticalPadding = 8.0
   static let textFieldLeadingPadding = 12.0
   static let textFieldTrailingPadding = 40.0
-  static let textFieldHeight = 32.0
+  static let textFieldHeight = 24.0
   static let textFieldBorderWidth = 1.0
   static let cornerRadius = 8.0
 
