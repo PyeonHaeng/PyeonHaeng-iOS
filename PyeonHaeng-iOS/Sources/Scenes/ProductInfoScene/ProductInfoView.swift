@@ -18,15 +18,17 @@ struct ProductInfoView<ViewModel>: View where ViewModel: ProductInfoViewModelRep
   }
 
   var body: some View {
-    VStack {
-      if viewModel.state.isLoading {
-        ProgressView()
-          .containerRelativeFrame(.vertical)
-      } else {
-        ProductInfoDetailView<ViewModel>()
-        ProductInfoLineGraphView<ViewModel>()
-        Spacer()
-      }
+    ScrollView {
+      VStack {
+        if viewModel.state.isLoading {
+          ProgressView()
+            .containerRelativeFrame(.vertical)
+        } else {
+          ProductInfoDetailView<ViewModel>()
+          ProductInfoLineGraphView<ViewModel>()
+          Spacer()
+        }
+      }      
     }
     .environmentObject(viewModel)
     .navigationTitle("제품 상세")
