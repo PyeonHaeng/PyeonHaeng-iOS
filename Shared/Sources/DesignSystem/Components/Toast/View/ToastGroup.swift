@@ -25,6 +25,7 @@ struct ToastGroup: View {
       }
       .padding(.bottom, safeArea.top == .zero ? 15 : 10)
       .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+      .offset(y: -100)
     }
   }
 

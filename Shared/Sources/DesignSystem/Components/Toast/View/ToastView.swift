@@ -66,7 +66,7 @@ struct ToastView: View {
     }
     // Limiting Size
     .frame(maxWidth: size.width * 0.7)
-    .transition(.offset(y: 150))
+    .transition(.offset(y: 250))
   }
 
   private func removeToast() {
