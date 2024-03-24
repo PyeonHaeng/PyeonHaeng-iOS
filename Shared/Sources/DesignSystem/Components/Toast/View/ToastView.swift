@@ -18,8 +18,7 @@ struct ToastView: View {
 
   // MARK: View Properties
 
-  @State private var animateIn: Bool = false
-  @State private var animateOut: Bool = false
+  @State private var delayTask: DispatchWorkItem?
 
   var body: some View {
     HStack(spacing: 0) {
@@ -55,9 +54,15 @@ struct ToastView: View {
           }
         }
     )
-    .task {
-      try? await Task.sleep(for: .seconds(item.duration.rawValue))
-      removeToast()
+    .onAppear {
+      guard delayTask == nil else { return }
+      delayTask = .init {
+        removeToast()
+      }
+
+      if let delayTask {
+        DispatchQueue.main.asyncAfter(deadline: .now() + item.duration.rawValue, execute: delayTask)
+      }
     }
     // Limiting Size
     .frame(maxWidth: size.width * 0.7)
@@ -65,6 +70,8 @@ struct ToastView: View {
   }
 
   private func removeToast() {
+    delayTask?.cancel()
+
     withAnimation(.snappy ) {
       Toast.shared.toasts.removeAll(where: { $0.id == item.id })
     }
