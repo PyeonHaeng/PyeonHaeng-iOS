@@ -20,6 +20,7 @@ struct ToastGroup: View {
           ToastView(size: size, item: toast)
             .scaleEffect(scale(toast))
             .offset(y: offsetY(toast))
+            .zIndex(Double(model.toasts.firstIndex(where: { $0.id == toast.id }) ?? 0))
         }
       }
       .padding(.bottom, safeArea.top == .zero ? 15 : 10)

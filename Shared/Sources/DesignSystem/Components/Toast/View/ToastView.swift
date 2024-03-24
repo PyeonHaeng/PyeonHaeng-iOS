@@ -55,32 +55,18 @@ struct ToastView: View {
           }
         }
     )
-    .offset(y: animateIn ? 0 : 150)
-    .offset(y: !animateOut ? 0 : 150)
     .task {
-      guard !animateIn else { return }
-      withAnimation(.snappy) {
-        animateIn = true
-      }
-
       try? await Task.sleep(for: .seconds(item.duration.rawValue))
-
       removeToast()
     }
     // Limiting Size
     .frame(maxWidth: size.width * 0.7)
+    .transition(.offset(y: 150))
   }
 
   private func removeToast() {
-    guard !animateOut else { return }
-    withAnimation(.snappy, completionCriteria: .logicallyComplete) {
-      animateOut = true
-    } completion: {
-      removeToastItem()
+    withAnimation(.snappy ) {
+      Toast.shared.toasts.removeAll(where: { $0.id == item.id })
     }
-  }
-
-  private func removeToastItem() {
-    Toast.shared.toasts.removeAll(where: { $0.id == item.id })
   }
 }
