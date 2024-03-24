@@ -23,24 +23,25 @@ public struct RootView<Content: View>: View {
   public var body: some View {
     content
       .onAppear {
-        for scene in UIApplication.shared.connectedScenes where scene.activationState == .foregroundActive && overlayWindow == nil {
-          if let windowScene = scene as? UIWindowScene {
-            let window = PassthroughWindow(windowScene: windowScene)
-            window.backgroundColor = .clear
-            window.isUserInteractionEnabled = true
-            window.isHidden = false
-
-            // view controller part
-
-            let rootController = UIHostingController(rootView: ToastGroup())
-            rootController.view.frame = windowScene.screen.bounds
-            rootController.view.backgroundColor = .clear
-            window.rootViewController = rootController
-
-            overlayWindow = window
-            break
-          }
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              overlayWindow == nil
+        else {
+          return
         }
+
+        let window = PassthroughWindow(windowScene: windowScene)
+        window.backgroundColor = .clear
+        window.isUserInteractionEnabled = true
+        window.isHidden = false
+
+        // view controller part
+
+        let rootController = UIHostingController(rootView: ToastGroup())
+        rootController.view.frame = windowScene.screen.bounds
+        rootController.view.backgroundColor = .clear
+        window.rootViewController = rootController
+
+        overlayWindow = window
       }
   }
 }
