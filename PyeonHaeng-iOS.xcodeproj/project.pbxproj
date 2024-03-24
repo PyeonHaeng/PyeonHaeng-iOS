@@ -1289,10 +1289,6 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = NoticeAPISupport;
 		};
-		BAAF1D352BAFFA340001EA36 /* DesignSystem */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = DesignSystem;
-		};
 		BAB569602B639F3000D1E0F9 /* DesignSystem */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DesignSystem;
