@@ -31,8 +31,11 @@ public struct MarkdownView: View {
             BulletTextView(content: block.content)
               .font(.body3)
           } else {
-            Text(block.content)
-              .font(.body2)
+            HStack {
+              Text(block.content)
+                .font(.body2)
+              Spacer()
+            }
           }
         }
       }
