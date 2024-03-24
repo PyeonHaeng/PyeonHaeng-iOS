@@ -18,6 +18,7 @@ struct NoticeDetailView<ViewModel: NoticeDetailViewModelRepresentable>: View {
   var body: some View {
     if let context = viewModel.state.notice?.context {
       MarkdownView(content: context)
+        .navigationTitle(viewModel.state.notice?.title ?? "")
     } else {
       ProgressView()
         .progressViewStyle(.circular)

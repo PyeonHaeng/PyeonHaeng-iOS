@@ -10,19 +10,19 @@ import Foundation
 import Log
 import NoticeAPI
 
-// MARK: - NoticeAction
+// MARK: - NoticeDetailAction
 
 enum NoticeDetailAction {
   case fetchNoticeDetail
 }
 
-// MARK: - NoticeState
+// MARK: - NoticeDetailState
 
 struct NoticeDetailState {
   var notice: NoticeDetail?
 }
 
-// MARK: - NoticeViewModelRepresentable
+// MARK: - NoticeDetailViewModelRepresentable
 
 @MainActor
 protocol NoticeDetailViewModelRepresentable: ObservableObject {
@@ -30,10 +30,9 @@ protocol NoticeDetailViewModelRepresentable: ObservableObject {
   func trigger(_ action: NoticeDetailAction)
 }
 
-// MARK: - NoticeViewModel
+// MARK: - NoticeDetailViewModel
 
 final class NoticeDetailViewModel: NoticeDetailViewModelRepresentable {
-
   // MARK: Properties
 
   private let service: NoticeServiceRepresentable
