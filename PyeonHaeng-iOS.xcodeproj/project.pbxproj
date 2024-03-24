@@ -43,10 +43,11 @@
 		BAA4D9AF2B5A1795005999F8 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA4D9AE2B5A1795005999F8 /* SplashView.swift */; };
 		BAA4D9B12B5A1796005999F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAA4D9B02B5A1796005999F8 /* Assets.xcassets */; };
 		BAA4D9B42B5A1796005999F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAA4D9B32B5A1796005999F8 /* Preview Assets.xcassets */; };
-		BAAF1D292BAFF1910001EA36 /* DesignSystemAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAF1D282BAFF1910001EA36 /* DesignSystemAppApp.swift */; };
+		BAAF1D292BAFF1910001EA36 /* DesignSystemApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAF1D282BAFF1910001EA36 /* DesignSystemApp.swift */; };
 		BAAF1D2B2BAFF1910001EA36 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAF1D2A2BAFF1910001EA36 /* ContentView.swift */; };
 		BAAF1D2D2BAFF1920001EA36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAAF1D2C2BAFF1920001EA36 /* Assets.xcassets */; };
 		BAAF1D302BAFF1920001EA36 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAAF1D2F2BAFF1920001EA36 /* Preview Assets.xcassets */; };
+		BAAF1D362BAFFA340001EA36 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = BAAF1D352BAFFA340001EA36 /* DesignSystem */; };
 		BAB569612B639F3000D1E0F9 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = BAB569602B639F3000D1E0F9 /* DesignSystem */; };
 		BAB5CF252B6B7C5A008B24BF /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB5CF242B6B7C5A008B24BF /* Services.swift */; };
 		BAB5CF272B6B7CF3008B24BF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB5CF262B6B7CF3008B24BF /* HomeViewModel.swift */; };
@@ -127,7 +128,7 @@
 		BAA4D9B02B5A1796005999F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAA4D9B32B5A1796005999F8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BAAF1D262BAFF1910001EA36 /* DesignSystemApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignSystemApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BAAF1D282BAFF1910001EA36 /* DesignSystemAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystemAppApp.swift; sourceTree = "<group>"; };
+		BAAF1D282BAFF1910001EA36 /* DesignSystemApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystemApp.swift; sourceTree = "<group>"; };
 		BAAF1D2A2BAFF1910001EA36 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BAAF1D2C2BAFF1920001EA36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAAF1D2F2BAFF1920001EA36 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -188,6 +189,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAAF1D362BAFFA340001EA36 /* DesignSystem in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,7 +457,7 @@
 		BAAF1D272BAFF1910001EA36 /* DesignSystemApp */ = {
 			isa = PBXGroup;
 			children = (
-				BAAF1D282BAFF1910001EA36 /* DesignSystemAppApp.swift */,
+				BAAF1D282BAFF1910001EA36 /* DesignSystemApp.swift */,
 				BAAF1D2A2BAFF1910001EA36 /* ContentView.swift */,
 				BAAF1D2C2BAFF1920001EA36 /* Assets.xcassets */,
 				BAAF1D2E2BAFF1920001EA36 /* Preview Content */,
@@ -564,6 +566,9 @@
 			dependencies = (
 			);
 			name = DesignSystemApp;
+			packageProductDependencies = (
+				BAAF1D352BAFFA340001EA36 /* DesignSystem */,
+			);
 			productName = DesignSystemApp;
 			productReference = BAAF1D262BAFF1910001EA36 /* DesignSystemApp.app */;
 			productType = "com.apple.product-type.application";
@@ -752,7 +757,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAAF1D2B2BAFF1910001EA36 /* ContentView.swift in Sources */,
-				BAAF1D292BAFF1910001EA36 /* DesignSystemAppApp.swift in Sources */,
+				BAAF1D292BAFF1910001EA36 /* DesignSystemApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1275,6 +1280,10 @@
 		BA4FB9C62BA1BC5B00ED03C4 /* NoticeAPISupport */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = NoticeAPISupport;
+		};
+		BAAF1D352BAFFA340001EA36 /* DesignSystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DesignSystem;
 		};
 		BAB569602B639F3000D1E0F9 /* DesignSystem */ = {
 			isa = XCSwiftPackageProductDependency;
