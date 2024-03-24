@@ -72,7 +72,7 @@ struct ToastView: View {
   private func removeToast() {
     delayTask?.cancel()
 
-    withAnimation(.snappy ) {
+    withAnimation(.snappy) {
       Toast.shared.toasts.removeAll(where: { $0.id == item.id })
     }
   }
