@@ -18,6 +18,7 @@ struct ToastGroup: View {
       ZStack {
         ForEach(model.toasts) { toast in
           ToastView(size: size, item: toast)
+            .scaleEffect(scale(toast))
             .offset(y: offsetY(toast))
         }
       }
@@ -26,10 +27,15 @@ struct ToastGroup: View {
     }
   }
 
-  func offsetY(_ item: ToastItem) -> CGFloat {
-    let index = model.toasts.firstIndex(where: { $0.id == item.id}) ?? 0
+  private func offsetY(_ item: ToastItem) -> CGFloat {
+    let index = model.toasts.firstIndex(where: { $0.id == item.id }) ?? 0
     let totalCount = model.toasts.count - 1
     return totalCount - index >= 2 ? -20 : CGFloat(totalCount - index) * -10
   }
 
+  private func scale(_ item: ToastItem) -> CGFloat {
+    let index = model.toasts.firstIndex(where: { $0.id == item.id }) ?? 0
+    let totalCount = model.toasts.count - 1
+    return 1.0 - (totalCount - index >= 2 ? 0.2 : CGFloat(totalCount - index) * 0.1)
+  }
 }
