@@ -28,6 +28,8 @@ public final class Toast {
     isUserInteractionEnabled: Bool = false,
     duration: ToastTime = .medium
   ) {
-    toasts.append(.init(title: title, symbol: symbol, tint: tint, isUseInteractionEnabled: isUserInteractionEnabled, duration: duration))
+    withAnimation(.snappy) {
+      toasts.append(.init(title: title, symbol: symbol, tint: tint, isUseInteractionEnabled: isUserInteractionEnabled, duration: duration))
+    }
   }
 }

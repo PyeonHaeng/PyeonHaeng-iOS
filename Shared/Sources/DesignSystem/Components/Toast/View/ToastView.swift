@@ -30,6 +30,7 @@ struct ToastView: View {
       }
 
       Text(item.title)
+        .lineLimit(1)
     }
     .foregroundStyle(item.tint)
     .padding(.horizontal, 15)
@@ -41,6 +42,18 @@ struct ToastView: View {
       in: .capsule
     )
     .contentShape(.capsule)
+    .gesture(
+      DragGesture(minimumDistance: 0)
+        .onEnded { value in
+          let endY = value.translation.height
+          let velocityY = value.velocity.height
+
+          if (endY + velocityY) > 100 {
+            // Removing Toast
+            removeToast()
+          }
+        }
+    )
     .offset(y: animateIn ? 0 : 150)
     .offset(y: !animateOut ? 0 : 150)
     .task {
@@ -53,6 +66,8 @@ struct ToastView: View {
 
       removeToast()
     }
+    // Limiting Size
+    .frame(maxWidth: size.width * 0.7)
   }
 
   private func removeToast() {
