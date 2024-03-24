@@ -24,7 +24,7 @@ struct ToastItem: Identifiable {
   let tint: Color
 
   /// 사용자 상호작용 여부
-  let isUseInteractionEnabled: Bool
+  let isUserInteractionEnabled: Bool
 
   // MARK: Timing
 
@@ -35,7 +35,7 @@ struct ToastItem: Identifiable {
     self.title = title
     self.symbol = symbol
     self.tint = tint
-    self.isUseInteractionEnabled = isUseInteractionEnabled
+    isUserInteractionEnabled = isUseInteractionEnabled
     self.duration = duration
   }
 }

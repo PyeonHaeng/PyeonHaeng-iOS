@@ -45,6 +45,7 @@ struct ToastView: View {
     .gesture(
       DragGesture(minimumDistance: 0)
         .onEnded { value in
+          guard item.isUserInteractionEnabled else { return }
           let endY = value.translation.height
           let velocityY = value.velocity.height
 
