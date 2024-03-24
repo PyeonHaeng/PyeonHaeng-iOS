@@ -13,6 +13,7 @@ import Network
 
 public protocol NoticeServiceRepresentable {
   func fetchNoticeList(request: NoticeListRequest) async throws -> Paginated<Notice>
+  func fetchNoticeDetail(id: Int) async throws -> NoticeDetail
 }
 
 // MARK: - NoticeService
@@ -32,6 +33,11 @@ extension NoticeService: NoticeServiceRepresentable {
     let response: NoticeResponse = try await network.request(with: NoticeEndPoint.fetchList(request))
     return Paginated<Notice>(dto: response)
   }
+
+  public func fetchNoticeDetail(id: Int) async throws -> NoticeDetail {
+    let response: NoticeItemResponse = try await network.request(with: NoticeEndPoint.fetchDetail(id))
+    return NoticeDetail(dto: response)
+  }
 }
 
 private extension Paginated where Model == Notice {
@@ -50,6 +56,15 @@ private extension Notice {
       id: dto.id,
       date: dto.date,
       title: dto.title
+    )
+  }
+}
+
+private extension NoticeDetail {
+  init(dto: NoticeItemResponse) {
+    self.init(
+      title: dto.title,
+      context: dto.body
     )
   }
 }
