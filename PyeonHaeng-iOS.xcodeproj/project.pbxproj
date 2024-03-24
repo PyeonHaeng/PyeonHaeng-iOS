@@ -43,6 +43,8 @@
 		BAA4D9AF2B5A1795005999F8 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA4D9AE2B5A1795005999F8 /* SplashView.swift */; };
 		BAA4D9B12B5A1796005999F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAA4D9B02B5A1796005999F8 /* Assets.xcassets */; };
 		BAA4D9B42B5A1796005999F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAA4D9B32B5A1796005999F8 /* Preview Assets.xcassets */; };
+		BAAF1D3A2BB01D910001EA36 /* NoticeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAF1D392BB01D910001EA36 /* NoticeDetailView.swift */; };
+		BAAF1D3C2BB01D980001EA36 /* NoticeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAF1D3B2BB01D980001EA36 /* NoticeDetailViewModel.swift */; };
 		BAAF1D292BAFF1910001EA36 /* DesignSystemApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAF1D282BAFF1910001EA36 /* DesignSystemApp.swift */; };
 		BAAF1D2B2BAFF1910001EA36 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAF1D2A2BAFF1910001EA36 /* ContentView.swift */; };
 		BAAF1D2D2BAFF1920001EA36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAAF1D2C2BAFF1920001EA36 /* Assets.xcassets */; };
@@ -127,6 +129,8 @@
 		BAA4D9AE2B5A1795005999F8 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		BAA4D9B02B5A1796005999F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAA4D9B32B5A1796005999F8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BAAF1D392BB01D910001EA36 /* NoticeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeDetailView.swift; sourceTree = "<group>"; };
+		BAAF1D3B2BB01D980001EA36 /* NoticeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeDetailViewModel.swift; sourceTree = "<group>"; };
 		BAAF1D262BAFF1910001EA36 /* DesignSystemApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignSystemApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAAF1D282BAFF1910001EA36 /* DesignSystemApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystemApp.swift; sourceTree = "<group>"; };
 		BAAF1D2A2BAFF1910001EA36 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -228,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				BA1989752BA9536A0083B4BE /* NoticeViewModel.swift */,
+				BAAF1D3B2BB01D980001EA36 /* NoticeDetailViewModel.swift */,
 				BA1989792BA95C040083B4BE /* NoticeConfiguration.swift */,
 			);
 			path = ViewModel;
@@ -237,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				BA1688DF2B99B85500A8F462 /* NoticeView.swift */,
+				BAAF1D392BB01D910001EA36 /* NoticeDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -743,9 +749,11 @@
 				BA1688E02B99B85500A8F462 /* NoticeView.swift in Sources */,
 				BAE159D82B65FA6F002DCF94 /* HomeProductDetailSelectionView.swift in Sources */,
 				BAE7A1E82B9DA0360022FEBB /* DeviceProvider.swift in Sources */,
+				BAAF1D3A2BB01D910001EA36 /* NoticeDetailView.swift in Sources */,
 				E50176262B6A204F0098D1BE /* ProductInfoLineGraphView.swift in Sources */,
 				BAB5CF252B6B7C5A008B24BF /* Services.swift in Sources */,
 				BAA4D9AF2B5A1795005999F8 /* SplashView.swift in Sources */,
+				BAAF1D3C2BB01D980001EA36 /* NoticeDetailViewModel.swift in Sources */,
 				BAB8C3AD2BAC7A11003DF3CC /* LeaveReviewView.swift in Sources */,
 				BA8E83242B8EF83B00FE968C /* ProductConfiguration.swift in Sources */,
 				BAA4D9AD2B5A1795005999F8 /* PyeonHaengApp.swift in Sources */,
@@ -1280,10 +1288,6 @@
 		BA4FB9C62BA1BC5B00ED03C4 /* NoticeAPISupport */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = NoticeAPISupport;
-		};
-		BAAF1D352BAFFA340001EA36 /* DesignSystem */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = DesignSystem;
 		};
 		BAB569602B639F3000D1E0F9 /* DesignSystem */ = {
 			isa = XCSwiftPackageProductDependency;
