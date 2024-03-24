@@ -8,8 +8,18 @@
 import SwiftUI
 
 struct ToastView: View {
-  var size: CGSize
-  var item: ToastItem
+  private let size: CGSize
+  private let item: ToastItem
+
+  init(size: CGSize, item: ToastItem) {
+    self.size = size
+    self.item = item
+  }
+
+  // MARK: View Properties
+
+  @State private var animateIn: Bool = false
+  @State private var animateOut: Bool = false
 
   var body: some View {
     HStack(spacing: 0) {
@@ -31,5 +41,30 @@ struct ToastView: View {
       in: .capsule
     )
     .contentShape(.capsule)
+    .offset(y: animateIn ? 0 : 150)
+    .offset(y: !animateOut ? 0 : 150)
+    .task {
+      guard !animateIn else { return }
+      withAnimation(.snappy) {
+        animateIn = true
+      }
+
+      try? await Task.sleep(for: .seconds(item.duration.rawValue))
+
+      removeToast()
+    }
+  }
+
+  private func removeToast() {
+    guard !animateOut else { return }
+    withAnimation(.snappy, completionCriteria: .logicallyComplete) {
+      animateOut = true
+    } completion: {
+      removeToastItem()
+    }
+  }
+
+  private func removeToastItem() {
+    Toast.shared.toasts.removeAll(where: { $0.id == item.id })
   }
 }
