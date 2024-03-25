@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ToastGroup: View {
-  let model = Toast.shared
+  private let model = Toast.shared
 
   var body: some View {
     GeometryReader { proxy in

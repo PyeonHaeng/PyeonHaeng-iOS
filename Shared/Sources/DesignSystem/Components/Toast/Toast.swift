@@ -24,7 +24,7 @@ public final class Toast {
   public func present(
     title: String,
     symbol: String?,
-    tint: Color = .gray900,
+    tint: Color = .gray050,
     isUserInteractionEnabled: Bool = false,
     duration: ToastTime = .medium
   ) {

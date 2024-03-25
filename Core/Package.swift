@@ -8,8 +8,12 @@ let package = Package(
   platforms: [.iOS(.v17)],
   products: [
     .library(
-      name: "Network",
-      targets: ["Network"]
+      name: "NetworkAPIKit",
+      targets: ["NetworkAPIKit"]
+    ),
+    .library(
+      name: "NetworkMonitor",
+      targets: ["NetworkMonitor"]
     ),
   ],
   dependencies: [
@@ -17,14 +21,20 @@ let package = Package(
   ],
   targets: [
     .target(
-      name: "Network",
+      name: "NetworkAPIKit",
+      dependencies: [
+        .product(name: "Log", package: "Shared"),
+      ]
+    ),
+    .target(
+      name: "NetworkMonitor",
       dependencies: [
         .product(name: "Log", package: "Shared"),
       ]
     ),
     .testTarget(
       name: "CoreTests",
-      dependencies: ["Network"]
+      dependencies: ["NetworkAPIKit"]
     ),
   ]
 )

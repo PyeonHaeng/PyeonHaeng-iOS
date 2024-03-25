@@ -6,10 +6,12 @@
 //
 
 import DesignSystem
+import NetworkMonitor
 import SwiftUI
 
 @main
 struct PyeonHaengApp: App {
+  @StateObject private var networkMonitor: NetworkMonitor = .init()
   private let services = Services()
 
   init() {
@@ -19,8 +21,18 @@ struct PyeonHaengApp: App {
 
   var body: some Scene {
     WindowGroup {
-      SplashView()
-        .environment(\.injected, DIContainer(services: services))
+      RootView {
+        SplashView()
+          .environment(\.injected, DIContainer(services: services))
+          // 네트워크 연결 모니터링
+          .onReceive(networkMonitor.$isSatisfied.debounce(for: .seconds(1), scheduler: RunLoop.main).removeDuplicates()) { isSatisfied in
+            if !isSatisfied {
+              Toast.shared.present(title: "Oops! Couldn't connect.", symbol: "exclamationmark.warninglight.fill")
+            } else {
+              Toast.shared.present(title: "Yay! Connected successfully.", symbol: "party.popper.fill")
+            }
+          }
+      }
     }
   }
 

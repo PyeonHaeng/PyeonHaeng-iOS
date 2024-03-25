@@ -7,7 +7,7 @@
 
 import Foundation
 import HomeAPI
-import Network
+import NetworkAPIKit
 
 public final class HomeURLProtocol: URLProtocol {
   private lazy var mockData: [String: Data?] = [

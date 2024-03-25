@@ -7,7 +7,7 @@
 
 import Foundation
 import Log
-import Network
+import NetworkAPIKit
 import ProductInfoAPI
 
 public final class ProductInfoURLProtocol: URLProtocol {

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Network
+import NetworkAPIKit
 import NoticeAPI
 
 public final class NoticeURLProtocol: URLProtocol {

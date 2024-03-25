@@ -7,7 +7,7 @@
 
 import CreditsAPI
 import Foundation
-import Network
+import NetworkAPIKit
 
 public final class CreditsURLProtocol: URLProtocol {
   private lazy var mockData: [String: Data?] = [
