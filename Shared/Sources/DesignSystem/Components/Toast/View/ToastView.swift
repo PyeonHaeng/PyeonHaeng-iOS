@@ -35,7 +35,7 @@ struct ToastView: View {
     .padding(.horizontal, 15)
     .padding(.vertical, 8)
     .background(
-      .primary
+      .pyeonHaengPrimary
         .shadow(.drop(color: .secondary.opacity(0.06), radius: 5, x: 5, y: 5))
         .shadow(.drop(color: .secondary.opacity(0.06), radius: 5, x: -5, y: -5)),
       in: .capsule
