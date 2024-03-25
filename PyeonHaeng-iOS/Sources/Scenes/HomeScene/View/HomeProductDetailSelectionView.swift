@@ -31,7 +31,7 @@ struct HomeProductDetailSelectionView<ViewModel>: View where ViewModel: HomeView
       Group {
         convenienceImageView()
           .resizable()
-          .scaledToFit()
+          .aspectRatio(contentMode: .fit)
         Image.chevronDown
           .renderingMode(.template)
           .foregroundStyle(.gray300)
