@@ -11,6 +11,10 @@ let package = Package(
       name: "NetworkAPIKit",
       targets: ["NetworkAPIKit"]
     ),
+    .library(
+      name: "NetworkMonitor",
+      targets: ["NetworkMonitor"]
+    ),
   ],
   dependencies: [
     .package(path: "../Shared"),
@@ -18,6 +22,12 @@ let package = Package(
   targets: [
     .target(
       name: "NetworkAPIKit",
+      dependencies: [
+        .product(name: "Log", package: "Shared"),
+      ]
+    ),
+    .target(
+      name: "NetworkMonitor",
       dependencies: [
         .product(name: "Log", package: "Shared"),
       ]
