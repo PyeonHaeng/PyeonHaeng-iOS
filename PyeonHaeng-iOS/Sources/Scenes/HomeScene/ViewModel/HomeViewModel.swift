@@ -5,6 +5,7 @@
 //  Created by 홍승현 on 2/1/24.
 //
 
+import DesignSystem
 import Entity
 import Foundation
 import HomeAPI
@@ -67,6 +68,11 @@ final class HomeViewModel: HomeViewModelRepresentable {
     func performAsyncAction(_ action: () async throws -> Void) async {
       do {
         try await action()
+      } catch let error as LocalizedError {
+        Toast.shared.present(title: error.localizedDescription, symbol: "exclamationmark.triangle")
+        Log.make(with: .viewModel)?.error("\(error.localizedDescription)")
+      } catch let error as URLError where error.code == .timedOut {
+        Toast.shared.present(title: "Network Connection Error", symbol: "exclamationmark.triangle")
       } catch {
         Log.make(with: .viewModel)?.error("\(String(describing: error))")
       }

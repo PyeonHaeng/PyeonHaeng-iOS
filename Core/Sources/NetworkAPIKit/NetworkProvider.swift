@@ -33,6 +33,7 @@ public struct NetworkProvider: Networking {
       throw NetworkError.urlError
     }
     var request = URLRequest(url: url)
+    request.timeoutInterval = 5
     request.httpMethod = endPoint.method.rawValue
     request.allHTTPHeaderFields = endPoint.headers
 
