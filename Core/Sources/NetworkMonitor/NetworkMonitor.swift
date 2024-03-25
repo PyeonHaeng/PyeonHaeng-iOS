@@ -10,10 +10,11 @@ import Network
 
 // MARK: - NetworkMonitor
 
-public final class NetworkMonitor: ObservableObject {
+@Observable
+public final class NetworkMonitor {
   private let monitor = NWPathMonitor()
   private let queue = DispatchQueue(label: .networkMonitor)
-  @Published public var isSatisfied = false
+  public var isSatisfied = true
 
   public init() {
     monitor.pathUpdateHandler = { path in
