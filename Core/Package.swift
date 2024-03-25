@@ -8,8 +8,8 @@ let package = Package(
   platforms: [.iOS(.v17)],
   products: [
     .library(
-      name: "Network",
-      targets: ["Network"]
+      name: "NetworkAPIKit",
+      targets: ["NetworkAPIKit"]
     ),
   ],
   dependencies: [
@@ -17,14 +17,14 @@ let package = Package(
   ],
   targets: [
     .target(
-      name: "Network",
+      name: "NetworkAPIKit",
       dependencies: [
         .product(name: "Log", package: "Shared"),
       ]
     ),
     .testTarget(
       name: "CoreTests",
-      dependencies: ["Network"]
+      dependencies: ["NetworkAPIKit"]
     ),
   ]
 )

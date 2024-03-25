@@ -7,7 +7,7 @@
 
 import Entity
 import Foundation
-import Network
+import NetworkAPIKit
 
 // MARK: - NoticeDetailServiceRepresentable
 

@@ -55,7 +55,7 @@ let package = Package(
     .target(
       name: "CreditsAPI",
       dependencies: [
-        .product(name: "Network", package: "Core"),
+        .product(name: "NetworkAPIKit", package: "Core"),
         .product(name: "Entity", package: "Entity"),
       ]
     ),
@@ -69,7 +69,7 @@ let package = Package(
     .target(
       name: "HomeAPI",
       dependencies: [
-        .product(name: "Network", package: "Core"),
+        .product(name: "NetworkAPIKit", package: "Core"),
         .product(name: "Entity", package: "Entity"),
       ]
     ),
@@ -83,7 +83,7 @@ let package = Package(
     .target(
       name: "NoticeAPI",
       dependencies: [
-        .product(name: "Network", package: "Core"),
+        .product(name: "NetworkAPIKit", package: "Core"),
         .product(name: "Entity", package: "Entity"),
       ]
     ),
@@ -97,7 +97,7 @@ let package = Package(
     .target(
       name: "ProductInfoAPI",
       dependencies: [
-        .product(name: "Network", package: "Core"),
+        .product(name: "NetworkAPIKit", package: "Core"),
         .product(name: "Entity", package: "Entity"),
       ]
     ),
@@ -111,7 +111,7 @@ let package = Package(
     .target(
       name: "SearchAPI",
       dependencies: [
-        .product(name: "Network", package: "Core"),
+        .product(name: "NetworkAPIKit", package: "Core"),
         .product(name: "Entity", package: "Entity"),
       ]
     ),

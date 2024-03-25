@@ -10,7 +10,7 @@ import CreditsAPISupport
 import Foundation
 import HomeAPI
 import HomeAPISupport
-import Network
+import NetworkAPIKit
 import NoticeAPI
 import NoticeAPISupport
 import ProductInfoAPI

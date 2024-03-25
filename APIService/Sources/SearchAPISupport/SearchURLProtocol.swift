@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Network
+import NetworkAPIKit
 import SearchAPI
 
 public final class SearchURLProtocol: URLProtocol {
