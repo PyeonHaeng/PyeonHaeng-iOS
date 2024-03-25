@@ -46,7 +46,6 @@
 		BAAF1D2B2BAFF1910001EA36 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAF1D2A2BAFF1910001EA36 /* ContentView.swift */; };
 		BAAF1D2D2BAFF1920001EA36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAAF1D2C2BAFF1920001EA36 /* Assets.xcassets */; };
 		BAAF1D302BAFF1920001EA36 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAAF1D2F2BAFF1920001EA36 /* Preview Assets.xcassets */; };
-		BAAF1D362BAFFA340001EA36 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		BAAF1D3A2BB01D910001EA36 /* NoticeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAF1D392BB01D910001EA36 /* NoticeDetailView.swift */; };
 		BAAF1D3C2BB01D980001EA36 /* NoticeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAF1D3B2BB01D980001EA36 /* NoticeDetailViewModel.swift */; };
 		BAB569612B639F3000D1E0F9 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = BAB569602B639F3000D1E0F9 /* DesignSystem */; };
@@ -61,6 +60,8 @@
 		BAE5ADB02BAD61D000176ADE /* CreditsAPI in Frameworks */ = {isa = PBXBuildFile; productRef = BAE5ADAF2BAD61D000176ADE /* CreditsAPI */; };
 		BAE5ADB22BAD61D000176ADE /* CreditsAPISupport in Frameworks */ = {isa = PBXBuildFile; productRef = BAE5ADB12BAD61D000176ADE /* CreditsAPISupport */; };
 		BAE5ADB92BAD660500176ADE /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE5ADB82BAD660500176ADE /* CreditsView.swift */; };
+		BAE5EDB22BB1416A00FC4B78 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = BAE5EDB12BB1416A00FC4B78 /* DesignSystem */; };
+		BAE5EDB42BB1450100FC4B78 /* NetworkMonitor in Frameworks */ = {isa = PBXBuildFile; productRef = BAE5EDB32BB1450100FC4B78 /* NetworkMonitor */; };
 		BAE7A1E62B9D7CA70022FEBB /* MailRowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE7A1E52B9D7CA70022FEBB /* MailRowItem.swift */; };
 		BAE7A1E82B9DA0360022FEBB /* DeviceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE7A1E72B9DA0360022FEBB /* DeviceProvider.swift */; };
 		BAE7A1EA2B9DA4960022FEBB /* MockDeviceInformationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE7A1E92B9DA4960022FEBB /* MockDeviceInformationProvider.swift */; };
@@ -184,6 +185,7 @@
 				BA0564092B6248EA003D6DC7 /* HomeAPI in Frameworks */,
 				BAE5ADB02BAD61D000176ADE /* CreditsAPI in Frameworks */,
 				BAB569612B639F3000D1E0F9 /* DesignSystem in Frameworks */,
+				BAE5EDB42BB1450100FC4B78 /* NetworkMonitor in Frameworks */,
 				E55DD5182B9370D100AA63C0 /* SearchAPI in Frameworks */,
 				E55DD51A2B9370D100AA63C0 /* SearchAPISupport in Frameworks */,
 			);
@@ -193,7 +195,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAAF1D362BAFFA340001EA36 /* (null) in Frameworks */,
+				BAE5EDB22BB1416A00FC4B78 /* DesignSystem in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,6 +556,7 @@
 				BAE5ADAF2BAD61D000176ADE /* CreditsAPI */,
 				BAE5ADB12BAD61D000176ADE /* CreditsAPISupport */,
 				BAB6212D2BB13CD100877FC3 /* NetworkAPIKit */,
+				BAE5EDB32BB1450100FC4B78 /* NetworkMonitor */,
 			);
 			productName = "PyeonHaeng-iOS";
 			productReference = BAA4D9A92B5A1795005999F8 /* PyeonHaeng-iOS.app */;
@@ -573,6 +576,7 @@
 			);
 			name = DesignSystemApp;
 			packageProductDependencies = (
+				BAE5EDB12BB1416A00FC4B78 /* DesignSystem */,
 			);
 			productName = DesignSystemApp;
 			productReference = BAAF1D262BAFF1910001EA36 /* DesignSystemApp.app */;
@@ -1299,6 +1303,14 @@
 		BAE5ADB12BAD61D000176ADE /* CreditsAPISupport */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = CreditsAPISupport;
+		};
+		BAE5EDB12BB1416A00FC4B78 /* DesignSystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DesignSystem;
+		};
+		BAE5EDB32BB1450100FC4B78 /* NetworkMonitor */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NetworkMonitor;
 		};
 		E55DD5172B9370D100AA63C0 /* SearchAPI */ = {
 			isa = XCSwiftPackageProductDependency;
