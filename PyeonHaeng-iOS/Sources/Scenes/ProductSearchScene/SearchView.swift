@@ -16,11 +16,11 @@ struct SearchView<ViewModel>: View where ViewModel: SearchViewModelRepresentable
   @State private var text: String = ""
   @Environment(\.dismiss) private var dismiss
   @Environment(\.injected) private var container
-
+  
   init(viewModel: @autoclosure @escaping () -> ViewModel) {
     _viewModel = .init(wrappedValue: viewModel())
   }
-
+  
   var body: some View {
     ScrollView {
       if viewModel.state.isLoading {
