@@ -68,7 +68,7 @@ private struct DetailView: View {
       Spacer()
       HStack(spacing: Metrics.horizontalSpacing) {
         PromotionTagView(promotionTag: promotionTag(for: product.promotion))
-        .padding(.bottom, -12)
+          .padding(.bottom, -12)
         VStack(alignment: .trailing, spacing: .zero) {
           Text("(\((product.price / 2).formatted())₩ per piece)")
             .font(.x2)
