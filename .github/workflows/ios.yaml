@@ -2,9 +2,9 @@ name: iOS CI workflow
 
 on:
   push:
-    branches: ["feature/*"]
+    branches: ['**']
   pull_request:
-    branches: ["main"]
+    branches: ['**']
     types: [labeled, opened, synchronize, reopened]
 
 jobs:
