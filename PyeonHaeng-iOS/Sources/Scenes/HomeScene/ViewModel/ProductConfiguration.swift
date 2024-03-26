@@ -36,6 +36,10 @@ extension ProductConfiguration {
     loadingState = .isLoading
   }
 
+  mutating func stopLoading() {
+    loadingState = .idle
+  }
+
   mutating func update(meta paginatedModel: some Paginatable) {
     loadingState = paginatedModel.hasMore ? .idle : .loadedAll
     offset += 1

@@ -126,17 +126,22 @@ final class HomeViewModel: HomeViewModelRepresentable {
       offset: state.productConfiguration.offset
     )
 
-    let paginatedModel = try await service.fetchProductList(request: request)
+    do {
+      let paginatedModel = try await service.fetchProductList(request: request)
 
-    defer {
-      // 다음에 요청하기 위해 설정해야할 메타데이터 업데이트
-      state.productConfiguration.update(meta: paginatedModel)
-    }
+      defer {
+        // 다음에 요청하기 위해 설정해야할 메타데이터 업데이트
+        state.productConfiguration.update(meta: paginatedModel)
+      }
 
-    if replace {
-      state.products = paginatedModel.results
-    } else {
-      state.products.append(contentsOf: paginatedModel.results)
+      if replace {
+        state.products = paginatedModel.results
+      } else {
+        state.products.append(contentsOf: paginatedModel.results)
+      }
+    } catch {
+      state.productConfiguration.stopLoading()
+      throw error
     }
   }
 
