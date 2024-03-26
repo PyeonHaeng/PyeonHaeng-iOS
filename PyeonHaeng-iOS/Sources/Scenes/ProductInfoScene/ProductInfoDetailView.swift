@@ -55,29 +55,26 @@ private struct DetailView: View {
       .font(.h3)
       .foregroundStyle(Color.gray900)
       .frame(maxWidth: .infinity, alignment: .leading)
-    HStack(alignment: .bottom) {
+    ZStack(alignment: .bottom) {
       VStack(alignment: .leading, spacing: .zero) {
         Text("행사 진행 편의점")
           .font(.c2)
           .padding(.top, Metrics.textPaddingTop)
+          .frame(maxWidth: 120, alignment: .leading)
         image(for: product.convenienceStore)
           .padding(.top, Metrics.convenienceStoreLogoPaddingTop)
       }
+      .frame(maxWidth: .infinity, alignment: .leading)
       Spacer()
       HStack(spacing: Metrics.horizontalSpacing) {
-        Group {
-          PromotionTagView(promotionTag: promotionTag(for: product.promotion))
-          Text("개당")
-            .font(.c1)
-        }
-        .padding(.bottom, -12)
+        PromotionTagView(promotionTag: promotionTag(for: product.promotion))
+          .padding(.bottom, -12)
         VStack(alignment: .trailing, spacing: .zero) {
-          Text("\(product.price.formatted())원")
+          Text("(\((product.price / 2).formatted())₩ per piece)")
             .font(.x2)
             .foregroundStyle(.gray100)
-            .strikethrough(color: .gray100)
             .padding(.bottom, -4)
-          Text("\(Int(product.price / 2).formatted())원")
+          Text("\(product.price.formatted())₩")
             .font(.h2)
         }
       }

@@ -162,6 +162,7 @@ private struct LineGraphPanelView: View {
         .font(.c4)
         .foregroundStyle(.gray400)
       Text("\(product.price.formatted())원")
+        .frame(maxWidth: .infinity)
         .font(.b1)
         .foregroundStyle(.gray900)
       Rectangle()
@@ -216,7 +217,7 @@ private enum Metrics {
   static let frameHeight: CGFloat = 226.0
   static let lineGraphHeight: CGFloat = 162.0
 
-  static let panelWidth: CGFloat = 60.0
+  static let panelWidth: CGFloat = 70.0
   static let panelHeight: CGFloat = 162.0
   static let panelPoleHeight: CGFloat = 122.0
 }
