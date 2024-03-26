@@ -73,7 +73,6 @@ private struct DetailView: View {
           Text("(\((product.price / 2).formatted())₩ per piece)")
             .font(.x2)
             .foregroundStyle(.gray100)
-            .strikethrough(color: .gray100)
             .padding(.bottom, -4)
           Text("\(product.price.formatted())₩")
             .font(.h2)
