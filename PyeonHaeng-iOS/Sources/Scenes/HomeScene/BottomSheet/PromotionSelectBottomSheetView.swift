@@ -44,9 +44,17 @@ struct PromotionSelectBottomSheetView<ViewModel>: View where ViewModel: HomeView
         viewModel.changePromotion(to: promotion)
         dismiss()
       } label: {
-        Text(promotion.displayName)
-          .font(.body2)
-          .frame(maxWidth: .infinity, minHeight: Metrics.itemHeight, alignment: .leading)
+        HStack {
+          Text(promotion.displayName)
+            .font(.body2)
+            .frame(minHeight: Metrics.itemHeight, alignment: .leading)
+          Spacer()
+          if viewModel.state.productConfiguration.promotion == promotion {
+            Image(systemName: Constants.checkMarkImageName)
+              .fontWeight(.bold)
+              .foregroundStyle(.pyeonHaengPrimary)
+          }
+        }
       }
     }
     .padding(.horizontal, Metrics.itemHorizontalPadding)
@@ -82,4 +90,10 @@ private enum Metrics {
   static let itemHorizontalSpacing: CGFloat = 12
   static let itemSpacing: CGFloat = 4
   static let itemHeight: CGFloat = 44
+}
+
+// MARK: - Constants
+
+private enum Constants {
+  static let checkMarkImageName: String = "checkmark"
 }

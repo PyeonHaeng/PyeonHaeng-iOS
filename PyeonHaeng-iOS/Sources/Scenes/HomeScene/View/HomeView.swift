@@ -44,11 +44,13 @@ struct HomeView<ViewModel>: View where ViewModel: HomeViewModelRepresentable {
       .navigationBarTitleDisplayMode(.inline)
       .toolbar {
         ToolbarItem(placement: .topBarLeading) {
-          HStack {
+          HStack(alignment: .center, spacing: 4) {
             Image.store
               .renderingMode(.template)
-              .foregroundStyle(.gray900)
+            Image.splashLogo
+              .renderingMode(.template)
           }
+          .foregroundStyle(.gray900)
         }
         ToolbarItemGroup(placement: .topBarTrailing) {
           NavigationLink {

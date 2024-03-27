@@ -27,8 +27,16 @@ struct ConvenienceSelectBottomSheetView<ViewModel>: View where ViewModel: HomeVi
           viewModel.trigger(.changeConvenienceStore(store))
           dismiss()
         } label: {
-          ConvenienceSelectItem(convenience: store)
-            .frame(maxWidth: .infinity, minHeight: Metrics.itemHeight, alignment: .leading)
+          HStack {
+            ConvenienceSelectItem(convenience: store)
+              .frame(minHeight: Metrics.itemHeight, alignment: .leading)
+            Spacer()
+            if viewModel.state.productConfiguration.store == store {
+              Image(systemName: Constants.checkMarkImageName)
+                .fontWeight(.bold)
+                .foregroundStyle(.pyeonHaengPrimary)
+            }
+          }
         }
       }
       .padding(.horizontal, Metrics.itemHorizontalPadding)
@@ -100,4 +108,10 @@ private enum Metrics {
   static let itemHorizontalSpacing: CGFloat = 12
   static let itemSpacing: CGFloat = 4
   static let itemHeight: CGFloat = 44
+}
+
+// MARK: - Constants
+
+private enum Constants {
+  static let checkMarkImageName: String = "checkmark"
 }

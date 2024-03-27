@@ -11,7 +11,7 @@ import SwiftUI
 
 @main
 struct PyeonHaengApp: App {
-  @StateObject private var networkMonitor: NetworkMonitor = .init()
+  @State private var networkMonitor: NetworkMonitor = .init()
   private let services = Services()
 
   init() {
@@ -25,11 +25,12 @@ struct PyeonHaengApp: App {
         SplashView()
           .environment(\.injected, DIContainer(services: services))
           // 네트워크 연결 모니터링
-          .onReceive(networkMonitor.$isSatisfied.debounce(for: .seconds(1), scheduler: RunLoop.main).removeDuplicates()) { isSatisfied in
-            if !isSatisfied {
-              Toast.shared.present(title: "Oops! Couldn't connect.", symbol: "exclamationmark.warninglight.fill")
+          .onChange(of: networkMonitor.isSatisfied) { oldValue, newValue in
+            if oldValue == newValue { return }
+            if !newValue {
+              Toast.shared.present(title: "Oops! Couldn't connect.", symbol: "wifi.slash")
             } else {
-              Toast.shared.present(title: "Yay! Connected successfully.", symbol: "party.popper.fill")
+              Toast.shared.present(title: "Yay! Connected successfully.", symbol: "wifi")
             }
           }
       }
