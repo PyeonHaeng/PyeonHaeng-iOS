@@ -21,6 +21,11 @@ struct SplashView: View {
           .multilineTextAlignment(.center)
           .padding(.horizontal, 20)
         Image.splashLogo
+          .renderingMode(.template)
+          .resizable()
+          .aspectRatio(contentMode: .fit)
+          .foregroundStyle(.pyeonHaengPrimary)
+          .frame(width: 126, height: 79)
       }
       .onAppear {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
