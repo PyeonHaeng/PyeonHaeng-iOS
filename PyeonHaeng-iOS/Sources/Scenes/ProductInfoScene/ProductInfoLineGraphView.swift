@@ -166,7 +166,7 @@ private struct LineGraphPanelView: View {
         .font(.b1)
         .foregroundStyle(.gray900)
       Rectangle()
-        .foregroundStyle(.gray100)
+        .foregroundStyle(.gray300)
         .frame(width: 1.0, height: Metrics.panelPoleHeight)
     }
     .frame(width: Metrics.panelWidth, height: Metrics.panelHeight)
