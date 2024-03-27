@@ -56,6 +56,7 @@ struct SearchView<ViewModel>: View where ViewModel: SearchViewModelRepresentable
                   ForEach(items) { item in
                     NavigationLink {
                       ProductInfoView(viewModel: ProductInfoViewModel(service: container.services.productInfoService, productID: item.id))
+                        .toolbarRole(.editor)
                     } label: {
                       SearchListCardView(product: item)
                     }
