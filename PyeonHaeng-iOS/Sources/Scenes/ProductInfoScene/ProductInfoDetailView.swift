@@ -72,7 +72,7 @@ private struct DetailView: View {
         VStack(alignment: .trailing, spacing: .zero) {
           Text("(\((product.price / 2).formatted())₩ per piece)")
             .font(.x2)
-            .foregroundStyle(.gray100)
+            .foregroundStyle(.gray300)
             .padding(.bottom, -4)
           Text("\(product.price.formatted())₩")
             .font(.h2)
