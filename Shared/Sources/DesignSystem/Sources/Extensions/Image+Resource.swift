@@ -77,7 +77,6 @@ public extension Image {
   static let scope: Image = .init(.scope)
   static let speakerFill: Image = .init(.speakerFill)
   static let speaker: Image = .init(.speaker)
-  static let storeFill: Image = .init(.storeFill)
   static let store: Image = .init(.store)
 
   static let textLogo: Image = .init(.textLogo)
