@@ -1,23 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : ""
-          }
-        }
-      }
-    },
     "(%@₩ per piece)" : {
       "localizations" : {
         "ja" : {
@@ -276,6 +259,22 @@
         }
       }
     },
+    "Default" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "デフォルト"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "기본"
+          }
+        }
+      }
+    },
     "Emart 24" : {
       "localizations" : {
         "ja" : {
@@ -308,6 +307,22 @@
         }
       }
     },
+    "High to Low" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "価格の高い順"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "높은 가격순"
+          }
+        }
+      }
+    },
     "Leave a Review" : {
       "localizations" : {
         "ja" : {
@@ -320,6 +335,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "리뷰 남기기"
+          }
+        }
+      }
+    },
+    "Low to High" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "価格の低い順"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "낮은 가격순"
           }
         }
       }
@@ -531,29 +562,6 @@
         }
       }
     },
-    "기본 정렬" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "General Sorting"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "般的な並び替え"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "기본 정렬"
-          }
-        }
-      }
-    },
     "기존 가격" : {
       "localizations" : {
         "en" : {
@@ -572,29 +580,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "기존 가격"
-          }
-        }
-      }
-    },
-    "내림차순 정렬" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Descending Sorting"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "降順並び替え"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "내림차순 정렬"
           }
         }
       }
@@ -818,29 +803,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "수많은 혜택을 한곳에서"
-          }
-        }
-      }
-    },
-    "오름차순 정렬" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ascending Sorting"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "昇順並び替え"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "오름차순 정렬"
           }
         }
       }
