@@ -12,8 +12,8 @@ import ProductInfoAPI
 
 public final class ProductInfoURLProtocol: URLProtocol {
   private lazy var mockData: [String: Data?] = [
-    ProductInfoEndPoint.fetchProduct(-1).path: loadMockData(fileName: "ProductInfoProductResponse"),
-    ProductInfoEndPoint.fetchPrices(-1).path: loadMockData(fileName: "ProductInfoPriceResponse"),
+    ProductInfoEndPoint.fetchProduct(33580).path: loadMockData(fileName: "ProductInfoProductResponse"),
+    ProductInfoEndPoint.fetchPrices(33580).path: loadMockData(fileName: "ProductInfoPriceResponse"),
   ]
 
   override public class func canInit(with _: URLRequest) -> Bool {
