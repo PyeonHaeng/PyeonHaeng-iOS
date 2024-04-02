@@ -15,7 +15,7 @@ struct SplashView: View {
   var body: some View {
     if showingSplash {
       VStack {
-        Text("합리적인 편의점 소비의 시작!")
+        Text("The beginning of smart convenience store shopping!")
           .font(.b1)
           .foregroundStyle(.gray300)
           .multilineTextAlignment(.center)

@@ -483,6 +483,22 @@
         }
       }
     },
+    "The beginning of smart convenience store shopping!" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "合理的なコンビニ消費のスタート!"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "합리적인 편의점 소비의 시작!"
+          }
+        }
+      }
+    },
     "Version Info" : {
       "localizations" : {
         "ja" : {
@@ -955,28 +971,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "편행 시작하기"
-          }
-        }
-      }
-    },
-    "합리적인 편의점 소비의 시작!" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "The start of rational convenience store consumption!"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "合理的なコンビニエンスストアの消費の始まり！"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "합리적인 편의점 소비의 시작!"
           }
         }
       }
