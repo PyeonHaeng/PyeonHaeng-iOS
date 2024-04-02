@@ -1,23 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : ""
-          }
-        }
-      }
-    },
     "(%@₩ per piece)" : {
       "localizations" : {
         "ja" : {
@@ -196,6 +179,22 @@
         }
       }
     },
+    "Buy one, get one free" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "一つ買えば、もう一つおまけ"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "하나 사면 하나 더"
+          }
+        }
+      }
+    },
     "Cannot Send Mail" : {
       "localizations" : {
         "ja" : {
@@ -276,6 +275,38 @@
         }
       }
     },
+    "Default" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "デフォルト"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "기본"
+          }
+        }
+      }
+    },
+    "Discover 1+1, 2+1 promotional product information from various convenience stores to consume smartly and economically." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "様々なコンビニの\n1+1、2+1のプロモーション商品情報で、\n賢く、経済的に消費しましょう。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "다양한 편의점의 1+1, 2+1 행사 제품 정보로\n알뜰하고 합리적으로 소비할수 있어요."
+          }
+        }
+      }
+    },
     "Emart 24" : {
       "localizations" : {
         "ja" : {
@@ -288,6 +319,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "이마트 24"
+          }
+        }
+      }
+    },
+    "Find the myriad of promotional information from 7-Eleven, CU, emart24, GS25, MiniStop all in one place with ’`Pyeonhaeng`’." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "セブンイレブン、CU、イーマート24、GS25、\nミニストップの数多くのプロモーション情報を\n「`ピョンヘン`」で一箇所で見つけましょう。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "세븐일레븐, CU, 이마트 24, GS 25, 미니스톱의\n수많은 행사정보를 ‘`편행`’한곳에서 만나보세요."
           }
         }
       }
@@ -308,6 +355,22 @@
         }
       }
     },
+    "High to Low" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "価格の高い順"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "높은 가격순"
+          }
+        }
+      }
+    },
     "Leave a Review" : {
       "localizations" : {
         "ja" : {
@@ -320,6 +383,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "리뷰 남기기"
+          }
+        }
+      }
+    },
+    "Low to High" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "価格の低い順"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "낮은 가격순"
           }
         }
       }
@@ -356,6 +435,22 @@
         }
       }
     },
+    "Numerous benefits in one place" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "多数の特典を一箇所で"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "수많은 혜택을 한 곳에서"
+          }
+        }
+      }
+    },
     "Open App Store" : {
       "localizations" : {
         "ja" : {
@@ -384,6 +479,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "행사 품목 선택"
+          }
+        }
+      }
+    },
+    "The beginning of smart convenience store shopping!" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "合理的なコンビニ消費のスタート!"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "합리적인 편의점 소비의 시작!"
           }
         }
       }
@@ -531,29 +642,6 @@
         }
       }
     },
-    "기본 정렬" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "General Sorting"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "般的な並び替え"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "기본 정렬"
-          }
-        }
-      }
-    },
     "기존 가격" : {
       "localizations" : {
         "en" : {
@@ -572,52 +660,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "기존 가격"
-          }
-        }
-      }
-    },
-    "내림차순 정렬" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Descending Sorting"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "降順並び替え"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "내림차순 정렬"
-          }
-        }
-      }
-    },
-    "다양한 편의점의 1+1, 2+1 행사 제품 정보로\n알뜰하고 합리적으로 소비할수 있어요." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Save money and shop wisely with various convenience store promotions such as 1+1, 2+1 offers."
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "1+1、2+1などの様々なコンビニエンスストアのプロモーションでお得に買い物をしましょう。"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "다양한 편의점의 1+1, 2+1 행사 제품 정보로\n알뜰하고 합리적으로 소비할수 있어요."
           }
         }
       }
@@ -776,75 +818,6 @@
         }
       }
     },
-    "세븐일레븐, CU, 이마트 24, GS 25, 미니스톱의 수많은 행사정보를 ‘편행’한곳에서 만나보세요." : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Explore the promotions from various convenience stores such as 7-Eleven, CU, Emart 24, GS 25, Mini Stop all in one place with 'Pyunhaeng'."
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "セブンイレブン、CU、イマート24、GS25、ミニストップなど、様々なコンビニのプロモーション情報を「편행（ピョンハン）」で一か所にまとめて見つけてください。"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "세븐일레븐, CU, 이마트 24, GS 25, 미니스톱의\\n수많은 행사정보를 ‘편행’한곳에서 만나보세요."
-          }
-        }
-      }
-    },
-    "수많은 혜택을 한곳에서" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Find numerous benefits in one place"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "たくさんの特典を1か所で見つけてください"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "수많은 혜택을 한곳에서"
-          }
-        }
-      }
-    },
-    "오름차순 정렬" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ascending Sorting"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "昇順並び替え"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "오름차순 정렬"
-          }
-        }
-      }
-    },
     "이전 행사 정보" : {
       "localizations" : {
         "en" : {
@@ -998,51 +971,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "편행 시작하기"
-          }
-        }
-      }
-    },
-    "하나사면 하나 더" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Buy one, get one free"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "1つ購入すると1つ無料"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "하나 사면 하나 더"
-          }
-        }
-      }
-    },
-    "합리적인 편의점 소비의 시작!" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "The start of rational convenience store consumption!"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "合理的なコンビニエンスストアの消費の始まり！"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "합리적인 편의점 소비의 시작!"
           }
         }
       }

@@ -38,6 +38,7 @@
 		BA849A342B8F4F36004495BF /* ProductConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8E83232B8EF83B00FE968C /* ProductConfiguration.swift */; };
 		BA849A372B8F4FC0004495BF /* MockPaginatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA849A362B8F4FC0004495BF /* MockPaginatable.swift */; };
 		BA8E83242B8EF83B00FE968C /* ProductConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8E83232B8EF83B00FE968C /* ProductConfiguration.swift */; };
+		BA9903562BBBD9F500DC3ED3 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = BA9903552BBBD9F500DC3ED3 /* InfoPlist.xcstrings */; };
 		BAA4D9AD2B5A1795005999F8 /* PyeonHaengApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA4D9AC2B5A1795005999F8 /* PyeonHaengApp.swift */; };
 		BAA4D9AF2B5A1795005999F8 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA4D9AE2B5A1795005999F8 /* SplashView.swift */; };
 		BAA4D9B12B5A1796005999F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAA4D9B02B5A1796005999F8 /* Assets.xcassets */; };
@@ -125,6 +126,7 @@
 		BA4EA35A2B6A00F70003DCE7 /* Entity */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Entity; sourceTree = "<group>"; };
 		BA849A362B8F4FC0004495BF /* MockPaginatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPaginatable.swift; sourceTree = "<group>"; };
 		BA8E83232B8EF83B00FE968C /* ProductConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductConfiguration.swift; sourceTree = "<group>"; };
+		BA9903552BBBD9F500DC3ED3 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		BAA4D9A92B5A1795005999F8 /* PyeonHaeng-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PyeonHaeng-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAA4D9AC2B5A1795005999F8 /* PyeonHaengApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PyeonHaengApp.swift; sourceTree = "<group>"; };
 		BAA4D9AE2B5A1795005999F8 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 			children = (
 				BA28F1A72B6157E90052855E /* Info.plist */,
 				BAA4D9B02B5A1796005999F8 /* Assets.xcassets */,
+				BA9903552BBBD9F500DC3ED3 /* InfoPlist.xcstrings */,
 				BAF2BEB22B61236100931AF0 /* Localizable.xcstrings */,
 				BA28F1922B6157140052855E /* Fonts */,
 			);
@@ -640,6 +643,7 @@
 			files = (
 				E57654D92B90D78900E92F3A /* Shared in Resources */,
 				BAA4D9B42B5A1796005999F8 /* Preview Assets.xcassets in Resources */,
+				BA9903562BBBD9F500DC3ED3 /* InfoPlist.xcstrings in Resources */,
 				BA28F19D2B61572A0052855E /* Pretendard-Bold.otf in Resources */,
 				BA28F1A32B61572A0052855E /* Pretendard-ExtraLight.otf in Resources */,
 				BA28F19E2B61572A0052855E /* Pretendard-SemiBold.otf in Resources */,
