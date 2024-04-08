@@ -7,6 +7,7 @@
 
 import DesignSystem
 import Entity
+import FirebaseAnalytics
 import SwiftUI
 
 // MARK: - SearchView
@@ -79,6 +80,7 @@ struct SearchView<ViewModel>: View where ViewModel: SearchViewModelRepresentable
         }
       }
     }
+    .analyticsScreen(name: "search_content", class: "\(Self.self)")
     .toolbar {
       ToolbarItem(placement: .principal) {
         SearchTextField<ViewModel>(text: $text)
@@ -111,7 +113,10 @@ private struct SearchTextField<ViewModel>: View where ViewModel: SearchViewModel
               lineWidth: Metrics.textFieldBorderWidth
             )
         }
-        .onSubmit { viewModel.trigger(.textChanged(text)) }
+        .onSubmit {
+          Analytics.logEvent("search_product", parameters: ["product": text])
+          viewModel.trigger(.textChanged(text))
+        }
       if !text.isEmpty {
         Button {
           text = ""

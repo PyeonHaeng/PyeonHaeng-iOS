@@ -6,6 +6,7 @@
 //
 
 import DesignSystem
+import FirebaseAnalytics
 import SwiftUI
 
 // MARK: - HomeView
@@ -76,6 +77,7 @@ struct HomeView<ViewModel>: View where ViewModel: HomeViewModelRepresentable {
         }
       }
     }
+    .analyticsScreen(name: "main_countent", class: "\(Self.self)")
     .tint(.accent)
     .fullScreenCover(isPresented: $isOnboardingSheetOpen) {
       OnboardingView()

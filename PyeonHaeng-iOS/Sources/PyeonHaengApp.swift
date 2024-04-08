@@ -6,6 +6,7 @@
 //
 
 import DesignSystem
+import FirebaseCore
 import NetworkMonitor
 import SwiftUI
 
@@ -17,6 +18,7 @@ struct PyeonHaengApp: App {
   init() {
     FontRegistrar.registerFonts() // 앱을 실행하기 전에 폰트를 로드합니다.
     setupNavigationBarAppearance()
+    FirebaseApp.configure()
   }
 
   var body: some Scene {

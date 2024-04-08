@@ -7,6 +7,7 @@
 
 import DesignSystem
 import Entity
+import FirebaseAnalytics
 import SwiftUI
 
 // MARK: - PromotionSelectBottomSheetView
@@ -41,6 +42,7 @@ struct PromotionSelectBottomSheetView<ViewModel>: View where ViewModel: HomeView
   private var promotionButtons: some View {
     ForEach(Promotion.allCases, id: \.self) { promotion in
       Button {
+        Analytics.logEvent("change_promotion", parameters: ["promotion": promotion.rawValue])
         viewModel.changePromotion(to: promotion)
         dismiss()
       } label: {
