@@ -38,8 +38,8 @@ private extension Credits {
   init(dto: CreditsResponse) {
     self.init(
       title: dto.title,
-      body: dto.body,
-      date: dto.date
+      content: dto.content,
+      date: dto.createdAt
     )
   }
 }

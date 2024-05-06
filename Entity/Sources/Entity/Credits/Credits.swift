@@ -18,9 +18,9 @@ public struct Credits {
   /// 크레딧 생성 날짜
   public let date: Date
 
-  public init(title: String, body: String, date: Date) {
+  public init(title: String, content: String, date: Date) {
     self.title = title
-    self.body = body
+    body = content
     self.date = date
   }
 }
