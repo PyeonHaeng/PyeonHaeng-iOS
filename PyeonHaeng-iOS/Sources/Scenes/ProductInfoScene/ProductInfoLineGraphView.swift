@@ -16,7 +16,7 @@ struct ProductInfoLineGraphView<ViewModel>: View where ViewModel: ProductInfoVie
   @EnvironmentObject private var viewModel: ViewModel
 
   @State private var offset: CGSize = .zero
-  @State private var index: Int = 0
+  @State private var index = 0
   @State private var frameSize: CGSize = .zero
   @State private var symbolLocations: [CGPoint] = []
 

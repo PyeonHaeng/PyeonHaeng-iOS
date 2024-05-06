@@ -7,6 +7,7 @@
 
 import DesignSystem
 import Entity
+import FirebaseAnalytics
 import SwiftUI
 
 // MARK: - ConvenienceSelectBottomSheetView
@@ -24,6 +25,7 @@ struct ConvenienceSelectBottomSheetView<ViewModel>: View where ViewModel: HomeVi
 
       ForEach(ConvenienceStore.allCases, id: \.self) { store in
         Button {
+          Analytics.logEvent("change_conveniencestore", parameters: ["promotion": store.rawValue])
           viewModel.trigger(.changeConvenienceStore(store))
           dismiss()
         } label: {

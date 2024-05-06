@@ -6,6 +6,7 @@
 //
 
 import DesignSystem
+import FirebaseAnalytics
 import SwiftUI
 
 // MARK: - SettingsItem
@@ -35,6 +36,7 @@ struct SettingsView: View {
     .scrollDisabled(true)
     .navigationTitle("설정")
     .navigationBarTitleDisplayMode(.inline)
+    .analyticsScreen(name: "settings_content", class: "\(Self.self)")
   }
 }
 

@@ -35,6 +35,9 @@
 		BA4EA3602B6A37E10003DCE7 /* Entity in Frameworks */ = {isa = PBXBuildFile; productRef = BA4EA35F2B6A37E10003DCE7 /* Entity */; };
 		BA4FB9C52BA1BC5B00ED03C4 /* NoticeAPI in Frameworks */ = {isa = PBXBuildFile; productRef = BA4FB9C42BA1BC5B00ED03C4 /* NoticeAPI */; };
 		BA4FB9C72BA1BC5B00ED03C4 /* NoticeAPISupport in Frameworks */ = {isa = PBXBuildFile; productRef = BA4FB9C62BA1BC5B00ED03C4 /* NoticeAPISupport */; };
+		BA73DDC42BC17912009EE718 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA73DDC32BC17912009EE718 /* GoogleService-Info.plist */; };
+		BA73DDC72BC179F6009EE718 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BA73DDC62BC179F6009EE718 /* FirebaseAnalytics */; };
+		BA73DDCB2BC179F6009EE718 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = BA73DDCA2BC179F6009EE718 /* FirebaseCrashlytics */; };
 		BA849A342B8F4F36004495BF /* ProductConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8E83232B8EF83B00FE968C /* ProductConfiguration.swift */; };
 		BA849A372B8F4FC0004495BF /* MockPaginatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA849A362B8F4FC0004495BF /* MockPaginatable.swift */; };
 		BA8E83242B8EF83B00FE968C /* ProductConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8E83232B8EF83B00FE968C /* ProductConfiguration.swift */; };
@@ -124,6 +127,7 @@
 		BA28F1A72B6157E90052855E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA402F7D2B85E31800E86AAD /* ConvenienceSelectBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvenienceSelectBottomSheetView.swift; sourceTree = "<group>"; };
 		BA4EA35A2B6A00F70003DCE7 /* Entity */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Entity; sourceTree = "<group>"; };
+		BA73DDC32BC17912009EE718 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BA849A362B8F4FC0004495BF /* MockPaginatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPaginatable.swift; sourceTree = "<group>"; };
 		BA8E83232B8EF83B00FE968C /* ProductConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductConfiguration.swift; sourceTree = "<group>"; };
 		BA9903552BBBD9F500DC3ED3 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
@@ -185,9 +189,11 @@
 				BAB6212E2BB13CD100877FC3 /* NetworkAPIKit in Frameworks */,
 				BA0623D82B68E51400A0A3B2 /* Log in Frameworks */,
 				BA0564092B6248EA003D6DC7 /* HomeAPI in Frameworks */,
+				BA73DDC72BC179F6009EE718 /* FirebaseAnalytics in Frameworks */,
 				BAE5ADB02BAD61D000176ADE /* CreditsAPI in Frameworks */,
 				BAB569612B639F3000D1E0F9 /* DesignSystem in Frameworks */,
 				BAE5EDB42BB1450100FC4B78 /* NetworkMonitor in Frameworks */,
+				BA73DDCB2BC179F6009EE718 /* FirebaseCrashlytics in Frameworks */,
 				E55DD5182B9370D100AA63C0 /* SearchAPI in Frameworks */,
 				E55DD51A2B9370D100AA63C0 /* SearchAPISupport in Frameworks */,
 			);
@@ -254,6 +260,7 @@
 		BA28F1702B6152E90052855E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BA73DDC32BC17912009EE718 /* GoogleService-Info.plist */,
 				BA28F1A72B6157E90052855E /* Info.plist */,
 				BAA4D9B02B5A1796005999F8 /* Assets.xcassets */,
 				BA9903552BBBD9F500DC3ED3 /* InfoPlist.xcstrings */,
@@ -560,6 +567,8 @@
 				BAE5ADB12BAD61D000176ADE /* CreditsAPISupport */,
 				BAB6212D2BB13CD100877FC3 /* NetworkAPIKit */,
 				BAE5EDB32BB1450100FC4B78 /* NetworkMonitor */,
+				BA73DDC62BC179F6009EE718 /* FirebaseAnalytics */,
+				BA73DDCA2BC179F6009EE718 /* FirebaseCrashlytics */,
 			);
 			productName = "PyeonHaeng-iOS";
 			productReference = BAA4D9A92B5A1795005999F8 /* PyeonHaeng-iOS.app */;
@@ -618,6 +627,9 @@
 				ja,
 			);
 			mainGroup = BAA4D9A02B5A1795005999F8;
+			packageReferences = (
+				BA73DDC52BC179F6009EE718 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = BAA4D9AA2B5A1795005999F8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -650,6 +662,7 @@
 				BA28F1A12B61572A0052855E /* Pretendard-Thin.otf in Resources */,
 				BA28F1A62B61572A0052855E /* Pretendard-Black.otf in Resources */,
 				BA28F1A52B61572A0052855E /* Pretendard-Light.otf in Resources */,
+				BA73DDC42BC17912009EE718 /* GoogleService-Info.plist in Resources */,
 				BA28F1A42B61572A0052855E /* Pretendard-ExtraBold.otf in Resources */,
 				BA28F1A02B61572A0052855E /* Pretendard-Regular.otf in Resources */,
 				BAA4D9B12B5A1796005999F8 /* Assets.xcassets in Resources */,
@@ -1267,6 +1280,17 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		BA73DDC52BC179F6009EE718 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.23.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		BA0564082B6248EA003D6DC7 /* HomeAPI */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -1291,6 +1315,16 @@
 		BA4FB9C62BA1BC5B00ED03C4 /* NoticeAPISupport */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = NoticeAPISupport;
+		};
+		BA73DDC62BC179F6009EE718 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA73DDC52BC179F6009EE718 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		BA73DDCA2BC179F6009EE718 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA73DDC52BC179F6009EE718 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
 		};
 		BAB569602B639F3000D1E0F9 /* DesignSystem */ = {
 			isa = XCSwiftPackageProductDependency;

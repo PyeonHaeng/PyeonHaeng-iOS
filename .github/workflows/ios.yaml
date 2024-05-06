@@ -41,8 +41,13 @@ jobs:
         env:
           APPCONFIG: ${{ secrets.XCCONFIG }}
         run: |
-          mkdir XCConfig
+          mkdir -p XCConfig
           echo $APPCONFIG | base64 --decode > ./XCConfig/Shared.xcconfig
+      - name: Create GoogleService-Info.plist
+        env:
+          GOOGLE_SERVICE_INFO_BASE64: ${{ secrets.GOOGLE_INFO_PLIST }}
+        run: |
+          echo $GOOGLE_SERVICE_INFO_BASE64 | base64 --decode > ./PyeonHaeng-iOS/Resources/GoogleService-Info.plist
       - name: Set Default Scheme
         run: |
           scheme_list=$(xcodebuild -list -json | tr -d "\n")

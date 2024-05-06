@@ -6,6 +6,7 @@
 //
 
 import DesignSystem
+import FirebaseAnalytics
 import SwiftUI
 
 // MARK: - ProductInfoView
@@ -37,5 +38,10 @@ struct ProductInfoView<ViewModel>: View where ViewModel: ProductInfoViewModelRep
     .onAppear {
       viewModel.trigger(.fetchProduct)
     }
+    .analyticsScreen(
+      name: "product_info_content",
+      class: "\(Self.self)",
+      extraParameters: ["product": viewModel.state.product.name]
+    )
   }
 }
