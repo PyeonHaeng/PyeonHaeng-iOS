@@ -14,7 +14,7 @@ import SwiftUI
 
 struct SearchView<ViewModel>: View where ViewModel: SearchViewModelRepresentable {
   @StateObject private var viewModel: ViewModel
-  @State private var text: String = ""
+  @State private var text = ""
   @Environment(\.dismiss) private var dismiss
   @Environment(\.injected) private var container
 

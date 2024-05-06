@@ -12,8 +12,8 @@ import SwiftUI
 
 struct HomeProductDetailSelectionView<ViewModel>: View where ViewModel: HomeViewModelRepresentable {
   @EnvironmentObject private var viewModel: ViewModel
-  @State private var convenienceStoreModalPresented: Bool = false
-  @State private var promotionModalPresented: Bool = false
+  @State private var convenienceStoreModalPresented = false
+  @State private var promotionModalPresented = false
 
   var body: some View {
     HStack {

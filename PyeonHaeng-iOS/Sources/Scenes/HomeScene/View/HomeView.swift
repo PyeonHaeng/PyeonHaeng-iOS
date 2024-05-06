@@ -14,7 +14,7 @@ import SwiftUI
 struct HomeView<ViewModel>: View where ViewModel: HomeViewModelRepresentable {
   @StateObject private var viewModel: ViewModel
   @State private var isOnboardingSheetOpen = false
-  @AppStorage("isFirstLaunch") private var isFirstLaunch: Bool = false
+  @AppStorage("isFirstLaunch") private var isFirstLaunch = false
   @Environment(\.injected) private var container
 
   init(viewModel: @autoclosure @escaping () -> ViewModel) {
