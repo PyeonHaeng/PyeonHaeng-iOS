@@ -11,7 +11,7 @@ import NoticeAPI
 
 public final class NoticeURLProtocol: URLProtocol {
   private lazy var mockData: [String: Data?] = [
-    NoticeEndPoint.fetchList(.init(pageSize: 0, offset: 0)).path: loadMockData(fileName: "NoticeListResponse"),
+    NoticeEndPoint.fetchList(.init(limit: 0, offset: 0)).path: loadMockData(fileName: "NoticeListResponse"),
     NoticeEndPoint.fetchDetail(2).path: loadMockData(fileName: "NoticeDetailResponse"),
   ]
 

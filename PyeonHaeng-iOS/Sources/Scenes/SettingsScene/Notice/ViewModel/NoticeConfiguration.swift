@@ -12,7 +12,7 @@ import Foundation
 
 struct NoticeConfiguration {
   let pageSize: Int = 20
-  private(set) var offset: Int = 0
+  private(set) var offset: Int = 1
   private(set) var loadingState: PagingState = .idle
 }
 

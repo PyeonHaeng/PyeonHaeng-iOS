@@ -8,16 +8,11 @@
 import Foundation
 
 public struct NoticeListRequest: Encodable {
-  let pageSize: Int
+  let limit: Int
   let offset: Int
 
-  public init(pageSize: Int, offset: Int) {
-    self.pageSize = pageSize
+  public init(limit: Int, offset: Int) {
+    self.limit = limit
     self.offset = offset
-  }
-
-  enum CodingKeys: String, CodingKey {
-    case pageSize = "page_size"
-    case offset
   }
 }
