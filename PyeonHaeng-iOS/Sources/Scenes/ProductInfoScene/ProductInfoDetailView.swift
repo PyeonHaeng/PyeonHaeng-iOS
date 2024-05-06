@@ -100,7 +100,6 @@ private struct DetailView: View {
     case .gs25: .gs25
     case ._7Eleven: ._7Eleven
     case .emart24: .emart24
-    case .ministop: .ministop
     }
   }
 }

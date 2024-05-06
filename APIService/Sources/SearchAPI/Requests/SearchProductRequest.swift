@@ -25,6 +25,6 @@ public struct SearchProductRequest: Encodable {
     self.name = name
     order = .normal
     pageSize = 5000
-    offset = 0
+    offset = 1
   }
 }

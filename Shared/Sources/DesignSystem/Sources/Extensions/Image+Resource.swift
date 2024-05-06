@@ -12,7 +12,6 @@ public extension Image {
   static let gs25: Image = .init(ImageResource.GS_25)
   static let _7Eleven: Image = .init(ImageResource._7Eleven)
   static let emart24: Image = .init(ImageResource.emart24)
-  static let ministop: Image = .init(ImageResource.ministop)
 
   static let appstore: Image = .init(.appstore)
   static let appstoreFill: Image = .init(.appstoreFill)

@@ -11,7 +11,6 @@ import SwiftUI
 public enum ConvenienceStore: String, Codable, CaseIterable {
   case cu = "CU"
   case gs25 = "GS25"
-  case _7Eleven = "7-ELEVEn"
-  case emart24
-  case ministop = "MINISTOP"
+  case _7Eleven = "SEVEN_ELEVEN"
+  case emart24 = "EMART24"
 }

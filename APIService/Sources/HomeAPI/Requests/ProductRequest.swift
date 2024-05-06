@@ -12,22 +12,16 @@ public struct ProductRequest: Encodable {
   public let store: ConvenienceStore
   public let promotion: Promotion
   public let order: Order
-  public let pageSize: Int
+  public let limit: Int
   public let offset: Int
+  public let date: Date
 
-  enum CodingKeys: String, CodingKey {
-    case store
-    case promotion
-    case order
-    case pageSize = "page_size"
-    case offset
-  }
-
-  public init(store: ConvenienceStore, promotion: Promotion, order: Order, pageSize: Int, offset: Int) {
+  public init(store: ConvenienceStore, promotion: Promotion, order: Order, limit: Int, offset: Int, date: Date = .now) {
     self.store = store
     self.promotion = promotion
     self.order = order
-    self.pageSize = pageSize
+    self.limit = limit
     self.offset = offset
+    self.date = date
   }
 }

@@ -161,8 +161,6 @@ private struct SearchHeaderView: View {
       ._7Eleven
     case .emart24:
       .emart24
-    case .ministop:
-      .ministop
     }
   }
 }

@@ -15,12 +15,6 @@ struct ProductResponse: Decodable, Paginatable {
   let hasMore: Bool
 
   let results: [ProductItemResponse]
-
-  enum CodingKeys: String, CodingKey {
-    case count
-    case hasMore = "has_more"
-    case results
-  }
 }
 
 // MARK: - ProductItemResponse
@@ -36,11 +30,11 @@ struct ProductItemResponse: Decodable {
 
   enum CodingKeys: String, CodingKey {
     case id
-    case imageURL = "img"
+    case imageURL = "imageUrl"
     case price
-    case date
+    case date = "eventDate"
     case name
-    case promotion = "tag"
+    case promotion
     case convenienceStore = "store"
   }
 }

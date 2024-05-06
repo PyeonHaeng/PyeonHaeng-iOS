@@ -88,7 +88,6 @@ struct HomeView<ViewModel>: View where ViewModel: HomeViewModelRepresentable {
         isFirstLaunch = true
       }
       viewModel.trigger(.fetchProducts)
-      viewModel.trigger(.fetchCount)
     }
   }
 }

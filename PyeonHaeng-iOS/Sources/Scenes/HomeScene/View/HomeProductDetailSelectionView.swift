@@ -6,6 +6,7 @@
 //
 
 import DesignSystem
+import Entity
 import SwiftUI
 
 // MARK: - HomeProductDetailSelectionView
@@ -50,7 +51,7 @@ struct HomeProductDetailSelectionView<ViewModel>: View where ViewModel: HomeView
       promotionModalPresented = true
     } label: {
       HStack(spacing: Metrics.buttonSpacing) {
-        Text(verbatim: viewModel.state.productConfiguration.promotion.rawValue)
+        Text(verbatim: viewModel.state.productConfiguration.promotion.displayName)
           .font(.title2)
         Image.arrowTriangleDownFill
           .renderingMode(.template)
@@ -91,8 +92,16 @@ struct HomeProductDetailSelectionView<ViewModel>: View where ViewModel: HomeView
       ._7Eleven
     case .emart24:
       .emart24
-    case .ministop:
-      .ministop
+    }
+  }
+}
+
+private extension Promotion {
+  var displayName: String {
+    switch self {
+    case .allItems: "All"
+    case .buyOneGetOneFree: "1+1"
+    case .buyTwoGetOneFree: "2+1"
     }
   }
 }
