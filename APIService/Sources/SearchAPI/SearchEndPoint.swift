@@ -24,7 +24,7 @@ extension SearchEndPoint: EndPoint {
   public var path: String {
     switch self {
     case .fetchProducts:
-      "/v2/search"
+      "/v2/products/search"
     }
   }
 
