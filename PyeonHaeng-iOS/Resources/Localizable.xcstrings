@@ -323,18 +323,18 @@
         }
       }
     },
-    "Find the myriad of promotional information from 7-Eleven, CU, emart24, GS25, MiniStop all in one place with ’`Pyeonhaeng`’." : {
+    "Find the myriad of promotional information from 7-Eleven, CU, emart24, GS25  all in one place with ’`Pyeonhaeng`’." : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "セブンイレブン、CU、イーマート24、GS25、\nミニストップの数多くのプロモーション情報を\n「`ピョンヘン`」で一箇所で見つけましょう。"
+            "value" : "セブンイレブン、CU、イーマート24、GS25の数多くのプロモーション情報を\n「`ピョンヘン`」で一箇所で見つけましょう。"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "세븐일레븐, CU, 이마트 24, GS 25, 미니스톱의\n수많은 행사정보를 ‘`편행`’한곳에서 만나보세요."
+            "value" : "세븐일레븐, CU, 이마트 24, GS25의\n수많은 행사정보를 ‘편행’한곳에서 만나보세요."
           }
         }
       }
@@ -399,22 +399,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "낮은 가격순"
-          }
-        }
-      }
-    },
-    "Ministop" : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ministop"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "미니스톱"
           }
         }
       }

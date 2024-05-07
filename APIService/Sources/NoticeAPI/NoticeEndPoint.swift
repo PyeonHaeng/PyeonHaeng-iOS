@@ -25,9 +25,9 @@ extension NoticeEndPoint: EndPoint {
   public var path: String {
     switch self {
     case .fetchList:
-      "/v2/notice"
+      "/v2/notices"
     case let .fetchDetail(id):
-      "/v2/notice/\(id)"
+      "/v2/notices/\(id)"
     }
   }
 

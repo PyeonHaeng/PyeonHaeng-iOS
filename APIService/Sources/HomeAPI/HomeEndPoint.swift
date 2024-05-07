@@ -12,7 +12,6 @@ import NetworkAPIKit
 
 public enum HomeEndPoint {
   case fetchProducts(ProductRequest)
-  case fetchCount(ProductCountRequest)
 }
 
 // MARK: EndPoint
@@ -26,16 +25,12 @@ extension HomeEndPoint: EndPoint {
     switch self {
     case .fetchProducts:
       "/v2/products"
-    case .fetchCount:
-      "/v2/products/count"
     }
   }
 
   public var parameters: HTTPParameter {
     switch self {
     case let .fetchProducts(requestModel):
-      .query(requestModel)
-    case let .fetchCount(requestModel):
       .query(requestModel)
     }
   }

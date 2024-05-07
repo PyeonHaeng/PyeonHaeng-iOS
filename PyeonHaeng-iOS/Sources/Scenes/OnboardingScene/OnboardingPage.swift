@@ -25,7 +25,7 @@ struct OnboardingPage: Identifiable {
     OnboardingPage(
       title: "Numerous benefits in one place",
       body: """
-      Find the myriad of promotional information from 7-Eleven, CU, emart24, GS25, MiniStop all in one place with ’`Pyeonhaeng`’.
+      Find the myriad of promotional information from 7-Eleven, CU, emart24, GS25  all in one place with ’`Pyeonhaeng`’.
       """,
       image: .onboarding2,
       tag: 1

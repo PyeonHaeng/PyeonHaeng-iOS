@@ -15,32 +15,26 @@ struct SearchProductResponse: Decodable, Paginatable {
   let hasMore: Bool
 
   let results: [SearchProductItemResponse]
-
-  enum CodingKeys: String, CodingKey {
-    case count
-    case hasMore = "has_more"
-    case results
-  }
 }
 
 // MARK: - SearchProductItemResponse
 
 struct SearchProductItemResponse: Decodable {
   let id: Int
-  let imageURL: URL?
-  let date: Date
-  let price: Int
   let name: String
+  let price: Int
   let promotion: Promotion
   let convenienceStore: ConvenienceStore
+  let date: Date
+  let imageURL: URL?
 
   enum CodingKeys: String, CodingKey {
     case id
-    case imageURL = "img"
+    case imageURL = "imageUrl"
     case price
-    case date
+    case date = "eventDate"
     case name
-    case promotion = "tag"
+    case promotion
     case convenienceStore = "store"
   }
 }

@@ -11,7 +11,8 @@ import Foundation
 // MARK: - ProductResponse
 
 struct CreditsResponse: Decodable {
+  let id: Int
   let title: String
-  let body: String
-  let date: Date
+  let content: String
+  let createdAt: Date
 }

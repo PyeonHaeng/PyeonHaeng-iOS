@@ -16,7 +16,6 @@ import Log
 enum HomeAction {
   case fetchProducts
   case loadMoreProducts
-  case fetchCount
   case changeOrder
   case changeConvenienceStore(ConvenienceStore)
   case changePromotion(Promotion)
@@ -90,25 +89,17 @@ final class HomeViewModel: HomeViewModelRepresentable {
         try await fetchProducts(replace: false)
       }
 
-    case .fetchCount:
-      await performAsyncAction {
-        try await fetchProductCounts()
-      }
-
     case .changeOrder:
       state.productConfiguration.toggleOrder()
       trigger(.fetchProducts)
-      trigger(.fetchCount)
 
     case let .changeConvenienceStore(store):
       state.productConfiguration.change(convenienceStore: store)
       trigger(.fetchProducts)
-      trigger(.fetchCount)
 
     case let .changePromotion(promotion):
       state.productConfiguration.change(promotion: promotion)
       trigger(.fetchProducts)
-      trigger(.fetchCount)
     }
   }
 
@@ -122,7 +113,7 @@ final class HomeViewModel: HomeViewModelRepresentable {
       store: state.productConfiguration.store,
       promotion: state.productConfiguration.promotion,
       order: state.productConfiguration.order,
-      pageSize: state.productConfiguration.pageSize,
+      limit: state.productConfiguration.pageSize,
       offset: state.productConfiguration.offset
     )
 
@@ -134,6 +125,7 @@ final class HomeViewModel: HomeViewModelRepresentable {
         state.productConfiguration.update(meta: paginatedModel)
       }
 
+      state.totalCount = paginatedModel.count
       if replace {
         state.products = paginatedModel.results
       } else {
@@ -143,15 +135,5 @@ final class HomeViewModel: HomeViewModelRepresentable {
       state.productConfiguration.stopLoading()
       throw error
     }
-  }
-
-  private func fetchProductCounts() async throws {
-    let total = try await service.fetchProductCount(
-      request: .init(
-        convenienceStore: state.productConfiguration.store,
-        promotion: state.productConfiguration.promotion
-      )
-    )
-    state.totalCount = total
   }
 }

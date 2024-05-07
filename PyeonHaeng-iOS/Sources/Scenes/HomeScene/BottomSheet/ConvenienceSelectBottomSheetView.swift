@@ -76,8 +76,6 @@ private struct ConvenienceSelectItem: View {
       ._7Eleven
     case .emart24:
       .emart24
-    case .ministop:
-      .ministop
     }
   }
 
@@ -91,8 +89,6 @@ private struct ConvenienceSelectItem: View {
       Text("7-Eleven")
     case .emart24:
       Text("Emart 24")
-    case .ministop:
-      Text("Ministop")
     }
   }
 }

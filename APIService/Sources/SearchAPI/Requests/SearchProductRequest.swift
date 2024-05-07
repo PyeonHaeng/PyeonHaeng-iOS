@@ -10,21 +10,21 @@ import Foundation
 
 public struct SearchProductRequest: Encodable {
   public let name: String
-  public let order: Order
-  public let pageSize: Int
+  public let limit: Int
   public let offset: Int
+  public let date: Date
 
   enum CodingKeys: String, CodingKey {
     case name = "product_name"
-    case order
-    case pageSize = "page_size"
+    case limit
     case offset
+    case date
   }
 
-  public init(name: String) {
+  public init(name: String, limit: Int = 5000, offset: Int = 1, date: Date = .now) {
     self.name = name
-    order = .normal
-    pageSize = 5000
-    offset = 0
+    self.limit = limit
+    self.offset = offset
+    self.date = date
   }
 }

@@ -43,7 +43,9 @@ public struct NetworkProvider: Networking {
       case .plain:
         break
       case let .body(data):
-        request.httpBody = try JSONEncoder().encode(data)
+        let encoder = JSONEncoder()
+        encoder.dateEncodingStrategy = .iso8601
+        request.httpBody = try encoder.encode(data)
       case let .query(data):
         var components = URLComponents(string: url.absoluteString)
         components?.queryItems = data.toDictionary.map { URLQueryItem(name: $0, value: "\($1)") }
@@ -76,6 +78,7 @@ public struct NetworkProvider: Networking {
     guard 200 ..< 300 ~= response.statusCode
     else {
       logger?.error("⚠️⚠️===Response Status Code Error: \(response.statusCode)==⚠️⚠️\n")
+      logger?.error("⬇️⬇️===Received Data===⬇️⬇️\n\(data.prettyJSONData ?? "None")\n⬆️⬆️===============⬆️⬆️\n")
       throw NetworkError.failedResponse(statusCode: response.statusCode)
     }
 
@@ -114,7 +117,9 @@ private extension Data {
 
 private extension Encodable {
   var toDictionary: [String: Any] {
-    guard let data = try? JSONEncoder().encode(self),
+    let encoder = JSONEncoder()
+    encoder.dateEncodingStrategy = .iso8601
+    guard let data = try? encoder.encode(self),
           let jsonData = try? JSONSerialization.jsonObject(with: data),
           let dictionaryData = jsonData as? [String: Any]
     else {

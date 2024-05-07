@@ -40,7 +40,7 @@ private extension NoticeDetail {
   init(dto: NoticeItemResponse) {
     self.init(
       title: dto.title,
-      context: dto.body
+      context: dto.content
     )
   }
 }

@@ -13,7 +13,6 @@ import NetworkAPIKit
 
 public protocol HomeServiceRepresentable {
   func fetchProductList(request: ProductRequest) async throws -> Paginated<Product>
-  func fetchProductCount(request: ProductCountRequest) async throws -> Int
 }
 
 // MARK: - HomeService
@@ -32,11 +31,6 @@ extension HomeService: HomeServiceRepresentable {
   public func fetchProductList(request: ProductRequest) async throws -> Paginated<Product> {
     let response: ProductResponse = try await network.request(with: HomeEndPoint.fetchProducts(request))
     return Paginated<Product>(dto: response)
-  }
-
-  public func fetchProductCount(request: ProductCountRequest) async throws -> Int {
-    let countResponse: ProductCountResponse = try await network.request(with: HomeEndPoint.fetchCount(request))
-    return countResponse.count
   }
 }
 

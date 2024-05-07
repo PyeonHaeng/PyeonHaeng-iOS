@@ -20,7 +20,6 @@ enum NoticeAction {
 
 struct NoticeState {
   var noticeList: [Notice] = []
-  var totalCount: Int = 0
   fileprivate var noticeConfiguration: NoticeConfiguration = .init()
 }
 
@@ -81,7 +80,7 @@ final class NoticeViewModel: NoticeViewModelRepresentable {
     state.noticeConfiguration.startLoading()
     let noticeList = try await service.fetchNoticeList(
       request: .init(
-        pageSize: state.noticeConfiguration.pageSize,
+        limit: state.noticeConfiguration.pageSize,
         offset: state.noticeConfiguration.offset
       )
     )

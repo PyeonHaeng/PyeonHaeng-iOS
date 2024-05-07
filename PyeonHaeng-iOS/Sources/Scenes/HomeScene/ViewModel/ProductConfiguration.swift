@@ -15,7 +15,7 @@ struct ProductConfiguration {
   private(set) var promotion: Promotion = .allItems
   private(set) var order: Order = .normal
   let pageSize: Int = 20
-  private(set) var offset: Int = 0
+  private(set) var offset: Int = 1
   private(set) var loadingState: PagingState = .idle
 }
 
@@ -47,7 +47,7 @@ extension ProductConfiguration {
 
   /// 페이징 관련 옵션들을 재설정합니다.
   mutating func resetPagingOptions() {
-    offset = 0
+    offset = 1
     loadingState = .idle
   }
 

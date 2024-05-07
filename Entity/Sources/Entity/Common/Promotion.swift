@@ -9,7 +9,7 @@ import Foundation
 
 /// 행사 종류
 public enum Promotion: String, Codable, CaseIterable {
-  case buyOneGetOneFree = "1+1"
-  case buyTwoGetOneFree = "2+1"
-  case allItems = "All"
+  case buyOneGetOneFree = "BUY_ONE_GET_ONE_FREE"
+  case buyTwoGetOneFree = "BUY_TWO_GET_ONE_FREE"
+  case allItems = "ALL"
 }

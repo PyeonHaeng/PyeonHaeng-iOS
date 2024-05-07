@@ -37,7 +37,7 @@ final class ProductConfigurationTests: XCTestCase {
 
     // Assert
     XCTAssertEqual(sut?.loadingState, .loadedAll, "loadingState should be .loadedAll when no more pages are available")
-    XCTAssertEqual(sut?.offset, 1, "offset should be incremented by 1 after update")
+    XCTAssertEqual(sut?.offset, 2, "offset should be incremented by 2 after update")
   }
 
   func testChangeConvenienceStoreUpdatesStore() {

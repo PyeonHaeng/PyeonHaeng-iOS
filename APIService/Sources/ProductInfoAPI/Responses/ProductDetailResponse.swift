@@ -8,22 +8,22 @@
 import Entity
 import Foundation
 
-// MARK: - ProductDetailResponse
-
 struct ProductDetailResponse: Decodable {
-  let count: Int
-  let results: [ProductDetailItemResponse]
-}
-
-// MARK: - ProductDetailItemResponse
-
-struct ProductDetailItemResponse: Decodable {
-  let name: String
-  let img: URL?
-  let price: Int
-  let store: ConvenienceStore
-  let tag: Promotion
-  let proinfo: Int
-  let date: Date
   let id: Int
+  let name: String
+  let price: Int
+  let promotion: Promotion
+  let store: ConvenienceStore
+  let date: Date
+  let imageURL: URL?
+
+  enum CodingKeys: String, CodingKey {
+    case id
+    case name
+    case price
+    case promotion
+    case store
+    case date = "eventDate"
+    case imageURL = "imageUrl"
+  }
 }

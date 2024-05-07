@@ -15,12 +15,6 @@ struct NoticeResponse: Decodable, Paginatable {
   let hasMore: Bool
 
   let results: [NoticeItemResponse]
-
-  enum CodingKeys: String, CodingKey {
-    case count
-    case hasMore = "has_more"
-    case results
-  }
 }
 
 // MARK: - NoticeItemResponse
@@ -28,6 +22,6 @@ struct NoticeResponse: Decodable, Paginatable {
 struct NoticeItemResponse: Decodable {
   let id: Int
   let title: String
-  let body: String?
-  let date: Date
+  let content: String
+  let createdAt: Date
 }

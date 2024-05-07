@@ -54,7 +54,7 @@ private extension Notice {
   init(dto: NoticeItemResponse) {
     self.init(
       id: dto.id,
-      date: dto.date,
+      date: dto.createdAt,
       title: dto.title
     )
   }
@@ -64,7 +64,7 @@ private extension NoticeDetail {
   init(dto: NoticeItemResponse) {
     self.init(
       title: dto.title,
-      context: dto.body
+      context: dto.content
     )
   }
 }
