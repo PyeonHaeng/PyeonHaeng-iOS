@@ -1,206 +1,195 @@
 {
-  "count": 20,
-  "has_more": false,
+  "count": 1633,
+  "hasMore": true,
   "results": [
     {
-      "name": "미성)콴타브레이크",
-      "img": "https://image.woodongs.com/imgsvr/item/GD_6291003632815_001.jpg",
-      "price": 800,
-      "store": "GS25",
-      "tag": "1+1",
-      "proinfo": 0,
-      "date": "2024-02-01T00:00:00Z",
-      "id": 81337
+      "id": 135280,
+      "name": "코카)코카콜라제로500ml",
+      "price": 2300,
+      "promotion": "BUY_ONE_GET_ONE_FREE",
+      "store": "SEVEN_ELEVEN",
+      "eventDate": "2024-05-01T00:00:00Z",
+      "imageUrl": "https://www.7-eleven.co.kr/upload/product/8801094/082604.1.jpg"
     },
     {
-      "name": "녹차녹차돌자반55G",
-      "img": "https://image.woodongs.com/imgsvr/item/GD_8809186873710_001.jpg",
-      "price": 3300,
+      "id": 140045,
+      "name": "PPG화이트초코",
+      "price": 1800,
+      "promotion": "BUY_ONE_GET_ONE_FREE",
       "store": "GS25",
-      "tag": "1+1",
-      "proinfo": 0,
-      "date": "2024-02-01T00:00:00Z",
-      "id": 81338
+      "eventDate": "2024-05-01T00:00:00Z",
+      "imageUrl": "https://image.woodongs.com/imgsvr/item/GD_8809399462800_001.jpg"
     },
     {
-      "name": "파래파래돌자반55G",
-      "img": "https://image.woodongs.com/imgsvr/item/GD_8809186873703_001.jpg",
-      "price": 3300,
+      "id": 140046,
+      "name": "콩두부부침210G",
+      "price": 4000,
+      "promotion": "BUY_ONE_GET_ONE_FREE",
       "store": "GS25",
-      "tag": "1+1",
-      "proinfo": 0,
-      "date": "2024-02-01T00:00:00Z",
-      "id": 81339
+      "eventDate": "2024-05-01T00:00:00Z",
+      "imageUrl": "https://image.woodongs.com/imgsvr/item/GD_8801114111154_155.jpg"
     },
     {
-      "name": "CJ)워터젤리복숭아130G",
-      "img": "https://image.woodongs.com/imgsvr/item/GD_8801007038032_035.jpg",
-      "price": 1900,
+      "id": 140047,
+      "name": "콩두부찌개210G",
+      "price": 4000,
+      "promotion": "BUY_ONE_GET_ONE_FREE",
       "store": "GS25",
-      "tag": "1+1",
-      "proinfo": 0,
-      "date": "2024-02-01T00:00:00Z",
-      "id": 81340
+      "eventDate": "2024-05-01T00:00:00Z",
+      "imageUrl": "https://image.woodongs.com/imgsvr/item/GD_8801114111161_163.jpg"
     },
     {
-      "name": "CJ)워터젤리오렌지130G",
-      "img": "https://image.woodongs.com/imgsvr/item/GD_8801007026275_278.jpg",
-      "price": 1900,
+      "id": 140048,
+      "name": "좋은울날대4P",
+      "price": 2800,
+      "promotion": "BUY_ONE_GET_ONE_FREE",
       "store": "GS25",
-      "tag": "1+1",
-      "proinfo": 0,
-      "date": "2024-02-01T00:00:00Z",
-      "id": 81341
+      "eventDate": "2024-05-01T00:00:00Z",
+      "imageUrl": "https://image.woodongs.com/imgsvr/item/GD_8801166094054_001.jpg"
     },
     {
-      "name": "CJ)워터젤리포도130G",
-      "img": "https://image.woodongs.com/imgsvr/item/GD_8801007067285_002.jpg",
-      "price": 1900,
+      "id": 140049,
+      "name": "네)물티슈80P캡",
+      "price": 5500,
+      "promotion": "BUY_ONE_GET_ONE_FREE",
       "store": "GS25",
-      "tag": "1+1",
-      "proinfo": 0,
-      "date": "2024-02-01T00:00:00Z",
-      "id": 81342
+      "eventDate": "2024-05-01T00:00:00Z",
+      "imageUrl": "https://image.woodongs.com/imgsvr/item/GD_8809848531903_001.jpg"
     },
     {
-      "name": "안동간고등어100G(순살/냉동)",
-      "img": "None",
-      "price": 5000,
-      "store": "GS25",
-      "tag": "1+1",
-      "proinfo": 0,
-      "date": "2024-02-01T00:00:00Z",
-      "id": 81343
-    },
-    {
-      "name": "노가리먹태1입",
-      "img": "https://image.woodongs.com/imgsvr/item/GD_8809677723586_002.jpg",
-      "price": 6900,
-      "store": "GS25",
-      "tag": "1+1",
-      "proinfo": 0,
-      "date": "2024-02-01T00:00:00Z",
-      "id": 81344
-    },
-    {
-      "name": "먹태랑오징어30G",
-      "img": "https://image.woodongs.com/imgsvr/item/GD_8809193858434_002.jpg",
-      "price": 6900,
-      "store": "GS25",
-      "tag": "1+1",
-      "proinfo": 0,
-      "date": "2024-02-01T00:00:00Z",
-      "id": 81345
-    },
-    {
-      "name": "먹태를찍먹30G",
-      "img": "https://image.woodongs.com/imgsvr/item/GD_8809193858250_004.jpg",
-      "price": 6900,
-      "store": "GS25",
-      "tag": "1+1",
-      "proinfo": 0,
-      "date": "2024-02-01T00:00:00Z",
-      "id": 81346
-    },
-    {
-      "name": "복태구이(40G/1미)",
-      "img": "https://image.woodongs.com/imgsvr/item/GD_8809465730147_001.jpg",
-      "price": 8500,
-      "store": "GS25",
-      "tag": "1+1",
-      "proinfo": 0,
-      "date": "2024-02-01T00:00:00Z",
-      "id": 81347
-    },
-    {
-      "name": "미닛메이드)레몬에이드제로350ML",
-      "img": "https://image.woodongs.com/imgsvr/item/GD_8801094326203_001.jpg",
-      "price": 1900,
-      "store": "GS25",
-      "tag": "1+1",
-      "proinfo": 0,
-      "date": "2024-02-01T00:00:00Z",
-      "id": 81348
-    },
-    {
-      "name": "현대)미에로화이바스파클링제로",
-      "img": "https://image.woodongs.com/imgsvr/item/GD_8806004000587_002.jpg",
-      "price": 2200,
-      "store": "GS25",
-      "tag": "1+1",
-      "proinfo": 0,
-      "date": "2024-02-01T00:00:00Z",
-      "id": 81349
-    },
-    {
-      "name": "빙그레)닥터캡슐베리믹스130ML",
-      "img": "https://image.woodongs.com/imgsvr/item/GD_8801104669283_001.jpg",
-      "price": 2200,
-      "store": "GS25",
-      "tag": "1+1",
-      "proinfo": 0,
-      "date": "2024-02-01T00:00:00Z",
-      "id": 81350
-    },
-    {
-      "name": "빙그레)닥터캡슐복분자130ML",
-      "img": "None",
-      "price": 2200,
-      "store": "GS25",
-      "tag": "1+1",
-      "proinfo": 0,
-      "date": "2024-02-01T00:00:00Z",
-      "id": 81351
-    },
-    {
-      "name": "빙그레)닥터캡슐사과130ML",
-      "img": "https://image.woodongs.com/imgsvr/item/GD_8801104665421_001.jpg",
-      "price": 2200,
-      "store": "GS25",
-      "tag": "1+1",
-      "proinfo": 0,
-      "date": "2024-02-01T00:00:00Z",
-      "id": 81352
-    },
-    {
-      "name": "빙그레)닥터캡슐프로텍트130ML",
-      "img": "https://image.woodongs.com/imgsvr/item/GD_8801104302739_004.jpg",
-      "price": 2200,
-      "store": "GS25",
-      "tag": "1+1",
-      "proinfo": 0,
-      "date": "2024-02-01T00:00:00Z",
-      "id": 81353
-    },
-    {
-      "name": "Y(P)명품갈비탕600G(냉장)",
-      "img": "https://image.woodongs.com/imgsvr/item/GD_8809396242689_001.JPG",
-      "price": 15900,
-      "store": "GS25",
-      "tag": "1+1",
-      "proinfo": 0,
-      "date": "2024-02-01T00:00:00Z",
-      "id": 81354
-    },
-    {
-      "name": "Y(P)명품염소전골500G(냉장)",
-      "img": "https://image.woodongs.com/imgsvr/item/GD_8809396242733_001.jpg",
-      "price": 15900,
-      "store": "GS25",
-      "tag": "1+1",
-      "proinfo": 0,
-      "date": "2024-02-01T00:00:00Z",
-      "id": 81355
-    },
-    {
-      "name": "꿀에빠진도라지말랭이15G",
-      "img": "https://image.woodongs.com/imgsvr/item/GD_8809742173049_001.jpg",
+      "id": 140050,
+      "name": "치즈아몬드볼",
       "price": 2500,
+      "promotion": "BUY_ONE_GET_ONE_FREE",
       "store": "GS25",
-      "tag": "1+1",
-      "proinfo": 0,
-      "date": "2024-02-01T00:00:00Z",
-      "id": 81356
+      "eventDate": "2024-05-01T00:00:00Z",
+      "imageUrl": "https://image.woodongs.com/imgsvr/item/GD_8809318029534_003.jpg"
+    },
+    {
+      "id": 140051,
+      "name": "까눌레젤리40G",
+      "price": 3000,
+      "promotion": "BUY_ONE_GET_ONE_FREE",
+      "store": "GS25",
+      "eventDate": "2024-05-01T00:00:00Z",
+      "imageUrl": "https://image.woodongs.com/imgsvr/item/GD_4902750385108_002.jpg"
+    },
+    {
+      "id": 140052,
+      "name": "아삭한샐러드",
+      "price": 2900,
+      "promotion": "BUY_ONE_GET_ONE_FREE",
+      "store": "GS25",
+      "eventDate": "2024-05-01T00:00:00Z",
+      "imageUrl": "https://image.woodongs.com/imgsvr/item/GD_2800100227547_002.jpg"
+    },
+    {
+      "id": 140053,
+      "name": "와일드샐러드",
+      "price": 2900,
+      "promotion": "BUY_ONE_GET_ONE_FREE",
+      "store": "GS25",
+      "eventDate": "2024-05-01T00:00:00Z",
+      "imageUrl": "https://image.woodongs.com/imgsvr/item/GD_2800100227554_002.jpg"
+    },
+    {
+      "id": 140054,
+      "name": "칼집찰현미500G",
+      "price": 4500,
+      "promotion": "BUY_ONE_GET_ONE_FREE",
+      "store": "GS25",
+      "eventDate": "2024-05-01T00:00:00Z",
+      "imageUrl": "https://image.woodongs.com/imgsvr/item/GD_8804246034339_002.jpg"
+    },
+    {
+      "id": 140055,
+      "name": "칼집현미500G",
+      "price": 4500,
+      "promotion": "BUY_ONE_GET_ONE_FREE",
+      "store": "GS25",
+      "eventDate": "2024-05-01T00:00:00Z",
+      "imageUrl": "https://image.woodongs.com/imgsvr/item/GD_8804246034322_002.jpg"
+    },
+    {
+      "id": 140056,
+      "name": "녹차돌자반55G",
+      "price": 3900,
+      "promotion": "BUY_ONE_GET_ONE_FREE",
+      "store": "GS25",
+      "eventDate": "2024-05-01T00:00:00Z",
+      "imageUrl": "https://image.woodongs.com/imgsvr/item/GD_8809186873710_001.jpg"
+    },
+    {
+      "id": 140057,
+      "name": "파래돌자반55G",
+      "price": 3900,
+      "promotion": "BUY_ONE_GET_ONE_FREE",
+      "store": "GS25",
+      "eventDate": "2024-05-01T00:00:00Z",
+      "imageUrl": "https://image.woodongs.com/imgsvr/item/GD_8809186873703_001.jpg"
+    },
+    {
+      "id": 140058,
+      "name": "오렌지소다600",
+      "price": 2100,
+      "promotion": "BUY_ONE_GET_ONE_FREE",
+      "store": "GS25",
+      "eventDate": "2024-05-01T00:00:00Z",
+      "imageUrl": "https://image.woodongs.com/imgsvr/item/GD_8806002023397_002.jpg"
+    },
+    {
+      "id": 140059,
+      "name": "자두자몽소다",
+      "price": 2100,
+      "promotion": "BUY_ONE_GET_ONE_FREE",
+      "store": "GS25",
+      "eventDate": "2024-05-01T00:00:00Z",
+      "imageUrl": "https://image.woodongs.com/imgsvr/item/GD_8806002023410_002.jpg"
+    },
+    {
+      "id": 140060,
+      "name": "간고등어(순살)",
+      "price": 5000,
+      "promotion": "BUY_ONE_GET_ONE_FREE",
+      "store": "GS25",
+      "eventDate": "2024-05-01T00:00:00Z",
+      "imageUrl": null
+    },
+    {
+      "id": 140061,
+      "name": "노가리먹태1입",
+      "price": 6900,
+      "promotion": "BUY_ONE_GET_ONE_FREE",
+      "store": "GS25",
+      "eventDate": "2024-05-01T00:00:00Z",
+      "imageUrl": "https://image.woodongs.com/imgsvr/item/GD_8809677723586_002.jpg"
+    },
+    {
+      "id": 140062,
+      "name": "미니붕어빵(팥)",
+      "price": 600,
+      "promotion": "BUY_ONE_GET_ONE_FREE",
+      "store": "GS25",
+      "eventDate": "2024-05-01T00:00:00Z",
+      "imageUrl": "https://image.woodongs.com/imgsvr/item/GD_2800100228940_001.jpg"
+    },
+    {
+      "id": 140063,
+      "name": "먹태랑오징어",
+      "price": 7900,
+      "promotion": "BUY_ONE_GET_ONE_FREE",
+      "store": "GS25",
+      "eventDate": "2024-05-01T00:00:00Z",
+      "imageUrl": "https://image.woodongs.com/imgsvr/item/GD_8809193858434_002.jpg"
+    },
+    {
+      "id": 140064,
+      "name": "먹태를찍먹30G",
+      "price": 7900,
+      "promotion": "BUY_ONE_GET_ONE_FREE",
+      "store": "GS25",
+      "eventDate": "2024-05-01T00:00:00Z",
+      "imageUrl": "https://image.woodongs.com/imgsvr/item/GD_8809193858250_004.jpg"
     }
   ]
 }
