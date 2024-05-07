@@ -1,18 +1,18 @@
 {
-  "count": 2,
-  "has_more": false,
+  "count": 1,
+  "hasMore": false,
   "results": [
     {
-      "title": "test test",
-      "body": null,
-      "date": "2024-02-25T19:41:11Z",
-      "id": 1
+      "id": 2,
+      "title": "test title",
+      "content": "test content",
+      "createdAt": "2024-05-02T13:23:02Z"
     },
     {
-      "title": "테스트 제목",
-      "body": null,
-      "date": "2024-02-26T20:35:48Z",
-      "id": 2
+      "id": 1,
+      "title": "test title",
+      "content": "test content",
+      "createdAt": "2024-05-02T13:23:02Z"
     }
   ]
 }
