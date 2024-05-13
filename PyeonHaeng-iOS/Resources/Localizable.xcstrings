@@ -55,6 +55,22 @@
         }
       }
     },
+    "%lld products total!" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "合計%lld商品"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "총 %lld개의 상품이 있어요!"
+          }
+        }
+      }
+    },
     "• 검색어의 단어 수를 줄이거나," : {
       "localizations" : {
         "en" : {
@@ -864,53 +880,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "제품 상세"
-          }
-        }
-      }
-    },
-    "총 %lld개의 상품이 있어요!" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "There is a total of %lld product!"
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "There are a total of %lld product!"
-                }
-              }
-            }
-          }
-        },
-        "ja" : {
-          "variations" : {
-            "plural" : {
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "合計%lld個の商品があります!"
-                }
-              }
-            }
-          }
-        },
-        "ko" : {
-          "variations" : {
-            "plural" : {
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "총 %lld개의 상품이 있어요!"
-                }
-              }
-            }
           }
         }
       }
