@@ -17,6 +17,7 @@ struct HomeProductSorterView<ViewModel>: View where ViewModel: HomeViewModelRepr
   var body: some View {
     HStack {
       Text(productCountString)
+        .accessibilityIdentifier(AccessibilityIdentifier.Home.productCountLabel)
         .font(.title2)
       Spacer()
       Button {
@@ -34,6 +35,7 @@ struct HomeProductSorterView<ViewModel>: View where ViewModel: HomeViewModelRepr
       }
       .accessibilityLabel(accessibilityLabel(for: viewModel.state.productConfiguration.order))
       .accessibilityHint("더블 탭하여 정렬 기준을 바꿔보세요")
+      .accessibilityIdentifier(AccessibilityIdentifier.Home.sortButton)
     }
     .padding(.all, 8)
   }
