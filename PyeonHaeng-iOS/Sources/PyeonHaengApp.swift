@@ -25,6 +25,7 @@ struct PyeonHaengApp: App {
     WindowGroup {
       RootView {
         SplashView()
+          .accessibilityIdentifier(AccessibilityIdentifier.Splash.screen)
           .environment(\.injected, DIContainer(services: services))
           // 네트워크 연결 모니터링
           .onChange(of: networkMonitor.isSatisfied) { oldValue, newValue in
