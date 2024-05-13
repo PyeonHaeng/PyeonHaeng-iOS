@@ -43,7 +43,7 @@ struct HomeProductSorterView<ViewModel>: View where ViewModel: HomeViewModelRepr
 
 private extension HomeProductSorterView {
   var productCountString: AttributedString {
-    var string = AttributedString(localized: "총 \(viewModel.state.totalCount)개의 상품이 있어요!")
+    var string = AttributedString(localized: "\(viewModel.state.totalCount) products total!")
 
     if let range = string.range(of: "\(viewModel.state.totalCount.formatted())") {
       string[range].foregroundColor = .pyeonHaengPrimary
