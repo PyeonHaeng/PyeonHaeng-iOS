@@ -15,6 +15,7 @@ struct HomeProductDetailSelectionView<ViewModel>: View where ViewModel: HomeView
   @EnvironmentObject private var viewModel: ViewModel
   @State private var convenienceStoreModalPresented = false
   @State private var promotionModalPresented = false
+  @State private var bottomSheetHeight: CGFloat = .zero
 
   var body: some View {
     HStack {
@@ -42,7 +43,12 @@ struct HomeProductDetailSelectionView<ViewModel>: View where ViewModel: HomeView
     .accessibilityHint("더블 탭하여 편의점을 선택하세요")
     .sheet(isPresented: $convenienceStoreModalPresented) {
       ConvenienceSelectBottomSheetView<ViewModel>()
-        .bottomSheetPresentation(height: Metrics.convenienceBottomSheetHeight)
+        .presentationDetents([bottomSheetHeight == .zero ? .medium : .height(bottomSheetHeight)])
+        .presentationCornerRadius(20)
+        .presentationBackground(.regularMaterial)
+        .heightChangePreference { height in
+          bottomSheetHeight = height
+        }
     }
   }
 
@@ -78,7 +84,12 @@ struct HomeProductDetailSelectionView<ViewModel>: View where ViewModel: HomeView
     }
     .sheet(isPresented: $promotionModalPresented) {
       PromotionSelectBottomSheetView<ViewModel>()
-        .bottomSheetPresentation(height: Metrics.promotionBottomSheetHeight)
+        .presentationDetents([bottomSheetHeight == .zero ? .medium : .height(bottomSheetHeight)])
+        .presentationCornerRadius(20)
+        .presentationBackground(.regularMaterial)
+        .heightChangePreference { height in
+          bottomSheetHeight = height
+        }
     }
   }
 
@@ -106,11 +117,17 @@ private extension Promotion {
   }
 }
 
-extension View {
-  func bottomSheetPresentation(height: CGFloat) -> some View {
-    presentationDetents([.height(height)])
-      .presentationCornerRadius(20)
-      .presentationBackground(.regularMaterial)
+private extension View {
+  func heightChangePreference(completion: @escaping (CGFloat) -> Void) -> some View {
+    overlay {
+      GeometryReader { geometry in
+        Color.clear
+          .preference(key: BottomSheetHeightKey.self, value: geometry.size.height)
+          .onPreferenceChange(BottomSheetHeightKey.self) { value in
+            completion(value)
+          }
+      }
+    }
   }
 }
 
@@ -130,6 +147,4 @@ private enum Metrics {
   static let promotionButtonCornerRadius: CGFloat = 16
 
   static let height: CGFloat = 56
-  static let convenienceBottomSheetHeight: CGFloat = 334
-  static let promotionBottomSheetHeight: CGFloat = 238
 }
