@@ -13,12 +13,18 @@ import SwiftUI
 @main
 struct PyeonHaengApp: App {
   @State private var networkMonitor: NetworkMonitor = .init()
+  #if !RELEASE
+    @AppStorage("isFirstLaunch") private var isFirstLaunch = false
+  #endif
   private let services = Services()
 
   init() {
     FontRegistrar.registerFonts() // 앱을 실행하기 전에 폰트를 로드합니다.
     setupNavigationBarAppearance()
     FirebaseApp.configure()
+    #if !RELEASE
+      isFirstLaunch = false
+    #endif
   }
 
   var body: some Scene {

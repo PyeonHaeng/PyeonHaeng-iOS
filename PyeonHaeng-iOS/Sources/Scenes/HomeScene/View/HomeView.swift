@@ -85,7 +85,6 @@ struct HomeView<ViewModel>: View where ViewModel: HomeViewModelRepresentable {
     .onAppear {
       if !isFirstLaunch {
         isOnboardingSheetOpen = true
-        isFirstLaunch = true
       }
       viewModel.trigger(.fetchProducts)
     }

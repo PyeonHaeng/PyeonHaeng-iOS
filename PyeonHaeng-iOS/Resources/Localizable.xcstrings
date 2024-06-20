@@ -665,7 +665,6 @@
       }
     },
     "다음" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -908,7 +907,6 @@
       }
     },
     "편행 시작하기" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
