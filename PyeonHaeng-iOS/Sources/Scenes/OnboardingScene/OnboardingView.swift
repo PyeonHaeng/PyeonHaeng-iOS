@@ -14,7 +14,7 @@ private let pages: [OnboardingPage] = [
     subtitle: "Discover 1+1, 2+1 promotional product information from various convenience stores to consume smartly and economically.",
     image: .onboarding1
   ),
-  OnboardingPage(
+  .init(
     title: "Numerous benefits in one place",
     subtitle: """
     Find the myriad of promotional information from 7-Eleven, CU, emart24, GS25  all in one place with ’`Pyeonhaeng`’.
@@ -38,9 +38,9 @@ struct OnboardingView: View {
   var body: some View {
     NavigationStack {
       VStack {
-        Spacer()
         PageSlider(data: pages, activeID: $activeID) { item in
           item.image
+            .padding(.bottom, 80)
         } titleContent: { item in
           VStack(spacing: 16) {
             Text(item.title)
@@ -51,8 +51,9 @@ struct OnboardingView: View {
               .multilineTextAlignment(.center)
               .foregroundStyle(.gray500)
           }
-          .padding(.top, 80)
         }
+        .frame(maxHeight: .infinity, alignment: .bottom)
+
         Button {
           if let index = pages.firstIndex(where: { activeID == $0.id }),
              let nextID = pages[safe: pages.index(after: index)]?.id {
@@ -75,7 +76,6 @@ struct OnboardingView: View {
         }
         .padding(.horizontal, 20)
         .padding(.bottom, 8)
-        .padding(.top, 100)
       }
       .toolbar {
         ToolbarItem(placement: .topBarTrailing) {

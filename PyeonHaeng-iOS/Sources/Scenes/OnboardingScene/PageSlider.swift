@@ -9,21 +9,17 @@ import SwiftUI
 
 struct PageSlider<Content: View, TitleContent: View, Item: RandomAccessCollection>: View
   where Item.Element: Identifiable {
-  // MARK: Customization Properties
-
-  var titleScrollSpeed: CGFloat = 0.6
-  var showIndicator: ScrollIndicatorVisibility = .hidden
-  var showPagingControl = true
-  var pagingControlSpacing: CGFloat = 20
-  var spacing: CGFloat = 10
-
+  private let titleScrollSpeed: CGFloat = 0.6
+  private let spacing: CGFloat = 10
   let data: Item
-  @Binding var activeID: UUID?
+
+  @State private var targetFrame: CGRect = .zero
+  @Binding var activeID: Item.Element.ID?
   @ViewBuilder var content: (Item.Element) -> Content
   @ViewBuilder var titleContent: (Item.Element) -> TitleContent
 
   var body: some View {
-    VStack(spacing: pagingControlSpacing) {
+    ZStack {
       ScrollView(.horizontal) {
         HStack(alignment: .bottom, spacing: spacing) {
           ForEach(data) { datum in
@@ -31,20 +27,34 @@ struct PageSlider<Content: View, TitleContent: View, Item: RandomAccessCollectio
               content(datum)
               titleContent(datum)
                 .frame(maxWidth: .infinity, alignment: .bottom)
+                .background(.systemBlue300)
+                .background {
+                  GeometryReader { proxy in
+                    Color.clear
+                      .preference(key: OnboardingPageControlOffsetKey.self, value: proxy.frame(in: .named("ZStack")))
+                      .onPreferenceChange(OnboardingPageControlOffsetKey.self) { value in
+                        targetFrame = value
+                      }
+                  }
+                }
                 .visualEffect { content, geometryProxy in
                   let minX = geometryProxy.bounds(of: .scrollView)?.minX ?? 0
                   return content.offset(x: -minX * titleScrollSpeed)
                 }
             }
-            .containerRelativeFrame(.horizontal)
           }
+          .containerRelativeFrame(.horizontal)
         }
         .scrollTargetLayout()
       }
-      .scrollIndicators(showIndicator)
+      .scrollIndicators(.hidden)
       .scrollTargetBehavior(.viewAligned)
       .scrollPosition(id: $activeID)
+      OnboardingPageControl(activeID: $activeID, items: data)
+        .frame(maxHeight: .infinity, alignment: .top)
+        .padding(.top, targetFrame.minY - 16 - 6) // 16만큼의 차이 + Page Control 높이를 해주어야 비로소 16의 차이가 남
     }
+    .coordinateSpace(name: "ZStack")
   }
 }
 

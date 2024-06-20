@@ -9,35 +9,40 @@ import SwiftUI
 
 // MARK: - OnboardingPageControl
 
-struct OnboardingPageControl: View {
-  @Binding private var currentPage: Int
-  private var pageCount: Int
+struct OnboardingPageControl<Item: RandomAccessCollection>: View where Item.Element: Identifiable {
+  @Binding private var activeID: Item.Element.ID?
+  private var items: Item
 
-  init(currentPage: Binding<Int>, pageCount: Int) {
-    _currentPage = currentPage
-    self.pageCount = pageCount
+  init(activeID: Binding<Item.Element.ID?>, items: Item) {
+    _activeID = activeID
+    self.items = items
   }
 
   var body: some View {
     HStack {
-      ForEach(0 ..< pageCount, id: \.self) { index in
+      ForEach(items) { item in
         Rectangle()
-          .frame(width: index == currentPage ? 24 : 6, height: 6)
-          .foregroundStyle(index == currentPage ? Color.green500 : Color.gray100)
+          .frame(width: item.id == activeID ? 24 : 6, height: 6)
+          .foregroundStyle(item.id == activeID ? Color.green500 : Color.gray100)
           .clipShape(.rect(cornerRadius: 3))
           .onTapGesture {
             withAnimation {
-              currentPage = index // 해당 인덱스로 페이지 변경
+              activeID = item.id // 해당 인덱스로 페이지 변경
             }
           }
       }
     }
     // 페이지 변경 시 애니메이션 효과
-    .animation(.default, value: currentPage)
+    .animation(.default, value: activeID)
   }
 }
 
 #Preview {
-  @State var currentPage = 0
-  return OnboardingPageControl(currentPage: $currentPage, pageCount: 3)
+  struct TestItem: Identifiable {
+    let id: UUID = .init()
+  }
+  let items: [TestItem] = [.init(), .init(), .init()]
+  @State var activeID: UUID? = items[1].id
+
+  return OnboardingPageControl(activeID: $activeID, items: items)
 }

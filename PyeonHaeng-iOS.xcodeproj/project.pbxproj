@@ -42,6 +42,7 @@
 		BA73DDCB2BC179F6009EE718 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = BA73DDCA2BC179F6009EE718 /* FirebaseCrashlytics */; };
 		BA7C1A5E2C241CC200869EB3 /* PageSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7C1A5D2C241CC200869EB3 /* PageSlider.swift */; };
 		BA7C1A612C24317A00869EB3 /* Array+subscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7C1A602C24317A00869EB3 /* Array+subscript.swift */; };
+		BA7C1A632C24392F00869EB3 /* OnboardingPageControlOffsetKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7C1A622C24392F00869EB3 /* OnboardingPageControlOffsetKey.swift */; };
 		BA849A342B8F4F36004495BF /* ProductConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8E83232B8EF83B00FE968C /* ProductConfiguration.swift */; };
 		BA849A372B8F4FC0004495BF /* MockPaginatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA849A362B8F4FC0004495BF /* MockPaginatable.swift */; };
 		BA8E83242B8EF83B00FE968C /* ProductConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8E83232B8EF83B00FE968C /* ProductConfiguration.swift */; };
@@ -148,6 +149,7 @@
 		BA73DDC32BC17912009EE718 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BA7C1A5D2C241CC200869EB3 /* PageSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageSlider.swift; sourceTree = "<group>"; };
 		BA7C1A602C24317A00869EB3 /* Array+subscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+subscript.swift"; sourceTree = "<group>"; };
+		BA7C1A622C24392F00869EB3 /* OnboardingPageControlOffsetKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageControlOffsetKey.swift; sourceTree = "<group>"; };
 		BA849A362B8F4FC0004495BF /* MockPaginatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPaginatable.swift; sourceTree = "<group>"; };
 		BA8E83232B8EF83B00FE968C /* ProductConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductConfiguration.swift; sourceTree = "<group>"; };
 		BA9903552BBBD9F500DC3ED3 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
@@ -547,6 +549,7 @@
 			isa = PBXGroup;
 			children = (
 				BAB2549F2C2315F900E74438 /* BottomSheetHeightKey.swift */,
+				BA7C1A622C24392F00869EB3 /* OnboardingPageControlOffsetKey.swift */,
 			);
 			path = PreferenceKeys;
 			sourceTree = "<group>";
@@ -867,6 +870,7 @@
 				BA28F18E2B6156420052855E /* SettingsView.swift in Sources */,
 				E55DD5122B91DE9500AA63C0 /* SearchListCardView.swift in Sources */,
 				BA097F0E2B9CA82A002D3E1E /* MailSheetView.swift in Sources */,
+				BA7C1A632C24392F00869EB3 /* OnboardingPageControlOffsetKey.swift in Sources */,
 				E52F371B2B947DC8000EBAD5 /* SearchViewModel.swift in Sources */,
 				BAE159DE2B663A9A002DCF94 /* HomeProductSorterView.swift in Sources */,
 				BA1688E02B99B85500A8F462 /* NoticeView.swift in Sources */,
