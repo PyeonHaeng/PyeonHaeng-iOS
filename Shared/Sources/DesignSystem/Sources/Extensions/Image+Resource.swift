@@ -8,6 +8,27 @@
 import SwiftUI
 
 public extension Image {
+  enum MIMEType: String {
+    case svg
+    case png
+  }
+
+  /// 이미지 이름과 MIME type에 맞게 `Image`를 가져옵니다.
+  /// - Parameters:
+  ///   - imageName: 이미지 이름
+  ///   - type: Mimetype
+  init(imageName: String, ofType type: MIMEType = .svg) {
+    // Attempt to load the image from the package's bundle
+    if let image = UIImage(named: "\(imageName).\(type.rawValue)", in: .module, compatibleWith: nil) {
+      self.init(uiImage: image)
+    } else {
+      // Fallback to a system or placeholder image if loading fails
+      self.init(imageName)
+    }
+  }
+}
+
+public extension Image {
   static let cu: Image = .init(ImageResource.CU)
   static let gs25: Image = .init(ImageResource.GS_25)
   static let _7Eleven: Image = .init(ImageResource._7Eleven)
