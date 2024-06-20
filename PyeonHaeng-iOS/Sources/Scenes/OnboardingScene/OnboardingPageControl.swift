@@ -37,14 +37,7 @@ struct OnboardingPageControl: View {
   }
 }
 
-// MARK: - CustomPageControl_Previews
-
-struct CustomPageControl_Previews: PreviewProvider {
-  @State static var currentPage = 0 // Preview를 위한 @State 변수
-
-  static var previews: some View {
-    OnboardingPageControl(currentPage: $currentPage, pageCount: 2)
-      .previewLayout(.sizeThatFits)
-      .padding()
-  }
+#Preview {
+  @State var currentPage = 0
+  return OnboardingPageControl(currentPage: $currentPage, pageCount: 3)
 }

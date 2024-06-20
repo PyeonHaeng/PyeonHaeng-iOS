@@ -11,76 +11,47 @@ import SwiftUI
 // MARK: - OnboardingView
 
 struct OnboardingView: View {
-  @State private var currentPage = 0
   @Environment(\.dismiss) private var dismiss
-  private let pages = OnboardingPage.pages
+  @State private var currentPage: Int = 0
+  @State private var pages: [OnboardingPage] = [
+    .init(
+      title: "Buy one, get one free",
+      subtitle: "Discover 1+1, 2+1 promotional product information from various convenience stores to consume smartly and economically.",
+      image: .onboarding1
+    ),
+    OnboardingPage(
+      title: "Numerous benefits in one place",
+      subtitle: """
+      Find the myriad of promotional information from 7-Eleven, CU, emart24, GS25  all in one place with ’`Pyeonhaeng`’.
+      """,
+      image: .onboarding2
+    ),
+  ]
 
   var body: some View {
     NavigationStack {
-      ZStack {
-        TabView(selection: $currentPage) {
-          ForEach(pages) { page in
-            VStack {
-              Spacer()
-              page.image
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .padding(.horizontal, 40)
-              Spacer()
-              Text(page.title)
-                .multilineTextAlignment(.center)
-                .font(.h2)
-              Spacer().frame(height: 16)
-              Text(page.body)
-                .font(.body2)
-                .foregroundStyle(Color.gray500)
-                .multilineTextAlignment(.center)
-                .padding(.horizontal, 20)
-              Spacer()
-                .frame(height: 120)
-            }
-            .tag(page.tag)
-          }
-        }
-        VStack {
-          Spacer()
-          OnboardingPageControl(
-            currentPage: $currentPage,
-            pageCount: pages.count
-          )
-          .padding(.top, 100)
-          Button {
-            if currentPage == pages.count - 1 {
-              dismiss()
-            } else {
-              withAnimation {
-                currentPage += 1
-              }
-            }
-          } label: {
-            Text(currentPage == pages.count - 1 ? "편행 시작하기" : "다음")
-              .font(.h5)
-              .foregroundStyle(.white)
-              .frame(maxWidth: .infinity)
-              .padding()
-              .background(Color.green500)
-              .clipShape(.rect(cornerRadius: 10))
-              .padding(.horizontal, 20)
-          }
-          .padding(.bottom, 8)
-          .padding(.top, 208)
+      PageSlider(data: $pages) { $item in
+        item.image
+      } titleContent: { $item in
+        VStack(spacing: 16) {
+          Text(item.title)
+            .font(.h2)
+            .foregroundStyle(.gray900)
+          Text(item.subtitle)
+            .font(.body2)
+            .multilineTextAlignment(.center)
+            .foregroundStyle(.gray500)
         }
       }
-      .tabViewStyle(.page)
-      .toolbar {
-        ToolbarItem(placement: .topBarTrailing) {
-          Button {
-            dismiss()
-          } label: {
-            Text("건너뛰기")
-              .font(.b2)
-              .foregroundStyle(Color.green500)
-          }
+    }
+    .toolbar {
+      ToolbarItem(placement: .topBarTrailing) {
+        Button {
+          dismiss()
+        } label: {
+          Text("건너뛰기")
+            .font(.b2)
+            .foregroundStyle(Color.green500)
         }
       }
     }

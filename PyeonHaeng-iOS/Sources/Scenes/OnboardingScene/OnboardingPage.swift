@@ -5,30 +5,18 @@
 //  Created by 김응철 on 3/18/24.
 //
 
-import DesignSystem
 import SwiftUI
 
+/// Onboarding Paging Slider Data Model
 struct OnboardingPage: Identifiable {
-  let id = UUID()
-  let title: LocalizedStringKey
-  let body: LocalizedStringKey
-  let image: Image
-  let tag: Int
+  let id: UUID = .init()
 
-  static let pages: [OnboardingPage] = [
-    OnboardingPage(
-      title: "Buy one, get one free",
-      body: "Discover 1+1, 2+1 promotional product information from various convenience stores to consume smartly and economically.",
-      image: .onboarding1,
-      tag: 0
-    ),
-    OnboardingPage(
-      title: "Numerous benefits in one place",
-      body: """
-      Find the myriad of promotional information from 7-Eleven, CU, emart24, GS25  all in one place with ’`Pyeonhaeng`’.
-      """,
-      image: .onboarding2,
-      tag: 1
-    ),
-  ]
+  /// 온보딩 제목
+  let title: LocalizedStringKey
+
+  /// 온보딩 부연설명
+  let subtitle: LocalizedStringKey
+
+  /// 이미지
+  let image: Image
 }
