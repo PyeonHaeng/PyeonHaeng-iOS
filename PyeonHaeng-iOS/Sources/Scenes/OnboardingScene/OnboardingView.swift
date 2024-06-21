@@ -15,7 +15,7 @@ private let pages: [OnboardingPage] = [
     image: .onboarding1
   ),
   .init(
-    title: "Numerous benefits in one place",
+    title: "Numerous benefits",
     subtitle: """
     Find the myriad of promotional information from 7-Eleven, CU, emart24, GS25  all in one place with ’`Pyeonhaeng`’.
     """,

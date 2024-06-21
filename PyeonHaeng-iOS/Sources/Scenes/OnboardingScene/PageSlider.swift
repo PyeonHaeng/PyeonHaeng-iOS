@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PageSlider<Content: View, TitleContent: View, Item: RandomAccessCollection>: View
   where Item.Element: Identifiable {
-  private let titleScrollSpeed: CGFloat = 0.6
+  private let titleScrollSpeed: CGFloat = 0.8
   private let spacing: CGFloat = 10
   let data: Item
 
@@ -27,7 +27,6 @@ struct PageSlider<Content: View, TitleContent: View, Item: RandomAccessCollectio
               content(datum)
               titleContent(datum)
                 .frame(maxWidth: .infinity, alignment: .bottom)
-                .background(.systemBlue300)
                 .background {
                   GeometryReader { proxy in
                     Color.clear
@@ -44,6 +43,10 @@ struct PageSlider<Content: View, TitleContent: View, Item: RandomAccessCollectio
             }
           }
           .containerRelativeFrame(.horizontal)
+          .scrollTransition { effect, phase in
+            effect
+              .opacity(phase.isIdentity ? 1 : 0)
+          }
         }
         .scrollTargetLayout()
       }
@@ -70,12 +73,12 @@ struct PageSlider<Content: View, TitleContent: View, Item: RandomAccessCollectio
     let subtitle: String
   }
 
-  @State var activeID: UUID?
   let items: [Item] = [
     .init(color: .red, title: "Hello, PyeonHaeng!", subtitle: "agoeagamdawidmawiodmwaiodmowaidmiowadmoagoeagamdawidmawiodmwaiodmowaidmiowadmo"),
     .init(color: .yellow, title: "Hello, PyeonHaeng!", subtitle: "agoeagamdawidmawiodmwaiodmowaidmiowadmoagoeagamdawidmawiodmwaiodmowaidmiowadmo"),
     .init(color: .green, title: "Hello, PyeonHaeng!", subtitle: "I wanna drink Coke zero right now"),
   ]
+  @State var activeID: UUID? = items.first?.id
 
   return PageSlider(data: items, activeID: $activeID) { item in
     RoundedRectangle(cornerRadius: 10)
