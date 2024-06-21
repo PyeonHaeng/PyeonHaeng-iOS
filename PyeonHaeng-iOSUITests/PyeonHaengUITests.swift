@@ -22,12 +22,16 @@ final class PyeonHaengUITests: XCTestCase {
   func testProductCountLabelDisplayedInSingleLine() {
     let app = XCUIApplication()
     app.launch()
-    XCTAssertTrue(app.otherElements[AccessibilityIdentifier.Splash.screen].exists, TestFailureMessage.splashScreenNotDisplayed)
 
-    let productCountLabel = app.staticTexts[AccessibilityIdentifier.Home.productCountLabel]
+    XCTAssertTrue(app.otherElements[.splash(.screen)].exists, TestFailureMessage.splashScreenNotDisplayed)
+
+    let button = XCUIApplication().navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons[.onboarding(.navigationBar)]
+    if button.exists { button.tap() }
+
+    let productCountLabel = app.staticTexts[.home(.productCountLabel)]
     let initialLabelHeight = productCountLabel.frame.size.height
 
-    let productSortButton = app.buttons[AccessibilityIdentifier.Home.sortButton]
+    let productSortButton = app.buttons[.home(.sortButton)]
     productSortButton.tap()
 
     let labelHeightAfterTap = productCountLabel.frame.size.height

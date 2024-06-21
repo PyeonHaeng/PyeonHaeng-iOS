@@ -29,6 +29,7 @@ struct OnboardingView: View {
   // MARK: Properties
 
   @Environment(\.dismiss) private var dismiss
+  @AppStorage("isFirstLaunch") private var isFirstLaunch = true
 
   /// 온보딩 페이지 중에서 보여지고 있는 페이지의 ID
   @State private var activeID: UUID? = pages.first?.id
@@ -61,6 +62,7 @@ struct OnboardingView: View {
               activeID = nextID
             }
           } else {
+            isFirstLaunch = false
             dismiss()
           }
         } label: {
@@ -80,12 +82,15 @@ struct OnboardingView: View {
       .toolbar {
         ToolbarItem(placement: .topBarTrailing) {
           Button {
+            isFirstLaunch = false
             dismiss()
           } label: {
             Text("건너뛰기")
               .font(.b2)
               .foregroundStyle(Color.green500)
+              .accessibilityIdentifier(.onboarding(.skip))
           }
+          .accessibilityIdentifier(.onboarding(.navigationBar))
         }
       }
     }

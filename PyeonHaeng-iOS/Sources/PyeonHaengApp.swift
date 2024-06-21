@@ -14,7 +14,7 @@ import SwiftUI
 struct PyeonHaengApp: App {
   @State private var networkMonitor: NetworkMonitor = .init()
   #if !RELEASE
-    @AppStorage("isFirstLaunch") private var isFirstLaunch = false
+    @AppStorage("isFirstLaunch") private var isFirstLaunch = true
   #endif
   private let services = Services()
 
@@ -23,7 +23,7 @@ struct PyeonHaengApp: App {
     setupNavigationBarAppearance()
     FirebaseApp.configure()
     #if !RELEASE
-      isFirstLaunch = false
+      isFirstLaunch = true
     #endif
   }
 
@@ -31,7 +31,7 @@ struct PyeonHaengApp: App {
     WindowGroup {
       RootView {
         SplashView()
-          .accessibilityIdentifier(AccessibilityIdentifier.Splash.screen)
+          .accessibilityIdentifier(.splash(.screen))
           .environment(\.injected, DIContainer(services: services))
           // 네트워크 연결 모니터링
           .onChange(of: networkMonitor.isSatisfied) { oldValue, newValue in

@@ -8,13 +8,33 @@
 import Foundation
 
 public enum AccessibilityIdentifier {
-  public enum Splash {
-    static let screen = "splash.screen"
+  case splash(Splash)
+  case onboarding(Onboarding)
+  case home(Home)
+
+  var stringValue: String {
+    switch self {
+    case let .splash(splash):
+      splash.rawValue
+    case let .onboarding(onboarding):
+      onboarding.rawValue
+    case let .home(home):
+      home.rawValue
+    }
   }
 
-  public enum Home {
-    static let screen = "home.screen"
-    static let productCountLabel = "product.count.label"
-    static let sortButton = "product.sort.button"
+  public enum Splash: String {
+    case screen = "splash.screen"
+  }
+
+  public enum Onboarding: String {
+    case navigationBar = "onboarding.navigationBar"
+    case skip = "onboarding.skip"
+  }
+
+  public enum Home: String {
+    case screen = "home.screen"
+    case productCountLabel = "product.count.label"
+    case sortButton = "product.sort.button"
   }
 }

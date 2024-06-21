@@ -14,7 +14,7 @@ import SwiftUI
 struct HomeView<ViewModel>: View where ViewModel: HomeViewModelRepresentable {
   @StateObject private var viewModel: ViewModel
   @State private var isOnboardingSheetOpen = false
-  @AppStorage("isFirstLaunch") private var isFirstLaunch = false
+  @AppStorage("isFirstLaunch") private var isFirstLaunch = true
   @Environment(\.injected) private var container
 
   init(viewModel: @autoclosure @escaping () -> ViewModel) {
@@ -83,7 +83,7 @@ struct HomeView<ViewModel>: View where ViewModel: HomeViewModelRepresentable {
       OnboardingView()
     }
     .onAppear {
-      if !isFirstLaunch {
+      if isFirstLaunch {
         isOnboardingSheetOpen = true
       }
       viewModel.trigger(.fetchProducts)
