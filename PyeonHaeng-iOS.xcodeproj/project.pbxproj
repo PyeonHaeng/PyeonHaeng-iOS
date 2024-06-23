@@ -17,7 +17,6 @@
 		BA1989762BA9536A0083B4BE /* NoticeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1989752BA9536A0083B4BE /* NoticeViewModel.swift */; };
 		BA19897A2BA95C040083B4BE /* NoticeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1989792BA95C040083B4BE /* NoticeConfiguration.swift */; };
 		BA19897C2BA95E8C0083B4BE /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA19897B2BA95E8C0083B4BE /* DIContainer.swift */; };
-		BA1A33F42C27A96500A6DF37 /* Testing in Frameworks */ = {isa = PBXBuildFile; productRef = BA1A33F32C27A96500A6DF37 /* Testing */; };
 		BA28F17C2B6155450052855E /* ProductConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA28F17B2B6155450052855E /* ProductConfigurationTests.swift */; };
 		BA28F1852B6155810052855E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA28F1842B6155810052855E /* OnboardingView.swift */; };
 		BA28F1882B6155910052855E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA28F1872B6155910052855E /* HomeView.swift */; };
@@ -201,7 +200,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA1A33F42C27A96500A6DF37 /* Testing in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,7 +610,6 @@
 			);
 			name = "PyeonHaeng-iOSTests";
 			packageProductDependencies = (
-				BA1A33F32C27A96500A6DF37 /* Testing */,
 			);
 			productName = "PyeonHaeng-iOSTests";
 			productReference = BA28F1792B6155450052855E /* PyeonHaeng-iOSTests.xctest */;
@@ -733,7 +730,6 @@
 			mainGroup = BAA4D9A02B5A1795005999F8;
 			packageReferences = (
 				BA73DDC52BC179F6009EE718 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				BA1A33F22C27A96500A6DF37 /* XCRemoteSwiftPackageReference "swift-testing" */,
 			);
 			productRefGroup = BAA4D9AA2B5A1795005999F8 /* Products */;
 			projectDirPath = "";
@@ -1487,14 +1483,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		BA1A33F22C27A96500A6DF37 /* XCRemoteSwiftPackageReference "swift-testing" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/apple/swift-testing.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.10.0;
-			};
-		};
 		BA73DDC52BC179F6009EE718 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -1517,11 +1505,6 @@
 		BA0623D72B68E51400A0A3B2 /* Log */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Log;
-		};
-		BA1A33F32C27A96500A6DF37 /* Testing */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BA1A33F22C27A96500A6DF37 /* XCRemoteSwiftPackageReference "swift-testing" */;
-			productName = Testing;
 		};
 		BA4EA35F2B6A37E10003DCE7 /* Entity */ = {
 			isa = XCSwiftPackageProductDependency;
