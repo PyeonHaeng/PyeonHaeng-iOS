@@ -8,15 +8,12 @@ import SwiftUI
 
 public extension View {
   func font(_ style: PyeonHaengFont) -> some View {
-    let setting = fontSetting(for: style)
-    let uiFont = UIFont(name: setting.name, size: setting.size) ?? .systemFont(ofSize: setting.size)
-    return fontWithLineHeight(font: uiFont, lineHeight: setting.lineHeight)
-      .tracking(setting.trackingAmount)
+    ModifiedContent(content: self, modifier: FontWithLineHeight(style))
   }
 }
 
 /// 폰트 스타일에 따른 설정을 반환하는 함수
-private func fontSetting(for style: PyeonHaengFont) -> FontSetting {
+private func toFontSetting(for style: PyeonHaengFont) -> FontSetting {
   switch style {
   case .h1:
     return FontSetting(fontName: .bold, size: 32, lineHeight: 40)
@@ -66,19 +63,19 @@ private func fontSetting(for style: PyeonHaengFont) -> FontSetting {
 // MARK: - FontWithLineHeight
 
 private struct FontWithLineHeight: ViewModifier {
+  let fontSetting: FontSetting
   let font: UIFont
-  let lineHeight: CGFloat
+
+  init(_ font: PyeonHaengFont) {
+    self.fontSetting = toFontSetting(for: font)
+    self.font = UIFont(name: fontSetting.name, size: fontSetting.size) ?? .systemFont(ofSize: fontSetting.size)
+  }
 
   func body(content: Content) -> some View {
     content
       .font(Font(font))
-      .lineSpacing(lineHeight - font.lineHeight)
-      .padding(.vertical, (lineHeight - font.lineHeight) / 2)
-  }
-}
-
-private extension View {
-  func fontWithLineHeight(font: UIFont, lineHeight: CGFloat) -> some View {
-    ModifiedContent(content: self, modifier: FontWithLineHeight(font: font, lineHeight: lineHeight))
+      .lineSpacing(fontSetting.lineHeight - font.lineHeight)
+      .padding(.vertical, (fontSetting.lineHeight - font.lineHeight) / 2)
+      .tracking(fontSetting.trackingAmount)
   }
 }
